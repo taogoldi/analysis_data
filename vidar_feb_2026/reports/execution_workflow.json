@@ -1,0 +1,22 @@
+{
+  "stage0": {
+    "name": "loader",
+    "sample": "/Users/taogoldi/Projects/Malware/SPECTRALVIPER/input/22.exe",
+    "sha256": "0cb5a2e3c8aa7c80c8bbfb3a5f737c75807aa0e689dd4ad0a0466d113d8a6b9d"
+  },
+  "stage1_evasion": {
+    "amsi_patch_fn": "sub_140002EA0 -> sub_1400041A0",
+    "anti_sandbox_hub": "sub_140003AA0",
+    "etw_patch_fn": "sub_140002F00 -> sub_140004270"
+  },
+  "stage1_to_stage2": {
+    "aes_iv_va": "0x1400a3590",
+    "aes_key_va": "0x1400a35a0",
+    "encrypted_blob_va": "0x140005140",
+    "encrypted_size_va": "0x1400a3560"
+  },
+  "stage2": {
+    "output": "/Users/taogoldi/Projects/Malware/SPECTRALVIPER/artifacts/stage2_dec_unpadded.bin",
+    "purpose": "secondary PE for command/config logic"
+  }
+}

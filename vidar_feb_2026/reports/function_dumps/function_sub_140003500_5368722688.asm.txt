@@ -1,0 +1,78 @@
+push    rdi
+push    rsi
+push    rbx
+sub     rsp, 1C0h
+xor     eax, eax
+mov     ecx, 20h ; ' '
+lea     rdi, [rsp+1D8h+Buffer]
+mov     [rsp+1D8h+pcbBuffer], 100h
+rep stosq
+lea     rdx, [rsp+1D8h+pcbBuffer]; pcbBuffer
+lea     rcx, [rsp+1D8h+Buffer]; lpBuffer
+call    cs:GetUserNameA
+lea     rax, aMalware; "malware"
+movq    xmm0, cs:off_1400A43E8; "virus"
+movq    xmm1, rax
+mov     rdi, cs:_stricmp
+punpcklqdq xmm0, xmm1
+lea     rax, aTest; "test"
+movups  [rsp+1D8h+var_1A0], xmm0
+movq    xmm0, cs:off_1400A43F0; "maltest"
+lea     rbx, [rsp+1D8h+var_1A8]
+movq    xmm2, rax
+punpcklqdq xmm0, xmm2
+lea     rax, aCurrentuser; "CurrentUser"
+movups  [rsp+1D8h+var_190], xmm0
+movq    xmm0, cs:off_1400A43F8; "user"
+lea     rdx, aSandbox_0; "sandbox"
+movq    xmm3, rax
+punpcklqdq xmm0, xmm3
+lea     rax, String2; "joe sandbox"
+movups  [rsp+1D8h+var_180], xmm0
+movq    xmm0, cs:off_1400A4400; "sand box"
+movq    xmm4, rax
+punpcklqdq xmm0, xmm4
+lea     rax, aVirus; "VIRUS"
+movups  [rsp+1D8h+var_170], xmm0
+movq    xmm0, cs:off_1400A4408; "john doe"
+movq    xmm5, rax
+punpcklqdq xmm0, xmm5
+lea     rax, aPeterWilson; "Peter Wilson"
+movups  [rsp+1D8h+var_160], xmm0
+movq    xmm0, cs:off_1400A4410; "SANDBOX"
+movq    xmm1, rax
+punpcklqdq xmm0, xmm1
+lea     rax, aEmily; "Emily"
+movups  [rsp+1D8h+var_150], xmm0
+movq    xmm0, cs:off_1400A4418; "John"
+movq    xmm2, rax
+lea     rax, aHongLee; "Hong Lee"
+punpcklqdq xmm0, xmm2
+movups  [rsp+1D8h+var_140], xmm0
+movq    xmm0, rax
+movups  [rsp+1D8h+var_130], xmm0
+jmp     short loc_140003645
+loc_140003638:
+mov     rdx, [rbx+8]; String2
+add     rbx, 8
+test    rdx, rdx
+jz      short loc_140003668
+loc_140003645:
+lea     rcx, [rsp+1D8h+Buffer]; String1
+call    rdi ; _stricmp
+test    eax, eax
+jnz     short loc_140003638
+loc_140003653:
+mov     eax, 1
+add     rsp, 1C0h
+pop     rbx
+pop     rsi
+pop     rdi
+retn
+loc_140003668:
+xor     eax, eax
+add     rsp, 1C0h
+pop     rbx
+pop     rsi
+pop     rdi
+retn

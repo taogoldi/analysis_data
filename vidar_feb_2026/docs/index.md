@@ -1,0 +1,4 @@
+- [22exe_stage_flowchart.svg](./22exe_stage_flowchart.svg)
+- [22exe_stage_flowchart.mmd](./22exe_stage_flowchart.mmd)
+- [execution_workflow.md](./execution_workflow.md)
+- [spectralviper_precursor_analysis.md](./spectralviper_precursor_analysis.md)

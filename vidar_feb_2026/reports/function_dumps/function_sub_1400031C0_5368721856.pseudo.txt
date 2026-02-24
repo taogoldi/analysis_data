@@ -1,0 +1,11 @@
+{
+  DWORD pcbBuffer; // [rsp+2Ch] [rbp-11Ch] BYREF
+  CHAR Buffer[280]; // [rsp+30h] [rbp-118h] BYREF
+
+  if ( GetModuleHandleA("SbieDll.dll") )
+    return 1;
+  pcbBuffer = 256;
+  memset(Buffer, 0, 0x100u);
+  GetUserNameA(Buffer, &pcbBuffer);
+  return !stricmp(Buffer, "joe sandbox") || !stricmp(Buffer, "sand box") || stricmp(Buffer, "maltest") == 0;
+}

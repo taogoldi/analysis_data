@@ -1,0 +1,38 @@
+push    rsi
+push    rbx
+sub     rsp, 48h
+xor     r8d, r8d; ulOptions
+mov     rbx, cs:RegOpenKeyExA
+mov     r9d, 20019h; samDesired
+lea     rdx, SubKey; "SOFTWARE\\Wine"
+mov     rcx, 0FFFFFFFF80000001h; hKey
+mov     [rsp+58h+hKey], 0
+lea     rsi, [rsp+58h+hKey]
+mov     [rsp+58h+phkResult], rsi; phkResult
+call    rbx ; RegOpenKeyExA
+test    eax, eax
+jz      short loc_1400034E8
+loc_1400034ad:
+xor     r8d, r8d; ulOptions
+mov     [rsp+58h+phkResult], rsi; phkResult
+mov     r9d, 20019h; samDesired
+mov     rcx, 0FFFFFFFF80000002h; hKey
+mov     [rsp+58h+hKey], 0
+lea     rdx, aSoftwareMicros; "SOFTWARE\\Microsoft\\Windows\\CurrentVe"...
+call    rbx ; RegOpenKeyExA
+test    eax, eax
+jz      short loc_1400034E8
+loc_1400034d8:
+xor     eax, eax
+add     rsp, 48h
+pop     rbx
+pop     rsi
+retn
+loc_1400034e8:
+mov     rcx, [rsp+58h+hKey]; hKey
+call    cs:RegCloseKey
+mov     eax, 1
+add     rsp, 48h
+pop     rbx
+pop     rsi
+retn

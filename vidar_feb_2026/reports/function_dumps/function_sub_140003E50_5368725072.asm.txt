@@ -1,0 +1,234 @@
+push    r15
+push    r14
+push    r13
+push    r12
+push    rbp
+push    rdi
+push    rsi
+push    rbx
+sub     rsp, 38h
+cmp     word ptr [rcx], 5A4Dh
+mov     r12, rcx
+jnz     loc_140003FA8
+loc_140003e6e:
+movsxd  rdi, dword ptr [rcx+3Ch]
+add     rdi, rcx
+cmp     dword ptr [rdi], 4550h
+jnz     loc_140003FA8
+loc_140003e81:
+mov     r14d, [rdi+50h]
+mov     r9d, 4; flProtect
+mov     r8d, 3000h; flAllocationType
+mov     r13, [rdi+30h]
+movzx   ebx, word ptr [rdi+14h]
+mov     rbp, cs:VirtualAlloc
+mov     rdx, r14; dwSize
+mov     rcx, r13; lpAddress
+call    rbp ; VirtualAlloc
+test    rax, rax
+mov     rsi, rax
+jz      loc_140004050
+loc_140003eb4:
+mov     r8d, [rdi+54h]; Size
+mov     rdx, r12; Src
+mov     rcx, rsi; void *
+xor     r14d, r14d
+lea     rbp, [rdi+rbx+18h]
+mov     rbx, rbp
+call    memcpy
+cmp     word ptr [rdi+6], 0
+jz      short loc_140003EFE
+loc_140003ed5:
+nop     dword ptr [rax]
+loc_140003ed8:
+mov     ecx, [rbx+0Ch]
+add     r14d, 1
+add     rbx, 28h ; '('
+mov     edx, [rbx-14h]
+mov     r8d, [rbx-18h]; Size
+add     rcx, rsi; void *
+add     rdx, r12; Src
+call    memcpy
+movzx   eax, word ptr [rdi+6]
+cmp     eax, r14d
+jg      short loc_140003ED8
+loc_140003efe:
+mov     r10, rsi
+sub     r10, r13
+jz      short loc_140003F14
+loc_140003f06:
+mov     eax, [rdi+0B4h]
+test    eax, eax
+jnz     loc_140004090
+loc_140003f14:
+mov     edx, [rdi+94h]
+test    edx, edx
+jz      loc_140003FD0
+loc_140003f22:
+mov     r14d, [rdi+90h]
+add     r14, rsi
+mov     eax, [r14+0Ch]
+test    eax, eax
+jz      loc_140003FD0
+loc_140003f38:
+mov     r13, cs:GetProcAddress
+loc_140003f3f:
+lea     rcx, [rsi+rax]; lpLibFileName
+call    cs:LoadLibraryA
+test    rax, rax
+mov     r12, rax
+jz      short loc_140003FA8
+loc_140003f51:
+mov     eax, [r14+10h]
+lea     r15, [rsi+rax]
+cmp     qword ptr [r15], 0
+jz      short loc_140003FC0
+loc_140003f5f:
+mov     ebx, [r14]
+sub     rbx, rax
+jmp     short loc_140003F8D
+loc_140003f70:
+lea     rdx, [rsi+rdx+2]; lpProcName
+mov     rcx, r12; hModule
+call    r13 ; GetProcAddress
+test    rax, rax
+jz      short loc_140003FA8
+loc_140003f80:
+mov     [r15], rax
+add     r15, 8
+cmp     qword ptr [r15], 0
+jz      short loc_140003FC0
+loc_140003f8d:
+mov     rdx, [r15+rbx]
+test    rdx, rdx
+jns     short loc_140003F70
+loc_140003f96:
+movzx   edx, dx; lpProcName
+mov     rcx, r12; hModule
+call    r13 ; GetProcAddress
+test    rax, rax
+jnz     short loc_140003F80
+loc_140003fa4:
+nop     dword ptr [rax+00h]
+loc_140003fa8:
+xor     eax, eax
+loc_140003faa:
+add     rsp, 38h
+pop     rbx
+pop     rsi
+pop     rdi
+pop     rbp
+pop     r12
+pop     r13
+pop     r14
+pop     r15
+retn
+loc_140003fc0:
+mov     eax, [r14+20h]
+add     r14, 14h
+test    eax, eax
+jnz     loc_140003F3F
+loc_140003fd0:
+cmp     word ptr [rdi+6], 0
+jz      short loc_140004030
+loc_140003fd7:
+mov     rbx, cs:VirtualProtect
+xor     r13d, r13d
+jmp     short loc_140004015
+loc_140003fe8:
+sar     r8d, 1Fh
+and     r8d, 20h
+add     r8d, 20h ; ' '; flNewProtect
+loc_140003ff4:
+mov     ecx, [rbp+0Ch]
+lea     r9, [rsp+78h+flOldProtect]; lpflOldProtect
+add     r13d, 1
+add     rbp, 28h ; '('
+mov     edx, [rbp-20h]; dwSize
+add     rcx, rsi; lpAddress
+call    rbx ; VirtualProtect
+movzx   eax, word ptr [rdi+6]
+cmp     eax, r13d
+jle     short loc_140004030
+loc_140004015:
+mov     r8d, [rbp+24h]
+test    r8d, 20000000h
+jnz     short loc_140003FE8
+loc_140004022:
+sar     r8d, 1Fh
+and     r8d, 2
+add     r8d, 2
+jmp     short loc_140003FF4
+loc_140004030:
+mov     eax, [rdi+28h]
+add     rax, rsi
+test    byte ptr [rdi+17h], 20h
+jnz     short loc_140004078
+loc_14000403c:
+call    rax
+loc_14000403e:
+mov     eax, 1
+jmp     loc_140003FAA
+loc_140004050:
+xor     ecx, ecx; lpAddress
+mov     r9d, 4; flProtect
+mov     r8d, 3000h; flAllocationType
+mov     rdx, r14; dwSize
+call    rbp ; VirtualAlloc
+test    rax, rax
+mov     rsi, rax
+jnz     loc_140003EB4
+loc_14000406f:
+jmp     loc_140003FA8
+loc_140004078:
+xor     r8d, r8d
+mov     edx, 1
+mov     rcx, rsi
+call    rax
+jmp     short loc_14000403E
+loc_140004090:
+mov     r9d, [rdi+0B0h]
+add     r9, rsi
+mov     ecx, [r9]
+test    ecx, ecx
+jz      loc_140003F14
+loc_1400040a5:
+nop     dword ptr [rax]
+loc_1400040a8:
+mov     r11d, [r9+4]
+lea     rax, [r11-8]
+shr     rax, 1
+test    eax, eax
+jz      short loc_1400040FD
+loc_1400040b7:
+lea     rdx, [r9+8]
+sub     eax, 1
+add     rcx, rsi
+lea     r8, [r9+rax*2+0Ah]
+jmp     short loc_1400040D9
+loc_1400040d0:
+add     rdx, 2
+cmp     r8, rdx
+jz      short loc_1400040FD
+loc_1400040d9:
+movzx   eax, byte ptr [rdx+1]
+and     eax, 0FFFFFFF0h
+cmp     al, 0A0h
+jz      short loc_1400040E8
+loc_1400040e4:
+cmp     al, 30h ; '0'
+jnz     short loc_1400040D0
+loc_1400040e8:
+movzx   eax, word ptr [rdx]
+add     rdx, 2
+and     eax, 0FFFh
+add     [rcx+rax], r10
+cmp     r8, rdx
+jnz     short loc_1400040D9
+loc_1400040fd:
+add     r9, r11
+mov     ecx, [r9]
+test    ecx, ecx
+jnz     short loc_1400040A8
+loc_140004107:
+jmp     loc_140003F14

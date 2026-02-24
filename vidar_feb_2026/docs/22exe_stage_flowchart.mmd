@@ -1,0 +1,7 @@
+flowchart TD
+  A[22.exe Stage0 Loader] --> B[Preflight Environment Gate]
+  B --> C[AMSI + ETW Patch Routines]
+  C --> D[Read Encrypted Blob + AES Key + IV]
+  D --> E[AES-CBC Decrypt + PKCS#7 Trim]
+  E --> F[Reflective Load of Stage2 PE]
+  F --> G[Stage2 Resolver / Config Logic]

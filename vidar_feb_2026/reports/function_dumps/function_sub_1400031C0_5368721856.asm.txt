@@ -1,0 +1,42 @@
+push    rdi
+push    rbx
+sub     rsp, 138h
+lea     rcx, aSbiedllDll; "SbieDll.dll"
+call    cs:GetModuleHandleA
+test    rax, rax
+jz      short loc_1400031F0
+loc_1400031db:
+mov     eax, 1
+loc_1400031e0:
+add     rsp, 138h
+pop     rbx
+pop     rdi
+retn
+loc_1400031f0:
+mov     ecx, 20h ; ' '
+mov     [rsp+148h+pcbBuffer], 100h
+lea     rdi, [rsp+148h+Buffer]
+rep stosq
+lea     rdx, [rsp+148h+pcbBuffer]; pcbBuffer
+lea     rcx, [rsp+148h+Buffer]; lpBuffer
+call    cs:GetUserNameA
+mov     rbx, cs:_stricmp
+lea     rcx, [rsp+148h+Buffer]; String1
+lea     rdx, String2; "joe sandbox"
+call    rbx ; _stricmp
+test    eax, eax
+jz      short loc_1400031DB
+loc_14000322e:
+lea     rdx, aSandBox; "sand box"
+lea     rcx, [rsp+148h+Buffer]; String1
+call    rbx ; _stricmp
+test    eax, eax
+jz      short loc_1400031DB
+loc_140003240:
+lea     rdx, aMaltest; "maltest"
+lea     rcx, [rsp+148h+Buffer]; String1
+call    rbx ; _stricmp
+test    eax, eax
+setz    al
+movzx   eax, al
+jmp     short loc_1400031E0

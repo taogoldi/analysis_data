@@ -1,0 +1,8 @@
+{
+  "encrypted_blob_len": 648208,
+  "encrypted_blob_sha256": "bd891e19dd2457d812ff1b03a5268da324b214e653309f51075e74eeb0b755f6",
+  "stage2_out_len": 648192,
+  "stage2_out_path": "/Users/taogoldi/Projects/Malware/SPECTRALVIPER/artifacts/stage2_dec_from_hex.bin",
+  "stage2_out_sha256": "5fa52aa9046334c86da1e9746dfe9d7bb23ec69a8b2ab77d98efd2cb1af012f3",
+  "starts_with_mz": true
+}

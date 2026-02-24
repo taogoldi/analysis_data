@@ -1,0 +1,231 @@
+push    r14
+push    rbp
+push    rdi
+push    rsi
+push    rbx
+sub     rsp, 50h
+xor     eax, eax
+xor     ebx, ebx
+mov     rbp, rcx
+mov     rdi, rdx
+mov     ecx, 29h ; ')'
+rep stosq
+mov     rsi, rdx
+mov     r10d, [rbp+0]
+test    r10d, r10d
+jnz     loc_140003BA0
+loc_140003acc:
+mov     r9d, [rbp+4]
+test    r9d, r9d
+jnz     loc_140003C8A
+loc_140003ad9:
+mov     r8d, [rbp+8]
+test    r8d, r8d
+jnz     loc_140003CC0
+loc_140003ae6:
+mov     ecx, [rbp+0Ch]
+test    ecx, ecx
+jnz     short loc_140003B30
+loc_140003aed:
+mov     eax, 64h ; 'd'
+cmp     ebx, eax
+cmovbe  eax, ebx
+mov     [rsi+4], eax
+xor     eax, eax
+cmp     ebx, 22h ; '"'
+setnbe  al
+mov     [rsi], eax
+jbe     short loc_140003B1B
+loc_140003b06:
+cmp     byte ptr [rsi+8], 0
+jz      loc_140003D40
+loc_140003b10:
+mov     edx, [rbp+10h]
+test    edx, edx
+jnz     loc_140003E40
+loc_140003b1b:
+add     rsp, 50h
+pop     rbx
+pop     rsi
+pop     rdi
+pop     rbp
+pop     r14
+retn
+loc_140003b30:
+mov     rdx, cs:GetTickCount
+mov     [rsp+78h+var_58], rdx
+call    rdx ; GetTickCount
+mov     r8, cs:Sleep
+mov     ecx, 3E8h; dwMilliseconds
+mov     edi, eax
+mov     [rsp+78h+var_50], r8
+call    r8 ; Sleep
+call    [rsp+78h+var_58]
+lea     edx, [rbx+1Eh]
+sub     eax, edi
+cmp     eax, 384h
+cmovb   ebx, edx
+mov     rdx, cs:GetTickCount64
+mov     [rsp+78h+var_58], rdx
+call    rdx ; GetTickCount64
+mov     r8, [rsp+78h+var_50]
+mov     ecx, 7D0h
+mov     rdi, rax
+call    r8
+call    [rsp+78h+var_58]
+lea     edx, [rbx+1Eh]
+sub     rax, rdi
+cmp     rax, 5DCh
+cmovb   ebx, edx
+jmp     loc_140003AED
+loc_140003ba0:
+call    sub_140003130
+xor     edi, edi
+test    eax, eax
+jnz     loc_140003DF0
+loc_140003baf:
+call    sub_1400031C0
+test    eax, eax
+jnz     loc_140003DA0
+loc_140003bbc:
+lea     rax, aProcesshackerE; "ProcessHacker.exe"
+lea     rbx, [rsp+78h+plii]
+movq    xmm0, rax
+movups  [rsp+78h+var_40], xmm0
+lea     rcx, aInjectorExe; "injector.exe"
+jmp     short loc_140003BED
+loc_140003be0:
+mov     rcx, [rbx+8]; String2
+add     rbx, 8
+test    rcx, rcx
+jz      short loc_140003C3F
+loc_140003bed:
+call    sub_1400043A0
+test    eax, eax
+jz      short loc_140003BE0
+loc_140003bf6:
+mov     rax, 6E75722E796E41h
+mov     qword ptr [rsi+38h], 0
+add     edi, 28h ; '('
+mov     [rsi+8], rax
+mov     qword ptr [rsi+10h], 0
+mov     qword ptr [rsi+18h], 0
+mov     qword ptr [rsi+20h], 0
+mov     qword ptr [rsi+28h], 0
+mov     qword ptr [rsi+30h], 0
+mov     qword ptr [rsi+3Fh], 0
+loc_140003c3f:
+call    sub_140003420
+mov     r14d, eax
+call    sub_140003260
+mov     ebx, eax
+call    sub_140003500
+neg     ebx
+neg     eax
+and     ebx, 1Eh
+and     eax, 14h
+add     ebx, eax
+call    sub_140003320
+add     ebx, edi
+neg     eax
+and     eax, 0Fh
+add     ebx, eax
+call    sub_140003470
+mov     r9d, [rbp+4]
+add     eax, r14d
+lea     eax, [rax+rax*4]
+lea     eax, [rax+rax*4]
+add     ebx, eax
+test    r9d, r9d
+jz      loc_140003AD9
+loc_140003c8a:
+mov     qword ptr [rsp+78h+plii.cbSize], 8
+lea     rcx, [rsp+78h+plii]; plii
+call    cs:GetLastInputInfo
+call    cs:GetTickCount
+sub     eax, [rsp+78h+plii.dwTime]
+lea     edx, [rbx+0Ah]
+mov     r8d, [rbp+8]
+cmp     eax, 493DFh
+cmova   ebx, edx
+test    r8d, r8d
+jz      loc_140003AE6
+loc_140003cc0:
+mov     rdx, cs:GetSystemMetrics
+xor     ecx, ecx; nIndex
+mov     [rsp+78h+var_58], rdx
+call    rdx ; GetSystemMetrics
+mov     ecx, 1
+mov     edi, eax
+call    [rsp+78h+var_58]
+cmp     edi, 320h
+mov     edx, eax
+setle   al
+cmp     edx, 258h
+setle   dl
+or      eax, edx
+movzx   eax, al
+neg     eax
+and     eax, 0Ah
+add     ebx, eax
+call    sub_140003750
+mov     edx, eax
+lea     eax, [rbx+0Fh]
+test    edx, edx
+cmovz   ebx, eax
+call    cs:GetTickCount64
+mov     rdx, 4A90BE587DE6E565h
+mul     rdx
+lea     eax, [rbx+0Ah]
+shr     rdx, 14h
+test    edx, edx
+cmovz   ebx, eax
+call    sub_140003920
+mov     edx, eax
+lea     eax, [rbx+0Ah]
+test    edx, edx
+cmovz   ebx, eax
+jmp     loc_140003AE6
+loc_140003d40:
+mov     rdi, 206E776F6E6B6E55h
+mov     qword ptr [rsi+38h], 0
+mov     [rsi+8], rdi
+mov     rdi, 786F62646E6153h
+mov     [rsi+10h], rdi
+mov     qword ptr [rsi+18h], 0
+mov     qword ptr [rsi+20h], 0
+mov     qword ptr [rsi+28h], 0
+mov     qword ptr [rsi+30h], 0
+mov     qword ptr [rsi+3Fh], 0
+mov     edx, [rbp+10h]
+test    edx, edx
+jz      loc_140003B1B
+loc_140003d97:
+jmp     loc_140003E40
+loc_140003da0:
+mov     rax, 646E615320656F4Ah
+mov     qword ptr [rsi+38h], 0
+add     edi, 32h ; '2'
+mov     [rsi+8], rax
+mov     qword ptr [rsi+10h], 786F62h
+mov     qword ptr [rsi+18h], 0
+mov     qword ptr [rsi+20h], 0
+mov     qword ptr [rsi+28h], 0
+mov     qword ptr [rsi+30h], 0
+mov     qword ptr [rsi+3Fh], 0
+jmp     loc_140003BBC
+loc_140003df0:
+mov     rax, 6F6F6B637543h
+mov     qword ptr [rsi+38h], 0
+mov     edi, 32h ; '2'
+mov     [rsi+8], rax
+mov     qword ptr [rsi+10h], 0
+mov     qword ptr [rsi+18h], 0
+mov     qword ptr [rsi+20h], 0
+mov     qword ptr [rsi+28h], 0
+mov     qword ptr [rsi+30h], 0
+mov     qword ptr [rsi+3Fh], 0
+jmp     loc_140003BAF
+loc_140003e40:
+xor     ecx, ecx; uExitCode
+call    cs:ExitProcess

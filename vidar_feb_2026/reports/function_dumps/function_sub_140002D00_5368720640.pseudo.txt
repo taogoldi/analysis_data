@@ -1,0 +1,71 @@
+{
+  _BYTE *v3; // r11
+  _BYTE *v5; // rax
+  char *v6; // r9
+  char v7; // r8
+  unsigned __int8 v8; // cl
+  unsigned int n8; // r8d
+  unsigned __int8 v10; // bp
+  unsigned __int8 v11; // r10
+  unsigned __int8 v12; // dl
+  __int64 v13; // r9
+  __int64 v14; // r10
+  __int64 result; // rax
+
+  v3 = a1;
+  v5 = a1;
+  v6 = a2 + 32;
+  do
+  {
+    v7 = *a2;
+    a2 += 4;
+    a1 += 4;
+    *(a1 - 4) = v7;
+    *(a1 - 3) = *(a2 - 3);
+    *(a1 - 2) = *(a2 - 2);
+    *(a1 - 1) = *(a2 - 1);
+  }
+  while ( a2 != v6 );
+  v8 = v3[31];
+  n8 = 8;
+  v10 = v3[30];
+  v11 = v3[29];
+  v12 = v3[28];
+  do
+  {
+    if ( (n8 & 7) != 0 )
+    {
+      if ( (n8 & 7) == 4 )
+      {
+        v12 = byte_1400A4A60[v12];
+        v11 = byte_1400A4A60[v11];
+        v10 = byte_1400A4A60[v10];
+        v8 = byte_1400A4A60[v8];
+      }
+    }
+    else
+    {
+      v13 = v11;
+      v14 = v10;
+      v10 = byte_1400A4A60[v8];
+      v8 = byte_1400A4A60[v12];
+      v11 = byte_1400A4A60[v14];
+      v12 = byte_1400A4950[n8 >> 3] ^ byte_1400A4A60[v13];
+    }
+    v12 ^= *v5;
+    ++n8;
+    v5 += 4;
+    v11 ^= *(v5 - 3);
+    v10 ^= *(v5 - 2);
+    v8 ^= *(v5 - 1);
+    v5[28] = v12;
+    v5[29] = v11;
+    v5[30] = v10;
+    v5[31] = v8;
+  }
+  while ( n8 != 60 );
+  *((_QWORD *)v3 + 30) = *a3;
+  result = a3[1];
+  *((_QWORD *)v3 + 31) = result;
+  return result;
+}

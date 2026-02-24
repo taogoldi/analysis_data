@@ -1,0 +1,33 @@
+{
+  const char *SANDBOX; // rbx
+  char *v1; // rsi
+  char *result; // rax
+  DWORD nSize; // [rsp+2Ch] [rbp-17Ch] BYREF
+  char v4; // [rsp+30h] [rbp-178h] BYREF
+  __m128i v5; // [rsp+38h] [rbp-170h]
+  __m128i v6; // [rsp+48h] [rbp-160h]
+  __m128i v7; // [rsp+58h] [rbp-150h]
+  __int128 DESKTOP_; // [rsp+68h] [rbp-140h]
+  CHAR Buffer[296]; // [rsp+80h] [rbp-128h] BYREF
+
+  SANDBOX = "SANDBOX";
+  nSize = 256;
+  memset(Buffer, 0, 0x100u);
+  GetComputerNameA(Buffer, &nSize);
+  v5 = _mm_unpacklo_epi64(_mm_loadl_epi64((const __m128i *)off_1400A4420), (__m128i)(unsigned __int64)"VIRUS");// "SAND-BOX"
+  v1 = &v4;
+  v6 = _mm_unpacklo_epi64(_mm_loadl_epi64((const __m128i *)off_1400A4428), (__m128i)(unsigned __int64)"MALTEST");// "MALWARE"
+  v7 = _mm_unpacklo_epi64(_mm_loadl_epi64((const __m128i *)&off_1400A4430), (__m128i)(unsigned __int64)"JOHN-PC");// "TEQUILABOOMBOOM"
+  DESKTOP_ = (unsigned __int64)"DESKTOP-";
+  while ( stricmp(Buffer, SANDBOX) )
+  {
+    result = strstr(Buffer, SANDBOX);
+    if ( result )
+      break;
+    SANDBOX = *((const char **)v1 + 1);
+    v1 += 8;
+    if ( !SANDBOX )
+      return result;
+  }
+  return (char *)1;
+}

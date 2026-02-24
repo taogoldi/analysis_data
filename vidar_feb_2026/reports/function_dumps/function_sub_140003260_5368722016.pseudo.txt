@@ -1,0 +1,30 @@
+{
+  const CHAR *sbiedll.dll; // rcx
+  char *v1; // rbx
+  HMODULE result; // rax
+  char v3; // [rsp+20h] [rbp-68h] BYREF
+  __m128i v4; // [rsp+28h] [rbp-60h]
+  __m128i v5; // [rsp+38h] [rbp-50h]
+  __m128i v6; // [rsp+48h] [rbp-40h]
+  __m128i v7; // [rsp+58h] [rbp-30h]
+  __int64 v8; // [rsp+68h] [rbp-20h]
+
+  sbiedll.dll = "sbiedll.dll";
+  v4 = _mm_unpacklo_epi64(_mm_loadl_epi64((const __m128i *)off_1400A43C8), (__m128i)(unsigned __int64)"dir_watch.dll");// "api_log.dll"
+  v8 = 0;
+  v1 = &v3;
+  v5 = _mm_unpacklo_epi64(_mm_loadl_epi64((const __m128i *)off_1400A43D0), (__m128i)(unsigned __int64)"vmcheck.dll");// "pstorec.dll"
+  v6 = _mm_unpacklo_epi64(_mm_loadl_epi64((const __m128i *)off_1400A43D8), (__m128i)(unsigned __int64)"cmdvrt32.dll");// "wpespy.dll"
+  v7 = _mm_unpacklo_epi64(_mm_loadl_epi64((const __m128i *)off_1400A43E0), (__m128i)(unsigned __int64)"cuckoomon.dll");// "cmdvrt64.dll"
+  while ( 1 )
+  {
+    result = GetModuleHandleA(sbiedll.dll);
+    if ( result )
+      break;
+    sbiedll.dll = *((const CHAR **)v1 + 1);
+    v1 += 8;
+    if ( !sbiedll.dll )
+      return result;
+  }
+  return (HMODULE)1;
+}

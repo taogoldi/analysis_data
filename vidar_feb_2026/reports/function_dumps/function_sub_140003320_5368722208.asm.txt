@@ -1,0 +1,61 @@
+push    rbp
+push    rdi
+push    rsi
+push    rbx
+sub     rsp, 188h
+lea     rbx, SubStr; "SANDBOX"
+xor     eax, eax
+mov     ecx, 20h ; ' '
+lea     rdi, [rsp+1A8h+Buffer]
+mov     [rsp+1A8h+nSize], 100h
+rep stosq
+lea     rdx, [rsp+1A8h+nSize]; nSize
+lea     rcx, [rsp+1A8h+Buffer]; lpBuffer
+call    cs:GetComputerNameA
+lea     rax, aVirus; "VIRUS"
+movq    xmm0, cs:off_1400A4420; "SAND-BOX"
+movq    xmm1, rax
+mov     rbp, cs:_stricmp
+lea     rax, aMaltest_0; "MALTEST"
+punpcklqdq xmm0, xmm1
+movups  [rsp+1A8h+var_170], xmm0
+movq    xmm0, cs:off_1400A4428; "MALWARE"
+lea     rsi, [rsp+1A8h+var_178]
+movq    xmm2, rax
+punpcklqdq xmm0, xmm2
+lea     rax, aJohnPc; "JOHN-PC"
+movups  [rsp+1A8h+var_160], xmm0
+movq    xmm0, cs:off_1400A4430; "TEQUILABOOMBOOM"
+movq    xmm3, rax
+lea     rax, aDesktop; "DESKTOP-"
+punpcklqdq xmm0, xmm3
+movups  [rsp+1A8h+var_150], xmm0
+movq    xmm0, rax
+movups  [rsp+1A8h+var_140], xmm0
+jmp     short loc_1400033FA
+loc_1400033d8:
+lea     rcx, [rsp+1A8h+Buffer]; Str
+mov     rdx, rbx; SubStr
+call    strstr
+test    rax, rax
+jnz     short loc_14000340B
+loc_1400033ed:
+mov     rbx, [rsi+8]
+add     rsi, 8
+test    rbx, rbx
+jz      short loc_140003410
+loc_1400033fa:
+lea     rcx, [rsp+1A8h+Buffer]; String1
+mov     rdx, rbx; String2
+call    rbp ; _stricmp
+test    eax, eax
+jnz     short loc_1400033D8
+loc_14000340b:
+mov     eax, 1
+loc_140003410:
+add     rsp, 188h
+pop     rbx
+pop     rsi
+pop     rdi
+pop     rbp
+retn

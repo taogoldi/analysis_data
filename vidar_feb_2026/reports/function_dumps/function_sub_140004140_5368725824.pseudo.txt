@@ -1,0 +1,3 @@
+{
+  return sub_1400041A0("amsi.dll", "AmsiScanBuffer", &unk_140005120, 6u);
+}
