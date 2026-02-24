@@ -1,0 +1,32 @@
+sub     rsp, 48h
+lea     rcx, aAgentPy; "agent.py"
+call    sub_1400043A0
+test    eax, eax
+jz      short loc_140003150
+loc_140003144:
+mov     eax, 1
+add     rsp, 48h
+retn
+loc_140003150:
+xor     r9d, r9d; lpSecurityAttributes
+xor     r8d, r8d; dwShareMode
+mov     [rsp+48h+hTemplateFile], 0; hTemplateFile
+mov     edx, 80000000h; dwDesiredAccess
+mov     [rsp+48h+dwFlagsAndAttributes], 0; dwFlagsAndAttributes
+lea     rcx, FileName; "\\\\.\\pipe\\cuckoo"
+mov     [rsp+48h+dwCreationDisposition], 3; dwCreationDisposition
+call    cs:CreateFileA
+cmp     rax, 0FFFFFFFFFFFFFFFFh
+jz      short loc_140003198
+loc_140003187:
+mov     rcx, rax; hObject
+call    cs:CloseHandle
+jmp     short loc_140003144
+loc_140003198:
+lea     rcx, ModuleName; "cuckoomon.dll"
+call    cs:GetModuleHandleA
+test    rax, rax
+setnz   al
+movzx   eax, al
+add     rsp, 48h
+retn

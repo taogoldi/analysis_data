@@ -1,0 +1,21 @@
+{
+  "dec_raw_sha256": "fc71ffa237ff7fbdd74fdb1e6ccaa395847b317ae6266d867872e4b490b4ffb2",
+  "dec_starts_mz": true,
+  "dec_unpadded_sha256": "5fa52aa9046334c86da1e9746dfe9d7bb23ec69a8b2ab77d98efd2cb1af012f3",
+  "enc_blob_va": "0x140005140",
+  "enc_sha256": "bd891e19dd2457d812ff1b03a5268da324b214e653309f51075e74eeb0b755f6",
+  "enc_size": 648208,
+  "enc_size_va": "0x1400a3560",
+  "image_base": "0x140000000",
+  "iv_va": "0x1400a3590",
+  "key_va": "0x1400a35a0",
+  "outputs": {
+    "aes_iv_hex": "/Users/taogoldi/Projects/Malware/SPECTRALVIPER/artifacts/aes_iv.hex",
+    "aes_key_hex": "/Users/taogoldi/Projects/Malware/SPECTRALVIPER/artifacts/aes_key.hex",
+    "enc_blob": "/Users/taogoldi/Projects/Malware/SPECTRALVIPER/artifacts/enc_blob.bin",
+    "stage2_dec_raw": "/Users/taogoldi/Projects/Malware/SPECTRALVIPER/artifacts/stage2_dec_raw.bin",
+    "stage2_dec_unpadded": "/Users/taogoldi/Projects/Malware/SPECTRALVIPER/artifacts/stage2_dec_unpadded.bin"
+  },
+  "sample": "/Users/taogoldi/Projects/Malware/SPECTRALVIPER/input/22.exe",
+  "sample_sha256": "0cb5a2e3c8aa7c80c8bbfb3a5f737c75807aa0e689dd4ad0a0466d113d8a6b9d"
+}

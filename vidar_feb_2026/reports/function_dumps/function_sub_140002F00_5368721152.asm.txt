@@ -1,0 +1,35 @@
+push    rsi
+push    rbx
+sub     rsp, 28h
+lea     r8, unk_1400A3570; Src
+mov     r9d, 3; dwSize
+lea     rdx, aEtweventwrite; "EtwEventWrite"
+lea     rcx, aNtdllDll; "ntdll.dll"
+call    sub_140004270
+mov     r9d, 3; dwSize
+lea     r8, unk_1400A3570; Src
+mov     ebx, eax
+lea     rdx, aEtweventwritet; "EtwEventWriteTransfer"
+lea     rcx, aNtdllDll; "ntdll.dll"
+call    sub_140004270
+mov     r9d, 3; dwSize
+lea     r8, unk_1400A3570; Src
+mov     esi, eax
+lea     rdx, aNttraceevent; "NtTraceEvent"
+lea     rcx, aNtdllDll; "ntdll.dll"
+call    sub_140004270
+test    eax, eax
+jnz     short loc_140002F92
+loc_140002f6e:
+lea     r8, unk_1400A3580; Src
+mov     r9d, 3; dwSize
+or      ebx, esi
+lea     rdx, aNttraceevent; "NtTraceEvent"
+lea     rcx, aNtdllDll; "ntdll.dll"
+call    sub_140004270
+or      eax, ebx
+loc_140002f92:
+add     rsp, 28h
+pop     rbx
+pop     rsi
+retn

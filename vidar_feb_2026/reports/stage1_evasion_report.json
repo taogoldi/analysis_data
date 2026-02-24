@@ -1,0 +1,223 @@
+{
+  "behavior": {
+    "anti_sandbox_indicators": [
+      {
+        "address": "5368721712",
+        "constant": "agent.py",
+        "name": "sub_140003130",
+        "rva": "12592"
+      },
+      {
+        "address": "5368721712",
+        "constant": "\\\\.\\pipe\\cuckoo",
+        "name": "sub_140003130",
+        "rva": "12592"
+      },
+      {
+        "address": "5368721712",
+        "constant": "cuckoomon.dll",
+        "name": "sub_140003130",
+        "rva": "12592"
+      },
+      {
+        "address": "5368721856",
+        "constant": "SbieDll.dll",
+        "name": "sub_1400031C0",
+        "rva": "12736"
+      },
+      {
+        "address": "5368721856",
+        "constant": "joe sandbox",
+        "name": "sub_1400031C0",
+        "rva": "12736"
+      },
+      {
+        "address": "5368721856",
+        "constant": "maltest",
+        "name": "sub_1400031C0",
+        "rva": "12736"
+      },
+      {
+        "address": "5368722016",
+        "constant": "sbiedll.dll",
+        "name": "sub_140003260",
+        "rva": "12896"
+      },
+      {
+        "address": "5368722016",
+        "constant": "cuckoomon.dll",
+        "name": "sub_140003260",
+        "rva": "12896"
+      },
+      {
+        "address": "5368722208",
+        "constant": "SANDBOX",
+        "name": "sub_140003320",
+        "rva": "13088"
+      },
+      {
+        "address": "5368722208",
+        "constant": "MALTEST",
+        "name": "sub_140003320",
+        "rva": "13088"
+      },
+      {
+        "address": "5368722544",
+        "constant": "SOFTWARE\\Wine",
+        "name": "sub_140003470",
+        "rva": "13424"
+      },
+      {
+        "address": "5368722544",
+        "constant": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Sandboxie",
+        "name": "sub_140003470",
+        "rva": "13424"
+      },
+      {
+        "address": "5368722688",
+        "constant": "sandbox",
+        "name": "sub_140003500",
+        "rva": "13568"
+      },
+      {
+        "address": "5368722688",
+        "constant": "joe sandbox",
+        "name": "sub_140003500",
+        "rva": "13568"
+      }
+    ],
+    "key_functions": [
+      {
+        "address": "5368721056",
+        "constants": [
+          "AmsiOpenSession",
+          "AmsiScanBuffer",
+          "amsi.dll"
+        ],
+        "name": "sub_140002EA0",
+        "rva": "11936"
+      },
+      {
+        "address": "5368721152",
+        "constants": [
+          "EtwEventWrite",
+          "EtwEventWriteTransfer",
+          "NtTraceEvent",
+          "ntdll.dll"
+        ],
+        "name": "sub_140002F00",
+        "rva": "12032"
+      },
+      {
+        "address": "5368721712",
+        "constants": [
+          "18446744071562067968",
+          "\\\\.\\pipe\\cuckoo",
+          "agent.py",
+          "cuckoomon.dll"
+        ],
+        "name": "sub_140003130",
+        "rva": "12592"
+      },
+      {
+        "address": "5368721856",
+        "constants": [
+          "SbieDll.dll",
+          "joe sandbox",
+          "maltest",
+          "sand box"
+        ],
+        "name": "sub_1400031C0",
+        "rva": "12736"
+      },
+      {
+        "address": "5368722016",
+        "constants": [
+          "cmdvrt32.dll",
+          "cuckoomon.dll",
+          "dir_watch.dll",
+          "sbiedll.dll",
+          "vmcheck.dll"
+        ],
+        "name": "sub_140003260",
+        "rva": "12896"
+      },
+      {
+        "address": "5368722208",
+        "constants": [
+          "DESKTOP-",
+          "JOHN-PC",
+          "MALTEST",
+          "SANDBOX",
+          "VIRUS"
+        ],
+        "name": "sub_140003320",
+        "rva": "13088"
+      },
+      {
+        "address": "5368722544",
+        "constants": [
+          "131097",
+          "131097",
+          "18446744071562067969",
+          "18446744071562067970",
+          "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Sandboxie",
+          "SOFTWARE\\Wine"
+        ],
+        "name": "sub_140003470",
+        "rva": "13424"
+      },
+      {
+        "address": "5368722688",
+        "constants": [
+          "CurrentUser",
+          "Emily",
+          "Hong Lee",
+          "Peter Wilson",
+          "VIRUS",
+          "joe sandbox",
+          "malware",
+          "sandbox"
+        ],
+        "name": "sub_140003500",
+        "rva": "13568"
+      },
+      {
+        "address": "5368724128",
+        "constants": [
+          "122524333733187",
+          "2336936577129475669",
+          "299999",
+          "31091380704603713",
+          "33899465587712339",
+          "5373003642731685221",
+          "7236828660884664138",
+          "7892834",
+          "ProcessHacker.exe",
+          "injector.exe"
+        ],
+        "name": "sub_140003AA0",
+        "rva": "15008"
+      },
+      {
+        "address": "5368725072",
+        "constants": [
+          "12288",
+          "12288",
+          "17744",
+          "23117"
+        ],
+        "name": "sub_140003E50",
+        "rva": "15952"
+      }
+    ]
+  },
+  "patches": {
+    "amsi_patch_hex": "b857000780c3",
+    "amsi_patch_meaning": "mov eax, 0x80070057 ; ret",
+    "etw_fallback_patch_hex": "c21400",
+    "etw_fallback_patch_meaning": "ret 0x14",
+    "etw_patch_hex": "31c0c3",
+    "etw_patch_meaning": "xor eax, eax ; ret"
+  }
+}

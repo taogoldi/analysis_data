@@ -1,0 +1,88 @@
+push    rbp
+push    rdi
+push    rsi
+push    rbx
+mov     r11, rcx
+mov     rbx, r8
+mov     rax, rcx
+lea     r9, [rdx+20h]
+nop     dword ptr [rax]
+nop     word ptr [rax+rax+00000000h]
+nop     word ptr [rax+rax+00000000h]
+nop     word ptr [rax+rax+00000000h]
+nop     word ptr [rax+rax+00000000h]
+loc_140002d40:
+movzx   r8d, byte ptr [rdx]
+add     rdx, 4
+add     rcx, 4
+mov     [rcx-4], r8b
+movzx   r8d, byte ptr [rdx-3]
+mov     [rcx-3], r8b
+movzx   r8d, byte ptr [rdx-2]
+mov     [rcx-2], r8b
+movzx   r8d, byte ptr [rdx-1]
+mov     [rcx-1], r8b
+cmp     rdx, r9
+jnz     short loc_140002D40
+loc_140002d70:
+movzx   ecx, byte ptr [r11+1Fh]
+mov     r8d, 8
+movzx   ebp, byte ptr [r11+1Eh]
+lea     rsi, unk_1400A4A60
+movzx   r10d, byte ptr [r11+1Dh]
+lea     rdi, unk_1400A4950
+movzx   edx, byte ptr [r11+1Ch]
+jmp     short loc_140002DF6
+loc_140002da0:
+movzx   ecx, cl
+movzx   edx, dl
+movzx   r9d, r10b
+movzx   r10d, bpl
+movzx   ebp, byte ptr [rsi+rcx]
+movzx   ecx, byte ptr [rsi+rdx]
+mov     edx, r8d
+shr     edx, 3
+movzx   r9d, byte ptr [rsi+r9]
+xor     r9b, [rdi+rdx]
+movzx   r10d, byte ptr [rsi+r10]
+mov     edx, r9d
+loc_140002dcd:
+xor     dl, [rax]
+add     r8d, 1
+add     rax, 4
+xor     r10b, [rax-3]
+xor     bpl, [rax-2]
+xor     cl, [rax-1]
+mov     [rax+1Ch], dl
+mov     [rax+1Dh], r10b
+mov     [rax+1Eh], bpl
+mov     [rax+1Fh], cl
+cmp     r8d, 3Ch ; '<'
+jz      short loc_140002E30
+loc_140002df6:
+mov     r9d, r8d
+and     r9d, 7
+jz      short loc_140002DA0
+loc_140002dff:
+cmp     r9d, 4
+jnz     short loc_140002DCD
+loc_140002e05:
+movzx   edx, dl
+movzx   r10d, r10b
+movzx   ebp, bpl
+movzx   ecx, cl
+movzx   edx, byte ptr [rsi+rdx]
+movzx   r10d, byte ptr [rsi+r10]
+movzx   ebp, byte ptr [rsi+rbp]
+movzx   ecx, byte ptr [rsi+rcx]
+jmp     short loc_140002DCD
+loc_140002e30:
+mov     rax, [rbx]
+mov     [r11+0F0h], rax
+mov     rax, [rbx+8]
+mov     [r11+0F8h], rax
+pop     rbx
+pop     rsi
+pop     rdi
+pop     rbp
+retn

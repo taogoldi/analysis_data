@@ -1,0 +1,44 @@
+push    rsi
+push    rbx
+sub     rsp, 78h
+lea     rax, aDirWatchDll; "dir_watch.dll"
+mov     rsi, cs:GetModuleHandleA
+movq    xmm0, cs:off_1400A43C8; "api_log.dll"
+movq    xmm1, rax
+lea     rax, aVmcheckDll; "vmcheck.dll"
+punpcklqdq xmm0, xmm1
+lea     rcx, aSbiedllDll_0; "sbiedll.dll"
+movq    xmm2, rax
+lea     rax, aCmdvrt32Dll; "cmdvrt32.dll"
+movq    xmm3, rax
+movups  [rsp+88h+var_60], xmm0
+lea     rax, ModuleName; "cuckoomon.dll"
+movq    xmm0, cs:off_1400A43D0; "pstorec.dll"
+mov     [rsp+88h+var_20], 0
+lea     rbx, [rsp+88h+var_68]
+movq    xmm4, rax
+punpcklqdq xmm0, xmm2
+movups  [rsp+88h+var_50], xmm0
+movq    xmm0, cs:off_1400A43D8; "wpespy.dll"
+punpcklqdq xmm0, xmm3
+movups  [rsp+88h+var_40], xmm0
+movq    xmm0, cs:off_1400A43E0; "cmdvrt64.dll"
+punpcklqdq xmm0, xmm4
+movups  [rsp+88h+var_30], xmm0
+jmp     short loc_14000330D
+loc_140003300:
+mov     rcx, [rbx+8]; lpModuleName
+add     rbx, 8
+test    rcx, rcx
+jz      short loc_140003319
+loc_14000330d:
+call    rsi ; GetModuleHandleA
+test    rax, rax
+jz      short loc_140003300
+loc_140003314:
+mov     eax, 1
+loc_140003319:
+add     rsp, 78h
+pop     rbx
+pop     rsi
+retn

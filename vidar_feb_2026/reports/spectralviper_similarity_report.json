@@ -1,0 +1,38 @@
+{
+  "behavioral_hits": {
+    "amsi_patch_strings": {
+      "AmsiOpenSession": true,
+      "AmsiScanBuffer": true,
+      "amsi.dll": true
+    },
+    "anti_sandbox_strings": {
+      "SOFTWARE\\Wine": true,
+      "SbieDll.dll": true,
+      "cuckoomon.dll": true,
+      "joe sandbox": true
+    },
+    "etw_patch_strings": {
+      "EtwEventWrite": true,
+      "EtwEventWriteTransfer": true,
+      "NtTraceEvent": true
+    }
+  },
+  "elastic_marker_hits": {
+    "commands": {
+      "DeleteFile": false,
+      "DownloadFile": false,
+      "GetDrives": false,
+      "GetFiles": false,
+      "SetBeacon": false,
+      "UploadFile": false
+    },
+    "cookie": false,
+    "named_pipe": false
+  },
+  "notes": [
+    "Behavioral overlap (AMSI/ETW patching + anti-sandbox) exists in stage1.",
+    "Public Elastic string markers (pipe/cookie/command names) were not observed in cleartext in this sample set.",
+    "Treat this as a likely related tradecraft cluster until deeper stage2/stage3 config decode confirms lineage."
+  ],
+  "verdict": "possible_variant_behavioral_only"
+}

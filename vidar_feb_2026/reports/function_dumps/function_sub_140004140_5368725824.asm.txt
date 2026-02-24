@@ -1,0 +1,5 @@
+lea     r8, unk_140005120; Src
+mov     r9d, 6; dwSize
+lea     rdx, aAmsiscanbuffer; "AmsiScanBuffer"
+lea     rcx, aAmsiDll; "amsi.dll"
+jmp     sub_1400041A0

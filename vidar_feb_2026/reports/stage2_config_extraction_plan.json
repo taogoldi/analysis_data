@@ -1,0 +1,51 @@
+{
+  "import_dlls": [
+    "KERNEL32.dll",
+    "USER32.dll",
+    "ADVAPI32.dll"
+  ],
+  "interesting_import_examples": {
+    "ADVAPI32.dll": [
+      "RegGetValueW",
+      "GetUserNameA",
+      "GetCurrentHwProfileA",
+      "RegCloseKey",
+      "RegEnumValueA",
+      "RegEnumKeyExA",
+      "RegEnumKeyExW"
+    ],
+    "KERNEL32.dll": [
+      "VirtualFreeEx",
+      "DeleteFileA",
+      "CloseHandle",
+      "CreateToolhelp32Snapshot",
+      "Thread32First",
+      "Thread32Next",
+      "UnmapViewOfFile",
+      "Process32First",
+      "Process32Next",
+      "Module32First"
+    ],
+    "USER32.dll": [
+      "EnumDisplayDevicesA",
+      "wvsprintfA",
+      "CloseDesktop",
+      "CreateDesktopA",
+      "OpenDesktopA",
+      "wsprintfA",
+      "GetSystemMetrics"
+    ]
+  },
+  "next_steps": [
+    "Find string/API resolver function in stage2 and map caller tree.",
+    "Locate encoded blob reads in .data/.rdata and match with decode loops.",
+    "Dump decoded buffer at function return for candidate config structures."
+  ],
+  "stage2_sha256": "5fa52aa9046334c86da1e9746dfe9d7bb23ec69a8b2ab77d98efd2cb1af012f3",
+  "suspicious_strings": [
+    "ChromeBuildTools",
+    "\\Network\\Cookies",
+    "11111111111111111111111111111111111111111111111111111%DOWNLOADS%",
+    "GetWindowsDirectoryA"
+  ]
+}

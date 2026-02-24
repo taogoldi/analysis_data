@@ -1,0 +1,12 @@
+{
+  int v0; // ebx
+  int v1; // esi
+  __int64 result; // rax
+
+  v0 = sub_140004270("ntdll.dll", "EtwEventWrite", &unk_1400A3570, 3u);
+  v1 = sub_140004270("ntdll.dll", "EtwEventWriteTransfer", &unk_1400A3570, 3u);
+  result = sub_140004270("ntdll.dll", "NtTraceEvent", &unk_1400A3570, 3u);
+  if ( !(_DWORD)result )
+    return v1 | v0 | (unsigned int)sub_140004270("ntdll.dll", "NtTraceEvent", &unk_1400A3580, 3u);
+  return result;
+}

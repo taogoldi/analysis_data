@@ -1,0 +1,3 @@
+{
+  return sub_140004270("ntdll.dll", "EtwEventWrite", &unk_1400A3570, 3u);
+}

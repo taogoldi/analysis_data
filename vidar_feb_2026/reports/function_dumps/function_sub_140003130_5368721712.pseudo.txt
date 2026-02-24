@@ -1,0 +1,13 @@
+{
+  HANDLE FileA; // rax
+
+  if ( (unsigned int)sub_1400043A0("agent.py") )
+    return 1;
+  FileA = CreateFileA("\\\\.\\pipe\\cuckoo", GENERIC_READ, 0, nullptr, OPEN_EXISTING, 0, nullptr);
+  if ( FileA != (HANDLE)-1LL )
+  {
+    CloseHandle(FileA);
+    return 1;
+  }
+  return GetModuleHandleA("cuckoomon.dll") != nullptr;
+}
