@@ -1,5 +1,6 @@
 - [extract_stage2_from_22.py](./extract_stage2_from_22.py)
 - [analyze_stage1_evasion.py](./analyze_stage1_evasion.py)
 - [hunt_stage2_iocs.py](./hunt_stage2_iocs.py)
+- [hunt_stage2_xor_mozilla.py](./hunt_stage2_xor_mozilla.py)
 - [assess_spectralviper_similarity.py](./assess_spectralviper_similarity.py)
 - [sv_analysis_lib.py](./sv_analysis_lib.py)

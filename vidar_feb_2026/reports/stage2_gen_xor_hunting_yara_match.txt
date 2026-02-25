@@ -1,0 +1,8 @@
+Source rule URL: https://github.com/Neo23x0/signature-base/blob/master/yara/gen_xor_hunting.yar
+Stage2 file: stage2_dec_unpadded.bin
+Command: yara gen_xor_hunting.yar stage2_dec_unpadded.bin
+Return code: 0
+STDOUT:
+SUSP_XORed_Mozilla_Oct19 stage2_dec_unpadded.bin
+STDERR:
+<empty>
