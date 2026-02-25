@@ -404,6 +404,39 @@ def suspicious_strings(path: Path) -> List[str]:
     return deduped
 
 
+def find_single_byte_xor_plaintext_hits(path: Path, plaintext: bytes) -> List[Dict[str, object]]:
+    """
+    Find raw offsets where a single-byte XOR decodes to plaintext.
+    Returns per-hit raw bytes and the XOR key for reproducibility.
+    """
+    data = path.read_bytes()
+    if not plaintext:
+        return []
+
+    n = len(plaintext)
+    hits: List[Dict[str, object]] = []
+    for off in range(0, len(data) - n + 1):
+        key = data[off] ^ plaintext[0]
+        matched = True
+        for i in range(1, n):
+            if (data[off + i] ^ key) != plaintext[i]:
+                matched = False
+                break
+        if not matched:
+            continue
+        hits.append(
+            {
+                "offset": off,
+                "offset_hex": hex(off),
+                "xor_key": key,
+                "xor_key_hex": f"0x{key:02x}",
+                "raw_hex": data[off : off + n].hex(),
+                "decoded": plaintext.decode("latin1", "ignore"),
+            }
+        )
+    return hits
+
+
 def write_json(path: Path, obj: object) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(obj, indent=2, sort_keys=True), encoding="utf-8")

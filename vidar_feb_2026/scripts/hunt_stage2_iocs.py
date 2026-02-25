@@ -5,6 +5,7 @@ import argparse
 from pathlib import Path
 
 from sv_analysis_lib import import_table, sha256_file, suspicious_strings, write_json
+from sv_analysis_lib import find_single_byte_xor_plaintext_hits
 
 
 def main() -> None:
@@ -19,12 +20,14 @@ def main() -> None:
 
     imports = import_table(stage2)
     strings = suspicious_strings(stage2)
+    xored_mozilla_hits = find_single_byte_xor_plaintext_hits(stage2, b"Mozilla/5.0")
 
     report = {
-        "stage2": str(stage2),
+        "stage2_basename": stage2.name,
         "stage2_sha256": sha256_file(stage2),
         "imports": imports,
         "suspicious_strings": strings,
+        "xored_mozilla_5_0_hits": xored_mozilla_hits,
     }
 
     out_path = out_dir / "stage2_ioc_report.json"
@@ -34,6 +37,7 @@ def main() -> None:
     print(f"    stage2_sha256: {report['stage2_sha256']}")
     print(f"    import dll count: {len(imports)}")
     print(f"    suspicious string count: {len(strings)}")
+    print(f"    xor-mozilla hits: {len(xored_mozilla_hits)}")
     print(f"    report: {out_path}")
 
 

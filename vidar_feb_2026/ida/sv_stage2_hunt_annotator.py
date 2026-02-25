@@ -424,6 +424,45 @@ def guess_config_blob_candidates(limit: int = 8) -> List[Tuple[int, int]]:
     return cands[:limit]
 
 
+def find_single_byte_xor_plaintext_hits(plaintext: bytes, max_hits: int = 32) -> List[Tuple[int, int]]:
+    """
+    Scan readable segments for raw bytes that decode to plaintext under one-byte XOR.
+    Returns (ea, xor_key).
+    """
+    if not plaintext:
+        return []
+
+    needle_len = len(plaintext)
+    hits: List[Tuple[int, int]] = []
+    for seg_start in idautils.Segments():
+        seg = ida_segment.getseg(seg_start)
+        if not seg:
+            continue
+        if not (seg.perm & ida_segment.SEGPERM_READ):
+            continue
+        seg_size = seg.end_ea - seg.start_ea
+        if seg_size < needle_len:
+            continue
+
+        blob = ida_bytes.get_bytes(seg.start_ea, seg_size)
+        if not blob:
+            continue
+
+        for off in range(0, seg_size - needle_len + 1):
+            key = blob[off] ^ plaintext[0]
+            matched = True
+            for i in range(1, needle_len):
+                if (blob[off + i] ^ key) != plaintext[i]:
+                    matched = False
+                    break
+            if not matched:
+                continue
+            hits.append((seg.start_ea + off, key))
+            if len(hits) >= max_hits:
+                return hits
+    return hits
+
+
 def rename_frame_var(func_ea: int, old_name: str, new_name: str) -> None:
     if HAS_IDA_STRUCT:
         f = ida_funcs.get_func(func_ea)
@@ -612,6 +651,18 @@ def annotate_stage2() -> None:
 
     if s_hits:
         log(f"Suspicious strings tagged: {len(s_hits)}")
+
+    xor_hits = find_single_byte_xor_plaintext_hits(b"Mozilla/5.0", max_hits=16)
+    for idx, (ea, key) in enumerate(xor_hits, 1):
+        safe_set_name(ea, f"g_sv2_xor_mozilla_hit_{idx:02d}")
+        safe_set_cmt(
+            ea,
+            f"Single-byte XOR hit: bytes here decode to 'Mozilla/5.0' with key=0x{key:02x}.",
+        )
+    if xor_hits:
+        log(f"XORed Mozilla/5.0 hits: {len(xor_hits)}")
+        for ea, key in xor_hits[:8]:
+            log(f"  {hex(ea)} key=0x{key:02x}")
 
     cfg_cands = guess_config_blob_candidates(limit=10)
     for idx, (ea, xr) in enumerate(cfg_cands, 1):

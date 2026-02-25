@@ -1,0 +1,33 @@
+{
+  "hit_count": 3,
+  "hits": [
+    {
+      "decoded": "Mozilla/5.0",
+      "offset": 1040,
+      "offset_hex": "0x410",
+      "raw_hex": "7e5c495a5f5f521c061d03",
+      "xor_key": 51,
+      "xor_key_hex": "0x33"
+    },
+    {
+      "decoded": "Mozilla/5.0",
+      "offset": 8945,
+      "offset_hex": "0x22f1",
+      "raw_hex": "98baafbcb9b9b4fae0fbe5",
+      "xor_key": 213,
+      "xor_key_hex": "0xd5"
+    },
+    {
+      "decoded": "Mozilla/5.0",
+      "offset": 9009,
+      "offset_hex": "0x2331",
+      "raw_hex": "2e0c190a0f0f024c564d53",
+      "xor_key": 99,
+      "xor_key_hex": "0x63"
+    }
+  ],
+  "note": "Hit means raw bytes at offset XORed with a single byte decode to target_plaintext. This reproduces the same core heuristic used by XOR-string hunting rules.",
+  "stage2_basename": "stage2_dec_unpadded.bin",
+  "stage2_sha256": "5fa52aa9046334c86da1e9746dfe9d7bb23ec69a8b2ab77d98efd2cb1af012f3",
+  "target_plaintext": "Mozilla/5.0"
+}

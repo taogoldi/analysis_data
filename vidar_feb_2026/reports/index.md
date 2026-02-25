@@ -5,6 +5,8 @@
 - [stage1_behavior_report.json](./stage1_behavior_report.json)
 - [stage2_extract_report.json](./stage2_extract_report.json)
 - [stage2_ioc_report.json](./stage2_ioc_report.json)
+- [stage2_xor_mozilla_report.json](./stage2_xor_mozilla_report.json)
+- [stage2_gen_xor_hunting_yara_match.txt](./stage2_gen_xor_hunting_yara_match.txt)
 - [stage2_config_extraction_plan.json](./stage2_config_extraction_plan.json)
 - [stage2_hex_input_decrypt_report.json](./stage2_hex_input_decrypt_report.json)
 - [execution_workflow.json](./execution_workflow.json)
