@@ -260,29 +260,35 @@ def function_score_api_hash(fea: int) -> Tuple[int, Dict[str, int]]:
         m = idc.print_insn_mnem(ea).lower()
         if m in ("ror", "rol", "rcr", "rcl"):
             stats["rotates"] += 1
-            score += 4
+            score += 6
         if m in ("xor", "add", "sub", "imul", "mul"):
             stats["mix_ops"] += 1
-            score += 1
+            # mix ops are common in many routines; keep low weight
+            score += 0
         if m in ("lodsb", "scasb"):
             stats["byte_loop"] += 1
-            score += 2
+            score += 3
 
         for op in (0, 1, 2):
             if idc.get_operand_type(ea, op) == idc.o_imm:
                 v = idc.get_operand_value(ea, op)
                 if v in (0x5A4D, 0x4550, 0x3C, 0x78):
                     stats["pe_consts"] += 1
-                    score += 3
+                    score += 5
                 if v > 0xFFFF and v <= 0xFFFFFFFF:
                     stats["cmp_imm32"] += 1
                     score += 1
 
-    # normalize high-noise arithmetic functions
-    if stats["rotates"] == 0 and stats["pe_consts"] == 0:
-        score //= 2
+    # hard guardrail against false positives from pure arithmetic-heavy functions
+    # require at least one structural hashing trait.
+    if stats["rotates"] == 0 and stats["pe_consts"] == 0 and stats["byte_loop"] == 0:
+        score = 0
 
-    return score, stats
+    # constrain pure immediate-heavy noise
+    score += min(stats["cmp_imm32"], 24)
+    score += min(stats["byte_loop"], 12) * 2
+
+    return int(score), stats
 
 
 def entry_function() -> Optional[int]:
@@ -542,6 +548,26 @@ def hexrays_rename_lvars(func_ea: int, mapping: Dict[str, str]) -> None:
             cfunc.save_user_labels()
 
 
+def queue_lvar_renames(
+    bucket: Dict[int, Dict[str, str]], func_ea: int, mapping: Dict[str, str]
+) -> None:
+    """
+    Merge rename requests so each function is decompiled once.
+    First mapping wins for duplicate old_name keys.
+    """
+    if not func_ea or func_ea == idaapi.BADADDR or not mapping:
+        return
+    dst = bucket.setdefault(func_ea, {})
+    for old_name, new_name in mapping.items():
+        if old_name not in dst:
+            dst[old_name] = new_name
+
+
+def apply_queued_lvar_renames(bucket: Dict[int, Dict[str, str]]) -> None:
+    for fea, mapping in bucket.items():
+        hexrays_rename_lvars(fea, mapping)
+
+
 def apply_manual_overrides() -> None:
     for key, ea in MANUAL_ADDRS.items():
         if not ea:
@@ -566,6 +592,7 @@ def apply_manual_overrides() -> None:
 def annotate_stage2() -> None:
     ensure_enums()
     ensure_structs()
+    queued_lvar_renames: Dict[int, Dict[str, str]] = {}
 
     apply_manual_overrides()
 
@@ -599,7 +626,8 @@ def annotate_stage2() -> None:
                 "var_18": "module_base",
             },
         )
-        hexrays_rename_lvars(
+        queue_lvar_renames(
+            queued_lvar_renames,
             fea,
             {
                 "a1": "module_hash",
@@ -617,7 +645,7 @@ def annotate_stage2() -> None:
     for fea in all_functions():
         score, stats = function_score_api_hash(fea)
         # avoid huge wrapper noise
-        if score >= 18:
+        if score >= 20:
             hash_scores.append((score, fea, stats))
     hash_scores.sort(reverse=True, key=lambda t: t[0])
 
@@ -627,7 +655,8 @@ def annotate_stage2() -> None:
         safe_set_cmt(fea, f"API-hash heuristic score={score} stats={stats}")
         log(f"API-hash candidate: {hex(fea)} score={score} stats={stats}")
 
-        hexrays_rename_lvars(
+        queue_lvar_renames(
+            queued_lvar_renames,
             fea,
             {
                 "a1": "module_base_or_seed",
@@ -698,7 +727,8 @@ def annotate_stage2() -> None:
         safe_set_cmt(cfg_func, f"Config-decode candidate score={func_counter[cfg_func]}.")
         log(f"Config decode candidate: {hex(cfg_func)} score={func_counter[cfg_func]}")
 
-        hexrays_rename_lvars(
+        queue_lvar_renames(
+            queued_lvar_renames,
             cfg_func,
             {
                 "a1": "cfg_blob",
@@ -708,6 +738,9 @@ def annotate_stage2() -> None:
                 "v3": "decoded_len",
             },
         )
+
+    # Apply decompiler local renames once per function to reduce log spam.
+    apply_queued_lvar_renames(queued_lvar_renames)
 
     # Manual address comments reinforce final output
     for k, ea in MANUAL_ADDRS.items():
