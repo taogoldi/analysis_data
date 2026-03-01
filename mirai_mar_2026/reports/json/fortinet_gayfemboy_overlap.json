@@ -1,0 +1,50 @@
+{
+  "sample": "input/d40cf9c95dcedf4f19e4a5f5bb744c8e98af87eb5703c850e6fda3b613668c28.elf",
+  "campaign_name": "Gayfemboy Mirai-based botnet (Fortinet, 2024-09-18)",
+  "campaign_indicator_hits": {},
+  "lineage_overlap_hits": {
+    "watchdogd": [
+      "watchdogd"
+    ],
+    "/proc/%s/exe": [
+      "/proc/%s/exe"
+    ],
+    "/proc/%s/cmdline": [
+      "/proc/%s/cmdline"
+    ],
+    "/proc/%s/maps": [
+      "/proc/%s/maps"
+    ],
+    "M-SEARCH * HTTP/1.1": [
+      "M-SEARCH * HTTP/1.1",
+      "M-SEARCH * HTTP/1.1",
+      "M-SEARCH * HTTP/1.1"
+    ],
+    "Via: SIP/2.0/UDP 192.168.1.1:5060": [
+      "Via: SIP/2.0/UDP 192.168.1.1:5060",
+      "Via: SIP/2.0/UDP 192.168.1.1:5060"
+    ],
+    "!SIGKILL": [
+      "!SIGKILL"
+    ]
+  },
+  "byte_pattern_hits": {
+    "elastic_d0c57a2e": [
+      "0x14036"
+    ],
+    "dns_decode_alt": [
+      "0x14034"
+    ]
+  },
+  "summary": {
+    "campaign_indicator_hit_count": 0,
+    "lineage_overlap_hit_count": 7,
+    "byte_pattern_hit_count": 2,
+    "assessment": "mirai-lineage overlap only (not enough for same campaign)"
+  },
+  "notes": [
+    "Campaign indicators are mostly string/IOC level and may be absent in other Mirai derivatives.",
+    "Byte-pattern overlap in decode_header supports shared resolver implementation lineage.",
+    "Final attribution should combine static overlap with infrastructure and runtime telemetry."
+  ]
+}

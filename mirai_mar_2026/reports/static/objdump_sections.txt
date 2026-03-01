@@ -1,0 +1,20 @@
+
+/Users/taogoldi/Projects/malware/Mirai/input/d40cf9c95dcedf4f19e4a5f5bb744c8e98af87eb5703c850e6fda3b613668c28.elf:	file format elf64-x86-64
+
+Sections:
+Idx Name          Size     VMA              Type
+  0               00000000 0000000000000000 
+  1 .init         00000013 00000000004000e8 TEXT
+  2 .text         000146d8 0000000000400100 TEXT
+  3 .fini         0000000e 00000000004147d8 TEXT
+  4 .rodata       00002dc0 0000000000414800 DATA
+  5 .eh_frame     00000004 00000000004175c0 DATA
+  6 .ctors        00000018 00000000005175c8 DATA
+  7 .dtors        00000010 00000000005175e0 DATA
+  8 .jcr          00000008 00000000005175f0 DATA
+  9 .data         00008ec8 0000000000517600 DATA
+ 10 .bss          000074d8 00000000005204e0 BSS
+ 11 .comment      00001200 0000000000000000 
+ 12 .shstrtab     00000066 0000000000000000 
+ 13 .symtab       00008430 0000000000000000 
+ 14 .strtab       00004f51 0000000000000000 
