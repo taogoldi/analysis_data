@@ -1,0 +1,50 @@
+{
+  "source": "urlhaus",
+  "sample": {
+    "file": "094e9d6ee057d38f40c35f018488e35ab6ccd006ed261b17322e78fd5ea2c0cb.elf",
+    "sha256": "094e9d6ee057d38f40c35f018488e35ab6ccd006ed261b17322e78fd5ea2c0cb"
+  },
+  "input_file": "/Users/taogoldi/Projects/Malware/Mirai/input/capa_094e9d6ee057d38f40c35f018488e35ab6ccd006ed261b17322e78fd5ea2c0cb.json",
+  "variant": {
+    "id": 10654,
+    "sha256": "094e9d6ee057d38f40c35f018488e35ab6ccd006ed261b17322e78fd5ea2c0cb",
+    "md5": "06838c1091298310b8f7d2f4d59203c2",
+    "file_name": "x86",
+    "file_type": "elf",
+    "last_success_at": "2026-03-07T15:26:41.084071+00:00"
+  },
+  "live_urls": [
+    "http://objective-roentgen.121-127-34-164.plesk.page/x86"
+  ],
+  "capa_summary": {
+    "findings_count": 35,
+    "risk_score": 100,
+    "risk_level": "critical",
+    "needs_investigation": true,
+    "red_alert": true,
+    "engine_version": "9.3.1",
+    "ruleset_version": "cd272f5b11123176321734d884c479dde0934291",
+    "summary_ai": {
+      "used": true,
+      "confidence": 85,
+      "reverse_priority": "critical",
+      "reverse_focus": [
+        "Command and Control detection",
+        "Network traffic analysis",
+        "System behavior monitoring",
+        "Incident response readiness",
+        "Threat intelligence integration",
+        "User awareness training"
+      ],
+      "actions": [
+        "Monitor network traffic for unusual patterns",
+        "Analyze command and control communications",
+        "Review system logs for suspicious activities",
+        "Isolate affected systems",
+        "Prepare incident response plan"
+      ],
+      "rationale": "Current findings indicate significant command and control capabilities, warranting continued monitoring."
+    },
+    "notable_signals": []
+  }
+}

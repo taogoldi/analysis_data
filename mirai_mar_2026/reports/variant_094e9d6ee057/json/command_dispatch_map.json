@@ -1,0 +1,69 @@
+{
+  "sample": "094e9d6ee057d38f40c35f018488e35ab6ccd006ed261b17322e78fd5ea2c0cb.elf",
+  "sample_sha256": "094e9d6ee057d38f40c35f018488e35ab6ccd006ed261b17322e78fd5ea2c0cb",
+  "dispatcher_function": {
+    "name": "main",
+    "va": "0x4061c5"
+  },
+  "commands": [
+    {
+      "command": "ack",
+      "main_callsite_va": null,
+      "handler": "vseattack",
+      "handler_va": "0x40307b"
+    },
+    {
+      "command": "ovhudpflood",
+      "main_callsite_va": null,
+      "handler": "ovhudpflood",
+      "handler_va": "0x403c5d"
+    },
+    {
+      "command": "rtcp",
+      "main_callsite_va": null,
+      "handler": "rtcp",
+      "handler_va": "0x402a77"
+    },
+    {
+      "command": "syn",
+      "main_callsite_va": null,
+      "handler": "unknown",
+      "handler_va": null
+    },
+    {
+      "command": "tcpFl00d",
+      "main_callsite_va": null,
+      "handler": "tcpFl00d",
+      "handler_va": "0x402465"
+    },
+    {
+      "command": "tcpfl00d",
+      "main_callsite_va": null,
+      "handler": "tcpFl00d",
+      "handler_va": "0x402465"
+    },
+    {
+      "command": "udp",
+      "main_callsite_va": null,
+      "handler": "udpfl00d",
+      "handler_va": "0x401f4f"
+    },
+    {
+      "command": "udpfl00d",
+      "main_callsite_va": null,
+      "handler": "udpfl00d",
+      "handler_va": "0x401f4f"
+    },
+    {
+      "command": "vseattack",
+      "main_callsite_va": null,
+      "handler": "vseattack",
+      "handler_va": "0x40307b"
+    }
+  ],
+  "notes": [
+    "For d40cf9...c28, callsite offsets are fixed from verified disassembly",
+    "For other variants, dispatch mapping is heuristic and symbol/string-driven",
+    "When symbols are stripped, handler_va may be null and should be recovered in IDA/Ghidra"
+  ]
+}

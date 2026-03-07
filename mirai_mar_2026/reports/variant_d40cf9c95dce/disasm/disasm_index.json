@@ -1,0 +1,120 @@
+{
+  "sample": "/Users/taogoldi/Projects/Malware/Mirai/input/d40cf9c95dcedf4f19e4a5f5bb744c8e98af87eb5703c850e6fda3b613668c28.elf",
+  "exported": [
+    {
+      "symbol": "main",
+      "address": "0x4002a0",
+      "file": "/Users/taogoldi/Projects/Malware/Mirai/reports/variant_d40cf9c95dce/disasm/main.asm"
+    },
+    {
+      "symbol": "verify_server_ip",
+      "address": "0x4001c0",
+      "file": "/Users/taogoldi/Projects/Malware/Mirai/reports/variant_d40cf9c95dce/disasm/verify_server_ip.asm"
+    },
+    {
+      "symbol": "force_sigkill",
+      "address": "0x400260",
+      "file": "/Users/taogoldi/Projects/Malware/Mirai/reports/variant_d40cf9c95dce/disasm/force_sigkill.asm"
+    },
+    {
+      "symbol": "killer_thread_func",
+      "address": "0x400730",
+      "file": "/Users/taogoldi/Projects/Malware/Mirai/reports/variant_d40cf9c95dce/disasm/killer_thread_func.asm"
+    },
+    {
+      "symbol": "daemonize_process",
+      "address": "0x400940",
+      "file": "/Users/taogoldi/Projects/Malware/Mirai/reports/variant_d40cf9c95dce/disasm/daemonize_process.asm"
+    },
+    {
+      "symbol": "disable_infection_tools",
+      "address": "0x400a10",
+      "file": "/Users/taogoldi/Projects/Malware/Mirai/reports/variant_d40cf9c95dce/disasm/disable_infection_tools.asm"
+    },
+    {
+      "symbol": "scan_and_kill",
+      "address": "0x400d60",
+      "file": "/Users/taogoldi/Projects/Malware/Mirai/reports/variant_d40cf9c95dce/disasm/scan_and_kill.asm"
+    },
+    {
+      "symbol": "cmdline_scan_match",
+      "address": "0x400b10",
+      "file": "/Users/taogoldi/Projects/Malware/Mirai/reports/variant_d40cf9c95dce/disasm/cmdline_scan_match.asm"
+    },
+    {
+      "symbol": "memory_scan_match",
+      "address": "0x400bc0",
+      "file": "/Users/taogoldi/Projects/Malware/Mirai/reports/variant_d40cf9c95dce/disasm/memory_scan_match.asm"
+    },
+    {
+      "symbol": "are_infection_tools_disabled",
+      "address": "0x400c10",
+      "file": "/Users/taogoldi/Projects/Malware/Mirai/reports/variant_d40cf9c95dce/disasm/are_infection_tools_disabled.asm"
+    },
+    {
+      "symbol": "method_udp",
+      "address": "0x401380",
+      "file": "/Users/taogoldi/Projects/Malware/Mirai/reports/variant_d40cf9c95dce/disasm/method_udp.asm"
+    },
+    {
+      "symbol": "method_syn",
+      "address": "0x4027b0",
+      "file": "/Users/taogoldi/Projects/Malware/Mirai/reports/variant_d40cf9c95dce/disasm/method_syn.asm"
+    },
+    {
+      "symbol": "method_ack",
+      "address": "0x4026d0",
+      "file": "/Users/taogoldi/Projects/Malware/Mirai/reports/variant_d40cf9c95dce/disasm/method_ack.asm"
+    },
+    {
+      "symbol": "method_udpslam",
+      "address": "0x401280",
+      "file": "/Users/taogoldi/Projects/Malware/Mirai/reports/variant_d40cf9c95dce/disasm/method_udpslam.asm"
+    },
+    {
+      "symbol": "method_junk",
+      "address": "0x401190",
+      "file": "/Users/taogoldi/Projects/Malware/Mirai/reports/variant_d40cf9c95dce/disasm/method_junk.asm"
+    },
+    {
+      "symbol": "method_raknet",
+      "address": "0x4010a0",
+      "file": "/Users/taogoldi/Projects/Malware/Mirai/reports/variant_d40cf9c95dce/disasm/method_raknet.asm"
+    },
+    {
+      "symbol": "method_udpburst",
+      "address": "0x400f60",
+      "file": "/Users/taogoldi/Projects/Malware/Mirai/reports/variant_d40cf9c95dce/disasm/method_udpburst.asm"
+    },
+    {
+      "symbol": "udp_worker",
+      "address": "0x401770",
+      "file": "/Users/taogoldi/Projects/Malware/Mirai/reports/variant_d40cf9c95dce/disasm/udp_worker.asm"
+    },
+    {
+      "symbol": "tcp_worker",
+      "address": "0x401e00",
+      "file": "/Users/taogoldi/Projects/Malware/Mirai/reports/variant_d40cf9c95dce/disasm/tcp_worker.asm"
+    },
+    {
+      "symbol": "tcp_ack_worker",
+      "address": "0x401b60",
+      "file": "/Users/taogoldi/Projects/Malware/Mirai/reports/variant_d40cf9c95dce/disasm/tcp_ack_worker.asm"
+    },
+    {
+      "symbol": "udpslam_worker",
+      "address": "0x402100",
+      "file": "/Users/taogoldi/Projects/Malware/Mirai/reports/variant_d40cf9c95dce/disasm/udpslam_worker.asm"
+    },
+    {
+      "symbol": "udpburst_worker",
+      "address": "0x4014b0",
+      "file": "/Users/taogoldi/Projects/Malware/Mirai/reports/variant_d40cf9c95dce/disasm/udpburst_worker.asm"
+    },
+    {
+      "symbol": "get_local_ip",
+      "address": "0x4025f0",
+      "file": "/Users/taogoldi/Projects/Malware/Mirai/reports/variant_d40cf9c95dce/disasm/get_local_ip.asm"
+    }
+  ]
+}

@@ -150,6 +150,31 @@ def get_first_elf(input_dir: Path) -> Path:
     return cands[0]
 
 
+def find_matching_capa_json(root: Path, sample: Path) -> Optional[Path]:
+    """
+    Resolve a CAPA JSON file for a given sample hash if present.
+    Search order:
+      1) input/capa_<sha256>.json
+      2) helpers/capa_<sha256>.json
+      3) first capa_*.json under input/
+      4) first capa_*.json under helpers/
+    """
+    sample_sha = sha256_file(sample)
+    candidates = [
+        root / "input" / f"capa_{sample_sha}.json",
+        root / "helpers" / f"capa_{sample_sha}.json",
+    ]
+    for p in candidates:
+        if p.exists():
+            return p
+
+    for base in (root / "input", root / "helpers"):
+        hits = sorted(base.glob("capa_*.json"))
+        if hits:
+            return hits[0]
+    return None
+
+
 def ensure_dir(path: Path) -> None:
     path.mkdir(parents=True, exist_ok=True)
 
@@ -199,4 +224,3 @@ def key_bot_symbols(symbol_names: Iterable[str]) -> List[str]:
         if name in wants or name.startswith("method_") or name.endswith("_worker"):
             out.append(name)
     return out
-

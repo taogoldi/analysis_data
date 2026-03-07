@@ -1,0 +1,256 @@
+{
+  "sample": {
+    "file": "d40cf9c95dcedf4f19e4a5f5bb744c8e98af87eb5703c850e6fda3b613668c28.elf",
+    "path": "d40cf9c95dcedf4f19e4a5f5bb744c8e98af87eb5703c850e6fda3b613668c28.elf",
+    "sha256": "d40cf9c95dcedf4f19e4a5f5bb744c8e98af87eb5703c850e6fda3b613668c28",
+    "size_bytes": 192113,
+    "file_type_summary": "ELF 64-bit LSB executable, x86-64, version 1 (SYSV), statically linked, not stripped"
+  },
+  "sections": [
+    {
+      "idx": 1,
+      "name": ".init",
+      "size": 19,
+      "vma": 4194536,
+      "type": "TEXT"
+    },
+    {
+      "idx": 2,
+      "name": ".text",
+      "size": 83672,
+      "vma": 4194560,
+      "type": "TEXT"
+    },
+    {
+      "idx": 3,
+      "name": ".fini",
+      "size": 14,
+      "vma": 4278232,
+      "type": "TEXT"
+    },
+    {
+      "idx": 4,
+      "name": ".rodata",
+      "size": 11712,
+      "vma": 4278272,
+      "type": "DATA"
+    },
+    {
+      "idx": 5,
+      "name": ".eh_frame",
+      "size": 4,
+      "vma": 4289984,
+      "type": "DATA"
+    },
+    {
+      "idx": 6,
+      "name": ".ctors",
+      "size": 24,
+      "vma": 5338568,
+      "type": "DATA"
+    },
+    {
+      "idx": 7,
+      "name": ".dtors",
+      "size": 16,
+      "vma": 5338592,
+      "type": "DATA"
+    },
+    {
+      "idx": 8,
+      "name": ".jcr",
+      "size": 8,
+      "vma": 5338608,
+      "type": "DATA"
+    },
+    {
+      "idx": 9,
+      "name": ".data",
+      "size": 36552,
+      "vma": 5338624,
+      "type": "DATA"
+    },
+    {
+      "idx": 10,
+      "name": ".bss",
+      "size": 29912,
+      "vma": 5375200,
+      "type": "BSS"
+    }
+  ],
+  "key_symbols": [
+    {
+      "name": "are_infection_tools_disabled",
+      "address": "0x400c10"
+    },
+    {
+      "name": "cmdline_scan_match",
+      "address": "0x400b10"
+    },
+    {
+      "name": "daemonize_process",
+      "address": "0x400940"
+    },
+    {
+      "name": "disable_infection_tools",
+      "address": "0x400a10"
+    },
+    {
+      "name": "force_sigkill",
+      "address": "0x400260"
+    },
+    {
+      "name": "get_local_ip",
+      "address": "0x4025f0"
+    },
+    {
+      "name": "init_payload_set",
+      "address": "0x4020a0"
+    },
+    {
+      "name": "killer_thread_func",
+      "address": "0x400730"
+    },
+    {
+      "name": "main",
+      "address": "0x4002a0"
+    },
+    {
+      "name": "memory_scan_match",
+      "address": "0x400bc0"
+    },
+    {
+      "name": "method_ack",
+      "address": "0x4026d0"
+    },
+    {
+      "name": "method_junk",
+      "address": "0x401190"
+    },
+    {
+      "name": "method_raknet",
+      "address": "0x4010a0"
+    },
+    {
+      "name": "method_syn",
+      "address": "0x4027b0"
+    },
+    {
+      "name": "method_udp",
+      "address": "0x401380"
+    },
+    {
+      "name": "method_udpburst",
+      "address": "0x400f60"
+    },
+    {
+      "name": "method_udpslam",
+      "address": "0x401280"
+    },
+    {
+      "name": "raknet_worker",
+      "address": "0x4015e0"
+    },
+    {
+      "name": "scan_and_kill",
+      "address": "0x400d60"
+    },
+    {
+      "name": "tcp_ack_worker",
+      "address": "0x401b60"
+    },
+    {
+      "name": "tcp_worker",
+      "address": "0x401e00"
+    },
+    {
+      "name": "udp_junk_worker",
+      "address": "0x4019c0"
+    },
+    {
+      "name": "udp_worker",
+      "address": "0x401770"
+    },
+    {
+      "name": "udpburst_worker",
+      "address": "0x4014b0"
+    },
+    {
+      "name": "udpslam_worker",
+      "address": "0x402100"
+    },
+    {
+      "name": "verify_server_ip",
+      "address": "0x4001c0"
+    }
+  ],
+  "strings_summary": {
+    "total_strings": 4603,
+    "public_ipv4_candidates": [
+      "144.172.108.230",
+      "239.255.255.250"
+    ],
+    "all_ipv4_candidates": [
+      "144.172.108.230",
+      "192.168.1.1",
+      "192.168.1.100",
+      "239.255.255.250"
+    ],
+    "domain_like_candidates": [
+      "caller.com",
+      "irmware.bin",
+      "onfig.txt",
+      "oot.img",
+      "resolv.conf",
+      "scanner.com",
+      "target.com"
+    ],
+    "method_tokens": [
+      "ack",
+      "junk",
+      "raknet",
+      "syn",
+      "udp",
+      "udpburst",
+      "udpslam"
+    ],
+    "command_tokens": [
+      "!QA",
+      "!SIGKILL",
+      "!WA",
+      "!hello",
+      "get curr_items",
+      "get stats",
+      "get total_items"
+    ],
+    "anti_infection_paths": [
+      "/bin/busybox",
+      "/bin/sh",
+      "/dev/null",
+      "/dev/shm",
+      "/proc/%s/cmdline",
+      "/proc/%s/exe",
+      "/proc/%s/maps",
+      "/proc/self/cmdline",
+      "/proc/self/exe",
+      "/usr/bin/curl",
+      "/usr/bin/ftp",
+      "/usr/bin/nc",
+      "/usr/bin/ncat",
+      "/usr/bin/netcat",
+      "/usr/bin/scp",
+      "/usr/bin/tftp",
+      "/usr/bin/wget"
+    ]
+  },
+  "assessment": {
+    "family_hint": "Mirai-like",
+    "confidence": "high",
+    "basis": [
+      "Observed method/attack markers: ack, junk, raknet, syn, udp, udpburst, udpslam",
+      "Contains watchdog/killer process-control indicators",
+      "Contains public IPv4 candidates that may be C2 or infrastructure pivots",
+      "Contains common DDoS payload/signature strings used by Mirai-like botnet modules"
+    ]
+  }
+}

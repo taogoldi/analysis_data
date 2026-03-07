@@ -1,0 +1,52 @@
+{
+  "source": "urlhaus",
+  "sample": {
+    "file": "094e9d6ee057d38f40c35f018488e35ab6ccd006ed261b17322e78fd5ea2c0cb.elf",
+    "sha256": "094e9d6ee057d38f40c35f018488e35ab6ccd006ed261b17322e78fd5ea2c0cb"
+  },
+  "input_file": "/Users/taogoldi/Projects/Malware/Mirai/helpers/capa_d40cf9c95dcedf4f19e4a5f5bb744c8e98af87eb5703c850e6fda3b613668c28.json",
+  "variant": {
+    "id": 4767,
+    "sha256": "d40cf9c95dcedf4f19e4a5f5bb744c8e98af87eb5703c850e6fda3b613668c28",
+    "md5": "9b2f53d3cd013848db5ef79dbc427b89",
+    "file_name": "d40cf9c95dcedf4f19e4a5f5bb744c8e98af87eb5703c850e6fda3b613668c28.elf",
+    "file_type": "elf",
+    "last_success_at": "2026-02-26T00:25:26.578404+00:00"
+  },
+  "live_urls": [
+    "http://144.172.108.230/bins/mynode.x86_64"
+  ],
+  "capa_summary": {
+    "findings_count": 36,
+    "risk_score": 100,
+    "risk_level": "critical",
+    "needs_investigation": true,
+    "red_alert": true,
+    "engine_version": "9.3.1",
+    "ruleset_version": "2e72aa5536540920cdeeab2ee5631bc49cd5b05a",
+    "summary_ai": {
+      "used": true,
+      "confidence": 85,
+      "reverse_priority": "critical",
+      "reverse_focus": [
+        "C2 communication",
+        "File system integrity",
+        "Process monitoring",
+        "Behavioral analysis",
+        "Threat intelligence correlation",
+        "Incident response readiness"
+      ],
+      "actions": [
+        "Monitor network traffic for C2 communications",
+        "Analyze file system changes",
+        "Review process creation logs",
+        "Conduct a full malware analysis",
+        "Implement endpoint detection measures"
+      ],
+      "rationale": "Current findings indicate significant capabilities related to command and control, file manipulation, and process management, warranting continued investigation."
+    },
+    "notable_signals": [
+      "xor"
+    ]
+  }
+}

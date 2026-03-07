@@ -1,0 +1,133 @@
+{
+  "sample": "input/d40cf9c95dcedf4f19e4a5f5bb744c8e98af87eb5703c850e6fda3b613668c28.elf",
+  "sample_sha256": "d40cf9c95dcedf4f19e4a5f5bb744c8e98af87eb5703c850e6fda3b613668c28",
+  "artifacts": {
+    "authorized_server_ip": {
+      "va": "0x41498a",
+      "value": "144.172.108.230"
+    },
+    "sigkill_cmd": {
+      "va": "0x4149c6",
+      "value": "!SIGKILL"
+    },
+    "method_udp": {
+      "va": "0x4149e7",
+      "value": "udp"
+    },
+    "method_syn": {
+      "va": "0x4149eb",
+      "value": "syn"
+    },
+    "method_ack": {
+      "va": "0x4149ef",
+      "value": "ack"
+    },
+    "method_udpslam": {
+      "va": "0x4149f3",
+      "value": "udpslam"
+    },
+    "method_junk": {
+      "va": "0x4149fb",
+      "value": "junk"
+    },
+    "method_raknet": {
+      "va": "0x414a00",
+      "value": "raknet"
+    },
+    "method_udpburst": {
+      "va": "0x414a07",
+      "value": "udpburst"
+    },
+    "hello_cmd": {
+      "va": "0x414a28",
+      "value": "!hello"
+    },
+    "hello_resp": {
+      "va": "0x414a2f",
+      "value": "im saying hello"
+    },
+    "busybox_binary": {
+      "va": "0x414bb6",
+      "value": "/bin/busybox"
+    }
+  },
+  "infection_tool_paths": [
+    {
+      "va": "0x414b48",
+      "value": "/usr/bin/wget"
+    },
+    {
+      "va": "0x414b56",
+      "value": "/usr/bin/curl"
+    },
+    {
+      "va": "0x414b64",
+      "value": "/usr/bin/tftp"
+    },
+    {
+      "va": "0x414b72",
+      "value": "/usr/bin/ftp"
+    },
+    {
+      "va": "0x414b7f",
+      "value": "/usr/bin/scp"
+    },
+    {
+      "va": "0x414b8c",
+      "value": "/usr/bin/nc"
+    },
+    {
+      "va": "0x414b98",
+      "value": "/usr/bin/netcat"
+    },
+    {
+      "va": "0x414ba8",
+      "value": "/usr/bin/ncat"
+    }
+  ],
+  "variant_artifacts": {
+    "public_ipv4_candidates": [
+      "144.172.108.230",
+      "239.255.255.250"
+    ],
+    "command_tokens": [
+      "!%15s %63s %d %d len=%d",
+      "!0@",
+      "!Q@",
+      "!QA",
+      "!SIGKILL",
+      "!T@",
+      "!WA",
+      "!hello"
+    ],
+    "method_tokens": [
+      "ack",
+      "junk",
+      "raknet",
+      "syn",
+      "udp",
+      "udpburst",
+      "udpslam"
+    ],
+    "interesting_token_va_candidates": {
+      "/etc/config/resolv.conf": [
+        "0x41709b"
+      ],
+      "M-SEARCH * HTTP/1.1": [
+        "0x414d50",
+        "0x414db8",
+        "0x414e18"
+      ],
+      "Via: SIP/2.0/UDP 192.168.1.1:5060": [
+        "0x414ebd",
+        "0x414f8c"
+      ]
+    }
+  },
+  "notes": [
+    "Reference VA map is sample-specific to d40cf9...c28 and is best-effort on other variants",
+    "Variant artifact block is string-driven and intended for cross-variant reproducibility",
+    "Authorized server IP checks may be absent or encoded differently in other variants",
+    "Reference VA extraction succeeded for this sample"
+  ]
+}

@@ -66,14 +66,35 @@ def main() -> None:
     public_ipv4s = [ip for ip in ipv4s if is_public_ipv4(ip)]
     domains = extract_domain_like(all_strings)
 
-    methods = sorted(
+    method_markers = {
+        "udp",
+        "syn",
+        "ack",
+        "udpslam",
+        "junk",
+        "raknet",
+        "udpburst",
+        "udpfl00d",
+        "tcpfl00d",
+        "ovhudpflood",
+        "vseattack",
+        "rtcp",
+    }
+    methods = sorted({s.lower() for s in all_strings if s.lower() in method_markers})
+    commands = sorted(
         {
             s
             for s in all_strings
-            if s in {"udp", "syn", "ack", "udpslam", "junk", "raknet", "udpburst"}
+            if s.startswith("get ")
+            or (
+                s.startswith("!")
+                and len(s) <= 24
+                and "%" not in s
+                and all(ch.isalnum() or ch in {"!", "_", "-", "."} for ch in s)
+                and any(ch.isalpha() for ch in s[1:])
+            )
         }
     )
-    commands = sorted({s for s in all_strings if s.startswith("!") or s.startswith("get ")})
     anti_infection_paths = [
         s
         for s in all_strings
@@ -86,6 +107,20 @@ def main() -> None:
 
     key_syms = key_bot_symbols(sym_map.keys())
     key_symbol_rows = [{"name": name, "address": f"0x{sym_map[name]:x}"} for name in key_syms if name in sym_map]
+
+    basis = []
+    if methods:
+        basis.append(f"Observed method/attack markers: {', '.join(methods[:12])}")
+    if any(s in all_strings for s in ["killer_thread_func", "watchdogd", "watchdog_maintain", "scan_and_kill"]):
+        basis.append("Contains watchdog/killer process-control indicators")
+    if public_ipv4s:
+        basis.append("Contains public IPv4 candidates that may be C2 or infrastructure pivots")
+    if any(s in all_strings for s in ["M-SEARCH * HTTP/1.1", "TSource Engine Query", "Via: SIP/2.0/UDP 192.168.1.1:5060"]):
+        basis.append("Contains common DDoS payload/signature strings used by Mirai-like botnet modules")
+    if not basis:
+        basis.append("Static indicators are limited; likely stripped or behavior strings are partially obfuscated")
+
+    confidence = "high" if (len(methods) >= 3 and len(basis) >= 3) else "medium"
 
     report = {
         "sample": {
@@ -108,13 +143,8 @@ def main() -> None:
         },
         "assessment": {
             "family_hint": "Mirai-like",
-            "confidence": "high",
-            "basis": [
-                "Named DDoS method dispatch in main (udp/syn/ack/udpslam/junk/raknet/udpburst)",
-                "Killer thread + infection-tool disabling + process scan-and-kill loops",
-                "Mirai-style network flood payload strings (SSDP/SIP/memcached/NTP/CHARGEN)",
-                "Hardcoded authorized server IP check before command execution",
-            ],
+            "confidence": confidence,
+            "basis": basis,
         },
     }
 

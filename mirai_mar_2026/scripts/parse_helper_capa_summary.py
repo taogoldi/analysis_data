@@ -7,7 +7,7 @@ import argparse
 import json
 from pathlib import Path
 
-from mirai_analysis_lib import write_json
+from mirai_analysis_lib import find_matching_capa_json, get_first_elf, sha256_file, write_json
 
 
 def parse_args() -> argparse.Namespace:
@@ -16,15 +16,23 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--input",
         type=Path,
-        default=root / "helpers" / "capa_d40cf9c95dcedf4f19e4a5f5bb744c8e98af87eb5703c850e6fda3b613668c28.json",
+        default=None,
+        help="CAPA helper JSON path (auto-detected if omitted)",
     )
+    parser.add_argument("--sample", type=Path, default=None, help="Optional sample path for CAPA file auto-selection")
     parser.add_argument("--out", type=Path, default=root / "reports" / "json" / "helper_capa_summary.json")
     return parser.parse_args()
 
 
 def main() -> None:
     args = parse_args()
-    data = json.loads(args.input.read_text(encoding="utf-8"))
+    root = Path(__file__).resolve().parents[1]
+    sample = args.sample or get_first_elf(root / "input")
+    src = args.input or find_matching_capa_json(root, sample)
+    if not src or not src.exists():
+        raise FileNotFoundError("No CAPA helper JSON found. Provide --input explicitly.")
+
+    data = json.loads(src.read_text(encoding="utf-8"))
 
     capa_block = data.get("capa", {})
     summary_block = capa_block.get("summary", {})
@@ -32,6 +40,8 @@ def main() -> None:
 
     out = {
         "source": data.get("source"),
+        "sample": {"file": sample.name, "sha256": sha256_file(sample)},
+        "input_file": str(src),
         "variant": data.get("variant", {}),
         "live_urls": data.get("live_urls", []),
         "capa_summary": {

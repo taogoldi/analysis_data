@@ -77,10 +77,29 @@ def main() -> None:
         write_text(out_path, dis)
         exported.append({"symbol": sym, "address": f"0x{sym_map[sym]:x}", "file": str(out_path)})
 
+    # Variant fallback: if symbol recovery is sparse, still dump a useful window around main().
+    if len(exported) < 3 and "main" in sym_map:
+        main_ea = sym_map["main"]
+        start = max(0, main_ea - 0x300)
+        stop = main_ea + 0x1800
+        dis = run_cmd(
+            [
+                "objdump",
+                "-d",
+                "-M",
+                "intel",
+                f"--start-address=0x{start:x}",
+                f"--stop-address=0x{stop:x}",
+                str(sample),
+            ]
+        )
+        out_path = outdir / "main_window.asm"
+        write_text(out_path, dis)
+        exported.append({"symbol": "main_window", "address": f"0x{main_ea:x}", "file": str(out_path)})
+
     write_json(outdir / "disasm_index.json", {"sample": str(sample), "exported": exported})
     print(f"[disasm] exported {len(exported)} symbols to {outdir}")
 
 
 if __name__ == "__main__":
     main()
-

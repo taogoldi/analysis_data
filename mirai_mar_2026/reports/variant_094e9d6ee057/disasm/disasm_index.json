@@ -1,0 +1,15 @@
+{
+  "sample": "/Users/taogoldi/Projects/Malware/Mirai/input/094e9d6ee057d38f40c35f018488e35ab6ccd006ed261b17322e78fd5ea2c0cb.elf",
+  "exported": [
+    {
+      "symbol": "main",
+      "address": "0x4061c5",
+      "file": "/Users/taogoldi/Projects/Malware/Mirai/reports/variant_094e9d6ee057/disasm/main.asm"
+    },
+    {
+      "symbol": "main_window",
+      "address": "0x4061c5",
+      "file": "/Users/taogoldi/Projects/Malware/Mirai/reports/variant_094e9d6ee057/disasm/main_window.asm"
+    }
+  ]
+}
