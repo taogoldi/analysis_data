@@ -1,0 +1,119 @@
+# Suspicious string hits
+
+## Persistence
+- /boot/System.mod | off=0x113e1a | va=0x513e1a | untyped locals , not a function.WithValue(type /boot/System.mod/etc/rc.d/init.d/etc/resolv.conf/lib/system-mark/usr/bin/netstat0123456789abcdef
+- quotaoff.service | off=0x11409a | va=0x51409a | non-IPv4 addressnon-IPv6 addressobject is remoteopt.services.cfgquotaoff.servicereading header: reflect mismatchremote I/O errorruntime: addr = runtime: base = 
+- /etc/opt.services.cfg | off=0x114d39 | va=0x514d39 | rite of Go pointer pcHeader.textStart= previous allocCount=, levelBits[level] = /etc/opt.services.cfgAnatolian_HieroglyphsAres: unknown mistakeInscriptional_PahlaviOther_Grapheme_Ex
+- /usr/sbin/ifconfig.cfg | off=0x11546e | va=0x51546e | .localhost.localdomain/etc/init.d/boot.local/lib/time/zoneinfo.zip/usr/sbin/ifconfig.cfgIPv6: no supported yetInscriptional_ParthianNyiakeng_Puachue_HmongSIGSTKFLT: sta
+- /usr/sbin/ifconfig.cfg | off=0x115879 | va=0x515879 | /etc/profile.d/bash_cfg/usr/lib/systemd/system/usr/sbin/ifconfig.cfg
+- /usr/sbin/ifconfig.cfg | off=0x115960 | va=0x515960 | /usr/sbin/ifconfig.cfgbytes.Buffer: too largechan receive (nil chan)close of closed channeldevice or r
+- /etc/profile.d/gateway.sh | off=0x116024 | va=0x516024 | leaningunpacking Question.Classupdate during transition to unused region of span/etc/profile.d/gateway.sh/proc/sys/kernel/hostname2006-01-02T15:04:05Z07:00GODEBUG: can not enable "
+- /etc/profile.d/bash_cfg.sh | off=0x1163f0 | va=0x5163f0 | unexpected '[' in addressunexpected ']' in addressunexpected fault address /etc/profile.d/bash_cfg.sh9d7fda27bc1f31299d27d238f49d7fda27bc1f31299d27d439f7SIGSTOP: stop, unblockableca
+- quotaoff.service | off=0x118e1d | va=0x518e1d | SPWRITE function transport endpoint is already connected/usr/lib/systemd/system/quotaoff.service9d6ccf36bc1f2769d626d73cfd183c18d960d739address family not supported by protocol
+- /usr/lib/systemd/system/quotaoff.service | off=0x118e1d | va=0x518e1d | netraceback: unexpected SPWRITE function transport endpoint is already connected/usr/lib/systemd/system/quotaoff.service9d6ccf36bc1f2769d626d73cfd183c18d960d739address family not supported by protocol
+- /etc/crontab | off=0x119e32 | va=0x519e32 | cipher.newCFB: IV length must equal block sizeecho "*/1 * * * * root /.mod " >> /etc/crontabmemory reservation exceeds address space limitpanicwrap: unexpected string after
+- echo "*/1 * * * * root /.mod " >> /etc/crontab | off=0x119e32 | va=0x519e32 |  and Foreground set in SysProcAttrcipher.newCFB: IV length must equal block sizeecho "*/1 * * * * root /.mod " >> /etc/crontabmemory reservation exceeds address space limitpanicwrap: unexpected string after
+- /etc/opt.services.cfg | off=0x11a742 | va=0x51a742 | /etc/opt.services.cfg
+- quotaoff.service | off=0x11b4f7 | va=0x51b4f7 | dule -X 300 -i my-Systemmod.ppcd /boot;systemctl daemon-reload;systemctl enable quotaoff.service;systemctl start quotaoff.service;journalctl -xe --no-pager
+- systemctl daemon-reload | off=0x11b4f7 | va=0x51b4f7 |  --raw | audit2allow -M my-Systemmod;semodule -X 300 -i my-Systemmod.ppcd /boot;systemctl daemon-reload;systemctl enable quotaoff.service;systemctl start quotaoff.service;journalctl -
+- systemctl enable quotaoff.service | off=0x11b4f7 | va=0x51b4f7 | my-Systemmod;semodule -X 300 -i my-Systemmod.ppcd /boot;systemctl daemon-reload;systemctl enable quotaoff.service;systemctl start quotaoff.service;journalctl -xe --no-pager
+- /boot/System.mod | off=0x11b662 | va=0x51b662 | /boot/System.mod
+- /boot/System.mod | off=0x11b6be | va=0x51b6be | ExecStart=/boot/System.mod
+- /boot/System.mod | off=0x11b6d9 | va=0x51b6d9 | ExecReload=/boot/System.mod
+- /boot/System.mod | off=0x11b6f5 | va=0x51b6f5 | ExecStop=/boot/System.mod
+
+## Behavior
+- encoding/base64 | off=0xe9392 | va=0x4e9392 | encoding/base64
+- /bin/sh | off=0x111fe4 | va=0x511fe4 | text= zombie% CPU (, goid=, j0 = ,errno=./.walk/bin/sh: type ::ffff:<<RMS>>AvestanBengaliBrailleCypriotDeseretElbasanElymaicEnd*-*-GOD
+- SIGKILL | off=0x1134f7 | va=0x5134f7 | of: unknown pc GC sweep waitGunjala_GondiMasaram_GondiMende_KikakuiOld_HungarianSIGKILL: killSIGQUIT: quit[ksoftirqd/0]bad flushGen bad map statecrond.servicedalTLDpSu
+- encoding/base64 | off=0x1498c7 | va=0x5498c7 | encoding/base64.(*Encoding).Encode
+- encoding/base64 | off=0x1498ea | va=0x5498ea | encoding/base64.(*Encoding).EncodeToString
+- encoding/base64 | off=0x149915 | va=0x549915 | encoding/base64.(*Encoding).EncodedLen
+- encoding/base64 | off=0x14993c | va=0x54993c | encoding/base64.CorruptInputError.Error
+- encoding/base64 | off=0x149964 | va=0x549964 | encoding/base64.(*Encoding).decodeQuantum
+- encoding/base64 | off=0x14998e | va=0x54998e | encoding/base64.(*Encoding).DecodeString
+- encoding/base64 | off=0x1499b7 | va=0x5499b7 | encoding/base64.(*Encoding).DecodedLen
+- encoding/base64 | off=0x1499de | va=0x5499de | encoding/base64.(*Encoding).Decode
+- encoding/base64 | off=0x149a01 | va=0x549a01 | encoding/base64.assemble64
+- encoding/base64 | off=0x149a1c | va=0x549a1c | encoding/base64.assemble32
+- encoding/base64 | off=0x149a37 | va=0x549a37 | encoding/base64.init
+- encoding/base64 | off=0x149a4c | va=0x549a4c | encoding/base64.NewEncoding
+- encoding/base64 | off=0x149a68 | va=0x549a68 | encoding/base64.Encoding.WithPadding
+- encoding/base64 | off=0x149a8d | va=0x549a8d | type:.eq.encoding/base64.Encoding
+- encoding/base64 | off=0x149aaf | va=0x549aaf | encoding/base64.(*CorruptInputError).Error
+- net.DialTCP | off=0x14f3ec | va=0x54f3ec | net.DialTCP
+- net.DialUDP | off=0x14f615 | va=0x54f615 | net.DialUDP
+- os/exec.Command | off=0x1500fc | va=0x5500fc | os/exec.Command
+- os/exec.Command | off=0x150516 | va=0x550516 | os/exec.Command.func1
+- encoding/base64 | off=0x154243 | va=0x554243 | C:/Program Files/Go/src/encoding/base64/base64.go
+
+## Go/Ares Module
+- main.Ares_ | off=0x15084b | va=0x55084b | main.Ares_Plain_Udp
+- ares_ | off=0x15084b | va=0x55084b | main.Ares_Plain_Udp
+- main.Ares_ | off=0x15086c | va=0x55086c | main.Ares_Plain_Udp.func1
+- ares_ | off=0x15086c | va=0x55086c | main.Ares_Plain_Udp.func1
+- main.Ares_ | off=0x150886 | va=0x550886 | main.Ares_Plain_Udp_Hex
+- ares_ | off=0x150886 | va=0x550886 | main.Ares_Plain_Udp_Hex
+- main.Ares_ | off=0x1508ac | va=0x5508ac | main.Ares_Plain_Udp_Hex.func1
+- ares_ | off=0x1508ac | va=0x5508ac | main.Ares_Plain_Udp_Hex.func1
+- main.Ares_ | off=0x1508f1 | va=0x5508f1 | main.Ares_L3_Raw
+- ares_ | off=0x1508f1 | va=0x5508f1 | main.Ares_L3_Raw
+- main.Ares_ | off=0x15091f | va=0x55091f | main.Ares_L3_Raw.func1
+- ares_ | off=0x15091f | va=0x55091f | main.Ares_L3_Raw.func1
+- main.Ares_ | off=0x150936 | va=0x550936 | main.Ares_ipspoof
+- ares_ | off=0x150936 | va=0x550936 | main.Ares_ipspoof
+- main.Ares_ | off=0x150952 | va=0x550952 | main.Ares_ipspoof.func1
+- ares_ | off=0x150952 | va=0x550952 | main.Ares_ipspoof.func1
+- main.Ares_ | off=0x1509c1 | va=0x5509c1 | main.Ares_Tcp
+- ares_ | off=0x1509c1 | va=0x5509c1 | main.Ares_Tcp
+- main.Ares_ | off=0x1509cf | va=0x5509cf | main.Ares_Tcp_Hex
+- ares_ | off=0x1509cf | va=0x5509cf | main.Ares_Tcp_Hex
+- main.Ares_ | off=0x150a50 | va=0x550a50 | main.Ares_Tcp_Keep
+- ares_ | off=0x150a50 | va=0x550a50 | main.Ares_Tcp_Keep
+- main.Ares_ | off=0x150a63 | va=0x550a63 | main.Ares_Tcp_Keep.func2
+- ares_ | off=0x150a63 | va=0x550a63 | main.Ares_Tcp_Keep.func2
+- main.Ares_ | off=0x150a7c | va=0x550a7c | main.Ares_Tcp_Keep.func1
+- ares_ | off=0x150a7c | va=0x550a7c | main.Ares_Tcp_Keep.func1
+- main.Ares_ | off=0x150a95 | va=0x550a95 | main.Ares_Tcp_Send
+- ares_ | off=0x150a95 | va=0x550a95 | main.Ares_Tcp_Send
+- main.Ares_ | off=0x150aa8 | va=0x550aa8 | main.Ares_Tcp_Send.func1
+- ares_ | off=0x150aa8 | va=0x550aa8 | main.Ares_Tcp_Send.func1
+- main.Ares_ | off=0x150ac1 | va=0x550ac1 | main.Ares_Tcp_Read
+- ares_ | off=0x150ac1 | va=0x550ac1 | main.Ares_Tcp_Read
+- main.Ares_ | off=0x150ad4 | va=0x550ad4 | main.Ares_Tcp_Keep_Hex
+- ares_ | off=0x150ad4 | va=0x550ad4 | main.Ares_Tcp_Keep_Hex
+- main.Ares_ | off=0x150aeb | va=0x550aeb | main.Ares_Tcp_Keep_Hex.func2
+- ares_ | off=0x150aeb | va=0x550aeb | main.Ares_Tcp_Keep_Hex.func2
+- main.Ares_ | off=0x150b08 | va=0x550b08 | main.Ares_Tcp_Keep_Hex.func1
+- ares_ | off=0x150b08 | va=0x550b08 | main.Ares_Tcp_Keep_Hex.func1
+- main.Ares_ | off=0x150b25 | va=0x550b25 | main.Ares_Tcp_Send_Hex
+- ares_ | off=0x150b25 | va=0x550b25 | main.Ares_Tcp_Send_Hex
+- main.Ares_ | off=0x150b3c | va=0x550b3c | main.Ares_Tcp_Send_Hex.func1
+- ares_ | off=0x150b3c | va=0x550b3c | main.Ares_Tcp_Send_Hex.func1
+- main.Ares_ | off=0x150bb0 | va=0x550bb0 | main.Ares_L3_Udp
+- ares_ | off=0x150bb0 | va=0x550bb0 | main.Ares_L3_Udp
+- main.Ares_ | off=0x150bc1 | va=0x550bc1 | main.Ares_L3_Udp.func1
+- ares_ | off=0x150bc1 | va=0x550bc1 | main.Ares_L3_Udp.func1
+- main.Ares_ | off=0x150bd8 | va=0x550bd8 | main.Ares_L3_Udp_Hex
+- ares_ | off=0x150bd8 | va=0x550bd8 | main.Ares_L3_Udp_Hex
+- main.Ares_ | off=0x150bed | va=0x550bed | main.Ares_L3_Udp_Hex.func1
+- ares_ | off=0x150bed | va=0x550bed | main.Ares_L3_Udp_Hex.func1
+- main.Killcpu | off=0x150ff5 | va=0x550ff5 | main.Killcpu
+- main.Ares_ | off=0x1511bd | va=0x5511bd | main.Ares_send
+- ares_ | off=0x1511bd | va=0x5511bd | main.Ares_send
+- main.watchdog | off=0x1514d4 | va=0x5514d4 | main.Watchdog
+- main.Watchdog | off=0x1514d4 | va=0x5514d4 | main.Watchdog
+- main.watchdog | off=0x1514e2 | va=0x5514e2 | main.watchdog
+- main.Watchdog | off=0x1514e2 | va=0x5514e2 | main.watchdog
+- ares_ | off=0x155aaf | va=0x555aaf | C:/src/client/linux/ares_plan_udp.go
+- ares_ | off=0x155b13 | va=0x555b13 | C:/src/client/linux/ares_raw.go
+- ares_ | off=0x155b4f | va=0x555b4f | C:/src/client/linux/ares_spoof.go
+- ares_ | off=0x155b71 | va=0x555b71 | C:/src/client/linux/ares_tcp.go
+- ares_ | off=0x155b91 | va=0x555b91 | C:/src/client/linux/ares_tcp_keep.go
+- ares_ | off=0x155bb6 | va=0x555bb6 | C:/src/client/linux/ares_udp.go
+- killcpu.go | off=0x155c49 | va=0x555c49 | C:/src/client/linux/killcpu.go
+- watchdog.go | off=0x155d3b | va=0x555d3b | C:/src/client/linux/watchdog.go
+
+## Base64 Decodes
+- off=0x11a593 | YWlyLnhlbS5sYXQ6MjUxOTR8KG9kaykvKi0= => air.xem.lat:25194|(odk)/*- (printable=1.0, H=4.5466)
+

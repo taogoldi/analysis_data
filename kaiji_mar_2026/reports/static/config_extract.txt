@@ -1,0 +1,22 @@
+# Kaiji Config Extraction
+
+Sample SHA-256: 0a70d7699c8e0629597dcc03b1aef0beebec03ae0580f2c070fb2bfd2fd89a71
+
+Decoded tokens:
+- air.xem.lat:25194|(odk)/*-
+
+C2 candidates:
+- air.duffy.baby:888
+- air.xem.lat:25194
+
+Persistence artifacts:
+- /boot/System.mod
+- /etc/crontab
+- /etc/opt.services.cfg
+- /etc/profile.d/bash_cfg.sh
+- /etc/profile.d/gateway.sh
+- /usr/lib/systemd/system/quotaoff.service
+- /usr/sbin/ifconfig.cfg
+- echo "*/1 * * * * root /.mod " >> /etc/crontab
+- quotaoff.service
+- systemctl enable quotaoff.service
