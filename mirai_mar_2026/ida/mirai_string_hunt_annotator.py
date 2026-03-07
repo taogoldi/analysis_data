@@ -21,6 +21,15 @@ TARGET_STRINGS = [
     "/bin/busybox",
     "disable_infection_tools",
     "scan_and_kill",
+    "watchdog_maintain",
+    "watchdog_pid",
+    "udpfl00d",
+    "tcpFl00d",
+    "ovhudpflood",
+    "TSource Engine Query",
+    "KHserverHACKER",
+    "/etc/config/resolv.conf",
+    "__dns_lookup",
 ]
 
 
@@ -64,4 +73,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

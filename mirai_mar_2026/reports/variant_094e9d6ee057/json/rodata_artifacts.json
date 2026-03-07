@@ -1,0 +1,93 @@
+{
+  "sample": "input/094e9d6ee057d38f40c35f018488e35ab6ccd006ed261b17322e78fd5ea2c0cb.elf",
+  "sample_sha256": "094e9d6ee057d38f40c35f018488e35ab6ccd006ed261b17322e78fd5ea2c0cb",
+  "artifacts": {
+    "authorized_server_ip": {
+      "va": "0x41498a",
+      "value": ""
+    },
+    "sigkill_cmd": {
+      "va": "0x4149c6",
+      "value": ""
+    },
+    "method_udp": {
+      "va": "0x4149e7",
+      "value": ""
+    },
+    "method_syn": {
+      "va": "0x4149eb",
+      "value": ""
+    },
+    "method_ack": {
+      "va": "0x4149ef",
+      "value": ""
+    },
+    "method_udpslam": {
+      "va": "0x4149f3",
+      "value": ""
+    },
+    "method_junk": {
+      "va": "0x4149fb",
+      "value": ""
+    },
+    "method_raknet": {
+      "va": "0x414a00",
+      "value": ""
+    },
+    "method_udpburst": {
+      "va": "0x414a07",
+      "value": ""
+    },
+    "hello_cmd": {
+      "va": "0x414a28",
+      "value": ""
+    },
+    "hello_resp": {
+      "va": "0x414a2f",
+      "value": ""
+    },
+    "busybox_binary": {
+      "va": "0x414bb6",
+      "value": ""
+    }
+  },
+  "infection_tool_paths": [],
+  "variant_artifacts": {
+    "public_ipv4_candidates": [
+      "33.0.0.0",
+      "8.8.8.8"
+    ],
+    "command_tokens": [
+      "!-2b",
+      "!-=6",
+      "!37"
+    ],
+    "method_tokens": [
+      "ack",
+      "ovhudpflood",
+      "rtcp",
+      "syn",
+      "tcpfl00d",
+      "udp",
+      "udpfl00d",
+      "vseattack"
+    ],
+    "interesting_token_va_candidates": {
+      "/etc/config/resolv.conf": [
+        "0x414563"
+      ],
+      "TSource Engine Query": [
+        "0x412310"
+      ],
+      "watchdog_maintain": [],
+      "watchdog_pid": [],
+      "KHserverHACKER": []
+    }
+  },
+  "notes": [
+    "Reference VA map is sample-specific to d40cf9...c28 and is best-effort on other variants",
+    "Variant artifact block is string-driven and intended for cross-variant reproducibility",
+    "Authorized server IP checks may be absent or encoded differently in other variants",
+    "Reference VA extraction not applicable/empty for this sample"
+  ]
+}

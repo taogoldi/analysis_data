@@ -1,5 +1,5 @@
 """
-IDA 9.x-compatible Stage1 annotator for d40cf9...c28 Mirai-like ELF.
+IDA 9.x variant-aware Stage1 annotator for Mirai-like ELF samples.
 
 Usage:
   File -> Script file... -> mirai_stage1_annotator.py
@@ -13,49 +13,39 @@ import idautils
 import idc
 
 
-KEY_FUNCTIONS = {
+STRING_SYMBOLS = {
+    "144.172.108.230": "g_authorized_server_ip",
+    "!SIGKILL": "g_cmd_sigkill",
+    "M-SEARCH * HTTP/1.1": "g_msearch_payload",
+    "Via: SIP/2.0/UDP 192.168.1.1:5060": "g_sip_payload",
+    "udpburst": "g_method_udpburst",
+    "udpslam": "g_method_udpslam",
+    "raknet": "g_method_raknet",
+    "udpfl00d": "g_method_udpfl00d",
+    "tcpFl00d": "g_method_tcpfl00d",
+    "ovhudpflood": "g_method_ovhudpflood",
+    "watchdog_maintain": "g_watchdog_maintain",
+    "KHserverHACKER": "g_variant_tag_khserverhacker",
+}
+
+FUNCTION_RENAMES = {
+    "main": "stage1_main_loop",
+    "verify_server_ip": "verify_server_ip",
+    "force_sigkill": "force_sigkill",
+    "killer_thread_func": "killer_thread_func",
+    "disable_infection_tools": "disable_infection_tools",
+    "scan_and_kill": "scan_and_kill_tools",
+    "__dns_lookup": "dns_lookup_with_resolver",
+}
+
+FALLBACK_SAMPLE_SPECIFIC = {
     0x4001C0: "verify_server_ip",
     0x400260: "force_sigkill",
     0x4002A0: "stage1_main_loop",
     0x400730: "killer_thread_func",
-    0x400940: "daemonize_process",
-    0x400A10: "disable_infection_tools",
-    0x400D60: "scan_and_kill_tools",
-    0x400F60: "method_udpburst",
-    0x4010A0: "method_raknet",
-    0x401190: "method_junk",
-    0x401280: "method_udpslam",
-    0x401380: "method_udp",
-    0x4026D0: "method_ack",
-    0x4027B0: "method_syn",
 }
 
-
-DATA_SYMBOLS = {
-    0x41498A: "g_authorized_server_ip",
-    0x4149C6: "g_cmd_sigkill",
-    0x4149E7: "g_method_udp",
-    0x4149EB: "g_method_syn",
-    0x4149EF: "g_method_ack",
-    0x4149F3: "g_method_udpslam",
-    0x4149FB: "g_method_junk",
-    0x414A00: "g_method_raknet",
-    0x414A07: "g_method_udpburst",
-    0x414A28: "g_cmd_hello",
-}
-
-
-FUNC_COMMENTS = {
-    0x4001C0: "Validates connected peer IP against hardcoded authorized server IP string.",
-    0x400260: "Emergency termination path used on !SIGKILL command.",
-    0x4002A0: "Primary bot loop: connect -> verify IP -> parse commands -> dispatch attack methods.",
-    0x400730: "Background killer thread; repeatedly disables infection tools and kills competing processes.",
-    0x400A10: "Disables/removes known downloader binaries and hardens busybox path.",
-    0x400D60: "Scans /proc and terminates processes matching competitor/infection-tool markers.",
-}
-
-
-INSN_COMMENTS = {
+SAMPLE_SPECIFIC_COMMENTS = {
     0x40031F: "inet_pton() writes authorized C2 target IP into sockaddr_in",
     0x40033F: "Post-connect peer verification gate",
     0x400412: "Command prefix check for !SIGKILL path",
@@ -73,60 +63,72 @@ def log(msg):
     print(f"[mirai_annotator] {msg}")
 
 
-def rename_ea(ea, new_name):
+def set_name(ea, name):
     if ea == idc.BADADDR:
         return False
-    flags = ida_name.SN_NOWARN | ida_name.SN_FORCE
-    ok = ida_name.set_name(ea, new_name, flags)
+    ok = ida_name.set_name(ea, name, ida_name.SN_NOWARN | ida_name.SN_FORCE)
     if ok:
-        log(f"renamed 0x{ea:x} -> {new_name}")
+        log(f"renamed 0x{ea:x} -> {name}")
     return bool(ok)
 
 
-def ensure_function(ea):
-    if ida_funcs.get_func(ea):
-        return
-    ida_funcs.add_func(ea)
+def find_string_ea(needle):
+    for s in idautils.Strings():
+        try:
+            if str(s) == needle:
+                return int(s.ea)
+        except Exception:
+            continue
+    return idc.BADADDR
 
 
-def apply_function_annotations():
-    for ea, name in KEY_FUNCTIONS.items():
-        ensure_function(ea)
-        rename_ea(ea, name)
-        cmt = FUNC_COMMENTS.get(ea)
-        if cmt:
-            idc.set_func_cmt(ea, cmt, 1)
+def rename_known_functions():
+    # Name-based renames (portable across variants if symbols exist).
+    for old_name, new_name in FUNCTION_RENAMES.items():
+        ea = idc.get_name_ea_simple(old_name)
+        if ea != idc.BADADDR:
+            set_name(ea, new_name)
+
+    # Conservative fallback only when a function actually exists at that address.
+    for ea, new_name in FALLBACK_SAMPLE_SPECIFIC.items():
+        if ida_funcs.get_func(ea):
+            set_name(ea, new_name)
 
 
-def apply_data_annotations():
-    for ea, name in DATA_SYMBOLS.items():
-        rename_ea(ea, name)
+def rename_and_annotate_strings():
+    hits = 0
+    for needle, sym_name in STRING_SYMBOLS.items():
+        ea = find_string_ea(needle)
+        if ea == idc.BADADDR:
+            continue
         ida_bytes.create_strlit(ea, 0, idc.STRTYPE_C)
+        set_name(ea, sym_name)
+        xrefs = 0
+        for x in idautils.XrefsTo(ea):
+            xrefs += 1
+            idc.set_cmt(x.frm, f"String ref: {needle}", 1)
+        log(f"string {needle!r} @ 0x{ea:x}, xrefs={xrefs}")
+        hits += 1
+    log(f"strings annotated: {hits}")
 
 
-def apply_instruction_comments():
-    for ea, cmt in INSN_COMMENTS.items():
-        idc.set_cmt(ea, cmt, 1)
-
-
-def annotate_xrefs_to_authorized_ip():
-    target = DATA_SYMBOLS[0x41498A]
-    ea = idc.get_name_ea_simple(target)
-    if ea == idc.BADADDR:
+def maybe_apply_sample_specific_comments():
+    # Gate old fixed comments behind known old marker strings.
+    if find_string_ea("!SIGKILL") == idc.BADADDR or find_string_ea("udpburst") == idc.BADADDR:
         return
-    for x in idautils.XrefsTo(ea):
-        idc.set_cmt(x.frm, "Uses hardcoded authorized server IP", 1)
+    for ea, cmt in SAMPLE_SPECIFIC_COMMENTS.items():
+        if ida_funcs.get_func(ea):
+            idc.set_cmt(ea, cmt, 1)
+    log("applied sample-specific dispatch comments where valid")
 
 
 def main():
-    apply_function_annotations()
-    apply_data_annotations()
-    apply_instruction_comments()
-    annotate_xrefs_to_authorized_ip()
+    rename_known_functions()
+    rename_and_annotate_strings()
+    maybe_apply_sample_specific_comments()
     ida_kernwin.refresh_idaview_anyway()
     log("stage1 annotation complete")
 
 
 if __name__ == "__main__":
     main()
-

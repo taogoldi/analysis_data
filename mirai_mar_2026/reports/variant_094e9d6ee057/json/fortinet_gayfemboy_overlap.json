@@ -1,0 +1,29 @@
+{
+  "sample": "input/094e9d6ee057d38f40c35f018488e35ab6ccd006ed261b17322e78fd5ea2c0cb.elf",
+  "campaign_name": "Gayfemboy Mirai-based botnet (Fortinet, 2024-09-18)",
+  "campaign_indicator_hits": {
+    "8.8.8.8": [
+      "8.8.8.8"
+    ]
+  },
+  "lineage_overlap_hits": {},
+  "byte_pattern_hits": {
+    "elastic_d0c57a2e": [
+      "0xf07a"
+    ],
+    "dns_decode_alt": [
+      "0xf078"
+    ]
+  },
+  "summary": {
+    "campaign_indicator_hit_count": 1,
+    "lineage_overlap_hit_count": 0,
+    "byte_pattern_hit_count": 2,
+    "assessment": "partial campaign overlap (needs deeper validation)"
+  },
+  "notes": [
+    "Campaign indicators are mostly string/IOC level and may be absent in other Mirai derivatives.",
+    "Byte-pattern overlap in decode_header supports shared resolver implementation lineage.",
+    "Final attribution should combine static overlap with infrastructure and runtime telemetry."
+  ]
+}

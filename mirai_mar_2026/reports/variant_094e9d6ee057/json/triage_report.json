@@ -1,0 +1,130 @@
+{
+  "sample": {
+    "file": "094e9d6ee057d38f40c35f018488e35ab6ccd006ed261b17322e78fd5ea2c0cb.elf",
+    "path": "input/094e9d6ee057d38f40c35f018488e35ab6ccd006ed261b17322e78fd5ea2c0cb.elf",
+    "sha256": "094e9d6ee057d38f40c35f018488e35ab6ccd006ed261b17322e78fd5ea2c0cb",
+    "size_bytes": 117649,
+    "file_type_summary": "ELF 64-bit LSB executable, x86-64, version 1 (SYSV), statically linked, not stripped"
+  },
+  "sections": [
+    {
+      "idx": 1,
+      "name": ".init",
+      "size": 19,
+      "vma": 4194536,
+      "type": "TEXT"
+    },
+    {
+      "idx": 2,
+      "name": ".text",
+      "size": 63768,
+      "vma": 4194560,
+      "type": "TEXT"
+    },
+    {
+      "idx": 3,
+      "name": ".fini",
+      "size": 14,
+      "vma": 4258328,
+      "type": "TEXT"
+    },
+    {
+      "idx": 4,
+      "name": ".rodata",
+      "size": 20160,
+      "vma": 4258368,
+      "type": "DATA"
+    },
+    {
+      "idx": 5,
+      "name": ".eh_frame",
+      "size": 4,
+      "vma": 4278528,
+      "type": "DATA"
+    },
+    {
+      "idx": 6,
+      "name": ".ctors",
+      "size": 16,
+      "vma": 5327112,
+      "type": "DATA"
+    },
+    {
+      "idx": 7,
+      "name": ".dtors",
+      "size": 16,
+      "vma": 5327128,
+      "type": "DATA"
+    },
+    {
+      "idx": 8,
+      "name": ".jcr",
+      "size": 8,
+      "vma": 5327144,
+      "type": "DATA"
+    },
+    {
+      "idx": 9,
+      "name": ".data",
+      "size": 1496,
+      "vma": 5327168,
+      "type": "DATA"
+    },
+    {
+      "idx": 10,
+      "name": ".bss",
+      "size": 27984,
+      "vma": 5328672,
+      "type": "BSS"
+    }
+  ],
+  "key_symbols": [
+    {
+      "name": "main",
+      "address": "0x4061c5"
+    }
+  ],
+  "strings_summary": {
+    "total_strings": 2255,
+    "public_ipv4_candidates": [
+      "33.0.0.0",
+      "8.8.8.8"
+    ],
+    "all_ipv4_candidates": [
+      "33.0.0.0",
+      "8.8.8.8"
+    ],
+    "domain_like_candidates": [
+      "resolv.conf"
+    ],
+    "method_tokens": [
+      "ack",
+      "ovhudpflood",
+      "rtcp",
+      "syn",
+      "tcpfl00d",
+      "udp",
+      "udpfl00d",
+      "vseattack"
+    ],
+    "command_tokens": [
+      "!-2b"
+    ],
+    "anti_infection_paths": [
+      "/bin/sh",
+      "/dev/null",
+      "/proc/net/route",
+      "/usr/bin/python"
+    ]
+  },
+  "assessment": {
+    "family_hint": "Mirai-like",
+    "confidence": "high",
+    "basis": [
+      "Observed method/attack markers: ack, ovhudpflood, rtcp, syn, tcpfl00d, udp, udpfl00d, vseattack",
+      "Contains watchdog/killer process-control indicators",
+      "Contains public IPv4 candidates that may be C2 or infrastructure pivots",
+      "Contains common DDoS payload/signature strings used by Mirai-like botnet modules"
+    ]
+  }
+}
