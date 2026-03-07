@@ -3,7 +3,7 @@ rule MIRAI_LIKE_D40CF9_STAGE1_HighFidelity
   meta:
     author = "taogoldi"
     date = "2026-02-26"
-    version = "1"
+    version = "2"
     sha256 = "d40cf9c95dcedf4f19e4a5f5bb744c8e98af87eb5703c850e6fda3b613668c28"
     description = "High-fidelity rule for the analyzed Mirai-like ELF sample"
 
@@ -26,7 +26,7 @@ rule MIRAI_LIKE_D40CF9_STAGE1_VariantHeuristic
   meta:
     author = "taogoldi"
     date = "2026-02-26"
-    version = "1"
+    version = "2"
     sha256 = "d40cf9c95dcedf4f19e4a5f5bb744c8e98af87eb5703c850e6fda3b613668c28"
     description = "Heuristic Mirai-like detector for this cluster family"
 
@@ -53,7 +53,7 @@ rule MIRAI_LIKE_094E9_STAGE1_HighFidelity
   meta:
     author = "taogoldi"
     date = "2026-03-07"
-    version = "1"
+    version = "2"
     sha256 = "094e9d6ee057d38f40c35f018488e35ab6ccd006ed261b17322e78fd5ea2c0cb"
     description = "High-fidelity rule for the validated Mirai-like variant (094e...)"
 
@@ -79,7 +79,7 @@ rule MIRAI_LIKE_STAGE1_Family_Heuristic
   meta:
     author = "taogoldi"
     date = "2026-03-07"
-    version = "1"
+    version = "2"
     description = "Family-level heuristic intended to match both d40... and 094e... Mirai-like variants"
 
   strings:
