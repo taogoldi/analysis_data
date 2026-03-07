@@ -1,0 +1,283 @@
+{
+  "sample_sha256": "0a70d7699c8e0629597dcc03b1aef0beebec03ae0580f2c070fb2bfd2fd89a71",
+  "symbol_count": 29,
+  "rows": [
+    {
+      "symbol": "main.Ares_L3_Raw",
+      "family": "kaiji-like/ares-like",
+      "capability": "unknown",
+      "attack_surface": "unknown",
+      "tactic": "unknown",
+      "confidence": "low",
+      "rationale": "no direct mapping rule"
+    },
+    {
+      "symbol": "main.Ares_L3_Raw.func1",
+      "family": "kaiji-like/ares-like",
+      "capability": "unknown",
+      "attack_surface": "unknown",
+      "tactic": "unknown",
+      "confidence": "low",
+      "rationale": "no direct mapping rule"
+    },
+    {
+      "symbol": "main.Ares_L3_Udp",
+      "family": "kaiji-like/ares-like",
+      "capability": "udp_flood_module",
+      "attack_surface": "network",
+      "tactic": "impact",
+      "confidence": "medium",
+      "rationale": "Ares UDP/L3 naming indicates UDP attack routines."
+    },
+    {
+      "symbol": "main.Ares_L3_Udp.func1",
+      "family": "kaiji-like/ares-like",
+      "capability": "udp_flood_module",
+      "attack_surface": "network",
+      "tactic": "impact",
+      "confidence": "medium",
+      "rationale": "Ares UDP/L3 naming indicates UDP attack routines."
+    },
+    {
+      "symbol": "main.Ares_L3_Udp_Hex",
+      "family": "kaiji-like/ares-like",
+      "capability": "udp_flood_module",
+      "attack_surface": "network",
+      "tactic": "impact",
+      "confidence": "medium",
+      "rationale": "Ares UDP/L3 naming indicates UDP attack routines."
+    },
+    {
+      "symbol": "main.Ares_L3_Udp_Hex.func1",
+      "family": "kaiji-like/ares-like",
+      "capability": "udp_flood_module",
+      "attack_surface": "network",
+      "tactic": "impact",
+      "confidence": "medium",
+      "rationale": "Ares UDP/L3 naming indicates UDP attack routines."
+    },
+    {
+      "symbol": "main.Ares_Plain_Udp",
+      "family": "kaiji-like/ares-like",
+      "capability": "udp_flood_module",
+      "attack_surface": "network",
+      "tactic": "impact",
+      "confidence": "medium",
+      "rationale": "Ares UDP/L3 naming indicates UDP attack routines."
+    },
+    {
+      "symbol": "main.Ares_Plain_Udp.func1",
+      "family": "kaiji-like/ares-like",
+      "capability": "udp_flood_module",
+      "attack_surface": "network",
+      "tactic": "impact",
+      "confidence": "medium",
+      "rationale": "Ares UDP/L3 naming indicates UDP attack routines."
+    },
+    {
+      "symbol": "main.Ares_Plain_Udp_Hex",
+      "family": "kaiji-like/ares-like",
+      "capability": "udp_flood_module",
+      "attack_surface": "network",
+      "tactic": "impact",
+      "confidence": "medium",
+      "rationale": "Ares UDP/L3 naming indicates UDP attack routines."
+    },
+    {
+      "symbol": "main.Ares_Plain_Udp_Hex.func1",
+      "family": "kaiji-like/ares-like",
+      "capability": "udp_flood_module",
+      "attack_surface": "network",
+      "tactic": "impact",
+      "confidence": "medium",
+      "rationale": "Ares UDP/L3 naming indicates UDP attack routines."
+    },
+    {
+      "symbol": "main.Ares_Tcp",
+      "family": "kaiji-like/ares-like",
+      "capability": "tcp_flood_module",
+      "attack_surface": "network",
+      "tactic": "impact",
+      "confidence": "medium",
+      "rationale": "Ares_Tcp symbol namespace indicates TCP attack path."
+    },
+    {
+      "symbol": "main.Ares_Tcp_Hex",
+      "family": "kaiji-like/ares-like",
+      "capability": "tcp_flood_module",
+      "attack_surface": "network",
+      "tactic": "impact",
+      "confidence": "medium",
+      "rationale": "Ares_Tcp symbol namespace indicates TCP attack path."
+    },
+    {
+      "symbol": "main.Ares_Tcp_Keep",
+      "family": "kaiji-like/ares-like",
+      "capability": "tcp_flood_module",
+      "attack_surface": "network",
+      "tactic": "impact",
+      "confidence": "medium",
+      "rationale": "Ares_Tcp symbol namespace indicates TCP attack path."
+    },
+    {
+      "symbol": "main.Ares_Tcp_Keep.func1",
+      "family": "kaiji-like/ares-like",
+      "capability": "tcp_flood_module",
+      "attack_surface": "network",
+      "tactic": "impact",
+      "confidence": "medium",
+      "rationale": "Ares_Tcp symbol namespace indicates TCP attack path."
+    },
+    {
+      "symbol": "main.Ares_Tcp_Keep.func2",
+      "family": "kaiji-like/ares-like",
+      "capability": "tcp_flood_module",
+      "attack_surface": "network",
+      "tactic": "impact",
+      "confidence": "medium",
+      "rationale": "Ares_Tcp symbol namespace indicates TCP attack path."
+    },
+    {
+      "symbol": "main.Ares_Tcp_Keep_Hex",
+      "family": "kaiji-like/ares-like",
+      "capability": "tcp_flood_module",
+      "attack_surface": "network",
+      "tactic": "impact",
+      "confidence": "medium",
+      "rationale": "Ares_Tcp symbol namespace indicates TCP attack path."
+    },
+    {
+      "symbol": "main.Ares_Tcp_Keep_Hex.func1",
+      "family": "kaiji-like/ares-like",
+      "capability": "tcp_flood_module",
+      "attack_surface": "network",
+      "tactic": "impact",
+      "confidence": "medium",
+      "rationale": "Ares_Tcp symbol namespace indicates TCP attack path."
+    },
+    {
+      "symbol": "main.Ares_Tcp_Keep_Hex.func2",
+      "family": "kaiji-like/ares-like",
+      "capability": "tcp_flood_module",
+      "attack_surface": "network",
+      "tactic": "impact",
+      "confidence": "medium",
+      "rationale": "Ares_Tcp symbol namespace indicates TCP attack path."
+    },
+    {
+      "symbol": "main.Ares_Tcp_Read",
+      "family": "kaiji-like/ares-like",
+      "capability": "tcp_flood_module",
+      "attack_surface": "network",
+      "tactic": "impact",
+      "confidence": "medium",
+      "rationale": "Ares_Tcp symbol namespace indicates TCP attack path."
+    },
+    {
+      "symbol": "main.Ares_Tcp_Send",
+      "family": "kaiji-like/ares-like",
+      "capability": "tcp_flood_module",
+      "attack_surface": "network",
+      "tactic": "impact",
+      "confidence": "medium",
+      "rationale": "Ares_Tcp symbol namespace indicates TCP attack path."
+    },
+    {
+      "symbol": "main.Ares_Tcp_Send.func1",
+      "family": "kaiji-like/ares-like",
+      "capability": "tcp_flood_module",
+      "attack_surface": "network",
+      "tactic": "impact",
+      "confidence": "medium",
+      "rationale": "Ares_Tcp symbol namespace indicates TCP attack path."
+    },
+    {
+      "symbol": "main.Ares_Tcp_Send_Hex",
+      "family": "kaiji-like/ares-like",
+      "capability": "tcp_flood_module",
+      "attack_surface": "network",
+      "tactic": "impact",
+      "confidence": "medium",
+      "rationale": "Ares_Tcp symbol namespace indicates TCP attack path."
+    },
+    {
+      "symbol": "main.Ares_Tcp_Send_Hex.func1",
+      "family": "kaiji-like/ares-like",
+      "capability": "tcp_flood_module",
+      "attack_surface": "network",
+      "tactic": "impact",
+      "confidence": "medium",
+      "rationale": "Ares_Tcp symbol namespace indicates TCP attack path."
+    },
+    {
+      "symbol": "main.Ares_ipspoof",
+      "family": "kaiji-like/ares-like",
+      "capability": "ip_spoofing_support",
+      "attack_surface": "network",
+      "tactic": "impact",
+      "confidence": "medium",
+      "rationale": "ipspoof naming indicates source-address spoof helper."
+    },
+    {
+      "symbol": "main.Ares_ipspoof.func1",
+      "family": "kaiji-like/ares-like",
+      "capability": "ip_spoofing_support",
+      "attack_surface": "network",
+      "tactic": "impact",
+      "confidence": "medium",
+      "rationale": "ipspoof naming indicates source-address spoof helper."
+    },
+    {
+      "symbol": "main.Ares_send",
+      "family": "kaiji-like/ares-like",
+      "capability": "attack_transport_io",
+      "attack_surface": "network",
+      "tactic": "impact",
+      "confidence": "low",
+      "rationale": "send/read helpers support attack traffic orchestration."
+    },
+    {
+      "symbol": "main.Killcpu",
+      "family": "kaiji-like/ares-like",
+      "capability": "local_resource_exhaustion",
+      "attack_surface": "host",
+      "tactic": "impact",
+      "confidence": "medium",
+      "rationale": "Killcpu naming indicates CPU stress/sabotage routine."
+    },
+    {
+      "symbol": "main.Watchdog",
+      "family": "kaiji-like/ares-like",
+      "capability": "self_protection_or_recovery",
+      "attack_surface": "host",
+      "tactic": "defense_evasion",
+      "confidence": "low",
+      "rationale": "watchdog naming often maps to process/service resiliency."
+    },
+    {
+      "symbol": "main.watchdog",
+      "family": "kaiji-like/ares-like",
+      "capability": "self_protection_or_recovery",
+      "attack_surface": "host",
+      "tactic": "defense_evasion",
+      "confidence": "low",
+      "rationale": "watchdog naming often maps to process/service resiliency."
+    }
+  ],
+  "summary": {
+    "capability_counts": {
+      "attack_transport_io": 1,
+      "ip_spoofing_support": 2,
+      "local_resource_exhaustion": 1,
+      "self_protection_or_recovery": 2,
+      "tcp_flood_module": 13,
+      "udp_flood_module": 8,
+      "unknown": 2
+    },
+    "tactic_counts": {
+      "defense_evasion": 2,
+      "impact": 25,
+      "unknown": 2
+    }
+  }
+}
