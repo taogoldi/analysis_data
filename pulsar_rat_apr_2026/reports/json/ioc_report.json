@@ -1,0 +1,65 @@
+{
+  "sample": {
+    "sha256": "8f31c06c8e7ea9eb451bf26666ac4a958bb485b2a8b71feace1981633b116c92",
+    "file_name": "RMnsgES.exe",
+    "family": "Pulsar RAT"
+  },
+  "embedded_dll_hashes": {
+    "sha1": [
+      "B57B485BA7372FB3403FD0C36043A051AF2AFC05",
+      "A0690708C86F009D41FDA400FEAD8407B8168895",
+      "2F410A0396BC148ED533AD49B6415FB58DD4D641",
+      "6E3CCF50BB1D30805DCE58AB6BDD63E0196669E6",
+      "3C5C5DF5F8F8DB3F0A35C5ED8D357313A54E3CDE",
+      "3D216458740AD5CB05BC5F7C3491CDE44A1E5DF0",
+      "43290CD4AAF80DF5D1CF9F242486EF8E646FDDDA",
+      "2242627282F9E07E37B274EA36FAC2D3CD9C9110",
+      "10B5E015B14D451DFAE1C36CCD9B6D96F1931127"
+    ],
+    "sha256": [
+      "0D664800ADECD1C0A82F4EFC1827EE22F2CB7D587BEDB3B6DA9FABBE3EC6E0A4",
+      "0E74C941C68600E7C62AB8AC0657DCD37D944C60CCC43C5BC5F5DF08D7D27213",
+      "2DB31F4E09597946E56E859813BFDAD7046D457C32332C3A882654D1E3FFDF67",
+      "6937AAA7C46A1CF5106F54609FCE156D8D08237B9B04319C5A36E1986FA22D30",
+      "7480873AB1076C4288DD822E683DB6AAFCCC947AA2A1C21ECE28EBB95A2BF615",
+      "7D78CB380BF5EFB7B851409CA6A875F77DECF09D19B9149DA17A3EBF674BC0F9",
+      "8059270629AEAEBEB861A6D097A0D1DD08B3B004C14BE3C85CD723439FB8F424",
+      "9F3E2BF6761F2B5BEEA9A0C835F21DFB2C4EAC717D2475F8AA0CA4AF0E2D5656",
+      "A55E57890FADA2C2BB00DB6C6BDACBD341D7A79D3171320A8EBDCF54BE6C9D86",
+      "A5F29764ABBD7AA6D7ED3D2D60BE10509D6B0E072ABB9D3E4ED25669E6A11559",
+      "C9D03607B9C0C873C8F0FF22A933A7CC4FF07C61EB255864018DE570E9AAEF4C",
+      "CEFFCF182C543FBEAC1D7FF7517C6D9DD4F447C0FC84605D4D292F70E35CB056",
+      "D460FC75A77B0B4CC52577540FF1D807700918360FD90E4DFA43E41E7452F3FC",
+      "E86965C347879BB282ABA1EEEBE272C34B7F7C24E06EAE97FA0A8E85ABD78316",
+      "F2173046D565A390F2EA722F09E8C2D93396E6D63EB8E1A453E53E97707D6982",
+      "F4A432758193F47640CB6DE150D55F29C99ED7701F1E1061B15A1D6C49677785"
+    ]
+  },
+  "costura_dlls": [
+    {"name": "MessagePack.dll", "version": "3.1.4.0", "resource_name": "costura.messagepack.dll.compressed"},
+    {"name": "MessagePack.Annotations.dll", "version": "3.1.4.0", "resource_name": "costura.messagepack.annotations.dll.compressed"},
+    {"name": "System.Buffers.dll", "version": "4.0.3.0", "resource_name": "costura.system.buffers.dll.compressed"},
+    {"name": "System.Collections.Immutable.dll", "version": "8.0.0.0", "resource_name": "costura.system.collections.immutable.dll.compressed"},
+    {"name": "System.Memory.dll", "version": "4.0.1.2", "resource_name": "costura.system.memory.dll.compressed"},
+    {"name": "System.Numerics.Vectors.dll", "version": "4.1.4.0", "resource_name": "costura.system.numerics.vectors.dll.compressed"},
+    {"name": "System.Runtime.CompilerServices.Unsafe.dll", "version": "6.0.3.0", "resource_name": "costura.system.runtime.compilerservices.unsafe.dll.compressed"},
+    {"name": "System.Threading.Tasks.Extensions.dll", "version": "4.2.0.1", "resource_name": "costura.system.threading.tasks.extensions.dll.compressed"},
+    {"name": "Pulsar.Common.dll", "version": "2.4.5.0", "resource_name": "costura.pulsar.common.dll.compressed"}
+  ],
+  "namespaces": [
+    "Pulsar.Common.UAC",
+    "Pulsar.Common.Messages",
+    "Pulsar.Common.Messages.ClientManagement.UAC"
+  ],
+  "encryption": {
+    "algorithm": "AES-256",
+    "key_derivation": "SHA256-based",
+    "serialization": "MessagePack 3.1.4.0"
+  },
+  "targeted_browsers": ["Chrome", "Firefox", "Opera", "Brave"],
+  "mitre_techniques": [
+    "T1047", "T1055", "T1112", "T1113", "T1134", "T1140",
+    "T1555", "T1562.001", "T1082", "T1083", "T1057", "T1033",
+    "T1016", "T1012", "T1105", "T1056.001", "T1115", "T1070.004"
+  ]
+}

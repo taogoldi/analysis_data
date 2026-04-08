@@ -1,0 +1,23 @@
+{
+  "sha256": "8f31c06c8e7ea9eb451bf26666ac4a958bb485b2a8b71feace1981633b116c92",
+  "file_name": "RMnsgES.exe",
+  "file_size": 986112,
+  "capa_red_alert": true,
+  "capa_risk_score": 100,
+  "capa_findings_count": 150,
+  "capa_needs_investigation": true,
+  "capa_engine_version": "9.3.1",
+  "capa_ruleset_version": "2e72aa5536540920cdeeab2ee5631bc49cd5b05a",
+  "packer_family": "mpress",
+  "has_overlay": false,
+  "imphash": "f34d5f2d4577ed6d9ceec516c1f5a744",
+  "tlsh": "T18725C09173F4860BE1FF2BB5E4B245594BBBB5529D36DB4F098490AD1EB37808E007A3",
+  "goresym_detected": false,
+  "floss_ioc_count": 25,
+  "floss_strings_count": 8139,
+  "speakeasy_risk_score": 0,
+  "speakeasy_findings_count": 0,
+  "mcrit_best_score": 0,
+  "mcrit_family_name": "",
+  "created_at": "2026-02-25T05:16:13.880902+00:00"
+}

@@ -1,0 +1,1355 @@
+{
+  "iocs": [
+    {
+      "value": "0D664800ADECD1C0A82F4EFC1827EE22F2CB7D587BEDB3B6DA9FABBE3EC6E0A4",
+      "ioc_type": "file_hash",
+      "metadata": {
+        "algorithm": "sha256",
+        "confidence_reason": "explicit_hash"
+      },
+      "context_excerpt": "tmYJ534 bcKk4GrfAQ3Xmt3HWJQIfduouvW34 bUhgqB9pWMRyVSDl34 2zKNNTFLW80rY44 FplByzzDqIrbGWF1LvbGmnXJPkH64 IMAGE_OPTIONAL_HEADER64 IMAGE_NT_HEADERS64 XSAVE_FORMAT64 CONTEXT64 ToUInt64 WriteInt64 ToInt64 T1hPcB5PAVrkADQaPu94 0D664800ADECD1C0A82F4EFC1827EE22F2CB7D587BEDB3B6DA9FABBE3EC6E0A4 nubzLga66QS8ymR",
+      "confidence_score": 96,
+      "normalized_value": "0d664800adecd1c0a82f4efc1827ee22f2cb7d587bedb3b6da9fabbe3ec6e0a4"
+    },
+    {
+      "value": "0E74C941C68600E7C62AB8AC0657DCD37D944C60CCC43C5BC5F5DF08D7D27213",
+      "ioc_type": "file_hash",
+      "metadata": {
+        "algorithm": "sha256",
+        "confidence_reason": "explicit_hash"
+      },
+      "context_excerpt": "4oa2 OIiJzu8bRRb2 cbReserved2 lpReserved2 X509Certificate2 c4KaU2kR9BUOk2 u581TSAKAoPcfRd9lOIUChl2 get_Item2 SysNtQuerySystemInformation2 <>7__wrap2 7Nw9Yqo4vpHGjZ8epYXlUt7q2 Vector2 e_res2 SysNtQueryInformationProcess2 0E74C941C68600E7C62AB8AC0657DCD37D944C60CCC43C5BC5F5DF08D7D27213 __StaticArrayIn",
+      "confidence_score": 96,
+      "normalized_value": "0e74c941c68600e7c62ab8ac0657dcd37d944c60ccc43c5bc5f5df08d7d27213"
+    },
+    {
+      "value": "10B5E015B14D451DFAE1C36CCD9B6D96F1931127",
+      "ioc_type": "file_hash",
+      "metadata": {
+        "algorithm": "sha1",
+        "confidence_reason": "explicit_hash"
+      },
+      "context_excerpt": "51|System.Threading.Tasks.Extensions.dll|2242627282F9E07E37B274EA36FAC2D3CD9C9110|25984 costura.pulsar.common.dll.compressed|2.4.5.0|Pulsar.Common, Version=2.4.5.0, Culture=neutral, PublicKeyToken=null|Pulsar.Common.dll|10B5E015B14D451DFAE1C36CCD9B6D96F1931127|189440 v4.0.30319 #Strings xv- Rt 1wI t",
+      "confidence_score": 96,
+      "normalized_value": "10b5e015b14d451dfae1c36ccd9b6d96f1931127"
+    },
+    {
+      "value": "2242627282F9E07E37B274EA36FAC2D3CD9C9110",
+      "ioc_type": "file_hash",
+      "metadata": {
+        "algorithm": "sha1",
+        "confidence_reason": "explicit_hash"
+      },
+      "context_excerpt": "E646FDDDA|19256 costura.system.threading.tasks.extensions.dll.compressed|4.2.0.1|System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51|System.Threading.Tasks.Extensions.dll|2242627282F9E07E37B274EA36FAC2D3CD9C9110|25984 costura.pulsar.common.dll.compres",
+      "confidence_score": 96,
+      "normalized_value": "2242627282f9e07e37b274ea36fac2d3cd9c9110"
+    },
+    {
+      "value": "2DB31F4E09597946E56E859813BFDAD7046D457C32332C3A882654D1E3FFDF67",
+      "ioc_type": "file_hash",
+      "metadata": {
+        "algorithm": "sha256",
+        "confidence_reason": "explicit_hash"
+      },
+      "context_excerpt": "wOgsXcd6 4oihUOsag6 SpB2WYX4Nblxg6 3Fw7ifhcrE6y7QQTxq6 KYBEexsicr6 sBYJJx8UWiVPs6 du2SHxMjsCYkBx6 <StartOperaGXAsync>d__17 9feHTpfofUB7DzNKUXjy72Jk247 9xZw10Q81ism4PeDLe3747 __StaticArrayInitTypeSize=57 hJKCw5kLM0nacf57 2DB31F4E09597946E56E859813BFDAD7046D457C32332C3A882654D1E3FFDF67 zaFU3W9YTXy28vF",
+      "confidence_score": 96,
+      "normalized_value": "2db31f4e09597946e56e859813bfdad7046d457c32332c3a882654d1e3ffdf67"
+    },
+    {
+      "value": "2F410A0396BC148ED533AD49B6415FB58DD4D641",
+      "ioc_type": "file_hash",
+      "metadata": {
+        "algorithm": "sha1",
+        "confidence_reason": "explicit_hash"
+      },
+      "context_excerpt": "ssagePack.Annotations.dll|A0690708C86F009D41FDA400FEAD8407B8168895|18432 costura.system.buffers.dll.compressed|4.0.3.0|System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51|System.Buffers.dll|2F410A0396BC148ED533AD49B6415FB58DD4D641|20856 costura.system.collections.immuta",
+      "confidence_score": 96,
+      "normalized_value": "2f410a0396bc148ed533ad49b6415fb58dd4d641"
+    },
+    {
+      "value": "3C5C5DF5F8F8DB3F0A35C5ED8D357313A54E3CDE",
+      "ioc_type": "file_hash",
+      "metadata": {
+        "algorithm": "sha1",
+        "confidence_reason": "explicit_hash"
+      },
+      "context_excerpt": "m.Collections.Immutable.dll|6E3CCF50BB1D30805DCE58AB6BDD63E0196669E6|252696 costura.system.memory.dll.compressed|4.0.1.2|System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51|System.Memory.dll|3C5C5DF5F8F8DB3F0A35C5ED8D357313A54E3CDE|142240 costura.system.numerics.vectors.",
+      "confidence_score": 96,
+      "normalized_value": "3c5c5df5f8f8db3f0a35c5ed8d357313a54e3cde"
+    },
+    {
+      "value": "3D216458740AD5CB05BC5F7C3491CDE44A1E5DF0",
+      "ioc_type": "file_hash",
+      "metadata": {
+        "algorithm": "sha1",
+        "confidence_reason": "explicit_hash"
+      },
+      "context_excerpt": "5C5DF5F8F8DB3F0A35C5ED8D357313A54E3CDE|142240 costura.system.numerics.vectors.dll.compressed|4.1.4.0|System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a|System.Numerics.Vectors.dll|3D216458740AD5CB05BC5F7C3491CDE44A1E5DF0|115856 costura.system.runtime.compilers",
+      "confidence_score": 96,
+      "normalized_value": "3d216458740ad5cb05bc5f7c3491cde44a1e5df0"
+    },
+    {
+      "value": "43290CD4AAF80DF5D1CF9F242486EF8E646FDDDA",
+      "ioc_type": "file_hash",
+      "metadata": {
+        "algorithm": "sha1",
+        "confidence_reason": "explicit_hash"
+      },
+      "context_excerpt": "costura.system.runtime.compilerservices.unsafe.dll.compressed|6.0.3.0|System.Runtime.CompilerServices.Unsafe, Version=6.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a|System.Runtime.CompilerServices.Unsafe.dll|43290CD4AAF80DF5D1CF9F242486EF8E646FDDDA|19256 costura.system.threading.tasks.ext",
+      "confidence_score": 96,
+      "normalized_value": "43290cd4aaf80df5d1cf9f242486ef8e646fddda"
+    },
+    {
+      "value": "6937AAA7C46A1CF5106F54609FCE156D8D08237B9B04319C5A36E1986FA22D30",
+      "ioc_type": "file_hash",
+      "metadata": {
+        "algorithm": "sha256",
+        "confidence_reason": "explicit_hash"
+      },
+      "context_excerpt": "~ 0 8 B L V ` j t | #F$Y$m$ %K&U&k&u&~& &6'='E'Y'c'm' )&);+C+ , 1.3\"9+949O9 \\1]I]S] o*o=oZoioro{o olp<qCq __StaticArrayInitTypeSize=10 __StaticArrayInitTypeSize=20 wK93727EVKm2g6hNLz1VVrFh20 __StaticArrayInitTypeSize=30 6937AAA7C46A1CF5106F54609FCE156D8D08237B9B04319C5A36E1986FA22D30 gZcRtec1pdBGSfU",
+      "confidence_score": 96,
+      "normalized_value": "6937aaa7c46a1cf5106f54609fce156d8d08237b9b04319c5a36e1986fa22d30"
+    },
+    {
+      "value": "6E3CCF50BB1D30805DCE58AB6BDD63E0196669E6",
+      "ioc_type": "file_hash",
+      "metadata": {
+        "algorithm": "sha1",
+        "confidence_reason": "explicit_hash"
+      },
+      "context_excerpt": "D533AD49B6415FB58DD4D641|20856 costura.system.collections.immutable.dll.compressed|8.0.0.0|System.Collections.Immutable, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a|System.Collections.Immutable.dll|6E3CCF50BB1D30805DCE58AB6BDD63E0196669E6|252696 costura.system.memory.dll.compre",
+      "confidence_score": 96,
+      "normalized_value": "6e3ccf50bb1d30805dce58ab6bdd63e0196669e6"
+    },
+    {
+      "value": "7480873AB1076C4288DD822E683DB6AAFCCC947AA2A1C21ECE28EBB95A2BF615",
+      "ioc_type": "file_hash",
+      "metadata": {
+        "algorithm": "sha256",
+        "confidence_reason": "explicit_hash"
+      },
+      "context_excerpt": "xEGxDGYD6wg4 iGJLKS4ZZg9ME0InHIMg24k4 2kYOUbEcRk4 xKL6cbv3pI1m4 <>7__wrap4 A8shTL9HOT2gAHbr4 RawColor4 LjISc2NwjXdFZsyNZniF0u4 NA47Vy68pNcGqRbCZjv4 EUXMWKS1EBrHukxFehFdrKVSTw4 gPGqAFwsHMWM60J23Qyp3kx4 ZKWHp8tiUfhL5ERK05 7480873AB1076C4288DD822E683DB6AAFCCC947AA2A1C21ECE28EBB95A2BF615 GLbDpxw4FS6iPrZ",
+      "confidence_score": 96,
+      "normalized_value": "7480873ab1076c4288dd822e683db6aafccc947aa2a1c21ece28ebb95a2bf615"
+    },
+    {
+      "value": "7D78CB380BF5EFB7B851409CA6A875F77DECF09D19B9149DA17A3EBF674BC0F9",
+      "ioc_type": "file_hash",
+      "metadata": {
+        "algorithm": "sha256",
+        "confidence_reason": "explicit_hash"
+      },
+      "context_excerpt": "_19 WF66cFiz51UEaf19 A5F29764ABBD7AA6D7ED3D2D60BE10509D6B0E072ABB9D3E4ED25669E6A11559 xyD7nJeI6MYanBXaxyC59 aFT20366Ah59 MWBldeAiarrAHr74I8Yg69 YdERC5t7yTu69 __StaticArrayInitTypeSize=9 fA0UabIMDddQQyZd1D9 ggtNXl1dgloD9 7D78CB380BF5EFB7B851409CA6A875F77DECF09D19B9149DA17A3EBF674BC0F9 HdSum4JwKY2rngs",
+      "confidence_score": 96,
+      "normalized_value": "7d78cb380bf5efb7b851409ca6a875f77decf09d19b9149da17a3ebf674bc0f9"
+    },
+    {
+      "value": "8059270629AEAEBEB861A6D097A0D1DD08B3B004C14BE3C85CD723439FB8F424",
+      "ioc_type": "file_hash",
+      "metadata": {
+        "algorithm": "sha256",
+        "confidence_reason": "explicit_hash"
+      },
+      "context_excerpt": "WFP7awgh5z9hElRNvmCleqcDPr3 Vector3 SysNtQueryInformationProcess3 lJkt4BmhRMKu3 O13F0pqew9OYZOw3 xFbyapdelMPF63hGN5Q8Gy3 11EQ90m4gIssx69P0zIi5hMNCtbz3 __StaticArrayInitTypeSize=14 <StartFirefoxAsync>d__14 zZhot0OrIux14 8059270629AEAEBEB861A6D097A0D1DD08B3B004C14BE3C85CD723439FB8F424 1XsGuACU444zwUgT",
+      "confidence_score": 96,
+      "normalized_value": "8059270629aeaebeb861a6d097a0d1dd08b3b004c14be3c85cd723439fb8f424"
+    },
+    {
+      "value": "9F3E2BF6761F2B5BEEA9A0C835F21DFB2C4EAC717D2475F8AA0CA4AF0E2D5656",
+      "ioc_type": "file_hash",
+      "metadata": {
+        "algorithm": "sha256",
+        "confidence_reason": "explicit_hash"
+      },
+      "context_excerpt": "icArrayInitTypeSize=26 <ExecuteAsync>d__26 <RestartAsync>d__26 __StaticArrayInitTypeSize=36 MnmmM6sx1b1uv9jTzZ446 BsI4KUugx46 CEFFCF182C543FBEAC1D7FF7517C6D9DD4F447C0FC84605D4D292F70E35CB056 get_SHA256 get_Sha256 Aes256 9F3E2BF6761F2B5BEEA9A0C835F21DFB2C4EAC717D2475F8AA0CA4AF0E2D5656 VwtxHai6wnYKk56",
+      "confidence_score": 96,
+      "normalized_value": "9f3e2bf6761f2b5beea9a0c835f21dfb2c4eac717d2475f8aa0ca4af0e2d5656"
+    },
+    {
+      "value": "A0690708C86F009D41FDA400FEAD8407B8168895",
+      "ioc_type": "file_hash",
+      "metadata": {
+        "algorithm": "sha1",
+        "confidence_reason": "explicit_hash"
+      },
+      "context_excerpt": "7B485BA7372FB3403FD0C36043A051AF2AFC05|377344 costura.messagepack.annotations.dll.compressed|3.1.4.0|MessagePack.Annotations, Version=3.1.4.0, Culture=neutral, PublicKeyToken=b4a0369545f0a1be|MessagePack.Annotations.dll|A0690708C86F009D41FDA400FEAD8407B8168895|18432 costura.system.buffers.dll.compre",
+      "confidence_score": 96,
+      "normalized_value": "a0690708c86f009d41fda400fead8407b8168895"
+    },
+    {
+      "value": "A55E57890FADA2C2BB00DB6C6BDACBD341D7A79D3171320A8EBDCF54BE6C9D86",
+      "ioc_type": "file_hash",
+      "metadata": {
+        "algorithm": "sha256",
+        "confidence_reason": "explicit_hash"
+      },
+      "context_excerpt": "F70E35CB056 get_SHA256 get_Sha256 Aes256 9F3E2BF6761F2B5BEEA9A0C835F21DFB2C4EAC717D2475F8AA0CA4AF0E2D5656 VwtxHai6wnYKk56 GOSu7RCwfhZWKzbLPTNF866 GTExLoqJTqcqcWrK9LsKhIDZv66 y5TUuRTXTUQvT9s897iClzbu576 ElltaHiRGjkltKZ76 A55E57890FADA2C2BB00DB6C6BDACBD341D7A79D3171320A8EBDCF54BE6C9D86 __StaticArrayIn",
+      "confidence_score": 96,
+      "normalized_value": "a55e57890fada2c2bb00db6c6bdacbd341d7a79d3171320a8ebdcf54be6c9d86"
+    },
+    {
+      "value": "A5F29764ABBD7AA6D7ED3D2D60BE10509D6B0E072ABB9D3E4ED25669E6A11559",
+      "ioc_type": "file_hash",
+      "metadata": {
+        "algorithm": "sha256",
+        "confidence_reason": "explicit_hash"
+      },
+      "context_excerpt": "WBOqwaf98 2fhmBxTUcTuikkMxX78GHwQxxA8 get_UTF8 Q5IrkG4I9wLArH8 wGZQaTXyqJ8 Rm6UmxlHwUa09fWw97RoZ8 <>9__8 <ThemeControl>b__8 ShVA1p5PyVSb01wmbz7EULbWGk8 qSRKUGCNlQ7CbXABHamJ2628t8 <StartChromeAsync>d__19 WF66cFiz51UEaf19 A5F29764ABBD7AA6D7ED3D2D60BE10509D6B0E072ABB9D3E4ED25669E6A11559 xyD7nJeI6MYanBX",
+      "confidence_score": 96,
+      "normalized_value": "a5f29764abbd7aa6d7ed3d2d60be10509d6b0e072abb9d3e4ed25669e6a11559"
+    },
+    {
+      "value": "B57B485BA7372FB3403FD0C36043A051AF2AFC05",
+      "ioc_type": "file_hash",
+      "metadata": {
+        "algorithm": "sha1",
+        "confidence_reason": "explicit_hash"
+      },
+      "context_excerpt": "3'M'< nt6m i C`<LIT z[MtzM .<5ODZ qJ5*5bH @\\M57=3. I6N% SN ,clF2.B whj Pe b>8hVZ& costura.messagepack.dll.compressed|3.1.4.0|MessagePack, Version=3.1.4.0, Culture=neutral, PublicKeyToken=b4a0369545f0a1be|MessagePack.dll|B57B485BA7372FB3403FD0C36043A051AF2AFC05|377344 costura.messagepack.annotations.",
+      "confidence_score": 96,
+      "normalized_value": "b57b485ba7372fb3403fd0c36043a051af2afc05"
+    },
+    {
+      "value": "C9D03607B9C0C873C8F0FF22A933A7CC4FF07C61EB255864018DE570E9AAEF4C",
+      "ioc_type": "file_hash",
+      "metadata": {
+        "algorithm": "sha256",
+        "confidence_reason": "explicit_hash"
+      },
+      "context_excerpt": "UpctKxqhn9TEdxUcOgB NB52qL5pFGcKIZoijoChB aAWSxQhVoSNWr3RlnmlyjB GwVQmyaDTJUnVd7iTY834IrB ouVMLs1jSiSlsB LgrGLODIvYCTp1NQZxB XcXiaisk4o6xuk8Ks7yB mDUuBHTDfWJ0C FDvtqcSOCU5ASf0qiaxY0C TX7Lemybvg2iwHJ2C 8QTlUrFG02iOswha3C C9D03607B9C0C873C8F0FF22A933A7CC4FF07C61EB255864018DE570E9AAEF4C YnASv4RMCP08C P",
+      "confidence_score": 96,
+      "normalized_value": "c9d03607b9c0c873c8f0ff22a933a7cc4ff07c61eb255864018de570e9aaef4c"
+    },
+    {
+      "value": "CEFFCF182C543FBEAC1D7FF7517C6D9DD4F447C0FC84605D4D292F70E35CB056",
+      "ioc_type": "file_hash",
+      "metadata": {
+        "algorithm": "sha256",
+        "confidence_reason": "explicit_hash"
+      },
+      "context_excerpt": "24E06EAE97FA0A8E85ABD78316 <StartOperaAsync>d__16 ToUInt16 ToInt16 LM5YYDYfDDwAvozmj126 __StaticArrayInitTypeSize=26 <ExecuteAsync>d__26 <RestartAsync>d__26 __StaticArrayInitTypeSize=36 MnmmM6sx1b1uv9jTzZ446 BsI4KUugx46 CEFFCF182C543FBEAC1D7FF7517C6D9DD4F447C0FC84605D4D292F70E35CB056 get_SHA256 get_",
+      "confidence_score": 96,
+      "normalized_value": "ceffcf182c543fbeac1d7ff7517c6d9dd4f447c0fc84605d4d292f70e35cb056"
+    },
+    {
+      "value": "D460FC75A77B0B4CC52577540FF1D807700918360FD90E4DFA43E41E7452F3FC",
+      "ioc_type": "file_hash",
+      "metadata": {
+        "algorithm": "sha256",
+        "confidence_reason": "explicit_hash"
+      },
+      "context_excerpt": "C873C8F0FF22A933A7CC4FF07C61EB255864018DE570E9AAEF4C YnASv4RMCP08C Pulsar.Common.UAC Pulsar.Common.Messages.ClientManagement.UAC DoEnableUAC DoDisableUAC CreateCompatibleDC ReleaseDC CreateDC DeleteDC 8hXFNaolo0hGn5p4EC D460FC75A77B0B4CC52577540FF1D807700918360FD90E4DFA43E41E7452F3FC QlDVTcO9iNcGC K",
+      "confidence_score": 96,
+      "normalized_value": "d460fc75a77b0b4cc52577540ff1d807700918360fd90e4dfa43e41e7452f3fc"
+    },
+    {
+      "value": "E86965C347879BB282ABA1EEEBE272C34B7F7C24E06EAE97FA0A8E85ABD78316",
+      "ioc_type": "file_hash",
+      "metadata": {
+        "algorithm": "sha256",
+        "confidence_reason": "explicit_hash"
+      },
+      "context_excerpt": "pcpHPxybh5 PgmJl4dh3XLKYdBli5 XWlv7PBptAT7d6aeK7U7k5 Yv07sb3NkDVck5 aWMah6IXik5 HVhelMtqk5 3l8w8PD7l5 nuNSG4bCnfy0U3UYwn5 fJT1uBP58o5 7BgtXZR1CUa2tkRsnmso5 <>7__wrap5 v26E7smFqncgp5 HHZ8CTHrqK006 LHfAHeG3MHVYhJYDRxVxs06 E86965C347879BB282ABA1EEEBE272C34B7F7C24E06EAE97FA0A8E85ABD78316 <StartOperaAsyn",
+      "confidence_score": 96,
+      "normalized_value": "e86965c347879bb282aba1eeebe272c34b7f7c24e06eae97fa0a8e85abd78316"
+    },
+    {
+      "value": "F2173046D565A390F2EA722F09E8C2D93396E6D63EB8E1A453E53E97707D6982",
+      "ioc_type": "file_hash",
+      "metadata": {
+        "algorithm": "sha256",
+        "confidence_reason": "explicit_hash"
+      },
+      "context_excerpt": "AGE_NT_HEADERS32 UFHQtcCWsl0it8b32 Microsoft.Win32 ProcessImageFileNameWin32 user32 AtlThunkSListPtr32 ToUInt32 ReadInt32 ToInt32 qm9BA5lXHhyzTrHgQ52 zYj7z4UxlAh52 uNnp5vCC4662 WpiGP1bDkZcjxYWV72 DieI9VdxADPOv6QdNwT8682 F2173046D565A390F2EA722F09E8C2D93396E6D63EB8E1A453E53E97707D6982 jIk6IdProVE2 H8",
+      "confidence_score": 96,
+      "normalized_value": "f2173046d565a390f2ea722f09e8c2d93396e6d63eb8e1a453e53e97707d6982"
+    },
+    {
+      "value": "F4A432758193F47640CB6DE150D55F29C99ED7701F1E1061B15A1D6C49677785",
+      "ioc_type": "file_hash",
+      "metadata": {
+        "algorithm": "sha256",
+        "confidence_reason": "explicit_hash"
+      },
+      "context_excerpt": "FCCC947AA2A1C21ECE28EBB95A2BF615 GLbDpxw4FS6iPrZhzg7N15 <StartBraveAsync>d__15 <GetKeyValues>d__15 __StaticArrayInitTypeSize=25 <PatchOperaAsync>d__25 <CloneBrowserProfileAsync>d__25 LOGTonEcC4y75 8KOgQrBeGbP5GJNCH5H285 F4A432758193F47640CB6DE150D55F29C99ED7701F1E1061B15A1D6C49677785 FGA46qHcVbvSYQ9",
+      "confidence_score": 96,
+      "normalized_value": "f4a432758193f47640cb6de150d55f29c99ed7701f1e1061b15a1d6c49677785"
+    }
+  ],
+  "format": "pe",
+  "analysis": {
+    "functions": 6,
+    "enable_stack_strings": false,
+    "enable_tight_strings": false,
+    "enable_static_strings": true,
+    "enable_decoded_strings": false
+  },
+  "metadata": {
+    "runtime": "{'decoded_strings': 0, 'find_features': 0, 'language_strings': 0, 'stack_strings': 0, 'start_date': '2026-03-28T17:42:04.765867Z', 'static_strings': 0.0292, 'tight_strings': 0, 'total': 0.0536, 'vivisect': 0}",
+    "version": "3.1.1",
+    "language": "dotnet",
+    "imagebase": "",
+    "language_version": "version unknown"
+  },
+  "top_strings": [
+    {
+      "type": "static_strings",
+      "offset": 77,
+      "string": "!This program cannot be run in DOS mode.",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 415,
+      "string": "`.rsrc",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 455,
+      "string": "@.reloc",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 21345,
+      "string": "k[&\to>",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 43828,
+      "string": "KDBM(",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 133693,
+      "string": "&&*.sI",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 150703,
+      "string": "#333333",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 159497,
+      "string": ",\"\trb",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 171440,
+      "string": "lSystem.Resources.ResourceReader, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089#System.Resources.RuntimeResourceSet",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 171597,
+      "string": "PADPADP",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 171624,
+      "string": "lSystem.Resources.ResourceReader, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089#System.Resources.RuntimeResourceSet",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 171781,
+      "string": "PADPADP",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 171808,
+      "string": "lSystem.Resources.ResourceReader, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089#System.Resources.RuntimeResourceSet",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 171965,
+      "string": "PADPADP",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 172505,
+      "string": "b\"g{G^\"Le",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 173063,
+      "string": "1%oTC",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 174488,
+      "string": ".qSmb^",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 174824,
+      "string": "%U,711",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 175171,
+      "string": "Q%eDqtS%_",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 175203,
+      "string": "qt\\eS5",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 176127,
+      "string": "JS7/8%",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 176342,
+      "string": "vz?oqa<c",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 176369,
+      "string": "c4K{O>",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 177570,
+      "string": "(UG 4l",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 178172,
+      "string": "9EabC]",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 178459,
+      "string": "KJTnB6",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 178996,
+      "string": "Z3|,+t",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 181555,
+      "string": "KJ\tvZ\"",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 181797,
+      "string": "DQ!(l\\",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 181818,
+      "string": "nfh3/uA",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 181985,
+      "string": "17k8$'A",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 182195,
+      "string": "nUe/CbX",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 184373,
+      "string": "`<`sew",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 184676,
+      "string": "FyWDRi",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 184767,
+      "string": "{~S<N9c",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 184925,
+      "string": "ZSVWVF/",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 185122,
+      "string": "lYT.kQ",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 185553,
+      "string": "EJJTOJ",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 185739,
+      "string": "hII1LK",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 186067,
+      "string": "7nY_)o",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 186099,
+      "string": "&i#1mj",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 186125,
+      "string": "$}Zj2Z",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 186178,
+      "string": "W%Ssry",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 186584,
+      "string": "v~!jgF3",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 186842,
+      "string": "vDwqa_",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 187141,
+      "string": "g{G^l",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 187995,
+      "string": "G\\211Q",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 190472,
+      "string": "rq(7!\\wK",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 191650,
+      "string": "HKi%>W",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 192194,
+      "string": "iL<>HX:A",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 192676,
+      "string": "f#t#|4",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 192801,
+      "string": "&&&j\\:",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 193719,
+      "string": "~&Ymu#",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 193817,
+      "string": "L<FD Us^",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 194592,
+      "string": "U_/n#F",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 195032,
+      "string": "h*\"4MF",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 195109,
+      "string": "DZf*?/",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 197031,
+      "string": "L_pR`n",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 199001,
+      "string": "3I@z`R",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 199533,
+      "string": "tzGWz|V_",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 199995,
+      "string": "xJ08e\"=",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 200913,
+      "string": "M!~R<-",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 201215,
+      "string": "J2p%z~?",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 201879,
+      "string": "r[_,nu-c",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 202657,
+      "string": "s?TYZb",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 203468,
+      "string": "ju/<6=",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 204252,
+      "string": "a'[2|!",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 204455,
+      "string": "9\\I'/E",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 205073,
+      "string": "3u\"7&,",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 205162,
+      "string": "b;1Q}0",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 206326,
+      "string": "T#1/{1",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 206409,
+      "string": "](0^'u",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 206432,
+      "string": "4-#8x[",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 206804,
+      "string": "Tj?ROS5",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 207364,
+      "string": "fM.8Z4,8",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 207676,
+      "string": "*5:/]#",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 207925,
+      "string": "7:qT,t",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 208488,
+      "string": "tN-uF<",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 208661,
+      "string": "znhN/)W",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 209117,
+      "string": "8q2%M(",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 209539,
+      "string": "tw/l+6q",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 210846,
+      "string": "uTu2/]L",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 211271,
+      "string": "c5ujmQg",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 211324,
+      "string": "@zud;l",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 211377,
+      "string": "{vsXF#",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 212169,
+      "string": "0F?L60t",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 212237,
+      "string": "Rr(F'g",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 212288,
+      "string": "3Um)y8#5G",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 212485,
+      "string": "l:K!;p",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 212649,
+      "string": "W!J\"f7{",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 213296,
+      "string": "J,kf-A",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 213697,
+      "string": "taQPs<",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 214865,
+      "string": "b?) K\tr",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 215144,
+      "string": "-t6]al",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 215482,
+      "string": "jkxo{S:X",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 220908,
+      "string": "H%;X`dt-",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 221448,
+      "string": "l,@KY~>",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 222300,
+      "string": "p5c]{>",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 222396,
+      "string": "HWb%vz",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 222949,
+      "string": "^!\"zl&",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 223208,
+      "string": "l]@Z,UH",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 223445,
+      "string": "_drwgr",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 224466,
+      "string": "LACW\\p~y",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 225581,
+      "string": "7*CWhu",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 226382,
+      "string": "S$gs?q",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 226465,
+      "string": "YJV_({",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 227669,
+      "string": "PJ3]XQ",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 227787,
+      "string": "F>O|)L",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 227982,
+      "string": "xT#=v0&",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 228341,
+      "string": "akM>*%$(:",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 228509,
+      "string": "6p\"zdA",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 228534,
+      "string": "if]#~~nA",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 228920,
+      "string": "/\"[R/\".-V",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 230112,
+      "string": "6ii1m?b",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 230844,
+      "string": "a'NSq$",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 231294,
+      "string": "Gyts=J",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 231955,
+      "string": "rF?1/)",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 232222,
+      "string": "*d0Zm",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 232372,
+      "string": "FLgtL'",
+      "encoding": "ASCII"
+    },
+    {
+      "type": "static_strings",
+      "offset": 233243,
+      "string": "e:d_FQ",
+      "encoding": "ASCII"
+    }
+  ],
+  "rejected_iocs": [
+    {
+      "value": "4.0.0.0",
+      "ioc_type": "ip_address",
+      "reason_code": "ip_not_declared_network_ioc",
+      "reason_message": "IP was not clearly declared as a network IOC in article context."
+    },
+    {
+      "value": "3.1.4.0",
+      "ioc_type": "ip_address",
+      "reason_code": "ip_not_declared_network_ioc",
+      "reason_message": "IP was not clearly declared as a network IOC in article context."
+    },
+    {
+      "value": "4.0.3.0",
+      "ioc_type": "ip_address",
+      "reason_code": "ip_not_declared_network_ioc",
+      "reason_message": "IP was not clearly declared as a network IOC in article context."
+    },
+    {
+      "value": "8.0.0.0",
+      "ioc_type": "ip_address",
+      "reason_code": "ip_not_declared_network_ioc",
+      "reason_message": "IP was not clearly declared as a network IOC in article context."
+    },
+    {
+      "value": "4.0.1.2",
+      "ioc_type": "ip_address",
+      "reason_code": "ip_not_declared_network_ioc",
+      "reason_message": "IP was not clearly declared as a network IOC in article context."
+    },
+    {
+      "value": "4.1.4.0",
+      "ioc_type": "ip_address",
+      "reason_code": "ip_not_declared_network_ioc",
+      "reason_message": "IP was not clearly declared as a network IOC in article context."
+    },
+    {
+      "value": "6.0.3.0",
+      "ioc_type": "ip_address",
+      "reason_code": "ip_not_declared_network_ioc",
+      "reason_message": "IP was not clearly declared as a network IOC in article context."
+    },
+    {
+      "value": "4.2.0.1",
+      "ioc_type": "ip_address",
+      "reason_code": "ip_not_declared_network_ioc",
+      "reason_message": "IP was not clearly declared as a network IOC in article context."
+    },
+    {
+      "value": "2.4.5.0",
+      "ioc_type": "ip_address",
+      "reason_code": "ip_not_declared_network_ioc",
+      "reason_message": "IP was not clearly declared as a network IOC in article context."
+    },
+    {
+      "value": "lSystem.Resources.ResourceReader",
+      "ioc_type": "domain",
+      "reason_code": "invalid_domain_format",
+      "reason_message": "Domain token does not pass strict validation."
+    },
+    {
+      "value": "System.Resources.RuntimeResourceSet",
+      "ioc_type": "domain",
+      "reason_code": "invalid_domain_format",
+      "reason_message": "Domain token does not pass strict validation."
+    },
+    {
+      "value": "lYT.kQ",
+      "ioc_type": "domain",
+      "reason_code": "invalid_domain_format",
+      "reason_message": "Domain token does not pass strict validation."
+    },
+    {
+      "value": "0C.Ww",
+      "ioc_type": "domain",
+      "reason_code": "invalid_domain_format",
+      "reason_message": "Domain token does not pass strict validation."
+    },
+    {
+      "value": "costura.messagepack.dll.compressed",
+      "ioc_type": "domain",
+      "reason_code": "invalid_domain_format",
+      "reason_message": "Domain token does not pass strict validation."
+    },
+    {
+      "value": "MessagePack.dll",
+      "ioc_type": "domain",
+      "reason_code": "invalid_domain_format",
+      "reason_message": "Domain token does not pass strict validation."
+    },
+    {
+      "value": "costura.messagepack.annotations.dll.compressed",
+      "ioc_type": "domain",
+      "reason_code": "invalid_domain_format",
+      "reason_message": "Domain token does not pass strict validation."
+    },
+    {
+      "value": "MessagePack.Annotations",
+      "ioc_type": "domain",
+      "reason_code": "invalid_domain_format",
+      "reason_message": "Domain token does not pass strict validation."
+    },
+    {
+      "value": "MessagePack.Annotations.dll",
+      "ioc_type": "domain",
+      "reason_code": "invalid_domain_format",
+      "reason_message": "Domain token does not pass strict validation."
+    },
+    {
+      "value": "costura.system.buffers.dll.compressed",
+      "ioc_type": "domain",
+      "reason_code": "invalid_domain_format",
+      "reason_message": "Domain token does not pass strict validation."
+    },
+    {
+      "value": "System.Buffers",
+      "ioc_type": "domain",
+      "reason_code": "invalid_domain_format",
+      "reason_message": "Domain token does not pass strict validation."
+    },
+    {
+      "value": "System.Buffers.dll",
+      "ioc_type": "domain",
+      "reason_code": "invalid_domain_format",
+      "reason_message": "Domain token does not pass strict validation."
+    },
+    {
+      "value": "costura.system.collections.immutable.dll.compressed",
+      "ioc_type": "domain",
+      "reason_code": "invalid_domain_format",
+      "reason_message": "Domain token does not pass strict validation."
+    },
+    {
+      "value": "System.Collections.Immutable",
+      "ioc_type": "domain",
+      "reason_code": "invalid_domain_format",
+      "reason_message": "Domain token does not pass strict validation."
+    },
+    {
+      "value": "System.Collections.Immutable.dll",
+      "ioc_type": "domain",
+      "reason_code": "invalid_domain_format",
+      "reason_message": "Domain token does not pass strict validation."
+    },
+    {
+      "value": "costura.system.memory.dll.compressed",
+      "ioc_type": "domain",
+      "reason_code": "invalid_domain_format",
+      "reason_message": "Domain token does not pass strict validation."
+    },
+    {
+      "value": "System.Memory",
+      "ioc_type": "domain",
+      "reason_code": "invalid_domain_format",
+      "reason_message": "Domain token does not pass strict validation."
+    },
+    {
+      "value": "System.Memory.dll",
+      "ioc_type": "domain",
+      "reason_code": "invalid_domain_format",
+      "reason_message": "Domain token does not pass strict validation."
+    },
+    {
+      "value": "costura.system.numerics.vectors.dll.compressed",
+      "ioc_type": "domain",
+      "reason_code": "invalid_domain_format",
+      "reason_message": "Domain token does not pass strict validation."
+    },
+    {
+      "value": "System.Numerics.Vectors",
+      "ioc_type": "domain",
+      "reason_code": "invalid_domain_format",
+      "reason_message": "Domain token does not pass strict validation."
+    },
+    {
+      "value": "System.Numerics.Vectors.dll",
+      "ioc_type": "domain",
+      "reason_code": "invalid_domain_format",
+      "reason_message": "Domain token does not pass strict validation."
+    },
+    {
+      "value": "costura.system.runtime.compilerservices.unsafe.dll.compressed",
+      "ioc_type": "domain",
+      "reason_code": "invalid_domain_format",
+      "reason_message": "Domain token does not pass strict validation."
+    },
+    {
+      "value": "System.Runtime.CompilerServices.Unsafe",
+      "ioc_type": "domain",
+      "reason_code": "invalid_domain_format",
+      "reason_message": "Domain token does not pass strict validation."
+    },
+    {
+      "value": "System.Runtime.CompilerServices.Unsafe.dll",
+      "ioc_type": "domain",
+      "reason_code": "invalid_domain_format",
+      "reason_message": "Domain token does not pass strict validation."
+    },
+    {
+      "value": "costura.system.threading.tasks.extensions.dll.compressed",
+      "ioc_type": "domain",
+      "reason_code": "invalid_domain_format",
+      "reason_message": "Domain token does not pass strict validation."
+    },
+    {
+      "value": "System.Threading.Tasks.Extensions",
+      "ioc_type": "domain",
+      "reason_code": "invalid_domain_format",
+      "reason_message": "Domain token does not pass strict validation."
+    },
+    {
+      "value": "System.Threading.Tasks.Extensions.dll",
+      "ioc_type": "domain",
+      "reason_code": "invalid_domain_format",
+      "reason_message": "Domain token does not pass strict validation."
+    },
+    {
+      "value": "costura.pulsar.common.dll.compressed",
+      "ioc_type": "domain",
+      "reason_code": "invalid_domain_format",
+      "reason_message": "Domain token does not pass strict validation."
+    },
+    {
+      "value": "Pulsar.Common",
+      "ioc_type": "domain",
+      "reason_code": "invalid_domain_format",
+      "reason_message": "Domain token does not pass strict validation."
+    },
+    {
+      "value": "Pulsar.Common.dll",
+      "ioc_type": "domain",
+      "reason_code": "invalid_domain_format",
+      "reason_message": "Domain token does not pass strict validation."
+    },
+    {
+      "value": "Pulsar.Common.UAC",
+      "ioc_type": "domain",
+      "reason_code": "invalid_domain_format",
+      "reason_message": "Domain token does not pass strict validation."
+    },
+    {
+      "value": "Pulsar.Common.Messages.ClientManagement.UAC",
+      "ioc_type": "domain",
+      "reason_code": "invalid_domain_format",
+      "reason_message": "Domain token does not pass strict validation."
+    },
+    {
+      "value": "Pulsar.Common.Messages.Monitoring.HVNC",
+      "ioc_type": "domain",
+      "reason_code": "invalid_domain_format",
+      "reason_message": "Domain token does not pass strict validation."
+    },
+    {
+      "value": "System.Drawing",
+      "ioc_type": "domain",
+      "reason_code": "invalid_domain_format",
+      "reason_message": "Domain token does not pass strict validation."
+    },
+    {
+      "value": "Pulsar.Common.Messages.ClientManagement.WinRE",
+      "ioc_type": "domain",
+      "reason_code": "invalid_domain_format",
+      "reason_message": "Domain token does not pass strict validation."
+    },
+    {
+      "value": "SharpDX.DXGI",
+      "ioc_type": "domain",
+      "reason_code": "invalid_domain_format",
+      "reason_message": "Domain token does not pass strict validation."
+    },
+    {
+      "value": "NAudio.WinMM",
+      "ioc_type": "domain",
+      "reason_code": "invalid_domain_format",
+      "reason_message": "Domain token does not pass strict validation."
+    },
+    {
+      "value": "System.IO",
+      "ioc_type": "domain",
+      "reason_code": "domain_not_declared_network_ioc",
+      "reason_message": "Domain was not clearly declared as a network IOC in article context."
+    },
+    {
+      "value": "Pulsar.Common.IO",
+      "ioc_type": "domain",
+      "reason_code": "domain_not_declared_network_ioc",
+      "reason_message": "Domain was not clearly declared as a network IOC in article context."
+    },
+    {
+      "value": "Pulsar.Common.DNS",
+      "ioc_type": "domain",
+      "reason_code": "invalid_domain_format",
+      "reason_message": "Domain token does not pass strict validation."
+    },
+    {
+      "value": "costura.metadata",
+      "ioc_type": "domain",
+      "reason_code": "invalid_domain_format",
+      "reason_message": "Domain token does not pass strict validation."
+    },
+    {
+      "value": "System.Collections.Generic",
+      "ioc_type": "domain",
+      "reason_code": "invalid_domain_format",
+      "reason_message": "Domain token does not pass strict validation."
+    }
+  ],
+  "sample_source": "sample_zip",
+  "category_counts": {
+    "stack_strings": 0,
+    "tight_strings": 0,
+    "static_strings": 8139,
+    "decoded_strings": 0,
+    "language_strings": 0
+  },
+  "suppressed_iocs": [],
+  "interesting_strings_preview": [
+    "!This program cannot be run in DOS mode.",
+    "`.rsrc",
+    "@.reloc",
+    "k[&\to>",
+    "KDBM(",
+    "&&*.sI",
+    "#333333",
+    ",\"\trb",
+    "lSystem.Resources.ResourceReader, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089#System.Resources.RuntimeResourceSet",
+    "PADPADP",
+    "lSystem.Resources.ResourceReader, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089#System.Resources.RuntimeResourceSet",
+    "PADPADP",
+    "lSystem.Resources.ResourceReader, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089#System.Resources.RuntimeResourceSet",
+    "PADPADP",
+    "b\"g{G^\"Le",
+    "1%oTC",
+    ".qSmb^",
+    "%U,711",
+    "Q%eDqtS%_",
+    "qt\\eS5"
+  ]
+}
