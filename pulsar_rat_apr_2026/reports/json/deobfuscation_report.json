@@ -1,0 +1,5074 @@
+{
+  "project_dir": "PulsarRAT/Csharpe_project/pulsar_src/pulsar/Client",
+  "files_analyzed": 166,
+  "namespace_map": {
+    "Costura": {
+      "roles": [
+        "assembly_resolver",
+        "costura_loader"
+      ],
+      "classes": {
+        "AssemblyLoader": "CosturaAssemblyLoader"
+      }
+    },
+    "DarkModeForms": {
+      "roles": [],
+      "classes": {
+        "ControlStatusInfo": "Unknown",
+        "ControlStatusStorage": "Unknown",
+        "CustomColorTable": "Unknown",
+        "DarkModeCS": "Unknown",
+        "DWMCOLORIZATIONcolors": "Unknown",
+        "DWMWINDOWATTRIBUTE": "Unknown",
+        "DWM_WINDOW_CORNER_PREFERENCE": "Unknown",
+        "RECT": "Unknown",
+        "DisplayMode": "Unknown",
+        "MyRenderer": "Unknown",
+        "OSThemeColors": "Unknown"
+      }
+    },
+    "aaxcwmwkxnnqc": {
+      "roles": [
+        "chromium_credential_reader",
+        "firefox_credential_reader"
+      ],
+      "classes": {
+        "HVXLu3opAZVjRpshGkoazFs4148e": "ChromiumCredentialReader"
+      }
+    },
+    "alhmksftjvslnoyhqb": {
+      "roles": [],
+      "classes": {
+        "TyHvep1renAy4qg": "Unknown",
+        "utilisateur": "Unknown",
+        "that": "Unknown"
+      }
+    },
+    "axyfwctblegjzeztuustfqd": {
+      "roles": [
+        "deferred_assembly_loader",
+        "message_serialization",
+        "secure_transport",
+        "tcp_client"
+      ],
+      "classes": {
+        "6p3gNcxQfZVEWTDJtT1": "SecureTransportClient",
+        "I5EjajeNQ2cgV6O44upPUlBtJ": "DeferredAssemblyLoader"
+      }
+    },
+    "bjaeujhapczempm": {
+      "roles": [],
+      "classes": {
+        "XfvRhfc8YGggaI": "Settings"
+      }
+    },
+    "bwrfpsflwqabsdycodhzf": {
+      "roles": [
+        "process_injection"
+      ],
+      "classes": {
+        "iCSrVWB0wFxJil64j52Y23jR": "NativeMethods",
+        "Generic": "NativeMethods"
+      }
+    },
+    "bxzfalosxplnm": {
+      "roles": [
+        "hardware_info"
+      ],
+      "classes": {
+        "21WxeM64lLAtlYaBXsyDWAyEbO": "Unknown",
+        "4dD4fAQGLVfBs3ZEQosHPj0": "Unknown",
+        "4vaOfADbmLkArIz7kDi": "DeviceIdHelper"
+      }
+    },
+    "coafmqnzpyvnmxfrrfqccyrjx": {
+      "roles": [
+        "defense_evasion"
+      ],
+      "classes": {
+        "XmLDMCuYxMHSW4HuI0A0DfUZ": "DefenseEvasion"
+      }
+    },
+    "dhhhhsfijyqzsnxzffrhhpfmctd": {
+      "roles": [
+        "keylogger"
+      ],
+      "classes": {
+        "WmqnA2l681BuAEtKC3FtoQgPKyBRY": "Unknown",
+        "gINcwKhHRk6iwJnTv2lf1wAfcwL5l": "KeyloggerCore"
+      }
+    },
+    "dipmbmguusfjmoaeqvydgkgdyephe": {
+      "roles": [
+        "active_window_monitor",
+        "clipboard_monitor",
+        "crypto_clipper",
+        "webcam_capture"
+      ],
+      "classes": {
+        "RGkgnP4B7jel640Kg": "ActiveWindowMonitor",
+        "TwN6jYiVuPjn9": "Unknown",
+        "WalddVelQIshHagR": "ClipboardMonitor",
+        "u90yjmSRc5": "Unknown",
+        "wA9bfdnXgCaOoM2": "WebcamCapture",
+        "that": "WebcamCapture"
+      }
+    },
+    "dnqdegmujqcozpmiozccytpxknvo": {
+      "roles": [
+        "anti_debug"
+      ],
+      "classes": {
+        "bxWPg048ST0": "NativeMethods",
+        "urzitert68ir": "AntiDebug",
+        "PROCESSINFOCLASS": "AntiDebug",
+        "SYSTEM_INFORMATION_CLASS": "AntiDebug",
+        "THREADINFOCLASS": "AntiDebug",
+        "PROCESS_BASIC_INFORMATION": "AntiDebug",
+        "FileType": "AntiDebug",
+        "SYSTEM_HANDLE_TABLE_ENTRY_INFO_EX": "AntiDebug",
+        "FILETIME": "AntiDebug",
+        "RM_UNIQUE_PROCESS": "AntiDebug",
+        "RM_APP_TYPE": "AntiDebug",
+        "RM_REBOOT_REASON": "AntiDebug",
+        "RM_PROCESS_INFO": "AntiDebug",
+        "CRED_TYPE": "AntiDebug",
+        "SECURITY_IMPERSONATION_LEVEL": "AntiDebug",
+        "TOKEN_TYPE": "AntiDebug",
+        "PROCESS_INFORMATION": "AntiDebug",
+        "DESKTOP_ACCESS": "AntiDebug",
+        "IO_STATUS_BLOCK": "AntiDebug",
+        "FILE_NAME_INFORMATION": "AntiDebug",
+        "SYSTEM_HANDLE_INFORMATION_EX": "AntiDebug"
+      }
+    },
+    "efvnwohwro": {
+      "roles": [
+        "process_injection"
+      ],
+      "classes": {
+        "1uE3N0loLMcH": "Unknown",
+        "LztrGwxkvFu76zsPDJXRrE": "Unknown",
+        "MPlyDv4L8TEXl1ePskaHlc4sK5wHr": "Unknown",
+        "OiwfdAR2fk9kFr": "NativeMethods",
+        "STARTUPINFO": "NativeMethods",
+        "STARTUPINFOEX": "NativeMethods",
+        "PROCESS_INFORMATION": "NativeMethods",
+        "ProcessCreationFlags": "NativeMethods",
+        "AllocationType": "NativeMethods",
+        "MemoryProtection": "NativeMethods",
+        "ProcessAccessFlags": "NativeMethods",
+        "PXj8uloh2oIB0DNBX5PH": "NativeMethods",
+        "S09p6jhN3Q": "Unknown",
+        "INPUT": "Unknown",
+        "InputUnion": "Unknown",
+        "KEYBDINPUT": "Unknown",
+        "miaBMs2rIOkWfqU80eHmxOqti": "Unknown",
+        "pqZMvrFbaoSOAGK883I74uadORol": "Unknown",
+        "wpZnIGNJEHtrV": "Unknown"
+      }
+    },
+    "fknzwcqedcjvgvtfoeppsxi": {
+      "roles": [
+        "remote_shell",
+        "winre_persistence"
+      ],
+      "classes": {
+        "1OaugIljVER7J5SeXW0HN": "WindowsRecoveryPersistence"
+      }
+    },
+    "gegvhzzqwbmrcirjjrhzlwptpbnx": {
+      "roles": [],
+      "classes": {
+        "0I2xtVw0qLLK44T6yKWTB9rP": "Unknown",
+        "ASL48TFXMXtv2tF8ES6RztibJ": "Unknown"
+      }
+    },
+    "iozxjxopkihzvsqatdaxpppvwoj": {
+      "roles": [
+        "privilege_escalation",
+        "process_injection",
+        "remote_shell"
+      ],
+      "classes": {
+        "8o4B05Z2IcNNGqgWo": "Unknown",
+        "ARznFxFn4J": "Unknown",
+        "DesktopInterop": "Unknown",
+        "E4gb2Uq7qEwz": "NativeMethods",
+        "DESKTOP_ACCESS": "NativeMethods",
+        "POINT": "NativeMethods",
+        "RECT": "NativeMethods",
+        "WINDOWPLACEMENT": "NativeMethods",
+        "IMTc7fnhVyaBDHzBFWa5MKs": "Unknown",
+        "KpvvUZ0FaNUE8aMgmtbkKHtpe": "NativeMethods",
+        "SYSTEM_HANDLE_TABLE_ENTRY_INFO_EX": "NativeMethods",
+        "SYSTEM_HANDLE_INFORMATION_EX": "NativeMethods",
+        "SYSTEM_INFORMATION_CLASS": "NativeMethods",
+        "FileType": "NativeMethods",
+        "RM_UNIQUE_PROCESS": "NativeMethods",
+        "RM_PROCESS_INFO": "NativeMethods",
+        "RM_REBOOT_REASON": "NativeMethods",
+        "LAsnkSIxxDJNrzPrlnltu": "Unknown",
+        "MrXe1i8iSZEsZbcIj7Py": "Unknown",
+        "MyMezryaAIG": "PrivilegeHelper",
+        "LUID": "PrivilegeHelper",
+        "LUID_AND_ATTRIBUTES": "PrivilegeHelper",
+        "TOKEN_PRIVILEGES": "PrivilegeHelper",
+        "TKBx0QoMgk61m2l": "NativeMethods",
+        "GetWindowType": "NativeMethods",
+        "DeviceCap": "NativeMethods",
+        "eoa1n5Y4hlvYxJ7c1": "RemoteShell",
+        "CloneResult": "RemoteShell",
+        "STARTUPINFO": "Unknown",
+        "PROCESS_INFORMATION": "Unknown",
+        "fvBuGTkK0fOtxcNcc2qSrk65G5y": "Unknown",
+        "gIm3Jktlj4J99jG8sdVsEdww7d": "Unknown",
+        "IMAGE_DOS_HEADER": "Unknown",
+        "IMAGE_FILE_HEADER": "Unknown",
+        "IMAGE_DATA_DIRECTORY": "Unknown",
+        "IMAGE_OPTIONAL_HEADER32": "Unknown",
+        "IMAGE_OPTIONAL_HEADER64": "Unknown",
+        "IMAGE_SECTION_HEADER": "Unknown",
+        "IMAGE_EXPORT_DIRECTORY": "Unknown",
+        "ndTKfsnW9H6d9j": "NativeMethods",
+        "ProcessAccessFlags": "NativeMethods",
+        "AllocationType": "NativeMethods",
+        "MemoryProtection": "NativeMethods",
+        "ym44TS8sL6xkLZjAR": "Unknown"
+      }
+    },
+    "isupdklydnnojpekfnfpjav": {
+      "roles": [
+        "active_window_monitor",
+        "webcam_capture"
+      ],
+      "classes": {
+        "5WJ3CNFTXIFD42b1cJfjEBGX2cX": "Unknown",
+        "fiqsFrr3WiUfUnbrek5S": "NativeMethods",
+        "hskXkkZ5RtIBGHtsPJ": "WebcamCapture"
+      }
+    },
+    "jhxzovsbvsxiupbfprvzxuj": {
+      "roles": [
+        "anti_debug"
+      ],
+      "classes": {
+        "MMBsP70yQvBqwPfJ3BnS": "AntiDebug",
+        "DetectionMethod": "AntiDebug"
+      }
+    },
+    "jtopooaggmlvxcdkzmasrbr": {
+      "roles": [
+        "process_injection"
+      ],
+      "classes": {
+        "DiPvMW64Ho2fWu": "NativeMethods",
+        "yqC4bzVgIU7mlemP": "Unknown"
+      }
+    },
+    "mujubbzyaqrl": {
+      "roles": [],
+      "classes": {
+        "66xfrgI3JTFPnfm1i6gqQSC": "Unknown",
+        "ZJZn4oC4KU1FUKN": "NativeMethods",
+        "h1R1J9wxLfWWcC": "Unknown",
+        "CONTEXT": "Unknown",
+        "PROCESS_MITIGATION_BINARY_SIGNATURE_POLICY": "Unknown",
+        "SYSTEM_CODEINTEGRITY_INFORMATION": "Unknown",
+        "PROCESS_BASIC_INFORMATION": "Unknown",
+        "SYSTEM_KERNEL_DEBUGGER_INFORMATION": "Unknown",
+        "UNICODE_STRING": "Unknown",
+        "ANSI_STRING": "Unknown",
+        "SYSTEM_SECUREBOOT_INFORMATION": "Unknown",
+        "SYSTEM_INFO": "Unknown",
+        "OSVERSIONINFOEX": "Unknown",
+        "IMAGE_DOS_HEADER": "Unknown",
+        "IMAGE_NT_HEADERS32": "Unknown",
+        "IMAGE_NT_HEADERS64": "Unknown",
+        "IMAGE_FILE_HEADER": "Unknown",
+        "IMAGE_OPTIONAL_HEADER64": "Unknown",
+        "IMAGE_OPTIONAL_HEADER32": "Unknown",
+        "IMAGE_DATA_DIRECTORY": "Unknown",
+        "IMAGE_EXPORT_DIRECTORY": "Unknown",
+        "IMAGE_SECTION_HEADER": "Unknown",
+        "MEMORY_BASIC_INFORMATION": "Unknown",
+        "OBJECT_ATTRIBUTES": "Unknown",
+        "CLIENT_ID": "Unknown",
+        "_LIST_ENTRY": "Unknown",
+        "_PEB_LDR_DATA": "Unknown",
+        "_LDR_DATA_TABLE_ENTRY": "Unknown",
+        "RTL_USER_PROCESS_PARAMETERS": "Unknown",
+        "PEB": "Unknown",
+        "KBDLLHOOKSTRUCT": "Unknown"
+      }
+    },
+    "nvyrvkdjwasdx": {
+      "roles": [],
+      "classes": {
+        "vqVDuoydFHCOixENVzBmMDz": "Unknown"
+      }
+    },
+    "nyoctgklpcacpttagstvy": {
+      "roles": [
+        "active_window_monitor",
+        "anti_debug",
+        "process_injection"
+      ],
+      "classes": {
+        "x7X3Xd3Nbieb4hnxJvC8Q68": "NativeMethods"
+      }
+    },
+    "nyvzquosyrjqrjydxonuia": {
+      "roles": [
+        "active_window_monitor",
+        "assembly_resolver",
+        "critical_process",
+        "deferred_assembly_loader",
+        "idle_monitor",
+        "process_dump"
+      ],
+      "classes": {
+        "2b2ZixbhvSvL9ZtiJ8cbzmY": "Unknown",
+        "IgWnxzvQkq": "Unknown",
+        "L7LO9gxA6ef": "Unknown",
+        "VS_INPUT": "Unknown",
+        "VS_OUTPUT": "Unknown",
+        "PS_INPUT": "Unknown",
+        "VertexPositionColor": "Unknown",
+        "VertexPosition3DColor": "Unknown",
+        "MonitorDrawingData": "Unknown",
+        "NativeMethods": "Unknown",
+        "Cube3DData": "Unknown",
+        "ICustomShader": "Unknown",
+        "ICustomRenderable": "Unknown",
+        "kF4iqz9qqhc8t95EKdDziN72jI7": "Unknown",
+        "pEdGEk24PvF9Hi": "DeferredAssemblyLoader",
+        "PendingCallback": "DeferredAssemblyLoader",
+        "qGL2ccWyKZEHFcm3kLolrCQ": "Unknown",
+        "u581TSAKAoPcfRd9lOIUChl2": "Unknown",
+        "y3UnHom0LtX8hLl": "NativeMethods",
+        "LASTINPUTINFO": "NativeMethods",
+        "INPUT": "NativeMethods",
+        "InputUnion": "NativeMethods",
+        "MOUSEINPUT": "NativeMethods",
+        "KEYBDINPUT": "NativeMethods",
+        "HARDWAREINPUT": "NativeMethods",
+        "MibTcprowOwnerPid": "NativeMethods",
+        "MibTcptableOwnerPid": "NativeMethods",
+        "TcpTableClass": "NativeMethods",
+        "MiniDumpType": "NativeMethods"
+      }
+    },
+    "ooyjobbkdolradeynzyqpwxkn": {
+      "roles": [
+        "startup_manager"
+      ],
+      "classes": {
+        "0FpvQmEmqaQCyB3bkqiMB9cmicCl": "Unknown",
+        "QJ1Rk4RYdyDWn1Xxeqo": "Unknown",
+        "TuuUWna59s5N2YVClGjxNPHE4G": "Unknown",
+        "cgqhdFzZPexQhquyshmLMXsM": "StartupManager",
+        "u3qBWnJmSpUsWevS645R2JcabT": "Unknown"
+      }
+    },
+    "plyajoswzuhtvzhvfto": {
+      "roles": [],
+      "classes": {
+        "fvxwX9yFaYw2G6a8n": "Unknown",
+        "pfBjPdbubAJ2vGm60vRMd7YwpEF": "Unknown",
+        "zYj7z4UxlAh52": "Unknown"
+      }
+    },
+    "pvxcnfwckbkmmmkndlzu": {
+      "roles": [
+        "bcrypt_crypto"
+      ],
+      "classes": {
+        "I5PL7KtZFGTOpvwVRK2nH2vn": "Unknown",
+        "record_header_field": "Unknown",
+        "sqlite_master_entry": "Unknown",
+        "table_entry": "Unknown",
+        "Kywq7ERTKW7bEUCI": "AesGcmDecryptor",
+        "RKWbIxvRPCiUgaldn2Tpm": "NativeMethods",
+        "BCRYPT_PSS_PADDING_INFO": "NativeMethods",
+        "BCRYPT_AUTHENTICATED_CIPHER_MODE_INFO": "NativeMethods",
+        "BCRYPT_KEY_LENGTHS_STRUCT": "NativeMethods",
+        "BCRYPT_OAEP_PADDING_INFO": "NativeMethods"
+      }
+    },
+    "qrjdxizlngoizjdhigxuaxsua": {
+      "roles": [
+        "opera_patcher",
+        "privilege_escalation",
+        "process_injection",
+        "system_info",
+        "webcam_capture"
+      ],
+      "classes": {
+        "0e5lbdQzblFjqDeiDVqVbJTWuNDg": "Unknown",
+        "C84BuhTCFC83hP4U": "Unknown",
+        "E5YmltKAfGrJeRWxR8IIAe6E45Jll": "NativeMethods",
+        "TokPriv1Luid": "NativeMethods",
+        "HUtEqZaMs1ES": "Unknown",
+        "PspzzHrHyf": "Unknown",
+        "PwS9Z36cSrEMsfGKm": "OperaPatcher",
+        "POINT": "OperaPatcher",
+        "CURSORINFO": "OperaPatcher",
+        "DeviceContext": "OperaPatcher",
+        "UW1sIS6hSuyY2k3xosxOpyW9EF0o": "SystemInfoHelper",
+        "XARMFRSUewcY1": "NativeMethods",
+        "ProcessInformation": "NativeMethods",
+        "StartupInformation": "NativeMethods",
+        "M128A": "NativeMethods",
+        "XSAVE_FORMAT64": "NativeMethods",
+        "CONTEXT64": "NativeMethods",
+        "ZxZos15lpy4BcfnXY": "OperaPatcher",
+        "c4KaU2kR9BUOk2": "Unknown",
+        "Rect": "Unknown",
+        "rMHj0od0yS": "Unknown",
+        "vQGOMjEooX53nkucyKE": "Unknown",
+        "yDDaU82zv36uVKGy0cF": "Unknown",
+        "yf5PXv3yex2OgeATCt45qb8eBME": "WebcamCapture"
+      }
+    },
+    "qskpywwztcyjtfjo": {
+      "roles": [],
+      "classes": {
+        "fJtVXExB51nCMykdSjQgpJ7409Z2E": "Unknown"
+      }
+    },
+    "rjotyecahsofwinlrieji": {
+      "roles": [
+        "chromium_dpapi_decryptor",
+        "firefox_credential_reader",
+        "nss_decryptor"
+      ],
+      "classes": {
+        "H8eZffrTfsi7GN33S2QN6fxWwEH2": "Unknown",
+        "T21IrjzZSO8RDLb9et6BL6FLyl": "Unknown",
+        "TO0SLLmMoP2NyMV1VrUshr8tbzZ": "Unknown",
+        "cTFllqAFhI": "ChromiumDecryptor",
+        "dgiNOP9jFxFZMEG": "FirefoxCredentialReader",
+        "FFLogins": "FirefoxCredentialReader",
+        "DismissedBreachAlertsByLoginGuid": "FirefoxCredentialReader",
+        "Login": "FirefoxCredentialReader",
+        "hZsJYgkYyHFYj": "Unknown",
+        "nraoGHg1NSoBOR": "FirefoxDecryptor",
+        "TSECItem": "FirefoxDecryptor",
+        "v2Kar5FlgIwuY6qyUep1N": "Unknown"
+      }
+    },
+    "rnnisybqzkiiwsthvgvyqtbcudu": {
+      "roles": [],
+      "classes": {
+        "vW6MDIrJgF0FNA2GBnWn": "Unknown",
+        "wjH3c7fTgZH36VJKShfDXS": "Unknown"
+      }
+    },
+    "usleyspamohrmttgkuhthymiaoatp": {
+      "roles": [],
+      "classes": {
+        "7lpEP3gx2juLqQLmbiWc0DijTJj": "Unknown",
+        "ObPeOFKVBhEzoOR": "Unknown",
+        "MappedFrame": "Unknown",
+        "cZ5XmoHnJ3K4wpaVT0x": "Unknown",
+        "p0HxjXGuMV0UKj": "Unknown",
+        "uRdS2RRctWY9Y": "Unknown"
+      }
+    },
+    "wibmfaqvvbsngvogkfeetrinzm": {
+      "roles": [
+        "opera_patcher",
+        "privilege_escalation",
+        "process_injection"
+      ],
+      "classes": {
+        "Zkijqbq1ZDl8Umj": "NativeMethods",
+        "LUID": "NativeMethods",
+        "TOKEN_PRIVILEGES": "NativeMethods"
+      }
+    },
+    "xcmobajxobfebgsqbrpftpzbwmcc": {
+      "roles": [
+        "deferred_assembly_loader",
+        "opera_patcher",
+        "remote_shell"
+      ],
+      "classes": {
+        "1Nv9J95jJjGyDFV5B0ZZ70": "Unknown",
+        "1gKwKrvaS8W2Ms2Kx2h6XLNJbsj": "Unknown",
+        "4WzVYWt2lQH9wJFucGrh3osv6F32Z": "Unknown",
+        "4rbGk1DRFQnDZS": "Unknown",
+        "6esDnggERoDgS": "OperaPatcher",
+        "CURSORINFO_NATIVE": "OperaPatcher",
+        "9FCxai05m7xeGWEkphz5bLp0Z": "Unknown",
+        "A0j9YXq8UrQbZu3D9hsS9kjNNcWIa": "Unknown",
+        "C0P4pUxY7nCgZX84xueE5cGi": "Unknown",
+        "GaHpzDbaGjcbBdXh5tMscwUfuCW7": "NativeMethods",
+        "ExitWindows": "NativeMethods",
+        "LUID": "NativeMethods",
+        "LUID_AND_ATTRIBUTES": "NativeMethods",
+        "TOKEN_PRIVILEGES": "NativeMethods",
+        "GbhcNw7dFu": "Unknown",
+        "HHZ8CTHrqK006": "Unknown",
+        "Hjjl7Fmfgzv2jRlSGV": "Unknown",
+        "KGJI4GnYig27wOgsXcd6": "Unknown",
+        "KNFVJmTVvrzLqNEJmlIje": "Unknown",
+        "KVuuCHzFHC": "Unknown",
+        "LObq7Q9lUvh1kAzh3XxZD": "Unknown",
+        "LsgfkyK0tz": "Unknown",
+        "MGjwxrjlW9ZRWw6BiiGm8KHFBO": "Unknown",
+        "Ss0FtkI009bDcCD": "Unknown",
+        "X9R6kUAu4wrJsVbg9RA": "Unknown",
+        "ajX7pNLqQPIvLDCvgJVRZI8F1UF2l": "Unknown",
+        "eaxEGxDGYD6wg4": "Unknown",
+        "ee3zUJMsS3erAdqlc": "DeferredAssemblyLoader",
+        "fJT1uBP58o5": "Unknown",
+        "gzodkNQZbuCwLvU29qFV7BE": "Unknown",
+        "iaPtCsb833VBMSr": "Unknown",
+        "if5GJloLfoL15XFjyiRU": "Unknown",
+        "l3pRgrwMjsnh7eIKv2O6": "Unknown",
+        "pGyoiCfQsr1Sxs2J3aghNEDQcmvM0": "Unknown",
+        "qruEd2rLOYNqK8jbD": "RemoteShell",
+        "thY7EaeYHzLwxbEH": "Unknown",
+        "uRs7xuRFRASbzcQR": "Unknown",
+        "unHySMwyqEmFcyUleQNLOY08xDH": "Unknown",
+        "wuZQS0fYvXxN": "Unknown",
+        "zi6E7tx0f4ok2XbYgxXiq": "Unknown"
+      }
+    },
+    "xeupqemuwphzeuoubzsupqisua": {
+      "roles": [],
+      "classes": {
+        "6vS4bMa5c1kx5B": "Unknown",
+        "ARlDVMX7fZZlz61zay": "Unknown",
+        "BtjNOVOfzk0F5B": "Unknown",
+        "EYfW58rFtLMn": "Unknown",
+        "gWNhjzjy3XC5": "Unknown",
+        "lfTpSMvwsPXstiRWwta": "Unknown"
+      }
+    },
+    "xvyfahwczorgkmoaccfvg": {
+      "roles": [],
+      "classes": {
+        "15R32w0PmMPQEvSRsOj": "Unknown",
+        "jIFdRZFt9ufopvk3zpe": "Unknown"
+      }
+    },
+    "yfaxqhzkkzkymkol": {
+      "roles": [],
+      "classes": {
+        "LPescXoo4Zo4ap": "Unknown"
+      }
+    }
+  },
+  "class_map": {
+    "Client_ProcessedByFody": {
+      "obfuscated": "Client_ProcessedByFody",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": null,
+      "file": "Client_ProcessedByFody.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020001D1",
+        "0x040009A0",
+        "0x040009A1"
+      ]
+    },
+    "AssemblyLoader": {
+      "obfuscated": "AssemblyLoader",
+      "likely_name": "CosturaAssemblyLoader",
+      "confidence": "high",
+      "evidence": [
+        "String/API pattern: costura_loader"
+      ],
+      "namespace": "Costura",
+      "file": "Costura/AssemblyLoader.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020001CF",
+        "0x06000813",
+        "0x06000814"
+      ]
+    },
+    "ControlStatusInfo": {
+      "obfuscated": "ControlStatusInfo",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "DarkModeForms",
+      "file": "DarkModeForms/ControlStatusInfo.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000013",
+        "0x17000023",
+        "0x17000024"
+      ]
+    },
+    "ControlStatusStorage": {
+      "obfuscated": "ControlStatusStorage",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "DarkModeForms",
+      "file": "DarkModeForms/ControlStatusStorage.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000012",
+        "0x06000091",
+        "0x06000092"
+      ]
+    },
+    "CustomColorTable": {
+      "obfuscated": "CustomColorTable",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "DarkModeForms",
+      "file": "DarkModeForms/CustomColorTable.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000011",
+        "0x1700001F",
+        "0x0600008D"
+      ]
+    },
+    "DarkModeCS": {
+      "obfuscated": "DarkModeCS",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "DarkModeForms",
+      "file": "DarkModeForms/DarkModeCS.cs",
+      "pinvoke_count": 1,
+      "tokens": [
+        "0x02000004",
+        "0x06000011",
+        "0x06000012"
+      ]
+    },
+    "DWMCOLORIZATIONcolors": {
+      "obfuscated": "DWMCOLORIZATIONcolors",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "DarkModeForms",
+      "file": "DarkModeForms/DarkModeCS.cs",
+      "pinvoke_count": 1,
+      "tokens": [
+        "0x02000004",
+        "0x06000011",
+        "0x06000012"
+      ]
+    },
+    "DWMWINDOWATTRIBUTE": {
+      "obfuscated": "DWMWINDOWATTRIBUTE",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "DarkModeForms",
+      "file": "DarkModeForms/DarkModeCS.cs",
+      "pinvoke_count": 1,
+      "tokens": [
+        "0x02000004",
+        "0x06000011",
+        "0x06000012"
+      ]
+    },
+    "DWM_WINDOW_CORNER_PREFERENCE": {
+      "obfuscated": "DWM_WINDOW_CORNER_PREFERENCE",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "DarkModeForms",
+      "file": "DarkModeForms/DarkModeCS.cs",
+      "pinvoke_count": 1,
+      "tokens": [
+        "0x02000004",
+        "0x06000011",
+        "0x06000012"
+      ]
+    },
+    "RECT": {
+      "obfuscated": "RECT",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "15 P/Invoke mappings: GetDC, SetThreadDesktop, OpenDesktop, CreateDesktop, GetDesktopWindow..."
+      ],
+      "namespace": "iozxjxopkihzvsqatdaxpppvwoj",
+      "file": "iozxjxopkihzvsqatdaxpppvwoj/TKBx0QoMgk61m2l.cs",
+      "pinvoke_count": 15,
+      "tokens": [
+        "0x02000124",
+        "0x060005ED",
+        "0x060005EE"
+      ]
+    },
+    "DisplayMode": {
+      "obfuscated": "DisplayMode",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "DarkModeForms",
+      "file": "DarkModeForms/DarkModeCS.cs",
+      "pinvoke_count": 1,
+      "tokens": [
+        "0x02000004",
+        "0x06000011",
+        "0x06000012"
+      ]
+    },
+    "MyRenderer": {
+      "obfuscated": "MyRenderer",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "DarkModeForms",
+      "file": "DarkModeForms/MyRenderer.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000010",
+        "0x1700001D",
+        "0x1700001E"
+      ]
+    },
+    "OSThemeColors": {
+      "obfuscated": "OSThemeColors",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "DarkModeForms",
+      "file": "DarkModeForms/OSThemeColors.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200000F",
+        "0x17000007",
+        "0x17000008"
+      ]
+    },
+    "FileHandlerXeno": {
+      "obfuscated": "FileHandlerXeno",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": null,
+      "file": "FileHandlerXeno.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000002",
+        "0x06000002",
+        "0x06000003"
+      ]
+    },
+    "GetFileHandlePathThreadParamStruct": {
+      "obfuscated": "GetFileHandlePathThreadParamStruct",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": null,
+      "file": "FileHandlerXeno.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000002",
+        "0x06000002",
+        "0x06000003"
+      ]
+    },
+    "HVXLu3opAZVjRpshGkoazFs4148e": {
+      "obfuscated": "HVXLu3opAZVjRpshGkoazFs4148e",
+      "likely_name": "ChromiumCredentialReader",
+      "confidence": "high",
+      "evidence": [
+        "String/API pattern: chromium_credential_reader"
+      ],
+      "namespace": "aaxcwmwkxnnqc",
+      "file": "aaxcwmwkxnnqc/HVXLu3opAZVjRpshGkoazFs4148e.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000077",
+        "0x0600024D",
+        "0x0600024E"
+      ]
+    },
+    "TyHvep1renAy4qg": {
+      "obfuscated": "TyHvep1renAy4qg",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [
+        "Using Pulsar.Common.Messages \u2192 c2_messaging"
+      ],
+      "namespace": "alhmksftjvslnoyhqb",
+      "file": "alhmksftjvslnoyhqb/TyHvep1renAy4qg.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200004E",
+        "0x060001E1",
+        "0x060001E2"
+      ]
+    },
+    "utilisateur": {
+      "obfuscated": "utilisateur",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [
+        "Using Pulsar.Common.Messages \u2192 c2_messaging"
+      ],
+      "namespace": "alhmksftjvslnoyhqb",
+      "file": "alhmksftjvslnoyhqb/TyHvep1renAy4qg.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200004E",
+        "0x060001E1",
+        "0x060001E2"
+      ]
+    },
+    "that": {
+      "obfuscated": "that",
+      "likely_name": "WebcamCapture",
+      "confidence": "medium",
+      "evidence": [
+        "String/API pattern: webcam_capture"
+      ],
+      "namespace": "dipmbmguusfjmoaeqvydgkgdyephe",
+      "file": "dipmbmguusfjmoaeqvydgkgdyephe/wA9bfdnXgCaOoM2.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200004D",
+        "0x060001D6",
+        "0x060001D7"
+      ]
+    },
+    "6p3gNcxQfZVEWTDJtT1": {
+      "obfuscated": "6p3gNcxQfZVEWTDJtT1",
+      "likely_name": "SecureTransportClient",
+      "confidence": "medium",
+      "evidence": [
+        "String/API pattern: tcp_client",
+        "String/API pattern: secure_transport",
+        "Using Pulsar.Common.Messages.Other \u2192 deferred_assembly",
+        "Using Pulsar.Common.Networking \u2192 networking"
+      ],
+      "namespace": "axyfwctblegjzeztuustfqd",
+      "file": "axyfwctblegjzeztuustfqd/6p3gNcxQfZVEWTDJtT1.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200008C",
+        "0x14000001",
+        "0x060002A9"
+      ]
+    },
+    "I5EjajeNQ2cgV6O44upPUlBtJ": {
+      "obfuscated": "I5EjajeNQ2cgV6O44upPUlBtJ",
+      "likely_name": "DeferredAssemblyLoader",
+      "confidence": "medium",
+      "evidence": [
+        "String/API pattern: deferred_assembly_loader",
+        "Using Pulsar.Common.Messages \u2192 c2_messaging",
+        "Using Pulsar.Common.Messages.Other \u2192 deferred_assembly"
+      ],
+      "namespace": "axyfwctblegjzeztuustfqd",
+      "file": "axyfwctblegjzeztuustfqd/I5EjajeNQ2cgV6O44upPUlBtJ.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000093",
+        "0x060002DA",
+        "0x060002DB"
+      ]
+    },
+    "XfvRhfc8YGggaI": {
+      "obfuscated": "XfvRhfc8YGggaI",
+      "likely_name": "Settings",
+      "confidence": "high",
+      "evidence": [
+        "Aes256 constructor call + 13 static encrypted fields"
+      ],
+      "namespace": "bjaeujhapczempm",
+      "file": "bjaeujhapczempm/XfvRhfc8YGggaI.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000186",
+        "0x0600073A",
+        "0x170000BA"
+      ]
+    },
+    "iCSrVWB0wFxJil64j52Y23jR": {
+      "obfuscated": "iCSrVWB0wFxJil64j52Y23jR",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "9 P/Invoke mappings: RtlInitUnicodeString, RtlUnicodeStringToAnsiString, LdrGetDllHandleEx, GetModuleHandleA, LdrGetProcedureAddressForCaller..."
+      ],
+      "namespace": "bwrfpsflwqabsdycodhzf",
+      "file": "bwrfpsflwqabsdycodhzf/iCSrVWB0wFxJil64j52Y23jR.cs",
+      "pinvoke_count": 9,
+      "tokens": [
+        "0x0200018A",
+        "0x06000750",
+        "0x06000751"
+      ]
+    },
+    "Generic": {
+      "obfuscated": "Generic",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "9 P/Invoke mappings: RtlInitUnicodeString, RtlUnicodeStringToAnsiString, LdrGetDllHandleEx, GetModuleHandleA, LdrGetProcedureAddressForCaller..."
+      ],
+      "namespace": "bwrfpsflwqabsdycodhzf",
+      "file": "bwrfpsflwqabsdycodhzf/iCSrVWB0wFxJil64j52Y23jR.cs",
+      "pinvoke_count": 9,
+      "tokens": [
+        "0x0200018A",
+        "0x06000750",
+        "0x06000751"
+      ]
+    },
+    "21WxeM64lLAtlYaBXsyDWAyEbO": {
+      "obfuscated": "21WxeM64lLAtlYaBXsyDWAyEbO",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "bxzfalosxplnm",
+      "file": "bxzfalosxplnm/21WxeM64lLAtlYaBXsyDWAyEbO.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020000E0",
+        "0x060004A2",
+        "0x060004A3"
+      ]
+    },
+    "4dD4fAQGLVfBs3ZEQosHPj0": {
+      "obfuscated": "4dD4fAQGLVfBs3ZEQosHPj0",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "bxzfalosxplnm",
+      "file": "bxzfalosxplnm/4dD4fAQGLVfBs3ZEQosHPj0.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020000E2",
+        "0x060004B5",
+        "0x060004B6"
+      ]
+    },
+    "4vaOfADbmLkArIz7kDi": {
+      "obfuscated": "4vaOfADbmLkArIz7kDi",
+      "likely_name": "DeviceIdHelper",
+      "confidence": "medium",
+      "evidence": [
+        "String/API pattern: hardware_info",
+        "Using Pulsar.Common.Cryptography \u2192 crypto"
+      ],
+      "namespace": "bxzfalosxplnm",
+      "file": "bxzfalosxplnm/4vaOfADbmLkArIz7kDi.cs",
+      "pinvoke_count": 1,
+      "tokens": [
+        "0x020000E1",
+        "0x1700008E",
+        "0x1700008F"
+      ]
+    },
+    "XmLDMCuYxMHSW4HuI0A0DfUZ": {
+      "obfuscated": "XmLDMCuYxMHSW4HuI0A0DfUZ",
+      "likely_name": "DefenseEvasion",
+      "confidence": "medium",
+      "evidence": [
+        "String/API pattern: defense_evasion"
+      ],
+      "namespace": "coafmqnzpyvnmxfrrfqccyrjx",
+      "file": "coafmqnzpyvnmxfrrfqccyrjx/XmLDMCuYxMHSW4HuI0A0DfUZ.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000109",
+        "0x06000561",
+        "0x06000562"
+      ]
+    },
+    "WmqnA2l681BuAEtKC3FtoQgPKyBRY": {
+      "obfuscated": "WmqnA2l681BuAEtKC3FtoQgPKyBRY",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "dhhhhsfijyqzsnxzffrhhpfmctd",
+      "file": "dhhhhsfijyqzsnxzffrhhpfmctd/WmqnA2l681BuAEtKC3FtoQgPKyBRY.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020000D6",
+        "0x0600045B",
+        "0x1700007D"
+      ]
+    },
+    "gINcwKhHRk6iwJnTv2lf1wAfcwL5l": {
+      "obfuscated": "gINcwKhHRk6iwJnTv2lf1wAfcwL5l",
+      "likely_name": "KeyloggerCore",
+      "confidence": "medium",
+      "evidence": [
+        "String/API pattern: keylogger"
+      ],
+      "namespace": "dhhhhsfijyqzsnxzffrhhpfmctd",
+      "file": "dhhhhsfijyqzsnxzffrhhpfmctd/gINcwKhHRk6iwJnTv2lf1wAfcwL5l.cs",
+      "pinvoke_count": 1,
+      "tokens": [
+        "0x020000D5",
+        "0x1700007C",
+        "0x06000448"
+      ]
+    },
+    "RGkgnP4B7jel640Kg": {
+      "obfuscated": "RGkgnP4B7jel640Kg",
+      "likely_name": "ActiveWindowMonitor",
+      "confidence": "medium",
+      "evidence": [
+        "String/API pattern: active_window_monitor",
+        "Using Pulsar.Common.Messages \u2192 c2_messaging"
+      ],
+      "namespace": "dipmbmguusfjmoaeqvydgkgdyephe",
+      "file": "dipmbmguusfjmoaeqvydgkgdyephe/RGkgnP4B7jel640Kg.cs",
+      "pinvoke_count": 4,
+      "tokens": [
+        "0x02000047",
+        "0x060001B1",
+        "0x060001B2"
+      ]
+    },
+    "TwN6jYiVuPjn9": {
+      "obfuscated": "TwN6jYiVuPjn9",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "dipmbmguusfjmoaeqvydgkgdyephe",
+      "file": "dipmbmguusfjmoaeqvydgkgdyephe/TwN6jYiVuPjn9.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200004C",
+        "0x17000052",
+        "0x17000053"
+      ]
+    },
+    "WalddVelQIshHagR": {
+      "obfuscated": "WalddVelQIshHagR",
+      "likely_name": "ClipboardMonitor",
+      "confidence": "high",
+      "evidence": [
+        "String/API pattern: clipboard_monitor",
+        "Using Pulsar.Common.Messages \u2192 c2_messaging"
+      ],
+      "namespace": "dipmbmguusfjmoaeqvydgkgdyephe",
+      "file": "dipmbmguusfjmoaeqvydgkgdyephe/WalddVelQIshHagR.cs",
+      "pinvoke_count": 2,
+      "tokens": [
+        "0x0200004A",
+        "0x060001C6",
+        "0x060001C7"
+      ]
+    },
+    "u90yjmSRc5": {
+      "obfuscated": "u90yjmSRc5",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [
+        "Using Pulsar.Common.Messages \u2192 c2_messaging"
+      ],
+      "namespace": "dipmbmguusfjmoaeqvydgkgdyephe",
+      "file": "dipmbmguusfjmoaeqvydgkgdyephe/u90yjmSRc5.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000049",
+        "0x060001BE",
+        "0x060001BF"
+      ]
+    },
+    "wA9bfdnXgCaOoM2": {
+      "obfuscated": "wA9bfdnXgCaOoM2",
+      "likely_name": "WebcamCapture",
+      "confidence": "medium",
+      "evidence": [
+        "String/API pattern: webcam_capture"
+      ],
+      "namespace": "dipmbmguusfjmoaeqvydgkgdyephe",
+      "file": "dipmbmguusfjmoaeqvydgkgdyephe/wA9bfdnXgCaOoM2.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200004D",
+        "0x060001D6",
+        "0x060001D7"
+      ]
+    },
+    "bxWPg048ST0": {
+      "obfuscated": "bxWPg048ST0",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "22 P/Invoke mappings: OpenProcess, CloseHandle, DuplicateHandle, GetCurrentProcess, NtQueryInformationProcess..."
+      ],
+      "namespace": "dnqdegmujqcozpmiozccytpxknvo",
+      "file": "dnqdegmujqcozpmiozccytpxknvo/bxWPg048ST0.cs",
+      "pinvoke_count": 22,
+      "tokens": [
+        "0x02000076",
+        "0x06000236",
+        "0x06000237"
+      ]
+    },
+    "urzitert68ir": {
+      "obfuscated": "urzitert68ir",
+      "likely_name": "AntiDebug",
+      "confidence": "medium",
+      "evidence": [
+        "String/API pattern: anti_debug"
+      ],
+      "namespace": "dnqdegmujqcozpmiozccytpxknvo",
+      "file": "dnqdegmujqcozpmiozccytpxknvo/urzitert68ir.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000062",
+        "0x040001DD",
+        "0x040001DE"
+      ]
+    },
+    "PROCESSINFOCLASS": {
+      "obfuscated": "PROCESSINFOCLASS",
+      "likely_name": "AntiDebug",
+      "confidence": "medium",
+      "evidence": [
+        "String/API pattern: anti_debug"
+      ],
+      "namespace": "dnqdegmujqcozpmiozccytpxknvo",
+      "file": "dnqdegmujqcozpmiozccytpxknvo/urzitert68ir.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000062",
+        "0x040001DD",
+        "0x040001DE"
+      ]
+    },
+    "SYSTEM_INFORMATION_CLASS": {
+      "obfuscated": "SYSTEM_INFORMATION_CLASS",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "15 P/Invoke mappings: NtQuerySystemInformation, OpenProcess, CloseHandle, DuplicateHandle, GetCurrentProcess..."
+      ],
+      "namespace": "iozxjxopkihzvsqatdaxpppvwoj",
+      "file": "iozxjxopkihzvsqatdaxpppvwoj/KpvvUZ0FaNUE8aMgmtbkKHtpe.cs",
+      "pinvoke_count": 15,
+      "tokens": [
+        "0x0200011B",
+        "0x060005D1",
+        "0x060005D2"
+      ]
+    },
+    "THREADINFOCLASS": {
+      "obfuscated": "THREADINFOCLASS",
+      "likely_name": "AntiDebug",
+      "confidence": "medium",
+      "evidence": [
+        "String/API pattern: anti_debug"
+      ],
+      "namespace": "dnqdegmujqcozpmiozccytpxknvo",
+      "file": "dnqdegmujqcozpmiozccytpxknvo/urzitert68ir.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000062",
+        "0x040001DD",
+        "0x040001DE"
+      ]
+    },
+    "PROCESS_BASIC_INFORMATION": {
+      "obfuscated": "PROCESS_BASIC_INFORMATION",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "mujubbzyaqrl",
+      "file": "mujubbzyaqrl/h1R1J9wxLfWWcC.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200019D",
+        "0x0200019E",
+        "0x04000875"
+      ]
+    },
+    "FileType": {
+      "obfuscated": "FileType",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "15 P/Invoke mappings: NtQuerySystemInformation, OpenProcess, CloseHandle, DuplicateHandle, GetCurrentProcess..."
+      ],
+      "namespace": "iozxjxopkihzvsqatdaxpppvwoj",
+      "file": "iozxjxopkihzvsqatdaxpppvwoj/KpvvUZ0FaNUE8aMgmtbkKHtpe.cs",
+      "pinvoke_count": 15,
+      "tokens": [
+        "0x0200011B",
+        "0x060005D1",
+        "0x060005D2"
+      ]
+    },
+    "SYSTEM_HANDLE_TABLE_ENTRY_INFO_EX": {
+      "obfuscated": "SYSTEM_HANDLE_TABLE_ENTRY_INFO_EX",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "15 P/Invoke mappings: NtQuerySystemInformation, OpenProcess, CloseHandle, DuplicateHandle, GetCurrentProcess..."
+      ],
+      "namespace": "iozxjxopkihzvsqatdaxpppvwoj",
+      "file": "iozxjxopkihzvsqatdaxpppvwoj/KpvvUZ0FaNUE8aMgmtbkKHtpe.cs",
+      "pinvoke_count": 15,
+      "tokens": [
+        "0x0200011B",
+        "0x060005D1",
+        "0x060005D2"
+      ]
+    },
+    "FILETIME": {
+      "obfuscated": "FILETIME",
+      "likely_name": "AntiDebug",
+      "confidence": "medium",
+      "evidence": [
+        "String/API pattern: anti_debug"
+      ],
+      "namespace": "dnqdegmujqcozpmiozccytpxknvo",
+      "file": "dnqdegmujqcozpmiozccytpxknvo/urzitert68ir.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000062",
+        "0x040001DD",
+        "0x040001DE"
+      ]
+    },
+    "RM_UNIQUE_PROCESS": {
+      "obfuscated": "RM_UNIQUE_PROCESS",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "15 P/Invoke mappings: NtQuerySystemInformation, OpenProcess, CloseHandle, DuplicateHandle, GetCurrentProcess..."
+      ],
+      "namespace": "iozxjxopkihzvsqatdaxpppvwoj",
+      "file": "iozxjxopkihzvsqatdaxpppvwoj/KpvvUZ0FaNUE8aMgmtbkKHtpe.cs",
+      "pinvoke_count": 15,
+      "tokens": [
+        "0x0200011B",
+        "0x060005D1",
+        "0x060005D2"
+      ]
+    },
+    "RM_APP_TYPE": {
+      "obfuscated": "RM_APP_TYPE",
+      "likely_name": "AntiDebug",
+      "confidence": "medium",
+      "evidence": [
+        "String/API pattern: anti_debug"
+      ],
+      "namespace": "dnqdegmujqcozpmiozccytpxknvo",
+      "file": "dnqdegmujqcozpmiozccytpxknvo/urzitert68ir.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000062",
+        "0x040001DD",
+        "0x040001DE"
+      ]
+    },
+    "RM_REBOOT_REASON": {
+      "obfuscated": "RM_REBOOT_REASON",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "15 P/Invoke mappings: NtQuerySystemInformation, OpenProcess, CloseHandle, DuplicateHandle, GetCurrentProcess..."
+      ],
+      "namespace": "iozxjxopkihzvsqatdaxpppvwoj",
+      "file": "iozxjxopkihzvsqatdaxpppvwoj/KpvvUZ0FaNUE8aMgmtbkKHtpe.cs",
+      "pinvoke_count": 15,
+      "tokens": [
+        "0x0200011B",
+        "0x060005D1",
+        "0x060005D2"
+      ]
+    },
+    "RM_PROCESS_INFO": {
+      "obfuscated": "RM_PROCESS_INFO",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "15 P/Invoke mappings: NtQuerySystemInformation, OpenProcess, CloseHandle, DuplicateHandle, GetCurrentProcess..."
+      ],
+      "namespace": "iozxjxopkihzvsqatdaxpppvwoj",
+      "file": "iozxjxopkihzvsqatdaxpppvwoj/KpvvUZ0FaNUE8aMgmtbkKHtpe.cs",
+      "pinvoke_count": 15,
+      "tokens": [
+        "0x0200011B",
+        "0x060005D1",
+        "0x060005D2"
+      ]
+    },
+    "CRED_TYPE": {
+      "obfuscated": "CRED_TYPE",
+      "likely_name": "AntiDebug",
+      "confidence": "medium",
+      "evidence": [
+        "String/API pattern: anti_debug"
+      ],
+      "namespace": "dnqdegmujqcozpmiozccytpxknvo",
+      "file": "dnqdegmujqcozpmiozccytpxknvo/urzitert68ir.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000062",
+        "0x040001DD",
+        "0x040001DE"
+      ]
+    },
+    "SECURITY_IMPERSONATION_LEVEL": {
+      "obfuscated": "SECURITY_IMPERSONATION_LEVEL",
+      "likely_name": "AntiDebug",
+      "confidence": "medium",
+      "evidence": [
+        "String/API pattern: anti_debug"
+      ],
+      "namespace": "dnqdegmujqcozpmiozccytpxknvo",
+      "file": "dnqdegmujqcozpmiozccytpxknvo/urzitert68ir.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000062",
+        "0x040001DD",
+        "0x040001DE"
+      ]
+    },
+    "TOKEN_TYPE": {
+      "obfuscated": "TOKEN_TYPE",
+      "likely_name": "AntiDebug",
+      "confidence": "medium",
+      "evidence": [
+        "String/API pattern: anti_debug"
+      ],
+      "namespace": "dnqdegmujqcozpmiozccytpxknvo",
+      "file": "dnqdegmujqcozpmiozccytpxknvo/urzitert68ir.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000062",
+        "0x040001DD",
+        "0x040001DE"
+      ]
+    },
+    "PROCESS_INFORMATION": {
+      "obfuscated": "PROCESS_INFORMATION",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "iozxjxopkihzvsqatdaxpppvwoj",
+      "file": "iozxjxopkihzvsqatdaxpppvwoj/ym44TS8sL6xkLZjAR.cs",
+      "pinvoke_count": 3,
+      "tokens": [
+        "0x02000130",
+        "0x06000641",
+        "0x06000642"
+      ]
+    },
+    "DESKTOP_ACCESS": {
+      "obfuscated": "DESKTOP_ACCESS",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "15 P/Invoke mappings: GetDC, SetThreadDesktop, OpenDesktop, CreateDesktop, GetDesktopWindow..."
+      ],
+      "namespace": "iozxjxopkihzvsqatdaxpppvwoj",
+      "file": "iozxjxopkihzvsqatdaxpppvwoj/TKBx0QoMgk61m2l.cs",
+      "pinvoke_count": 15,
+      "tokens": [
+        "0x02000124",
+        "0x060005ED",
+        "0x060005EE"
+      ]
+    },
+    "IO_STATUS_BLOCK": {
+      "obfuscated": "IO_STATUS_BLOCK",
+      "likely_name": "AntiDebug",
+      "confidence": "medium",
+      "evidence": [
+        "String/API pattern: anti_debug"
+      ],
+      "namespace": "dnqdegmujqcozpmiozccytpxknvo",
+      "file": "dnqdegmujqcozpmiozccytpxknvo/urzitert68ir.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000062",
+        "0x040001DD",
+        "0x040001DE"
+      ]
+    },
+    "FILE_NAME_INFORMATION": {
+      "obfuscated": "FILE_NAME_INFORMATION",
+      "likely_name": "AntiDebug",
+      "confidence": "medium",
+      "evidence": [
+        "String/API pattern: anti_debug"
+      ],
+      "namespace": "dnqdegmujqcozpmiozccytpxknvo",
+      "file": "dnqdegmujqcozpmiozccytpxknvo/urzitert68ir.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000062",
+        "0x040001DD",
+        "0x040001DE"
+      ]
+    },
+    "SYSTEM_HANDLE_INFORMATION_EX": {
+      "obfuscated": "SYSTEM_HANDLE_INFORMATION_EX",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "15 P/Invoke mappings: NtQuerySystemInformation, OpenProcess, CloseHandle, DuplicateHandle, GetCurrentProcess..."
+      ],
+      "namespace": "iozxjxopkihzvsqatdaxpppvwoj",
+      "file": "iozxjxopkihzvsqatdaxpppvwoj/KpvvUZ0FaNUE8aMgmtbkKHtpe.cs",
+      "pinvoke_count": 15,
+      "tokens": [
+        "0x0200011B",
+        "0x060005D1",
+        "0x060005D2"
+      ]
+    },
+    "1uE3N0loLMcH": {
+      "obfuscated": "1uE3N0loLMcH",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "efvnwohwro",
+      "file": "efvnwohwro/1uE3N0loLMcH.cs",
+      "pinvoke_count": 1,
+      "tokens": [
+        "0x02000172",
+        "0x060006F3",
+        "0x060006F4"
+      ]
+    },
+    "LztrGwxkvFu76zsPDJXRrE": {
+      "obfuscated": "LztrGwxkvFu76zsPDJXRrE",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "efvnwohwro",
+      "file": "efvnwohwro/LztrGwxkvFu76zsPDJXRrE.cs",
+      "pinvoke_count": 2,
+      "tokens": [
+        "0x02000165",
+        "0x060006C5",
+        "0x060006C6"
+      ]
+    },
+    "MPlyDv4L8TEXl1ePskaHlc4sK5wHr": {
+      "obfuscated": "MPlyDv4L8TEXl1ePskaHlc4sK5wHr",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "efvnwohwro",
+      "file": "efvnwohwro/MPlyDv4L8TEXl1ePskaHlc4sK5wHr.cs",
+      "pinvoke_count": 2,
+      "tokens": [
+        "0x0200016C",
+        "0x060006DB",
+        "0x060006DC"
+      ]
+    },
+    "OiwfdAR2fk9kFr": {
+      "obfuscated": "OiwfdAR2fk9kFr",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "11 P/Invoke mappings: CreateProcess, VirtualAllocEx, WriteProcessMemory, CreateRemoteThread, ResumeThread..."
+      ],
+      "namespace": "efvnwohwro",
+      "file": "efvnwohwro/OiwfdAR2fk9kFr.cs",
+      "pinvoke_count": 11,
+      "tokens": [
+        "0x02000175",
+        "0x060006FC",
+        "0x060006FD"
+      ]
+    },
+    "STARTUPINFO": {
+      "obfuscated": "STARTUPINFO",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "iozxjxopkihzvsqatdaxpppvwoj",
+      "file": "iozxjxopkihzvsqatdaxpppvwoj/ym44TS8sL6xkLZjAR.cs",
+      "pinvoke_count": 3,
+      "tokens": [
+        "0x02000130",
+        "0x06000641",
+        "0x06000642"
+      ]
+    },
+    "STARTUPINFOEX": {
+      "obfuscated": "STARTUPINFOEX",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "11 P/Invoke mappings: CreateProcess, VirtualAllocEx, WriteProcessMemory, CreateRemoteThread, ResumeThread..."
+      ],
+      "namespace": "efvnwohwro",
+      "file": "efvnwohwro/OiwfdAR2fk9kFr.cs",
+      "pinvoke_count": 11,
+      "tokens": [
+        "0x02000175",
+        "0x060006FC",
+        "0x060006FD"
+      ]
+    },
+    "ProcessCreationFlags": {
+      "obfuscated": "ProcessCreationFlags",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "11 P/Invoke mappings: CreateProcess, VirtualAllocEx, WriteProcessMemory, CreateRemoteThread, ResumeThread..."
+      ],
+      "namespace": "efvnwohwro",
+      "file": "efvnwohwro/OiwfdAR2fk9kFr.cs",
+      "pinvoke_count": 11,
+      "tokens": [
+        "0x02000175",
+        "0x060006FC",
+        "0x060006FD"
+      ]
+    },
+    "AllocationType": {
+      "obfuscated": "AllocationType",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "6 P/Invoke mappings: OpenProcess, VirtualAllocEx, WriteProcessMemory, CreateRemoteThread, WaitForSingleObject..."
+      ],
+      "namespace": "iozxjxopkihzvsqatdaxpppvwoj",
+      "file": "iozxjxopkihzvsqatdaxpppvwoj/ndTKfsnW9H6d9j.cs",
+      "pinvoke_count": 6,
+      "tokens": [
+        "0x02000138",
+        "0x06000650",
+        "0x06000651"
+      ]
+    },
+    "MemoryProtection": {
+      "obfuscated": "MemoryProtection",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "6 P/Invoke mappings: OpenProcess, VirtualAllocEx, WriteProcessMemory, CreateRemoteThread, WaitForSingleObject..."
+      ],
+      "namespace": "iozxjxopkihzvsqatdaxpppvwoj",
+      "file": "iozxjxopkihzvsqatdaxpppvwoj/ndTKfsnW9H6d9j.cs",
+      "pinvoke_count": 6,
+      "tokens": [
+        "0x02000138",
+        "0x06000650",
+        "0x06000651"
+      ]
+    },
+    "ProcessAccessFlags": {
+      "obfuscated": "ProcessAccessFlags",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "6 P/Invoke mappings: OpenProcess, VirtualAllocEx, WriteProcessMemory, CreateRemoteThread, WaitForSingleObject..."
+      ],
+      "namespace": "iozxjxopkihzvsqatdaxpppvwoj",
+      "file": "iozxjxopkihzvsqatdaxpppvwoj/ndTKfsnW9H6d9j.cs",
+      "pinvoke_count": 6,
+      "tokens": [
+        "0x02000138",
+        "0x06000650",
+        "0x06000651"
+      ]
+    },
+    "PXj8uloh2oIB0DNBX5PH": {
+      "obfuscated": "PXj8uloh2oIB0DNBX5PH",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "10 P/Invoke mappings: OpenProcess, VirtualAllocEx, WriteProcessMemory, CreateRemoteThread, VirtualFreeEx..."
+      ],
+      "namespace": "efvnwohwro",
+      "file": "efvnwohwro/PXj8uloh2oIB0DNBX5PH.cs",
+      "pinvoke_count": 10,
+      "tokens": [
+        "0x02000167",
+        "0x060006CB",
+        "0x060006CC"
+      ]
+    },
+    "S09p6jhN3Q": {
+      "obfuscated": "S09p6jhN3Q",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "efvnwohwro",
+      "file": "efvnwohwro/S09p6jhN3Q.cs",
+      "pinvoke_count": 5,
+      "tokens": [
+        "0x0200016D",
+        "0x060006DF",
+        "0x170000B6"
+      ]
+    },
+    "INPUT": {
+      "obfuscated": "INPUT",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "25 P/Invoke mappings: NtResumeProcess, SetForegroundWindow, IsIconic, ShowWindow, LoadLibrary..."
+      ],
+      "namespace": "nyvzquosyrjqrjydxonuia",
+      "file": "nyvzquosyrjqrjydxonuia/y3UnHom0LtX8hLl.cs",
+      "pinvoke_count": 25,
+      "tokens": [
+        "0x0200001E",
+        "0x060000E9",
+        "0x060000EA"
+      ]
+    },
+    "InputUnion": {
+      "obfuscated": "InputUnion",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "25 P/Invoke mappings: NtResumeProcess, SetForegroundWindow, IsIconic, ShowWindow, LoadLibrary..."
+      ],
+      "namespace": "nyvzquosyrjqrjydxonuia",
+      "file": "nyvzquosyrjqrjydxonuia/y3UnHom0LtX8hLl.cs",
+      "pinvoke_count": 25,
+      "tokens": [
+        "0x0200001E",
+        "0x060000E9",
+        "0x060000EA"
+      ]
+    },
+    "KEYBDINPUT": {
+      "obfuscated": "KEYBDINPUT",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "25 P/Invoke mappings: NtResumeProcess, SetForegroundWindow, IsIconic, ShowWindow, LoadLibrary..."
+      ],
+      "namespace": "nyvzquosyrjqrjydxonuia",
+      "file": "nyvzquosyrjqrjydxonuia/y3UnHom0LtX8hLl.cs",
+      "pinvoke_count": 25,
+      "tokens": [
+        "0x0200001E",
+        "0x060000E9",
+        "0x060000EA"
+      ]
+    },
+    "miaBMs2rIOkWfqU80eHmxOqti": {
+      "obfuscated": "miaBMs2rIOkWfqU80eHmxOqti",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "efvnwohwro",
+      "file": "efvnwohwro/miaBMs2rIOkWfqU80eHmxOqti.cs",
+      "pinvoke_count": 1,
+      "tokens": [
+        "0x02000166",
+        "0x060006C9",
+        "0x060006CA"
+      ]
+    },
+    "pqZMvrFbaoSOAGK883I74uadORol": {
+      "obfuscated": "pqZMvrFbaoSOAGK883I74uadORol",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "efvnwohwro",
+      "file": "efvnwohwro/pqZMvrFbaoSOAGK883I74uadORol.cs",
+      "pinvoke_count": 2,
+      "tokens": [
+        "0x0200017E",
+        "0x0600070E",
+        "0x0600070F"
+      ]
+    },
+    "wpZnIGNJEHtrV": {
+      "obfuscated": "wpZnIGNJEHtrV",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "efvnwohwro",
+      "file": "efvnwohwro/wpZnIGNJEHtrV.cs",
+      "pinvoke_count": 1,
+      "tokens": [
+        "0x02000174",
+        "0x060006F9",
+        "0x060006FA"
+      ]
+    },
+    "1OaugIljVER7J5SeXW0HN": {
+      "obfuscated": "1OaugIljVER7J5SeXW0HN",
+      "likely_name": "WindowsRecoveryPersistence",
+      "confidence": "high",
+      "evidence": [
+        "String/API pattern: winre_persistence"
+      ],
+      "namespace": "fknzwcqedcjvgvtfoeppsxi",
+      "file": "fknzwcqedcjvgvtfoeppsxi/1OaugIljVER7J5SeXW0HN.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000104",
+        "0x06000544",
+        "0x06000545"
+      ]
+    },
+    "0I2xtVw0qLLK44T6yKWTB9rP": {
+      "obfuscated": "0I2xtVw0qLLK44T6yKWTB9rP",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "gegvhzzqwbmrcirjjrhzlwptpbnx",
+      "file": "gegvhzzqwbmrcirjjrhzlwptpbnx/0I2xtVw0qLLK44T6yKWTB9rP.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000057",
+        "0x17000059",
+        "0x0600020E"
+      ]
+    },
+    "ASL48TFXMXtv2tF8ES6RztibJ": {
+      "obfuscated": "ASL48TFXMXtv2tF8ES6RztibJ",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "gegvhzzqwbmrcirjjrhzlwptpbnx",
+      "file": "gegvhzzqwbmrcirjjrhzlwptpbnx/ASL48TFXMXtv2tF8ES6RztibJ.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000056",
+        "0x06000204",
+        "0x06000205"
+      ]
+    },
+    "8o4B05Z2IcNNGqgWo": {
+      "obfuscated": "8o4B05Z2IcNNGqgWo",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "iozxjxopkihzvsqatdaxpppvwoj",
+      "file": "iozxjxopkihzvsqatdaxpppvwoj/8o4B05Z2IcNNGqgWo.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000117",
+        "0x170000AF",
+        "0x170000B0"
+      ]
+    },
+    "ARznFxFn4J": {
+      "obfuscated": "ARznFxFn4J",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "iozxjxopkihzvsqatdaxpppvwoj",
+      "file": "iozxjxopkihzvsqatdaxpppvwoj/ARznFxFn4J.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000111",
+        "0x0600059A",
+        "0x170000AD"
+      ]
+    },
+    "DesktopInterop": {
+      "obfuscated": "DesktopInterop",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "iozxjxopkihzvsqatdaxpppvwoj",
+      "file": "iozxjxopkihzvsqatdaxpppvwoj/ARznFxFn4J.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000111",
+        "0x0600059A",
+        "0x170000AD"
+      ]
+    },
+    "E4gb2Uq7qEwz": {
+      "obfuscated": "E4gb2Uq7qEwz",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "33 P/Invoke mappings: OpenDesktop, CreateDesktop, CloseDesktop, SetThreadDesktop, WindowFromPoint..."
+      ],
+      "namespace": "iozxjxopkihzvsqatdaxpppvwoj",
+      "file": "iozxjxopkihzvsqatdaxpppvwoj/E4gb2Uq7qEwz.cs",
+      "pinvoke_count": 33,
+      "tokens": [
+        "0x02000129",
+        "0x06000608",
+        "0x06000609"
+      ]
+    },
+    "POINT": {
+      "obfuscated": "POINT",
+      "likely_name": "OperaPatcher",
+      "confidence": "high",
+      "evidence": [
+        "String/API pattern: opera_patcher"
+      ],
+      "namespace": "qrjdxizlngoizjdhigxuaxsua",
+      "file": "qrjdxizlngoizjdhigxuaxsua/ZxZos15lpy4BcfnXY.cs",
+      "pinvoke_count": 2,
+      "tokens": [
+        "0x020000FB",
+        "0x06000515",
+        "0x06000516"
+      ]
+    },
+    "WINDOWPLACEMENT": {
+      "obfuscated": "WINDOWPLACEMENT",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "33 P/Invoke mappings: OpenDesktop, CreateDesktop, CloseDesktop, SetThreadDesktop, WindowFromPoint..."
+      ],
+      "namespace": "iozxjxopkihzvsqatdaxpppvwoj",
+      "file": "iozxjxopkihzvsqatdaxpppvwoj/E4gb2Uq7qEwz.cs",
+      "pinvoke_count": 33,
+      "tokens": [
+        "0x02000129",
+        "0x06000608",
+        "0x06000609"
+      ]
+    },
+    "IMTc7fnhVyaBDHzBFWa5MKs": {
+      "obfuscated": "IMTc7fnhVyaBDHzBFWa5MKs",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "iozxjxopkihzvsqatdaxpppvwoj",
+      "file": "iozxjxopkihzvsqatdaxpppvwoj/IMTc7fnhVyaBDHzBFWa5MKs.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000119",
+        "0x060005C3",
+        "0x14000007"
+      ]
+    },
+    "KpvvUZ0FaNUE8aMgmtbkKHtpe": {
+      "obfuscated": "KpvvUZ0FaNUE8aMgmtbkKHtpe",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "15 P/Invoke mappings: NtQuerySystemInformation, OpenProcess, CloseHandle, DuplicateHandle, GetCurrentProcess..."
+      ],
+      "namespace": "iozxjxopkihzvsqatdaxpppvwoj",
+      "file": "iozxjxopkihzvsqatdaxpppvwoj/KpvvUZ0FaNUE8aMgmtbkKHtpe.cs",
+      "pinvoke_count": 15,
+      "tokens": [
+        "0x0200011B",
+        "0x060005D1",
+        "0x060005D2"
+      ]
+    },
+    "LAsnkSIxxDJNrzPrlnltu": {
+      "obfuscated": "LAsnkSIxxDJNrzPrlnltu",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "iozxjxopkihzvsqatdaxpppvwoj",
+      "file": "iozxjxopkihzvsqatdaxpppvwoj/LAsnkSIxxDJNrzPrlnltu.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200012F",
+        "0x0600063F"
+      ]
+    },
+    "MrXe1i8iSZEsZbcIj7Py": {
+      "obfuscated": "MrXe1i8iSZEsZbcIj7Py",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "iozxjxopkihzvsqatdaxpppvwoj",
+      "file": "iozxjxopkihzvsqatdaxpppvwoj/MrXe1i8iSZEsZbcIj7Py.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000110",
+        "0x06000594",
+        "0x170000A8"
+      ]
+    },
+    "MyMezryaAIG": {
+      "obfuscated": "MyMezryaAIG",
+      "likely_name": "PrivilegeHelper",
+      "confidence": "medium",
+      "evidence": [
+        "String/API pattern: privilege_escalation"
+      ],
+      "namespace": "iozxjxopkihzvsqatdaxpppvwoj",
+      "file": "iozxjxopkihzvsqatdaxpppvwoj/MyMezryaAIG.cs",
+      "pinvoke_count": 4,
+      "tokens": [
+        "0x02000134",
+        "0x0600064B",
+        "0x0600064C"
+      ]
+    },
+    "LUID": {
+      "obfuscated": "LUID",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "7 P/Invoke mappings: ExitWindowsEx, SetSuspendState, LockWorkStation, OpenProcessToken, LookupPrivilegeValue..."
+      ],
+      "namespace": "xcmobajxobfebgsqbrpftpzbwmcc",
+      "file": "xcmobajxobfebgsqbrpftpzbwmcc/GaHpzDbaGjcbBdXh5tMscwUfuCW7.cs",
+      "pinvoke_count": 7,
+      "tokens": [
+        "0x020000C6",
+        "0x060003F4",
+        "0x060003F5"
+      ]
+    },
+    "LUID_AND_ATTRIBUTES": {
+      "obfuscated": "LUID_AND_ATTRIBUTES",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "7 P/Invoke mappings: ExitWindowsEx, SetSuspendState, LockWorkStation, OpenProcessToken, LookupPrivilegeValue..."
+      ],
+      "namespace": "xcmobajxobfebgsqbrpftpzbwmcc",
+      "file": "xcmobajxobfebgsqbrpftpzbwmcc/GaHpzDbaGjcbBdXh5tMscwUfuCW7.cs",
+      "pinvoke_count": 7,
+      "tokens": [
+        "0x020000C6",
+        "0x060003F4",
+        "0x060003F5"
+      ]
+    },
+    "TOKEN_PRIVILEGES": {
+      "obfuscated": "TOKEN_PRIVILEGES",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "7 P/Invoke mappings: ExitWindowsEx, SetSuspendState, LockWorkStation, OpenProcessToken, LookupPrivilegeValue..."
+      ],
+      "namespace": "xcmobajxobfebgsqbrpftpzbwmcc",
+      "file": "xcmobajxobfebgsqbrpftpzbwmcc/GaHpzDbaGjcbBdXh5tMscwUfuCW7.cs",
+      "pinvoke_count": 7,
+      "tokens": [
+        "0x020000C6",
+        "0x060003F4",
+        "0x060003F5"
+      ]
+    },
+    "TKBx0QoMgk61m2l": {
+      "obfuscated": "TKBx0QoMgk61m2l",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "15 P/Invoke mappings: GetDC, SetThreadDesktop, OpenDesktop, CreateDesktop, GetDesktopWindow..."
+      ],
+      "namespace": "iozxjxopkihzvsqatdaxpppvwoj",
+      "file": "iozxjxopkihzvsqatdaxpppvwoj/TKBx0QoMgk61m2l.cs",
+      "pinvoke_count": 15,
+      "tokens": [
+        "0x02000124",
+        "0x060005ED",
+        "0x060005EE"
+      ]
+    },
+    "GetWindowType": {
+      "obfuscated": "GetWindowType",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "15 P/Invoke mappings: GetDC, SetThreadDesktop, OpenDesktop, CreateDesktop, GetDesktopWindow..."
+      ],
+      "namespace": "iozxjxopkihzvsqatdaxpppvwoj",
+      "file": "iozxjxopkihzvsqatdaxpppvwoj/TKBx0QoMgk61m2l.cs",
+      "pinvoke_count": 15,
+      "tokens": [
+        "0x02000124",
+        "0x060005ED",
+        "0x060005EE"
+      ]
+    },
+    "DeviceCap": {
+      "obfuscated": "DeviceCap",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "15 P/Invoke mappings: GetDC, SetThreadDesktop, OpenDesktop, CreateDesktop, GetDesktopWindow..."
+      ],
+      "namespace": "iozxjxopkihzvsqatdaxpppvwoj",
+      "file": "iozxjxopkihzvsqatdaxpppvwoj/TKBx0QoMgk61m2l.cs",
+      "pinvoke_count": 15,
+      "tokens": [
+        "0x02000124",
+        "0x060005ED",
+        "0x060005EE"
+      ]
+    },
+    "eoa1n5Y4hlvYxJ7c1": {
+      "obfuscated": "eoa1n5Y4hlvYxJ7c1",
+      "likely_name": "RemoteShell",
+      "confidence": "medium",
+      "evidence": [
+        "String/API pattern: remote_shell"
+      ],
+      "namespace": "iozxjxopkihzvsqatdaxpppvwoj",
+      "file": "iozxjxopkihzvsqatdaxpppvwoj/eoa1n5Y4hlvYxJ7c1.cs",
+      "pinvoke_count": 4,
+      "tokens": [
+        "0x02000144",
+        "0x0600065D",
+        "0x0600065E"
+      ]
+    },
+    "CloneResult": {
+      "obfuscated": "CloneResult",
+      "likely_name": "RemoteShell",
+      "confidence": "medium",
+      "evidence": [
+        "String/API pattern: remote_shell"
+      ],
+      "namespace": "iozxjxopkihzvsqatdaxpppvwoj",
+      "file": "iozxjxopkihzvsqatdaxpppvwoj/eoa1n5Y4hlvYxJ7c1.cs",
+      "pinvoke_count": 4,
+      "tokens": [
+        "0x02000144",
+        "0x0600065D",
+        "0x0600065E"
+      ]
+    },
+    "fvBuGTkK0fOtxcNcc2qSrk65G5y": {
+      "obfuscated": "fvBuGTkK0fOtxcNcc2qSrk65G5y",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "iozxjxopkihzvsqatdaxpppvwoj",
+      "file": "iozxjxopkihzvsqatdaxpppvwoj/fvBuGTkK0fOtxcNcc2qSrk65G5y.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000118",
+        "0x060005BF",
+        "0x060005C0"
+      ]
+    },
+    "gIm3Jktlj4J99jG8sdVsEdww7d": {
+      "obfuscated": "gIm3Jktlj4J99jG8sdVsEdww7d",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "iozxjxopkihzvsqatdaxpppvwoj",
+      "file": "iozxjxopkihzvsqatdaxpppvwoj/gIm3Jktlj4J99jG8sdVsEdww7d.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200013C",
+        "0x06000659",
+        "0x0600065A"
+      ]
+    },
+    "IMAGE_DOS_HEADER": {
+      "obfuscated": "IMAGE_DOS_HEADER",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "mujubbzyaqrl",
+      "file": "mujubbzyaqrl/h1R1J9wxLfWWcC.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200019D",
+        "0x0200019E",
+        "0x04000875"
+      ]
+    },
+    "IMAGE_FILE_HEADER": {
+      "obfuscated": "IMAGE_FILE_HEADER",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "mujubbzyaqrl",
+      "file": "mujubbzyaqrl/h1R1J9wxLfWWcC.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200019D",
+        "0x0200019E",
+        "0x04000875"
+      ]
+    },
+    "IMAGE_DATA_DIRECTORY": {
+      "obfuscated": "IMAGE_DATA_DIRECTORY",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "mujubbzyaqrl",
+      "file": "mujubbzyaqrl/h1R1J9wxLfWWcC.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200019D",
+        "0x0200019E",
+        "0x04000875"
+      ]
+    },
+    "IMAGE_OPTIONAL_HEADER32": {
+      "obfuscated": "IMAGE_OPTIONAL_HEADER32",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "mujubbzyaqrl",
+      "file": "mujubbzyaqrl/h1R1J9wxLfWWcC.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200019D",
+        "0x0200019E",
+        "0x04000875"
+      ]
+    },
+    "IMAGE_OPTIONAL_HEADER64": {
+      "obfuscated": "IMAGE_OPTIONAL_HEADER64",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "mujubbzyaqrl",
+      "file": "mujubbzyaqrl/h1R1J9wxLfWWcC.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200019D",
+        "0x0200019E",
+        "0x04000875"
+      ]
+    },
+    "IMAGE_SECTION_HEADER": {
+      "obfuscated": "IMAGE_SECTION_HEADER",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "mujubbzyaqrl",
+      "file": "mujubbzyaqrl/h1R1J9wxLfWWcC.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200019D",
+        "0x0200019E",
+        "0x04000875"
+      ]
+    },
+    "IMAGE_EXPORT_DIRECTORY": {
+      "obfuscated": "IMAGE_EXPORT_DIRECTORY",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "mujubbzyaqrl",
+      "file": "mujubbzyaqrl/h1R1J9wxLfWWcC.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200019D",
+        "0x0200019E",
+        "0x04000875"
+      ]
+    },
+    "ndTKfsnW9H6d9j": {
+      "obfuscated": "ndTKfsnW9H6d9j",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "6 P/Invoke mappings: OpenProcess, VirtualAllocEx, WriteProcessMemory, CreateRemoteThread, WaitForSingleObject..."
+      ],
+      "namespace": "iozxjxopkihzvsqatdaxpppvwoj",
+      "file": "iozxjxopkihzvsqatdaxpppvwoj/ndTKfsnW9H6d9j.cs",
+      "pinvoke_count": 6,
+      "tokens": [
+        "0x02000138",
+        "0x06000650",
+        "0x06000651"
+      ]
+    },
+    "ym44TS8sL6xkLZjAR": {
+      "obfuscated": "ym44TS8sL6xkLZjAR",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "iozxjxopkihzvsqatdaxpppvwoj",
+      "file": "iozxjxopkihzvsqatdaxpppvwoj/ym44TS8sL6xkLZjAR.cs",
+      "pinvoke_count": 3,
+      "tokens": [
+        "0x02000130",
+        "0x06000641",
+        "0x06000642"
+      ]
+    },
+    "5WJ3CNFTXIFD42b1cJfjEBGX2cX": {
+      "obfuscated": "5WJ3CNFTXIFD42b1cJfjEBGX2cX",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "isupdklydnnojpekfnfpjav",
+      "file": "isupdklydnnojpekfnfpjav/5WJ3CNFTXIFD42b1cJfjEBGX2cX.cs",
+      "pinvoke_count": 3,
+      "tokens": [
+        "0x02000015",
+        "0x060000B1",
+        "0x060000B2"
+      ]
+    },
+    "fiqsFrr3WiUfUnbrek5S": {
+      "obfuscated": "fiqsFrr3WiUfUnbrek5S",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "7 P/Invoke mappings: GetWindowThreadProcessId, SetForegroundWindow, BringWindowToTop, AttachThreadInput, GetCurrentThreadId..."
+      ],
+      "namespace": "isupdklydnnojpekfnfpjav",
+      "file": "isupdklydnnojpekfnfpjav/fiqsFrr3WiUfUnbrek5S.cs",
+      "pinvoke_count": 7,
+      "tokens": [
+        "0x02000014",
+        "0x0600009A",
+        "0x0600009B"
+      ]
+    },
+    "hskXkkZ5RtIBGHtsPJ": {
+      "obfuscated": "hskXkkZ5RtIBGHtsPJ",
+      "likely_name": "WebcamCapture",
+      "confidence": "medium",
+      "evidence": [
+        "String/API pattern: webcam_capture",
+        "Using Pulsar.Common.Messages \u2192 c2_messaging"
+      ],
+      "namespace": "isupdklydnnojpekfnfpjav",
+      "file": "isupdklydnnojpekfnfpjav/hskXkkZ5RtIBGHtsPJ.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000016",
+        "0x17000026",
+        "0x17000027"
+      ]
+    },
+    "MMBsP70yQvBqwPfJ3BnS": {
+      "obfuscated": "MMBsP70yQvBqwPfJ3BnS",
+      "likely_name": "AntiDebug",
+      "confidence": "medium",
+      "evidence": [
+        "String/API pattern: anti_debug"
+      ],
+      "namespace": "jhxzovsbvsxiupbfprvzxuj",
+      "file": "jhxzovsbvsxiupbfprvzxuj/MMBsP70yQvBqwPfJ3BnS.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000187",
+        "0x170000BB",
+        "0x06000741"
+      ]
+    },
+    "DetectionMethod": {
+      "obfuscated": "DetectionMethod",
+      "likely_name": "AntiDebug",
+      "confidence": "medium",
+      "evidence": [
+        "String/API pattern: anti_debug"
+      ],
+      "namespace": "jhxzovsbvsxiupbfprvzxuj",
+      "file": "jhxzovsbvsxiupbfprvzxuj/MMBsP70yQvBqwPfJ3BnS.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000187",
+        "0x170000BB",
+        "0x06000741"
+      ]
+    },
+    "DiPvMW64Ho2fWu": {
+      "obfuscated": "DiPvMW64Ho2fWu",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "6 P/Invoke mappings: GetModuleHandle, GetProcAddress, WriteProcessMemory, SetProcessMitigationPolicy, NtOpenThread..."
+      ],
+      "namespace": "jtopooaggmlvxcdkzmasrbr",
+      "file": "jtopooaggmlvxcdkzmasrbr/DiPvMW64Ho2fWu.cs",
+      "pinvoke_count": 6,
+      "tokens": [
+        "0x0200018F",
+        "0x06000773",
+        "0x06000774"
+      ]
+    },
+    "yqC4bzVgIU7mlemP": {
+      "obfuscated": "yqC4bzVgIU7mlemP",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "jtopooaggmlvxcdkzmasrbr",
+      "file": "jtopooaggmlvxcdkzmasrbr/yqC4bzVgIU7mlemP.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200018E",
+        "0x04000868",
+        "0x04000869"
+      ]
+    },
+    "66xfrgI3JTFPnfm1i6gqQSC": {
+      "obfuscated": "66xfrgI3JTFPnfm1i6gqQSC",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "mujubbzyaqrl",
+      "file": "mujubbzyaqrl/66xfrgI3JTFPnfm1i6gqQSC.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000190",
+        "0x02000191",
+        "0x02000192"
+      ]
+    },
+    "ZJZn4oC4KU1FUKN": {
+      "obfuscated": "ZJZn4oC4KU1FUKN",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "12 P/Invoke mappings: NtAllocateVirtualMemory, VirtualFree, RtlInitUnicodeString, RtlUnicodeStringToAnsiString, LdrGetDllHandleEx..."
+      ],
+      "namespace": "mujubbzyaqrl",
+      "file": "mujubbzyaqrl/ZJZn4oC4KU1FUKN.cs",
+      "pinvoke_count": 12,
+      "tokens": [
+        "0x020001BB",
+        "0x060007B5",
+        "0x060007B6"
+      ]
+    },
+    "h1R1J9wxLfWWcC": {
+      "obfuscated": "h1R1J9wxLfWWcC",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "mujubbzyaqrl",
+      "file": "mujubbzyaqrl/h1R1J9wxLfWWcC.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200019D",
+        "0x0200019E",
+        "0x04000875"
+      ]
+    },
+    "CONTEXT": {
+      "obfuscated": "CONTEXT",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "mujubbzyaqrl",
+      "file": "mujubbzyaqrl/h1R1J9wxLfWWcC.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200019D",
+        "0x0200019E",
+        "0x04000875"
+      ]
+    },
+    "PROCESS_MITIGATION_BINARY_SIGNATURE_POLICY": {
+      "obfuscated": "PROCESS_MITIGATION_BINARY_SIGNATURE_POLICY",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "mujubbzyaqrl",
+      "file": "mujubbzyaqrl/h1R1J9wxLfWWcC.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200019D",
+        "0x0200019E",
+        "0x04000875"
+      ]
+    },
+    "SYSTEM_CODEINTEGRITY_INFORMATION": {
+      "obfuscated": "SYSTEM_CODEINTEGRITY_INFORMATION",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "mujubbzyaqrl",
+      "file": "mujubbzyaqrl/h1R1J9wxLfWWcC.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200019D",
+        "0x0200019E",
+        "0x04000875"
+      ]
+    },
+    "SYSTEM_KERNEL_DEBUGGER_INFORMATION": {
+      "obfuscated": "SYSTEM_KERNEL_DEBUGGER_INFORMATION",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "mujubbzyaqrl",
+      "file": "mujubbzyaqrl/h1R1J9wxLfWWcC.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200019D",
+        "0x0200019E",
+        "0x04000875"
+      ]
+    },
+    "UNICODE_STRING": {
+      "obfuscated": "UNICODE_STRING",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "mujubbzyaqrl",
+      "file": "mujubbzyaqrl/h1R1J9wxLfWWcC.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200019D",
+        "0x0200019E",
+        "0x04000875"
+      ]
+    },
+    "ANSI_STRING": {
+      "obfuscated": "ANSI_STRING",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "mujubbzyaqrl",
+      "file": "mujubbzyaqrl/h1R1J9wxLfWWcC.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200019D",
+        "0x0200019E",
+        "0x04000875"
+      ]
+    },
+    "SYSTEM_SECUREBOOT_INFORMATION": {
+      "obfuscated": "SYSTEM_SECUREBOOT_INFORMATION",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "mujubbzyaqrl",
+      "file": "mujubbzyaqrl/h1R1J9wxLfWWcC.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200019D",
+        "0x0200019E",
+        "0x04000875"
+      ]
+    },
+    "SYSTEM_INFO": {
+      "obfuscated": "SYSTEM_INFO",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "mujubbzyaqrl",
+      "file": "mujubbzyaqrl/h1R1J9wxLfWWcC.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200019D",
+        "0x0200019E",
+        "0x04000875"
+      ]
+    },
+    "OSVERSIONINFOEX": {
+      "obfuscated": "OSVERSIONINFOEX",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "mujubbzyaqrl",
+      "file": "mujubbzyaqrl/h1R1J9wxLfWWcC.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200019D",
+        "0x0200019E",
+        "0x04000875"
+      ]
+    },
+    "IMAGE_NT_HEADERS32": {
+      "obfuscated": "IMAGE_NT_HEADERS32",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "mujubbzyaqrl",
+      "file": "mujubbzyaqrl/h1R1J9wxLfWWcC.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200019D",
+        "0x0200019E",
+        "0x04000875"
+      ]
+    },
+    "IMAGE_NT_HEADERS64": {
+      "obfuscated": "IMAGE_NT_HEADERS64",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "mujubbzyaqrl",
+      "file": "mujubbzyaqrl/h1R1J9wxLfWWcC.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200019D",
+        "0x0200019E",
+        "0x04000875"
+      ]
+    },
+    "MEMORY_BASIC_INFORMATION": {
+      "obfuscated": "MEMORY_BASIC_INFORMATION",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "mujubbzyaqrl",
+      "file": "mujubbzyaqrl/h1R1J9wxLfWWcC.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200019D",
+        "0x0200019E",
+        "0x04000875"
+      ]
+    },
+    "OBJECT_ATTRIBUTES": {
+      "obfuscated": "OBJECT_ATTRIBUTES",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "mujubbzyaqrl",
+      "file": "mujubbzyaqrl/h1R1J9wxLfWWcC.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200019D",
+        "0x0200019E",
+        "0x04000875"
+      ]
+    },
+    "CLIENT_ID": {
+      "obfuscated": "CLIENT_ID",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "mujubbzyaqrl",
+      "file": "mujubbzyaqrl/h1R1J9wxLfWWcC.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200019D",
+        "0x0200019E",
+        "0x04000875"
+      ]
+    },
+    "_LIST_ENTRY": {
+      "obfuscated": "_LIST_ENTRY",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "mujubbzyaqrl",
+      "file": "mujubbzyaqrl/h1R1J9wxLfWWcC.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200019D",
+        "0x0200019E",
+        "0x04000875"
+      ]
+    },
+    "_PEB_LDR_DATA": {
+      "obfuscated": "_PEB_LDR_DATA",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "mujubbzyaqrl",
+      "file": "mujubbzyaqrl/h1R1J9wxLfWWcC.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200019D",
+        "0x0200019E",
+        "0x04000875"
+      ]
+    },
+    "_LDR_DATA_TABLE_ENTRY": {
+      "obfuscated": "_LDR_DATA_TABLE_ENTRY",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "mujubbzyaqrl",
+      "file": "mujubbzyaqrl/h1R1J9wxLfWWcC.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200019D",
+        "0x0200019E",
+        "0x04000875"
+      ]
+    },
+    "RTL_USER_PROCESS_PARAMETERS": {
+      "obfuscated": "RTL_USER_PROCESS_PARAMETERS",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "mujubbzyaqrl",
+      "file": "mujubbzyaqrl/h1R1J9wxLfWWcC.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200019D",
+        "0x0200019E",
+        "0x04000875"
+      ]
+    },
+    "PEB": {
+      "obfuscated": "PEB",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "mujubbzyaqrl",
+      "file": "mujubbzyaqrl/h1R1J9wxLfWWcC.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200019D",
+        "0x0200019E",
+        "0x04000875"
+      ]
+    },
+    "KBDLLHOOKSTRUCT": {
+      "obfuscated": "KBDLLHOOKSTRUCT",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "mujubbzyaqrl",
+      "file": "mujubbzyaqrl/h1R1J9wxLfWWcC.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200019D",
+        "0x0200019E",
+        "0x04000875"
+      ]
+    },
+    "vqVDuoydFHCOixENVzBmMDz": {
+      "obfuscated": "vqVDuoydFHCOixENVzBmMDz",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "nvyrvkdjwasdx",
+      "file": "nvyrvkdjwasdx/vqVDuoydFHCOixENVzBmMDz.cs",
+      "pinvoke_count": 1,
+      "tokens": [
+        "0x02000046",
+        "0x060001AB",
+        "0x060001AC"
+      ]
+    },
+    "x7X3Xd3Nbieb4hnxJvC8Q68": {
+      "obfuscated": "x7X3Xd3Nbieb4hnxJvC8Q68",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "26 P/Invoke mappings: SetHandleInformation, NtClose, CreateMutexA, IsDebuggerPresent, GetModuleHandle..."
+      ],
+      "namespace": "nyoctgklpcacpttagstvy",
+      "file": "nyoctgklpcacpttagstvy/x7X3Xd3Nbieb4hnxJvC8Q68.cs",
+      "pinvoke_count": 26,
+      "tokens": [
+        "0x020001BC",
+        "0x060007E0",
+        "0x060007E1"
+      ]
+    },
+    "2b2ZixbhvSvL9ZtiJ8cbzmY": {
+      "obfuscated": "2b2ZixbhvSvL9ZtiJ8cbzmY",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "nyvzquosyrjqrjydxonuia",
+      "file": "nyvzquosyrjqrjydxonuia/2b2ZixbhvSvL9ZtiJ8cbzmY.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000045",
+        "0x1700004F",
+        "0x17000050"
+      ]
+    },
+    "IgWnxzvQkq": {
+      "obfuscated": "IgWnxzvQkq",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "nyvzquosyrjqrjydxonuia",
+      "file": "nyvzquosyrjqrjydxonuia/IgWnxzvQkq.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200002A",
+        "0x040000C8",
+        "0x040000C9"
+      ]
+    },
+    "L7LO9gxA6ef": {
+      "obfuscated": "L7LO9gxA6ef",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "nyvzquosyrjqrjydxonuia",
+      "file": "nyvzquosyrjqrjydxonuia/L7LO9gxA6ef.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200002F",
+        "0x06000112",
+        "0x06000113"
+      ]
+    },
+    "VS_INPUT": {
+      "obfuscated": "VS_INPUT",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "nyvzquosyrjqrjydxonuia",
+      "file": "nyvzquosyrjqrjydxonuia/L7LO9gxA6ef.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200002F",
+        "0x06000112",
+        "0x06000113"
+      ]
+    },
+    "VS_OUTPUT": {
+      "obfuscated": "VS_OUTPUT",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "nyvzquosyrjqrjydxonuia",
+      "file": "nyvzquosyrjqrjydxonuia/L7LO9gxA6ef.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200002F",
+        "0x06000112",
+        "0x06000113"
+      ]
+    },
+    "PS_INPUT": {
+      "obfuscated": "PS_INPUT",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "nyvzquosyrjqrjydxonuia",
+      "file": "nyvzquosyrjqrjydxonuia/L7LO9gxA6ef.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200002F",
+        "0x06000112",
+        "0x06000113"
+      ]
+    },
+    "VertexPositionColor": {
+      "obfuscated": "VertexPositionColor",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "nyvzquosyrjqrjydxonuia",
+      "file": "nyvzquosyrjqrjydxonuia/L7LO9gxA6ef.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200002F",
+        "0x06000112",
+        "0x06000113"
+      ]
+    },
+    "VertexPosition3DColor": {
+      "obfuscated": "VertexPosition3DColor",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "nyvzquosyrjqrjydxonuia",
+      "file": "nyvzquosyrjqrjydxonuia/L7LO9gxA6ef.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200002F",
+        "0x06000112",
+        "0x06000113"
+      ]
+    },
+    "MonitorDrawingData": {
+      "obfuscated": "MonitorDrawingData",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "nyvzquosyrjqrjydxonuia",
+      "file": "nyvzquosyrjqrjydxonuia/L7LO9gxA6ef.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200002F",
+        "0x06000112",
+        "0x06000113"
+      ]
+    },
+    "NativeMethods": {
+      "obfuscated": "NativeMethods",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "nyvzquosyrjqrjydxonuia",
+      "file": "nyvzquosyrjqrjydxonuia/L7LO9gxA6ef.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200002F",
+        "0x06000112",
+        "0x06000113"
+      ]
+    },
+    "Cube3DData": {
+      "obfuscated": "Cube3DData",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "nyvzquosyrjqrjydxonuia",
+      "file": "nyvzquosyrjqrjydxonuia/L7LO9gxA6ef.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200002F",
+        "0x06000112",
+        "0x06000113"
+      ]
+    },
+    "ICustomShader": {
+      "obfuscated": "ICustomShader",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "nyvzquosyrjqrjydxonuia",
+      "file": "nyvzquosyrjqrjydxonuia/L7LO9gxA6ef.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200002F",
+        "0x06000112",
+        "0x06000113"
+      ]
+    },
+    "ICustomRenderable": {
+      "obfuscated": "ICustomRenderable",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "nyvzquosyrjqrjydxonuia",
+      "file": "nyvzquosyrjqrjydxonuia/L7LO9gxA6ef.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200002F",
+        "0x06000112",
+        "0x06000113"
+      ]
+    },
+    "kF4iqz9qqhc8t95EKdDziN72jI7": {
+      "obfuscated": "kF4iqz9qqhc8t95EKdDziN72jI7",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "nyvzquosyrjqrjydxonuia",
+      "file": "nyvzquosyrjqrjydxonuia/kF4iqz9qqhc8t95EKdDziN72jI7.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200002C",
+        "0x040000D4",
+        "0x040000D5"
+      ]
+    },
+    "pEdGEk24PvF9Hi": {
+      "obfuscated": "pEdGEk24PvF9Hi",
+      "likely_name": "DeferredAssemblyLoader",
+      "confidence": "medium",
+      "evidence": [
+        "String/API pattern: deferred_assembly_loader",
+        "Using Pulsar.Common.Messages.Other \u2192 deferred_assembly"
+      ],
+      "namespace": "nyvzquosyrjqrjydxonuia",
+      "file": "nyvzquosyrjqrjydxonuia/pEdGEk24PvF9Hi.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000018",
+        "0x17000029",
+        "0x060000CC"
+      ]
+    },
+    "PendingCallback": {
+      "obfuscated": "PendingCallback",
+      "likely_name": "DeferredAssemblyLoader",
+      "confidence": "medium",
+      "evidence": [
+        "String/API pattern: deferred_assembly_loader",
+        "Using Pulsar.Common.Messages.Other \u2192 deferred_assembly"
+      ],
+      "namespace": "nyvzquosyrjqrjydxonuia",
+      "file": "nyvzquosyrjqrjydxonuia/pEdGEk24PvF9Hi.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000018",
+        "0x17000029",
+        "0x060000CC"
+      ]
+    },
+    "qGL2ccWyKZEHFcm3kLolrCQ": {
+      "obfuscated": "qGL2ccWyKZEHFcm3kLolrCQ",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "nyvzquosyrjqrjydxonuia",
+      "file": "nyvzquosyrjqrjydxonuia/qGL2ccWyKZEHFcm3kLolrCQ.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200002B",
+        "0x040000D2",
+        "0x040000D3"
+      ]
+    },
+    "u581TSAKAoPcfRd9lOIUChl2": {
+      "obfuscated": "u581TSAKAoPcfRd9lOIUChl2",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "nyvzquosyrjqrjydxonuia",
+      "file": "nyvzquosyrjqrjydxonuia/u581TSAKAoPcfRd9lOIUChl2.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200002D",
+        "0x0600010D",
+        "0x040000D6"
+      ]
+    },
+    "y3UnHom0LtX8hLl": {
+      "obfuscated": "y3UnHom0LtX8hLl",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "25 P/Invoke mappings: NtResumeProcess, SetForegroundWindow, IsIconic, ShowWindow, LoadLibrary..."
+      ],
+      "namespace": "nyvzquosyrjqrjydxonuia",
+      "file": "nyvzquosyrjqrjydxonuia/y3UnHom0LtX8hLl.cs",
+      "pinvoke_count": 25,
+      "tokens": [
+        "0x0200001E",
+        "0x060000E9",
+        "0x060000EA"
+      ]
+    },
+    "LASTINPUTINFO": {
+      "obfuscated": "LASTINPUTINFO",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "25 P/Invoke mappings: NtResumeProcess, SetForegroundWindow, IsIconic, ShowWindow, LoadLibrary..."
+      ],
+      "namespace": "nyvzquosyrjqrjydxonuia",
+      "file": "nyvzquosyrjqrjydxonuia/y3UnHom0LtX8hLl.cs",
+      "pinvoke_count": 25,
+      "tokens": [
+        "0x0200001E",
+        "0x060000E9",
+        "0x060000EA"
+      ]
+    },
+    "MOUSEINPUT": {
+      "obfuscated": "MOUSEINPUT",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "25 P/Invoke mappings: NtResumeProcess, SetForegroundWindow, IsIconic, ShowWindow, LoadLibrary..."
+      ],
+      "namespace": "nyvzquosyrjqrjydxonuia",
+      "file": "nyvzquosyrjqrjydxonuia/y3UnHom0LtX8hLl.cs",
+      "pinvoke_count": 25,
+      "tokens": [
+        "0x0200001E",
+        "0x060000E9",
+        "0x060000EA"
+      ]
+    },
+    "HARDWAREINPUT": {
+      "obfuscated": "HARDWAREINPUT",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "25 P/Invoke mappings: NtResumeProcess, SetForegroundWindow, IsIconic, ShowWindow, LoadLibrary..."
+      ],
+      "namespace": "nyvzquosyrjqrjydxonuia",
+      "file": "nyvzquosyrjqrjydxonuia/y3UnHom0LtX8hLl.cs",
+      "pinvoke_count": 25,
+      "tokens": [
+        "0x0200001E",
+        "0x060000E9",
+        "0x060000EA"
+      ]
+    },
+    "MibTcprowOwnerPid": {
+      "obfuscated": "MibTcprowOwnerPid",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "25 P/Invoke mappings: NtResumeProcess, SetForegroundWindow, IsIconic, ShowWindow, LoadLibrary..."
+      ],
+      "namespace": "nyvzquosyrjqrjydxonuia",
+      "file": "nyvzquosyrjqrjydxonuia/y3UnHom0LtX8hLl.cs",
+      "pinvoke_count": 25,
+      "tokens": [
+        "0x0200001E",
+        "0x060000E9",
+        "0x060000EA"
+      ]
+    },
+    "MibTcptableOwnerPid": {
+      "obfuscated": "MibTcptableOwnerPid",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "25 P/Invoke mappings: NtResumeProcess, SetForegroundWindow, IsIconic, ShowWindow, LoadLibrary..."
+      ],
+      "namespace": "nyvzquosyrjqrjydxonuia",
+      "file": "nyvzquosyrjqrjydxonuia/y3UnHom0LtX8hLl.cs",
+      "pinvoke_count": 25,
+      "tokens": [
+        "0x0200001E",
+        "0x060000E9",
+        "0x060000EA"
+      ]
+    },
+    "TcpTableClass": {
+      "obfuscated": "TcpTableClass",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "25 P/Invoke mappings: NtResumeProcess, SetForegroundWindow, IsIconic, ShowWindow, LoadLibrary..."
+      ],
+      "namespace": "nyvzquosyrjqrjydxonuia",
+      "file": "nyvzquosyrjqrjydxonuia/y3UnHom0LtX8hLl.cs",
+      "pinvoke_count": 25,
+      "tokens": [
+        "0x0200001E",
+        "0x060000E9",
+        "0x060000EA"
+      ]
+    },
+    "MiniDumpType": {
+      "obfuscated": "MiniDumpType",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "25 P/Invoke mappings: NtResumeProcess, SetForegroundWindow, IsIconic, ShowWindow, LoadLibrary..."
+      ],
+      "namespace": "nyvzquosyrjqrjydxonuia",
+      "file": "nyvzquosyrjqrjydxonuia/y3UnHom0LtX8hLl.cs",
+      "pinvoke_count": 25,
+      "tokens": [
+        "0x0200001E",
+        "0x060000E9",
+        "0x060000EA"
+      ]
+    },
+    "0FpvQmEmqaQCyB3bkqiMB9cmicCl": {
+      "obfuscated": "0FpvQmEmqaQCyB3bkqiMB9cmicCl",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "ooyjobbkdolradeynzyqpwxkn",
+      "file": "ooyjobbkdolradeynzyqpwxkn/0FpvQmEmqaQCyB3bkqiMB9cmicCl.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000054",
+        "0x060001F3"
+      ]
+    },
+    "QJ1Rk4RYdyDWn1Xxeqo": {
+      "obfuscated": "QJ1Rk4RYdyDWn1Xxeqo",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "ooyjobbkdolradeynzyqpwxkn",
+      "file": "ooyjobbkdolradeynzyqpwxkn/QJ1Rk4RYdyDWn1Xxeqo.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000050",
+        "0x060001EB",
+        "0x04000195"
+      ]
+    },
+    "TuuUWna59s5N2YVClGjxNPHE4G": {
+      "obfuscated": "TuuUWna59s5N2YVClGjxNPHE4G",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "ooyjobbkdolradeynzyqpwxkn",
+      "file": "ooyjobbkdolradeynzyqpwxkn/TuuUWna59s5N2YVClGjxNPHE4G.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000052",
+        "0x060001EF"
+      ]
+    },
+    "cgqhdFzZPexQhquyshmLMXsM": {
+      "obfuscated": "cgqhdFzZPexQhquyshmLMXsM",
+      "likely_name": "StartupManager",
+      "confidence": "medium",
+      "evidence": [
+        "String/API pattern: startup_manager"
+      ],
+      "namespace": "ooyjobbkdolradeynzyqpwxkn",
+      "file": "ooyjobbkdolradeynzyqpwxkn/cgqhdFzZPexQhquyshmLMXsM.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000051",
+        "0x060001EC",
+        "0x060001ED"
+      ]
+    },
+    "u3qBWnJmSpUsWevS645R2JcabT": {
+      "obfuscated": "u3qBWnJmSpUsWevS645R2JcabT",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "ooyjobbkdolradeynzyqpwxkn",
+      "file": "ooyjobbkdolradeynzyqpwxkn/u3qBWnJmSpUsWevS645R2JcabT.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200004F",
+        "0x060001E8",
+        "0x060001E9"
+      ]
+    },
+    "fvxwX9yFaYw2G6a8n": {
+      "obfuscated": "fvxwX9yFaYw2G6a8n",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "plyajoswzuhtvzhvfto",
+      "file": "plyajoswzuhtvzhvfto/fvxwX9yFaYw2G6a8n.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000182",
+        "0x0600071B",
+        "0x0600071C"
+      ]
+    },
+    "pfBjPdbubAJ2vGm60vRMd7YwpEF": {
+      "obfuscated": "pfBjPdbubAJ2vGm60vRMd7YwpEF",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "plyajoswzuhtvzhvfto",
+      "file": "plyajoswzuhtvzhvfto/pfBjPdbubAJ2vGm60vRMd7YwpEF.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000181",
+        "0x0600071A"
+      ]
+    },
+    "zYj7z4UxlAh52": {
+      "obfuscated": "zYj7z4UxlAh52",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "plyajoswzuhtvzhvfto",
+      "file": "plyajoswzuhtvzhvfto/zYj7z4UxlAh52.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200017F",
+        "0x06000712",
+        "0x06000713"
+      ]
+    },
+    "I5PL7KtZFGTOpvwVRK2nH2vn": {
+      "obfuscated": "I5PL7KtZFGTOpvwVRK2nH2vn",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "pvxcnfwckbkmmmkndlzu",
+      "file": "pvxcnfwckbkmmmkndlzu/I5PL7KtZFGTOpvwVRK2nH2vn.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200005E",
+        "0x0600022A",
+        "0x0600022B"
+      ]
+    },
+    "record_header_field": {
+      "obfuscated": "record_header_field",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "pvxcnfwckbkmmmkndlzu",
+      "file": "pvxcnfwckbkmmmkndlzu/I5PL7KtZFGTOpvwVRK2nH2vn.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200005E",
+        "0x0600022A",
+        "0x0600022B"
+      ]
+    },
+    "sqlite_master_entry": {
+      "obfuscated": "sqlite_master_entry",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "pvxcnfwckbkmmmkndlzu",
+      "file": "pvxcnfwckbkmmmkndlzu/I5PL7KtZFGTOpvwVRK2nH2vn.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200005E",
+        "0x0600022A",
+        "0x0600022B"
+      ]
+    },
+    "table_entry": {
+      "obfuscated": "table_entry",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "pvxcnfwckbkmmmkndlzu",
+      "file": "pvxcnfwckbkmmmkndlzu/I5PL7KtZFGTOpvwVRK2nH2vn.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200005E",
+        "0x0600022A",
+        "0x0600022B"
+      ]
+    },
+    "Kywq7ERTKW7bEUCI": {
+      "obfuscated": "Kywq7ERTKW7bEUCI",
+      "likely_name": "AesGcmDecryptor",
+      "confidence": "high",
+      "evidence": [
+        "String/API pattern: bcrypt_crypto"
+      ],
+      "namespace": "pvxcnfwckbkmmmkndlzu",
+      "file": "pvxcnfwckbkmmmkndlzu/Kywq7ERTKW7bEUCI.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200005D",
+        "0x06000223",
+        "0x06000224"
+      ]
+    },
+    "RKWbIxvRPCiUgaldn2Tpm": {
+      "obfuscated": "RKWbIxvRPCiUgaldn2Tpm",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "8 P/Invoke mappings: BCryptOpenAlgorithmProvider, BCryptCloseAlgorithmProvider, BCryptGetProperty, BCryptSetProperty, BCryptImportKey..."
+      ],
+      "namespace": "pvxcnfwckbkmmmkndlzu",
+      "file": "pvxcnfwckbkmmmkndlzu/RKWbIxvRPCiUgaldn2Tpm.cs",
+      "pinvoke_count": 8,
+      "tokens": [
+        "0x02000058",
+        "0x06000216",
+        "0x06000217"
+      ]
+    },
+    "BCRYPT_PSS_PADDING_INFO": {
+      "obfuscated": "BCRYPT_PSS_PADDING_INFO",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "8 P/Invoke mappings: BCryptOpenAlgorithmProvider, BCryptCloseAlgorithmProvider, BCryptGetProperty, BCryptSetProperty, BCryptImportKey..."
+      ],
+      "namespace": "pvxcnfwckbkmmmkndlzu",
+      "file": "pvxcnfwckbkmmmkndlzu/RKWbIxvRPCiUgaldn2Tpm.cs",
+      "pinvoke_count": 8,
+      "tokens": [
+        "0x02000058",
+        "0x06000216",
+        "0x06000217"
+      ]
+    },
+    "BCRYPT_AUTHENTICATED_CIPHER_MODE_INFO": {
+      "obfuscated": "BCRYPT_AUTHENTICATED_CIPHER_MODE_INFO",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "8 P/Invoke mappings: BCryptOpenAlgorithmProvider, BCryptCloseAlgorithmProvider, BCryptGetProperty, BCryptSetProperty, BCryptImportKey..."
+      ],
+      "namespace": "pvxcnfwckbkmmmkndlzu",
+      "file": "pvxcnfwckbkmmmkndlzu/RKWbIxvRPCiUgaldn2Tpm.cs",
+      "pinvoke_count": 8,
+      "tokens": [
+        "0x02000058",
+        "0x06000216",
+        "0x06000217"
+      ]
+    },
+    "BCRYPT_KEY_LENGTHS_STRUCT": {
+      "obfuscated": "BCRYPT_KEY_LENGTHS_STRUCT",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "8 P/Invoke mappings: BCryptOpenAlgorithmProvider, BCryptCloseAlgorithmProvider, BCryptGetProperty, BCryptSetProperty, BCryptImportKey..."
+      ],
+      "namespace": "pvxcnfwckbkmmmkndlzu",
+      "file": "pvxcnfwckbkmmmkndlzu/RKWbIxvRPCiUgaldn2Tpm.cs",
+      "pinvoke_count": 8,
+      "tokens": [
+        "0x02000058",
+        "0x06000216",
+        "0x06000217"
+      ]
+    },
+    "BCRYPT_OAEP_PADDING_INFO": {
+      "obfuscated": "BCRYPT_OAEP_PADDING_INFO",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "8 P/Invoke mappings: BCryptOpenAlgorithmProvider, BCryptCloseAlgorithmProvider, BCryptGetProperty, BCryptSetProperty, BCryptImportKey..."
+      ],
+      "namespace": "pvxcnfwckbkmmmkndlzu",
+      "file": "pvxcnfwckbkmmmkndlzu/RKWbIxvRPCiUgaldn2Tpm.cs",
+      "pinvoke_count": 8,
+      "tokens": [
+        "0x02000058",
+        "0x06000216",
+        "0x06000217"
+      ]
+    },
+    "0e5lbdQzblFjqDeiDVqVbJTWuNDg": {
+      "obfuscated": "0e5lbdQzblFjqDeiDVqVbJTWuNDg",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "qrjdxizlngoizjdhigxuaxsua",
+      "file": "qrjdxizlngoizjdhigxuaxsua/0e5lbdQzblFjqDeiDVqVbJTWuNDg.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000103",
+        "0x17000097",
+        "0x17000098"
+      ]
+    },
+    "C84BuhTCFC83hP4U": {
+      "obfuscated": "C84BuhTCFC83hP4U",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "qrjdxizlngoizjdhigxuaxsua",
+      "file": "qrjdxizlngoizjdhigxuaxsua/C84BuhTCFC83hP4U.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020000E6",
+        "0x060004C8"
+      ]
+    },
+    "E5YmltKAfGrJeRWxR8IIAe6E45Jll": {
+      "obfuscated": "E5YmltKAfGrJeRWxR8IIAe6E45Jll",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "7 P/Invoke mappings: OpenProcessToken, LookupPrivilegeValue, AdjustTokenPrivileges, DuplicateToken, SetThreadToken..."
+      ],
+      "namespace": "qrjdxizlngoizjdhigxuaxsua",
+      "file": "qrjdxizlngoizjdhigxuaxsua/E5YmltKAfGrJeRWxR8IIAe6E45Jll.cs",
+      "pinvoke_count": 7,
+      "tokens": [
+        "0x020000FE",
+        "0x06000521",
+        "0x06000522"
+      ]
+    },
+    "TokPriv1Luid": {
+      "obfuscated": "TokPriv1Luid",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "7 P/Invoke mappings: OpenProcessToken, LookupPrivilegeValue, AdjustTokenPrivileges, DuplicateToken, SetThreadToken..."
+      ],
+      "namespace": "qrjdxizlngoizjdhigxuaxsua",
+      "file": "qrjdxizlngoizjdhigxuaxsua/E5YmltKAfGrJeRWxR8IIAe6E45Jll.cs",
+      "pinvoke_count": 7,
+      "tokens": [
+        "0x020000FE",
+        "0x06000521",
+        "0x06000522"
+      ]
+    },
+    "HUtEqZaMs1ES": {
+      "obfuscated": "HUtEqZaMs1ES",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "qrjdxizlngoizjdhigxuaxsua",
+      "file": "qrjdxizlngoizjdhigxuaxsua/HUtEqZaMs1ES.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020000E7",
+        "0x060004C9",
+        "0x060004CA"
+      ]
+    },
+    "PspzzHrHyf": {
+      "obfuscated": "PspzzHrHyf",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "qrjdxizlngoizjdhigxuaxsua",
+      "file": "qrjdxizlngoizjdhigxuaxsua/PspzzHrHyf.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020000E5",
+        "0x060004C7"
+      ]
+    },
+    "PwS9Z36cSrEMsfGKm": {
+      "obfuscated": "PwS9Z36cSrEMsfGKm",
+      "likely_name": "OperaPatcher",
+      "confidence": "high",
+      "evidence": [
+        "String/API pattern: opera_patcher"
+      ],
+      "namespace": "qrjdxizlngoizjdhigxuaxsua",
+      "file": "qrjdxizlngoizjdhigxuaxsua/PwS9Z36cSrEMsfGKm.cs",
+      "pinvoke_count": 5,
+      "tokens": [
+        "0x020000F2",
+        "0x060004FC",
+        "0x060004FD"
+      ]
+    },
+    "CURSORINFO": {
+      "obfuscated": "CURSORINFO",
+      "likely_name": "OperaPatcher",
+      "confidence": "high",
+      "evidence": [
+        "String/API pattern: opera_patcher"
+      ],
+      "namespace": "qrjdxizlngoizjdhigxuaxsua",
+      "file": "qrjdxizlngoizjdhigxuaxsua/ZxZos15lpy4BcfnXY.cs",
+      "pinvoke_count": 2,
+      "tokens": [
+        "0x020000FB",
+        "0x06000515",
+        "0x06000516"
+      ]
+    },
+    "DeviceContext": {
+      "obfuscated": "DeviceContext",
+      "likely_name": "OperaPatcher",
+      "confidence": "high",
+      "evidence": [
+        "String/API pattern: opera_patcher"
+      ],
+      "namespace": "qrjdxizlngoizjdhigxuaxsua",
+      "file": "qrjdxizlngoizjdhigxuaxsua/PwS9Z36cSrEMsfGKm.cs",
+      "pinvoke_count": 5,
+      "tokens": [
+        "0x020000F2",
+        "0x060004FC",
+        "0x060004FD"
+      ]
+    },
+    "UW1sIS6hSuyY2k3xosxOpyW9EF0o": {
+      "obfuscated": "UW1sIS6hSuyY2k3xosxOpyW9EF0o",
+      "likely_name": "SystemInfoHelper",
+      "confidence": "medium",
+      "evidence": [
+        "String/API pattern: system_info"
+      ],
+      "namespace": "qrjdxizlngoizjdhigxuaxsua",
+      "file": "qrjdxizlngoizjdhigxuaxsua/UW1sIS6hSuyY2k3xosxOpyW9EF0o.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000100",
+        "0x06000530",
+        "0x06000531"
+      ]
+    },
+    "XARMFRSUewcY1": {
+      "obfuscated": "XARMFRSUewcY1",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "17 P/Invoke mappings: ResumeThread, Wow64SetThreadContext, Wow64GetThreadContext, GetThreadContext, SetThreadContext..."
+      ],
+      "namespace": "qrjdxizlngoizjdhigxuaxsua",
+      "file": "qrjdxizlngoizjdhigxuaxsua/XARMFRSUewcY1.cs",
+      "pinvoke_count": 17,
+      "tokens": [
+        "0x020000EC",
+        "0x060004E8",
+        "0x060004E9"
+      ]
+    },
+    "ProcessInformation": {
+      "obfuscated": "ProcessInformation",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "17 P/Invoke mappings: ResumeThread, Wow64SetThreadContext, Wow64GetThreadContext, GetThreadContext, SetThreadContext..."
+      ],
+      "namespace": "qrjdxizlngoizjdhigxuaxsua",
+      "file": "qrjdxizlngoizjdhigxuaxsua/XARMFRSUewcY1.cs",
+      "pinvoke_count": 17,
+      "tokens": [
+        "0x020000EC",
+        "0x060004E8",
+        "0x060004E9"
+      ]
+    },
+    "StartupInformation": {
+      "obfuscated": "StartupInformation",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "17 P/Invoke mappings: ResumeThread, Wow64SetThreadContext, Wow64GetThreadContext, GetThreadContext, SetThreadContext..."
+      ],
+      "namespace": "qrjdxizlngoizjdhigxuaxsua",
+      "file": "qrjdxizlngoizjdhigxuaxsua/XARMFRSUewcY1.cs",
+      "pinvoke_count": 17,
+      "tokens": [
+        "0x020000EC",
+        "0x060004E8",
+        "0x060004E9"
+      ]
+    },
+    "M128A": {
+      "obfuscated": "M128A",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "17 P/Invoke mappings: ResumeThread, Wow64SetThreadContext, Wow64GetThreadContext, GetThreadContext, SetThreadContext..."
+      ],
+      "namespace": "qrjdxizlngoizjdhigxuaxsua",
+      "file": "qrjdxizlngoizjdhigxuaxsua/XARMFRSUewcY1.cs",
+      "pinvoke_count": 17,
+      "tokens": [
+        "0x020000EC",
+        "0x060004E8",
+        "0x060004E9"
+      ]
+    },
+    "XSAVE_FORMAT64": {
+      "obfuscated": "XSAVE_FORMAT64",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "17 P/Invoke mappings: ResumeThread, Wow64SetThreadContext, Wow64GetThreadContext, GetThreadContext, SetThreadContext..."
+      ],
+      "namespace": "qrjdxizlngoizjdhigxuaxsua",
+      "file": "qrjdxizlngoizjdhigxuaxsua/XARMFRSUewcY1.cs",
+      "pinvoke_count": 17,
+      "tokens": [
+        "0x020000EC",
+        "0x060004E8",
+        "0x060004E9"
+      ]
+    },
+    "CONTEXT64": {
+      "obfuscated": "CONTEXT64",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "17 P/Invoke mappings: ResumeThread, Wow64SetThreadContext, Wow64GetThreadContext, GetThreadContext, SetThreadContext..."
+      ],
+      "namespace": "qrjdxizlngoizjdhigxuaxsua",
+      "file": "qrjdxizlngoizjdhigxuaxsua/XARMFRSUewcY1.cs",
+      "pinvoke_count": 17,
+      "tokens": [
+        "0x020000EC",
+        "0x060004E8",
+        "0x060004E9"
+      ]
+    },
+    "ZxZos15lpy4BcfnXY": {
+      "obfuscated": "ZxZos15lpy4BcfnXY",
+      "likely_name": "OperaPatcher",
+      "confidence": "high",
+      "evidence": [
+        "String/API pattern: opera_patcher"
+      ],
+      "namespace": "qrjdxizlngoizjdhigxuaxsua",
+      "file": "qrjdxizlngoizjdhigxuaxsua/ZxZos15lpy4BcfnXY.cs",
+      "pinvoke_count": 2,
+      "tokens": [
+        "0x020000FB",
+        "0x06000515",
+        "0x06000516"
+      ]
+    },
+    "c4KaU2kR9BUOk2": {
+      "obfuscated": "c4KaU2kR9BUOk2",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "qrjdxizlngoizjdhigxuaxsua",
+      "file": "qrjdxizlngoizjdhigxuaxsua/c4KaU2kR9BUOk2.cs",
+      "pinvoke_count": 1,
+      "tokens": [
+        "0x020000F6",
+        "0x06000509",
+        "0x0600050A"
+      ]
+    },
+    "Rect": {
+      "obfuscated": "Rect",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "qrjdxizlngoizjdhigxuaxsua",
+      "file": "qrjdxizlngoizjdhigxuaxsua/c4KaU2kR9BUOk2.cs",
+      "pinvoke_count": 1,
+      "tokens": [
+        "0x020000F6",
+        "0x06000509",
+        "0x0600050A"
+      ]
+    },
+    "rMHj0od0yS": {
+      "obfuscated": "rMHj0od0yS",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "qrjdxizlngoizjdhigxuaxsua",
+      "file": "qrjdxizlngoizjdhigxuaxsua/rMHj0od0yS.cs",
+      "pinvoke_count": 2,
+      "tokens": [
+        "0x020000E8",
+        "0x060004CC",
+        "0x060004CD"
+      ]
+    },
+    "vQGOMjEooX53nkucyKE": {
+      "obfuscated": "vQGOMjEooX53nkucyKE",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "qrjdxizlngoizjdhigxuaxsua",
+      "file": "qrjdxizlngoizjdhigxuaxsua/vQGOMjEooX53nkucyKE.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020000E3",
+        "0x060004C0",
+        "0x060004C1"
+      ]
+    },
+    "yDDaU82zv36uVKGy0cF": {
+      "obfuscated": "yDDaU82zv36uVKGy0cF",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "qrjdxizlngoizjdhigxuaxsua",
+      "file": "qrjdxizlngoizjdhigxuaxsua/yDDaU82zv36uVKGy0cF.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020000EA",
+        "0x060004DC",
+        "0x060004DD"
+      ]
+    },
+    "yf5PXv3yex2OgeATCt45qb8eBME": {
+      "obfuscated": "yf5PXv3yex2OgeATCt45qb8eBME",
+      "likely_name": "WebcamCapture",
+      "confidence": "medium",
+      "evidence": [
+        "String/API pattern: webcam_capture"
+      ],
+      "namespace": "qrjdxizlngoizjdhigxuaxsua",
+      "file": "qrjdxizlngoizjdhigxuaxsua/yf5PXv3yex2OgeATCt45qb8eBME.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000102",
+        "0x06000538",
+        "0x06000539"
+      ]
+    },
+    "fJtVXExB51nCMykdSjQgpJ7409Z2E": {
+      "obfuscated": "fJtVXExB51nCMykdSjQgpJ7409Z2E",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "qskpywwztcyjtfjo",
+      "file": "qskpywwztcyjtfjo/fJtVXExB51nCMykdSjQgpJ7409Z2E.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000055",
+        "0x17000054",
+        "0x17000055"
+      ]
+    },
+    "H8eZffrTfsi7GN33S2QN6fxWwEH2": {
+      "obfuscated": "H8eZffrTfsi7GN33S2QN6fxWwEH2",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "rjotyecahsofwinlrieji",
+      "file": "rjotyecahsofwinlrieji/H8eZffrTfsi7GN33S2QN6fxWwEH2.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000088",
+        "0x040003B9",
+        "0x040003BA"
+      ]
+    },
+    "T21IrjzZSO8RDLb9et6BL6FLyl": {
+      "obfuscated": "T21IrjzZSO8RDLb9et6BL6FLyl",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "rjotyecahsofwinlrieji",
+      "file": "rjotyecahsofwinlrieji/T21IrjzZSO8RDLb9et6BL6FLyl.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000086",
+        "0x040003B2",
+        "0x040003B3"
+      ]
+    },
+    "TO0SLLmMoP2NyMV1VrUshr8tbzZ": {
+      "obfuscated": "TO0SLLmMoP2NyMV1VrUshr8tbzZ",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "rjotyecahsofwinlrieji",
+      "file": "rjotyecahsofwinlrieji/TO0SLLmMoP2NyMV1VrUshr8tbzZ.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000087",
+        "0x040003B6",
+        "0x040003B7"
+      ]
+    },
+    "cTFllqAFhI": {
+      "obfuscated": "cTFllqAFhI",
+      "likely_name": "ChromiumDecryptor",
+      "confidence": "high",
+      "evidence": [
+        "String/API pattern: chromium_dpapi_decryptor"
+      ],
+      "namespace": "rjotyecahsofwinlrieji",
+      "file": "rjotyecahsofwinlrieji/cTFllqAFhI.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200007B",
+        "0x0600025E",
+        "0x0600025F"
+      ]
+    },
+    "dgiNOP9jFxFZMEG": {
+      "obfuscated": "dgiNOP9jFxFZMEG",
+      "likely_name": "FirefoxCredentialReader",
+      "confidence": "medium",
+      "evidence": [
+        "String/API pattern: firefox_credential_reader"
+      ],
+      "namespace": "rjotyecahsofwinlrieji",
+      "file": "rjotyecahsofwinlrieji/dgiNOP9jFxFZMEG.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000081",
+        "0x06000272",
+        "0x02000082"
+      ]
+    },
+    "FFLogins": {
+      "obfuscated": "FFLogins",
+      "likely_name": "FirefoxCredentialReader",
+      "confidence": "medium",
+      "evidence": [
+        "String/API pattern: firefox_credential_reader"
+      ],
+      "namespace": "rjotyecahsofwinlrieji",
+      "file": "rjotyecahsofwinlrieji/dgiNOP9jFxFZMEG.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000081",
+        "0x06000272",
+        "0x02000082"
+      ]
+    },
+    "DismissedBreachAlertsByLoginGuid": {
+      "obfuscated": "DismissedBreachAlertsByLoginGuid",
+      "likely_name": "FirefoxCredentialReader",
+      "confidence": "medium",
+      "evidence": [
+        "String/API pattern: firefox_credential_reader"
+      ],
+      "namespace": "rjotyecahsofwinlrieji",
+      "file": "rjotyecahsofwinlrieji/dgiNOP9jFxFZMEG.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000081",
+        "0x06000272",
+        "0x02000082"
+      ]
+    },
+    "Login": {
+      "obfuscated": "Login",
+      "likely_name": "FirefoxCredentialReader",
+      "confidence": "medium",
+      "evidence": [
+        "String/API pattern: firefox_credential_reader"
+      ],
+      "namespace": "rjotyecahsofwinlrieji",
+      "file": "rjotyecahsofwinlrieji/dgiNOP9jFxFZMEG.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000081",
+        "0x06000272",
+        "0x02000082"
+      ]
+    },
+    "hZsJYgkYyHFYj": {
+      "obfuscated": "hZsJYgkYyHFYj",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "rjotyecahsofwinlrieji",
+      "file": "rjotyecahsofwinlrieji/hZsJYgkYyHFYj.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200007A",
+        "0x0600025C"
+      ]
+    },
+    "nraoGHg1NSoBOR": {
+      "obfuscated": "nraoGHg1NSoBOR",
+      "likely_name": "FirefoxDecryptor",
+      "confidence": "high",
+      "evidence": [
+        "String/API pattern: nss_decryptor"
+      ],
+      "namespace": "rjotyecahsofwinlrieji",
+      "file": "rjotyecahsofwinlrieji/nraoGHg1NSoBOR.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200007C",
+        "0x06000261",
+        "0x06000262"
+      ]
+    },
+    "TSECItem": {
+      "obfuscated": "TSECItem",
+      "likely_name": "FirefoxDecryptor",
+      "confidence": "high",
+      "evidence": [
+        "String/API pattern: nss_decryptor"
+      ],
+      "namespace": "rjotyecahsofwinlrieji",
+      "file": "rjotyecahsofwinlrieji/nraoGHg1NSoBOR.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200007C",
+        "0x06000261",
+        "0x06000262"
+      ]
+    },
+    "v2Kar5FlgIwuY6qyUep1N": {
+      "obfuscated": "v2Kar5FlgIwuY6qyUep1N",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "rjotyecahsofwinlrieji",
+      "file": "rjotyecahsofwinlrieji/v2Kar5FlgIwuY6qyUep1N.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000085",
+        "0x040003B0",
+        "0x040003B1"
+      ]
+    },
+    "vW6MDIrJgF0FNA2GBnWn": {
+      "obfuscated": "vW6MDIrJgF0FNA2GBnWn",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "rnnisybqzkiiwsthvgvyqtbcudu",
+      "file": "rnnisybqzkiiwsthvgvyqtbcudu/vW6MDIrJgF0FNA2GBnWn.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000089",
+        "0x0600029D",
+        "0x1700006D"
+      ]
+    },
+    "wjH3c7fTgZH36VJKShfDXS": {
+      "obfuscated": "wjH3c7fTgZH36VJKShfDXS",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "rnnisybqzkiiwsthvgvyqtbcudu",
+      "file": "rnnisybqzkiiwsthvgvyqtbcudu/wjH3c7fTgZH36VJKShfDXS.Designer.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200008A",
+        "0x1700006F",
+        "0x040003C0"
+      ]
+    },
+    "7lpEP3gx2juLqQLmbiWc0DijTJj": {
+      "obfuscated": "7lpEP3gx2juLqQLmbiWc0DijTJj",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "usleyspamohrmttgkuhthymiaoatp",
+      "file": "usleyspamohrmttgkuhthymiaoatp/7lpEP3gx2juLqQLmbiWc0DijTJj.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200010F",
+        "0x0400059E",
+        "0x0400059F"
+      ]
+    },
+    "ObPeOFKVBhEzoOR": {
+      "obfuscated": "ObPeOFKVBhEzoOR",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "usleyspamohrmttgkuhthymiaoatp",
+      "file": "usleyspamohrmttgkuhthymiaoatp/ObPeOFKVBhEzoOR.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200010B",
+        "0x06000565",
+        "0x06000566"
+      ]
+    },
+    "MappedFrame": {
+      "obfuscated": "MappedFrame",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "usleyspamohrmttgkuhthymiaoatp",
+      "file": "usleyspamohrmttgkuhthymiaoatp/ObPeOFKVBhEzoOR.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200010B",
+        "0x06000565",
+        "0x06000566"
+      ]
+    },
+    "cZ5XmoHnJ3K4wpaVT0x": {
+      "obfuscated": "cZ5XmoHnJ3K4wpaVT0x",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "usleyspamohrmttgkuhthymiaoatp",
+      "file": "usleyspamohrmttgkuhthymiaoatp/cZ5XmoHnJ3K4wpaVT0x.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200010E",
+        "0x170000A6",
+        "0x170000A7"
+      ]
+    },
+    "p0HxjXGuMV0UKj": {
+      "obfuscated": "p0HxjXGuMV0UKj",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "usleyspamohrmttgkuhthymiaoatp",
+      "file": "usleyspamohrmttgkuhthymiaoatp/p0HxjXGuMV0UKj.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200010A",
+        "0x06000563",
+        "0x06000564"
+      ]
+    },
+    "uRdS2RRctWY9Y": {
+      "obfuscated": "uRdS2RRctWY9Y",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "usleyspamohrmttgkuhthymiaoatp",
+      "file": "usleyspamohrmttgkuhthymiaoatp/uRdS2RRctWY9Y.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200010D",
+        "0x1700009E",
+        "0x1700009F"
+      ]
+    },
+    "Zkijqbq1ZDl8Umj": {
+      "obfuscated": "Zkijqbq1ZDl8Umj",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "13 P/Invoke mappings: GetProcAddress, VirtualProtectEx, WriteProcessMemory, OpenProcess, CloseHandle..."
+      ],
+      "namespace": "wibmfaqvvbsngvogkfeetrinzm",
+      "file": "wibmfaqvvbsngvogkfeetrinzm/Zkijqbq1ZDl8Umj.cs",
+      "pinvoke_count": 13,
+      "tokens": [
+        "0x0200015E",
+        "0x060006A8",
+        "0x060006A9"
+      ]
+    },
+    "1Nv9J95jJjGyDFV5B0ZZ70": {
+      "obfuscated": "1Nv9J95jJjGyDFV5B0ZZ70",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "xcmobajxobfebgsqbrpftpzbwmcc",
+      "file": "xcmobajxobfebgsqbrpftpzbwmcc/1Nv9J95jJjGyDFV5B0ZZ70.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020000BA",
+        "0x0400043D",
+        "0x0400043E"
+      ]
+    },
+    "1gKwKrvaS8W2Ms2Kx2h6XLNJbsj": {
+      "obfuscated": "1gKwKrvaS8W2Ms2Kx2h6XLNJbsj",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [
+        "Using Pulsar.Common.Messages \u2192 c2_messaging",
+        "Using Pulsar.Common.Messages.Other \u2192 deferred_assembly",
+        "Using Pulsar.Common.Networking \u2192 networking"
+      ],
+      "namespace": "xcmobajxobfebgsqbrpftpzbwmcc",
+      "file": "xcmobajxobfebgsqbrpftpzbwmcc/1gKwKrvaS8W2Ms2Kx2h6XLNJbsj.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020000CB",
+        "0x06000403",
+        "0x06000404"
+      ]
+    },
+    "4WzVYWt2lQH9wJFucGrh3osv6F32Z": {
+      "obfuscated": "4WzVYWt2lQH9wJFucGrh3osv6F32Z",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [
+        "Using Pulsar.Common.Messages \u2192 c2_messaging",
+        "Using Pulsar.Common.Messages.Other \u2192 deferred_assembly",
+        "Using Pulsar.Common.Networking \u2192 networking"
+      ],
+      "namespace": "xcmobajxobfebgsqbrpftpzbwmcc",
+      "file": "xcmobajxobfebgsqbrpftpzbwmcc/4WzVYWt2lQH9wJFucGrh3osv6F32Z.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020000AD",
+        "0x06000371",
+        "0x06000372"
+      ]
+    },
+    "4rbGk1DRFQnDZS": {
+      "obfuscated": "4rbGk1DRFQnDZS",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [
+        "Using Pulsar.Common.Messages.Other \u2192 deferred_assembly",
+        "Using Pulsar.Common.Networking \u2192 networking"
+      ],
+      "namespace": "xcmobajxobfebgsqbrpftpzbwmcc",
+      "file": "xcmobajxobfebgsqbrpftpzbwmcc/4rbGk1DRFQnDZS.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020000AE",
+        "0x06000376",
+        "0x06000377"
+      ]
+    },
+    "6esDnggERoDgS": {
+      "obfuscated": "6esDnggERoDgS",
+      "likely_name": "OperaPatcher",
+      "confidence": "high",
+      "evidence": [
+        "String/API pattern: opera_patcher",
+        "Using Pulsar.Common.Messages \u2192 c2_messaging",
+        "Using Pulsar.Common.Messages.Other \u2192 deferred_assembly",
+        "Using Pulsar.Common.Networking \u2192 networking"
+      ],
+      "namespace": "xcmobajxobfebgsqbrpftpzbwmcc",
+      "file": "xcmobajxobfebgsqbrpftpzbwmcc/6esDnggERoDgS.cs",
+      "pinvoke_count": 2,
+      "tokens": [
+        "0x020000BC",
+        "0x060003A9",
+        "0x060003AA"
+      ]
+    },
+    "CURSORINFO_NATIVE": {
+      "obfuscated": "CURSORINFO_NATIVE",
+      "likely_name": "OperaPatcher",
+      "confidence": "high",
+      "evidence": [
+        "String/API pattern: opera_patcher",
+        "Using Pulsar.Common.Messages \u2192 c2_messaging",
+        "Using Pulsar.Common.Messages.Other \u2192 deferred_assembly",
+        "Using Pulsar.Common.Networking \u2192 networking"
+      ],
+      "namespace": "xcmobajxobfebgsqbrpftpzbwmcc",
+      "file": "xcmobajxobfebgsqbrpftpzbwmcc/6esDnggERoDgS.cs",
+      "pinvoke_count": 2,
+      "tokens": [
+        "0x020000BC",
+        "0x060003A9",
+        "0x060003AA"
+      ]
+    },
+    "9FCxai05m7xeGWEkphz5bLp0Z": {
+      "obfuscated": "9FCxai05m7xeGWEkphz5bLp0Z",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "xcmobajxobfebgsqbrpftpzbwmcc",
+      "file": "xcmobajxobfebgsqbrpftpzbwmcc/9FCxai05m7xeGWEkphz5bLp0Z.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020000B8",
+        "0x04000437",
+        "0x04000438"
+      ]
+    },
+    "A0j9YXq8UrQbZu3D9hsS9kjNNcWIa": {
+      "obfuscated": "A0j9YXq8UrQbZu3D9hsS9kjNNcWIa",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [
+        "Using Pulsar.Common.Messages \u2192 c2_messaging",
+        "Using Pulsar.Common.Messages.Other \u2192 deferred_assembly",
+        "Using Pulsar.Common.Networking \u2192 networking"
+      ],
+      "namespace": "xcmobajxobfebgsqbrpftpzbwmcc",
+      "file": "xcmobajxobfebgsqbrpftpzbwmcc/A0j9YXq8UrQbZu3D9hsS9kjNNcWIa.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020000D3",
+        "0x0600043A",
+        "0x0600043B"
+      ]
+    },
+    "C0P4pUxY7nCgZX84xueE5cGi": {
+      "obfuscated": "C0P4pUxY7nCgZX84xueE5cGi",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [
+        "Using Pulsar.Common.Messages \u2192 c2_messaging",
+        "Using Pulsar.Common.Messages.Other \u2192 deferred_assembly",
+        "Using Pulsar.Common.Networking \u2192 networking"
+      ],
+      "namespace": "xcmobajxobfebgsqbrpftpzbwmcc",
+      "file": "xcmobajxobfebgsqbrpftpzbwmcc/C0P4pUxY7nCgZX84xueE5cGi.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000098",
+        "0x06000305",
+        "0x06000306"
+      ]
+    },
+    "GaHpzDbaGjcbBdXh5tMscwUfuCW7": {
+      "obfuscated": "GaHpzDbaGjcbBdXh5tMscwUfuCW7",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "7 P/Invoke mappings: ExitWindowsEx, SetSuspendState, LockWorkStation, OpenProcessToken, LookupPrivilegeValue..."
+      ],
+      "namespace": "xcmobajxobfebgsqbrpftpzbwmcc",
+      "file": "xcmobajxobfebgsqbrpftpzbwmcc/GaHpzDbaGjcbBdXh5tMscwUfuCW7.cs",
+      "pinvoke_count": 7,
+      "tokens": [
+        "0x020000C6",
+        "0x060003F4",
+        "0x060003F5"
+      ]
+    },
+    "ExitWindows": {
+      "obfuscated": "ExitWindows",
+      "likely_name": "NativeMethods",
+      "confidence": "high",
+      "evidence": [
+        "7 P/Invoke mappings: ExitWindowsEx, SetSuspendState, LockWorkStation, OpenProcessToken, LookupPrivilegeValue..."
+      ],
+      "namespace": "xcmobajxobfebgsqbrpftpzbwmcc",
+      "file": "xcmobajxobfebgsqbrpftpzbwmcc/GaHpzDbaGjcbBdXh5tMscwUfuCW7.cs",
+      "pinvoke_count": 7,
+      "tokens": [
+        "0x020000C6",
+        "0x060003F4",
+        "0x060003F5"
+      ]
+    },
+    "GbhcNw7dFu": {
+      "obfuscated": "GbhcNw7dFu",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [
+        "Using Pulsar.Common.Messages \u2192 c2_messaging",
+        "Using Pulsar.Common.Messages.ClientManagement \u2192 client_lifecycle",
+        "Using Pulsar.Common.Messages.Other \u2192 deferred_assembly",
+        "Using Pulsar.Common.Networking \u2192 networking"
+      ],
+      "namespace": "xcmobajxobfebgsqbrpftpzbwmcc",
+      "file": "xcmobajxobfebgsqbrpftpzbwmcc/GbhcNw7dFu.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000097",
+        "0x060002F9",
+        "0x060002FA"
+      ]
+    },
+    "HHZ8CTHrqK006": {
+      "obfuscated": "HHZ8CTHrqK006",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [
+        "Using Pulsar.Common.Messages \u2192 c2_messaging",
+        "Using Pulsar.Common.Messages.Other \u2192 deferred_assembly",
+        "Using Pulsar.Common.Networking \u2192 networking"
+      ],
+      "namespace": "xcmobajxobfebgsqbrpftpzbwmcc",
+      "file": "xcmobajxobfebgsqbrpftpzbwmcc/HHZ8CTHrqK006.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020000C1",
+        "0x060003CD",
+        "0x060003CE"
+      ]
+    },
+    "Hjjl7Fmfgzv2jRlSGV": {
+      "obfuscated": "Hjjl7Fmfgzv2jRlSGV",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [
+        "Using Pulsar.Common.Messages \u2192 c2_messaging",
+        "Using Pulsar.Common.Messages.Other \u2192 deferred_assembly",
+        "Using Pulsar.Common.Networking \u2192 networking"
+      ],
+      "namespace": "xcmobajxobfebgsqbrpftpzbwmcc",
+      "file": "xcmobajxobfebgsqbrpftpzbwmcc/Hjjl7Fmfgzv2jRlSGV.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020000CE",
+        "0x06000413",
+        "0x06000414"
+      ]
+    },
+    "KGJI4GnYig27wOgsXcd6": {
+      "obfuscated": "KGJI4GnYig27wOgsXcd6",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [
+        "Using Pulsar.Common.Messages \u2192 c2_messaging"
+      ],
+      "namespace": "xcmobajxobfebgsqbrpftpzbwmcc",
+      "file": "xcmobajxobfebgsqbrpftpzbwmcc/KGJI4GnYig27wOgsXcd6.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020000AB",
+        "0x0600036B"
+      ]
+    },
+    "KNFVJmTVvrzLqNEJmlIje": {
+      "obfuscated": "KNFVJmTVvrzLqNEJmlIje",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [
+        "Using Pulsar.Common.Messages \u2192 c2_messaging",
+        "Using Pulsar.Common.Messages.Other \u2192 deferred_assembly",
+        "Using Pulsar.Common.Networking \u2192 networking"
+      ],
+      "namespace": "xcmobajxobfebgsqbrpftpzbwmcc",
+      "file": "xcmobajxobfebgsqbrpftpzbwmcc/KNFVJmTVvrzLqNEJmlIje.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020000A4",
+        "0x06000339",
+        "0x0600033A"
+      ]
+    },
+    "KVuuCHzFHC": {
+      "obfuscated": "KVuuCHzFHC",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [
+        "Using Pulsar.Common.Messages \u2192 c2_messaging",
+        "Using Pulsar.Common.Messages.Other \u2192 deferred_assembly",
+        "Using Pulsar.Common.Networking \u2192 networking"
+      ],
+      "namespace": "xcmobajxobfebgsqbrpftpzbwmcc",
+      "file": "xcmobajxobfebgsqbrpftpzbwmcc/KVuuCHzFHC.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020000A9",
+        "0x06000364",
+        "0x06000365"
+      ]
+    },
+    "LObq7Q9lUvh1kAzh3XxZD": {
+      "obfuscated": "LObq7Q9lUvh1kAzh3XxZD",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [
+        "Using Pulsar.Common.Messages \u2192 c2_messaging",
+        "Using Pulsar.Common.Messages.Other \u2192 deferred_assembly",
+        "Using Pulsar.Common.Networking \u2192 networking"
+      ],
+      "namespace": "xcmobajxobfebgsqbrpftpzbwmcc",
+      "file": "xcmobajxobfebgsqbrpftpzbwmcc/LObq7Q9lUvh1kAzh3XxZD.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200009B",
+        "0x06000311",
+        "0x06000312"
+      ]
+    },
+    "LsgfkyK0tz": {
+      "obfuscated": "LsgfkyK0tz",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [
+        "Using Pulsar.Common.Messages \u2192 c2_messaging",
+        "Using Pulsar.Common.Messages.Other \u2192 deferred_assembly",
+        "Using Pulsar.Common.Networking \u2192 networking"
+      ],
+      "namespace": "xcmobajxobfebgsqbrpftpzbwmcc",
+      "file": "xcmobajxobfebgsqbrpftpzbwmcc/LsgfkyK0tz.cs",
+      "pinvoke_count": 1,
+      "tokens": [
+        "0x020000D2",
+        "0x06000434",
+        "0x06000435"
+      ]
+    },
+    "MGjwxrjlW9ZRWw6BiiGm8KHFBO": {
+      "obfuscated": "MGjwxrjlW9ZRWw6BiiGm8KHFBO",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [
+        "Using Pulsar.Common.Messages \u2192 c2_messaging",
+        "Using Pulsar.Common.Messages.Other \u2192 deferred_assembly",
+        "Using Pulsar.Common.Networking \u2192 networking"
+      ],
+      "namespace": "xcmobajxobfebgsqbrpftpzbwmcc",
+      "file": "xcmobajxobfebgsqbrpftpzbwmcc/MGjwxrjlW9ZRWw6BiiGm8KHFBO.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020000D4",
+        "0x0600043F",
+        "0x06000440"
+      ]
+    },
+    "Ss0FtkI009bDcCD": {
+      "obfuscated": "Ss0FtkI009bDcCD",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [
+        "Using Pulsar.Common.Messages \u2192 c2_messaging",
+        "Using Pulsar.Common.Messages.Other \u2192 deferred_assembly",
+        "Using Pulsar.Common.Networking \u2192 networking"
+      ],
+      "namespace": "xcmobajxobfebgsqbrpftpzbwmcc",
+      "file": "xcmobajxobfebgsqbrpftpzbwmcc/Ss0FtkI009bDcCD.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020000B0",
+        "0x06000380",
+        "0x06000381"
+      ]
+    },
+    "X9R6kUAu4wrJsVbg9RA": {
+      "obfuscated": "X9R6kUAu4wrJsVbg9RA",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "xcmobajxobfebgsqbrpftpzbwmcc",
+      "file": "xcmobajxobfebgsqbrpftpzbwmcc/X9R6kUAu4wrJsVbg9RA.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020000B9",
+        "0x0400043B",
+        "0x0400043C"
+      ]
+    },
+    "ajX7pNLqQPIvLDCvgJVRZI8F1UF2l": {
+      "obfuscated": "ajX7pNLqQPIvLDCvgJVRZI8F1UF2l",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [
+        "Using Pulsar.Common.Messages \u2192 c2_messaging",
+        "Using Pulsar.Common.Messages.Other \u2192 deferred_assembly",
+        "Using Pulsar.Common.Networking \u2192 networking"
+      ],
+      "namespace": "xcmobajxobfebgsqbrpftpzbwmcc",
+      "file": "xcmobajxobfebgsqbrpftpzbwmcc/ajX7pNLqQPIvLDCvgJVRZI8F1UF2l.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020000CD",
+        "0x0600040E",
+        "0x0600040F"
+      ]
+    },
+    "eaxEGxDGYD6wg4": {
+      "obfuscated": "eaxEGxDGYD6wg4",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "xcmobajxobfebgsqbrpftpzbwmcc",
+      "file": "xcmobajxobfebgsqbrpftpzbwmcc/eaxEGxDGYD6wg4.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020000B7",
+        "0x0400042D",
+        "0x0400042E"
+      ]
+    },
+    "ee3zUJMsS3erAdqlc": {
+      "obfuscated": "ee3zUJMsS3erAdqlc",
+      "likely_name": "DeferredAssemblyLoader",
+      "confidence": "medium",
+      "evidence": [
+        "String/API pattern: deferred_assembly_loader",
+        "Using Pulsar.Common.Messages \u2192 c2_messaging",
+        "Using Pulsar.Common.Messages.Other \u2192 deferred_assembly",
+        "Using Pulsar.Common.Networking \u2192 networking"
+      ],
+      "namespace": "xcmobajxobfebgsqbrpftpzbwmcc",
+      "file": "xcmobajxobfebgsqbrpftpzbwmcc/ee3zUJMsS3erAdqlc.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200009C",
+        "0x06000317",
+        "0x06000318"
+      ]
+    },
+    "fJT1uBP58o5": {
+      "obfuscated": "fJT1uBP58o5",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [
+        "Using Pulsar.Common.Messages \u2192 c2_messaging",
+        "Using Pulsar.Common.Messages.Other \u2192 deferred_assembly",
+        "Using Pulsar.Common.Networking \u2192 networking"
+      ],
+      "namespace": "xcmobajxobfebgsqbrpftpzbwmcc",
+      "file": "xcmobajxobfebgsqbrpftpzbwmcc/fJT1uBP58o5.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020000A8",
+        "0x0600035F",
+        "0x06000360"
+      ]
+    },
+    "gzodkNQZbuCwLvU29qFV7BE": {
+      "obfuscated": "gzodkNQZbuCwLvU29qFV7BE",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [
+        "Using Pulsar.Common.Messages.Other \u2192 deferred_assembly",
+        "Using Pulsar.Common.Networking \u2192 networking"
+      ],
+      "namespace": "xcmobajxobfebgsqbrpftpzbwmcc",
+      "file": "xcmobajxobfebgsqbrpftpzbwmcc/gzodkNQZbuCwLvU29qFV7BE.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000094",
+        "0x060002E3",
+        "0x060002E4"
+      ]
+    },
+    "iaPtCsb833VBMSr": {
+      "obfuscated": "iaPtCsb833VBMSr",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [
+        "Using Pulsar.Common.Messages \u2192 c2_messaging",
+        "Using Pulsar.Common.Messages.Other \u2192 deferred_assembly",
+        "Using Pulsar.Common.Networking \u2192 networking"
+      ],
+      "namespace": "xcmobajxobfebgsqbrpftpzbwmcc",
+      "file": "xcmobajxobfebgsqbrpftpzbwmcc/iaPtCsb833VBMSr.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020000B2",
+        "0x06000395",
+        "0x06000396"
+      ]
+    },
+    "if5GJloLfoL15XFjyiRU": {
+      "obfuscated": "if5GJloLfoL15XFjyiRU",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [
+        "Using Pulsar.Common.Messages.Other \u2192 deferred_assembly",
+        "Using Pulsar.Common.Networking \u2192 networking"
+      ],
+      "namespace": "xcmobajxobfebgsqbrpftpzbwmcc",
+      "file": "xcmobajxobfebgsqbrpftpzbwmcc/if5GJloLfoL15XFjyiRU.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020000C4",
+        "0x1700007A",
+        "0x1700007B"
+      ]
+    },
+    "l3pRgrwMjsnh7eIKv2O6": {
+      "obfuscated": "l3pRgrwMjsnh7eIKv2O6",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [
+        "Using Pulsar.Common.Messages \u2192 c2_messaging",
+        "Using Pulsar.Common.Messages.Other \u2192 deferred_assembly",
+        "Using Pulsar.Common.Networking \u2192 networking"
+      ],
+      "namespace": "xcmobajxobfebgsqbrpftpzbwmcc",
+      "file": "xcmobajxobfebgsqbrpftpzbwmcc/l3pRgrwMjsnh7eIKv2O6.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020000D1",
+        "0x0600042D",
+        "0x0600042E"
+      ]
+    },
+    "pGyoiCfQsr1Sxs2J3aghNEDQcmvM0": {
+      "obfuscated": "pGyoiCfQsr1Sxs2J3aghNEDQcmvM0",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [
+        "Using Pulsar.Common.Messages \u2192 c2_messaging",
+        "Using Pulsar.Common.Messages.Other \u2192 deferred_assembly",
+        "Using Pulsar.Common.Networking \u2192 networking"
+      ],
+      "namespace": "xcmobajxobfebgsqbrpftpzbwmcc",
+      "file": "xcmobajxobfebgsqbrpftpzbwmcc/pGyoiCfQsr1Sxs2J3aghNEDQcmvM0.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200009E",
+        "0x0600031D",
+        "0x0600031E"
+      ]
+    },
+    "qruEd2rLOYNqK8jbD": {
+      "obfuscated": "qruEd2rLOYNqK8jbD",
+      "likely_name": "RemoteShell",
+      "confidence": "medium",
+      "evidence": [
+        "String/API pattern: remote_shell",
+        "Using Pulsar.Common.Messages \u2192 c2_messaging",
+        "Using Pulsar.Common.Messages.Other \u2192 deferred_assembly",
+        "Using Pulsar.Common.Networking \u2192 networking"
+      ],
+      "namespace": "xcmobajxobfebgsqbrpftpzbwmcc",
+      "file": "xcmobajxobfebgsqbrpftpzbwmcc/qruEd2rLOYNqK8jbD.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020000A5",
+        "0x0600034C",
+        "0x0600034D"
+      ]
+    },
+    "thY7EaeYHzLwxbEH": {
+      "obfuscated": "thY7EaeYHzLwxbEH",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [
+        "Using Pulsar.Common.Messages \u2192 c2_messaging",
+        "Using Pulsar.Common.Messages.Other \u2192 deferred_assembly",
+        "Using Pulsar.Common.Networking \u2192 networking"
+      ],
+      "namespace": "xcmobajxobfebgsqbrpftpzbwmcc",
+      "file": "xcmobajxobfebgsqbrpftpzbwmcc/thY7EaeYHzLwxbEH.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020000B1",
+        "0x06000389",
+        "0x0600038A"
+      ]
+    },
+    "uRs7xuRFRASbzcQR": {
+      "obfuscated": "uRs7xuRFRASbzcQR",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [
+        "Using Pulsar.Common.Messages \u2192 c2_messaging",
+        "Using Pulsar.Common.Messages.Other \u2192 deferred_assembly",
+        "Using Pulsar.Common.Networking \u2192 networking"
+      ],
+      "namespace": "xcmobajxobfebgsqbrpftpzbwmcc",
+      "file": "xcmobajxobfebgsqbrpftpzbwmcc/uRs7xuRFRASbzcQR.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020000C5",
+        "0x060003ED",
+        "0x060003EE"
+      ]
+    },
+    "unHySMwyqEmFcyUleQNLOY08xDH": {
+      "obfuscated": "unHySMwyqEmFcyUleQNLOY08xDH",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [
+        "Using Pulsar.Common.Messages.Other \u2192 deferred_assembly",
+        "Using Pulsar.Common.Networking \u2192 networking"
+      ],
+      "namespace": "xcmobajxobfebgsqbrpftpzbwmcc",
+      "file": "xcmobajxobfebgsqbrpftpzbwmcc/unHySMwyqEmFcyUleQNLOY08xDH.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000095",
+        "0x060002ED",
+        "0x060002EE"
+      ]
+    },
+    "wuZQS0fYvXxN": {
+      "obfuscated": "wuZQS0fYvXxN",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [
+        "Using Pulsar.Common.Messages \u2192 c2_messaging",
+        "Using Pulsar.Common.Messages.Other \u2192 deferred_assembly",
+        "Using Pulsar.Common.Networking \u2192 networking"
+      ],
+      "namespace": "xcmobajxobfebgsqbrpftpzbwmcc",
+      "file": "xcmobajxobfebgsqbrpftpzbwmcc/wuZQS0fYvXxN.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020000AC",
+        "0x0600036C",
+        "0x0600036D"
+      ]
+    },
+    "zi6E7tx0f4ok2XbYgxXiq": {
+      "obfuscated": "zi6E7tx0f4ok2XbYgxXiq",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [
+        "Using Pulsar.Common.Messages \u2192 c2_messaging",
+        "Using Pulsar.Common.Messages.Other \u2192 deferred_assembly",
+        "Using Pulsar.Common.Networking \u2192 networking"
+      ],
+      "namespace": "xcmobajxobfebgsqbrpftpzbwmcc",
+      "file": "xcmobajxobfebgsqbrpftpzbwmcc/zi6E7tx0f4ok2XbYgxXiq.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020000C3",
+        "0x060003D4",
+        "0x060003D5"
+      ]
+    },
+    "6vS4bMa5c1kx5B": {
+      "obfuscated": "6vS4bMa5c1kx5B",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "xeupqemuwphzeuoubzsupqisua",
+      "file": "xeupqemuwphzeuoubzsupqisua/6vS4bMa5c1kx5B.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020000DB",
+        "0x06000486",
+        "0x040004C3"
+      ]
+    },
+    "ARlDVMX7fZZlz61zay": {
+      "obfuscated": "ARlDVMX7fZZlz61zay",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "xeupqemuwphzeuoubzsupqisua",
+      "file": "xeupqemuwphzeuoubzsupqisua/ARlDVMX7fZZlz61zay.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020000DC",
+        "0x06000488",
+        "0x06000489"
+      ]
+    },
+    "BtjNOVOfzk0F5B": {
+      "obfuscated": "BtjNOVOfzk0F5B",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "xeupqemuwphzeuoubzsupqisua",
+      "file": "xeupqemuwphzeuoubzsupqisua/BtjNOVOfzk0F5B.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020000DE",
+        "0x1700008B",
+        "0x040004CE"
+      ]
+    },
+    "EYfW58rFtLMn": {
+      "obfuscated": "EYfW58rFtLMn",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "xeupqemuwphzeuoubzsupqisua",
+      "file": "xeupqemuwphzeuoubzsupqisua/EYfW58rFtLMn.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020000DF",
+        "0x1700008C",
+        "0x1700008D"
+      ]
+    },
+    "gWNhjzjy3XC5": {
+      "obfuscated": "gWNhjzjy3XC5",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "xeupqemuwphzeuoubzsupqisua",
+      "file": "xeupqemuwphzeuoubzsupqisua/gWNhjzjy3XC5.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020000DD",
+        "0x17000085",
+        "0x17000086"
+      ]
+    },
+    "lfTpSMvwsPXstiRWwta": {
+      "obfuscated": "lfTpSMvwsPXstiRWwta",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "xeupqemuwphzeuoubzsupqisua",
+      "file": "xeupqemuwphzeuoubzsupqisua/lfTpSMvwsPXstiRWwta.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x020000DA",
+        "0x1700007E",
+        "0x1700007F"
+      ]
+    },
+    "15R32w0PmMPQEvSRsOj": {
+      "obfuscated": "15R32w0PmMPQEvSRsOj",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "xvyfahwczorgkmoaccfvg",
+      "file": "xvyfahwczorgkmoaccfvg/15R32w0PmMPQEvSRsOj.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000108",
+        "0x0600055E",
+        "0x0600055F"
+      ]
+    },
+    "jIFdRZFt9ufopvk3zpe": {
+      "obfuscated": "jIFdRZFt9ufopvk3zpe",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [],
+      "namespace": "xvyfahwczorgkmoaccfvg",
+      "file": "xvyfahwczorgkmoaccfvg/jIFdRZFt9ufopvk3zpe.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x02000107",
+        "0x0600055B",
+        "0x04000580"
+      ]
+    },
+    "LPescXoo4Zo4ap": {
+      "obfuscated": "LPescXoo4Zo4ap",
+      "likely_name": "Unknown",
+      "confidence": "low",
+      "evidence": [
+        "Using Pulsar.Common.Messages \u2192 c2_messaging"
+      ],
+      "namespace": "yfaxqhzkkzkymkol",
+      "file": "yfaxqhzkkzkymkol/LPescXoo4Zo4ap.cs",
+      "pinvoke_count": 0,
+      "tokens": [
+        "0x0200008B",
+        "0x17000070",
+        "0x17000071"
+      ]
+    }
+  },
+  "pinvoke_master": {
+    "DwmGetColorizationParameters": "#127",
+    "gZcRtec1pdBGSfUmLVkss840": "RtlInitUnicodeString",
+    "y5TUuRTXTUQvT9s897iClzbu576": "RtlUnicodeStringToAnsiString",
+    "eBhelZ5iJg4Lrt8KE": "LdrGetDllHandleEx",
+    "1W1tsBWyQ8eiZxV53SxvK4EJzcC": "GetModuleHandleA",
+    "U20RqDFkguSfIxJ6E": "LdrGetProcedureAddressForCaller",
+    "HHzvzqWSq7Rr3Q98dXHN2": "WriteProcessMemory",
+    "rvZJ9SmWuIFPU5hi": "IsProcessCritical",
+    "J4XWISy0Bg": "fopen",
+    "Uvy1rwZEWqrEq": "fclose",
+    "uSHouolIMNPebP3Khky": "GetPhysicallyInstalledSystemMemory",
+    "DKmCUeqMhgfyLNHztiI7Zt": "GetWindowThreadProcessId",
+    "D095N9wwCH": "SetWinEventHook",
+    "1bMykE5lwRAPYvr": "UnhookWinEvent",
+    "bj337mwnXWj": "GetWindowText",
+    "AX0xyzX7CUUGopYt": "GetForegroundWindow",
+    "3fcF2iBhUFVqHZyhCdAnOv1tH": "AddClipboardFormatListener",
+    "JPHY43CHVZLNe1k5JQI5Js49F7go": "RemoveClipboardFormatListener",
+    "gf1K7KmdlEtWAagT1fjjYbw": "OpenProcess",
+    "Orf59aEivq9phl8KR": "CloseHandle",
+    "eXDAPGUlGxtRSEte5PpreL9LkT": "DuplicateHandle",
+    "0vQhYRj7ZSOcYlXTRy": "GetCurrentProcess",
+    "Y46DqtekUSX2a5pe00P": "NtQueryInformationProcess",
+    "AsHTMqwRFG2sXG5f": "GetFileType",
+    "sjy3qPpBaygsHhcBddpxm096NfO": "GetFinalPathNameByHandleW",
+    "pfTAKkIQbbUdbRv2Pi": "CreateFileMappingA",
+    "jZq4nPrQ1k1qLAPW5ffigYLjBIMWU": "GetFileSizeEx",
+    "HqogpA8kpvc": "MapViewOfFile",
+    "RqkvJcM50XtAcKOG": "UnmapViewOfFile",
+    "eDV5vdKBoVPYUzuFLGf9Q9tJZPt": "TerminateProcess",
+    "oDev1sKrGYfMZteG7hfi84REsHlfT": "NtQuerySystemInformation",
+    "ggtNXl1dgloD9": "RmRegisterResources",
+    "lSjhemM2tL8twZCuHpX429cMW": "RmStartSession",
+    "PdA3355ecZhEBr9nwiPoybave9p": "RmEndSession",
+    "4m0XKkXs10R": "RmGetList",
+    "xS7nMDnq4O": "NtQueryInformationFile",
+    "46sFxCOZ4Q1j0": "NtSuspendProcess",
+    "K3aTRw6QN0fexjbV8KpZ5": "NtResumeProcess",
+    "cfkpmaWv6sGDCJNXnc": "CreateFileW",
+    "nt1jSPp7jSr4an": "GetCurrentProcessId",
+    "cKXBt0ZyRSPqGEfJWS": "SendMessage",
+    "0pRnh1SiKiDP": "RtlAdjustPrivilege",
+    "GpvoSPg4HxjfSR5D": "NtRaiseHardError",
+    "b9jcRmbKMRdMZGm2kibfEOz": "FindWindow",
+    "VuU2oH9xeS1E": "ShowWindow",
+    "nubzLga66QS8ymRUTjQDD4": "CreateProcess",
+    "CHc5miWTus58": "VirtualAllocEx",
+    "pJimt7HD8q": "WriteProcessMemory",
+    "8P4bwM9jtn": "CreateRemoteThread",
+    "sskyXj7hQ2oRpKAnUG": "ResumeThread",
+    "DDac7Xn5ghsWOWQazB5kiFaaH": "CloseHandle",
+    "8PQvipd6jVRQmbtn": "TerminateProcess",
+    "Ahfa4YuLlYfO8mAUoY": "OpenProcess",
+    "pu8C3Sx4IiZe04oa2": "InitializeProcThreadAttributeList",
+    "3D1gk6Q7rlsR58CV8qBfmH": "UpdateProcThreadAttribute",
+    "dlmM4pUUMHsu": "DeleteProcThreadAttributeList",
+    "hCJyJwz73Bq0YUTq": "OpenProcess",
+    "QF6Uw5B2vfYagF29NW": "VirtualAllocEx",
+    "OY0NpIYpqUUfdvOzXl8vHI6YR": "WriteProcessMemory",
+    "gW5y0K7jcAa2QLXQUi": "CreateRemoteThread",
+    "95pSPeXPlmGcc6PmBt": "VirtualFreeEx",
+    "dKi4TNZfVwX1yX7Rf1EqTc4W6Vi": "WaitForSingleObject",
+    "5AjWgbEPbAVE09CdNuSEepuu7CjBQ": "CloseHandle",
+    "77pbjUMBVWTr0": "GetExitCodeThread",
+    "fA0UabIMDddQQyZd1D9": "GetProcAddress",
+    "DXYYZrQMZ5vwyQO": "GetModuleHandle",
+    "RR2Q6371FcDn95bofQnHOFebe22U": "SendInput",
+    "wLUpoIcNOnwXZBtXzY9hD9I": "SetWindowsHookEx",
+    "ArMxawEBnMSQs7Vx9bRn0uy": "UnhookWindowsHookEx",
+    "uDod2wlxCqp": "CallNextHookEx",
+    "5pwbjvuMscp2DLilrfyP3ICWHkI0": "GetModuleHandle",
+    "NScjx1sQ1onXnQJPRX6lnNJIF": "SystemParametersInfo",
+    "rTDTAmEjirbT5WGa": "SwapMouseButton",
+    "YDDOTgeQ95Q58dDeHtUP5AeG": "GetSystemMetrics",
+    "FHyY16PmNIdbMZXJqWdGdgUT": "mciSendStringA",
+    "ADjY7tIXH0awYRT": "OpenDesktop",
+    "opzDhPy43lSXcYw3iD": "CreateDesktop",
+    "fDLyPXs6DGpdD": "CloseDesktop",
+    "fBZ6wuvPpeWbu5tDg": "SetThreadDesktop",
+    "UFxXc0jqySuxNH": "WindowFromPoint",
+    "A6XX7wTaQXqbym": "SendMessage",
+    "NAjcI8iIiiWG5df1RPMu9Wqja": "PostMessage",
+    "phAvZvDBEu": "GetWindowRect",
+    "v8QbyyzkqX7vgZ": "ScreenToClient",
+    "m1y1TABHTBIwJ": "ChildWindowFromPoint",
+    "C4YvnfQ6TLh18unrvdWNJL": "GetWindowText",
+    "NaNt16ZqBq9ndj": "PtInRect",
+    "245pimTcBQ": "SetWindowLong",
+    "lPoa5c1rKUZvZ93ffK9": "GetWindowLong",
+    "KIvlcRdmj37M": "GetWindowPlacement",
+    "XVKBlugvvYpdIfqpHyR": "FindWindow",
+    "JTceC8n9OH": "MenuItemFromPoint",
+    "XMSCntd4adVYuGI": "GetMenuItemID",
+    "ww7cFpLTD3p9mGhh": "GetSubMenu",
+    "HSQzdC6o31ix4rX4o1MRpL": "MoveWindow",
+    "B98uDeRU5yunx1eStBxLymgJ": "RealGetWindowClass",
+    "RE7OUP85kO0fS": "GetWindow",
+    "Klhn8KEkDKjcQ2A2YdzjvZTFkiw": "EnumWindows",
+    "MmoxbInjR9h8HrAxp29F4rzX": "IsWindowVisible",
+    "tHuSbCaXVXagvBHPblZ60bD": "IsWindow",
+    "gasjqxfwQHsB2Rz7Gl": "PrintWindow",
+    "UkR3110dGabzRDVwBU0rh2nPo": "SetWindowPos",
+    "GWJwczPptyOg1rz": "GetClientRect",
+    "ZWzRb8hfxnQ3Nc6B": "GetDesktopWindow",
+    "iveTT8mklUghfc": "MapVirtualKey",
+    "1NdRZX1Iyo9zi": "GetKeyState",
+    "cQ2NRS5VAFXNrzoA": "ToUnicode",
+    "RKGCA9pl1rnppUJDOJDoUNJNgNX3M": "GetKeyboardState",
+    "khMBcdpMr2SKfAaClDVFIbQyPnxb": "NtQuerySystemInformation",
+    "D6FQXzT2Yu1ZwsTNcNbKIf": "OpenProcess",
+    "UZxIQYvyqNjo6M3HKHKMSdq": "CloseHandle",
+    "s7kxaVRehQv1jqCem": "DuplicateHandle",
+    "KLMEWBiFQC8TX0sbZTx8YV5FHqaC": "GetCurrentProcess",
+    "dEpjWSeJokjOUEOgN35I": "GetFileType",
+    "RtrohzQG7qkg": "GetFinalPathNameByHandleW",
+    "x8SuAhNSvtNtEQqi3wf3Z": "CreateFileMappingA",
+    "V84ydOCr38swRQ": "GetFileSizeEx",
+    "d2Y40g9d5djjhE": "MapViewOfFile",
+    "FmIknTzME9PD0PAR9aUZ4H8jqVe9": "UnmapViewOfFile",
+    "4oen92Fnqn4opT5k": "RmStartSession",
+    "JO4MjJNp98oj4Ryz2KU": "RmEndSession",
+    "a0W5oSwauPxD8OMQEIUfR8A4b": "RmRegisterResources",
+    "wWFzxJk0BS1": "RmGetList",
+    "XyhCFJAhhaOw7rGZlN8H2Z6j7": "OpenProcessToken",
+    "9XoBdriv1OEQf2k9ivjZhIkZ": "LookupPrivilegeValue",
+    "wK93727EVKm2g6hNLz1VVrFh20": "AdjustTokenPrivileges",
+    "9iM0xPMqgi23W": "CloseHandle",
+    "GsX0TT2uKtotw": "GetDC",
+    "EyjU6bPebMlZGwRwOvQzHg6D5ARQm": "SetThreadDesktop",
+    "m5ahfISR5J4m": "OpenDesktop",
+    "LO4NGdYf3d71h1g": "CreateDesktop",
+    "6K81Ukq9jRIe6zG4e": "GetDesktopWindow",
+    "uyBwKxNmsccp7Qw": "GetWindowRect",
+    "VcTDoFaSpJEg": "GetWindow",
+    "9uGOtUXufcMfMPDn78bPBntUnN": "GetTopWindow",
+    "GkotnhCHOmFZ": "ReleaseDC",
+    "tX0AHibzWpsKnQwVAwkgMRJ1sj7K": "CreateCompatibleDC",
+    "zA2iggoxsNFv": "CreateCompatibleBitmap",
+    "t55i9RPvN0e2sbN": "SelectObject",
+    "xFbyapdelMPF63hGN5Q8Gy3": "DeleteDC",
+    "DI84UU5fc5Soru04BQSW90NqIyJp3": "CloseDesktop",
+    "j9McuSqjJQQumBk3Zd": "GetDeviceCaps",
+    "PJqhCqaLX64PCfD38EkiJTE": "CreateProcess",
+    "NAPWkdS4WCUkr6muabib9": "WaitForSingleObject",
+    "jQV4L32Si5FHUCb": "CloseHandle",
+    "27bQ861h4iN5qY9DRi7wi": "ResumeThread",
+    "Yv07sb3NkDVck5": "OpenProcess",
+    "MhxTypf480VE": "VirtualAllocEx",
+    "8zczQ8bkhHBwtQtG": "WriteProcessMemory",
+    "PCa14Yppvh202": "CreateRemoteThread",
+    "XWjOulgLlehp": "WaitForSingleObject",
+    "wgEZvyykSocDaxKebi": "CloseHandle",
+    "yp4VcU9Nld": "CreateProcess",
+    "4Ca8cfboHwqJblyjO0ri5aof": "ResumeThread",
+    "bcKk4GrfAQ3Xmt3HWJQIfduouvW34": "CloseHandle",
+    "azF8ya8DSfrduHeX7QvpVH": "GetThreadDesktop",
+    "Q7Py3PwBk0d3iCHOe3Xi7cCy6h": "GetCurrentThreadId",
+    "amqrPSAzAilFxfeHmRO6VzBR": "SetProcessDPIAware",
+    "MscGw7W630L02G5SO6NBy78BQ": "GetWindowThreadProcessId",
+    "RDsrUS3AYb6WKLKk": "SetForegroundWindow",
+    "eaUgFl4WZyx8PtazdpTOMg3": "BringWindowToTop",
+    "2seW2wB1OSel6wMcxU5dGCJrfgqf": "AttachThreadInput",
+    "Wc8hXoXGidmw5u6Pz3rd0a1kZ0z": "GetCurrentThreadId",
+    "x0WFg910fEiIyVP1SqKRN": "GetForegroundWindow",
+    "xEflccXYPZQzLaSL9p5DwZK3r7b": "SetWindowPos",
+    "qru5YvlGPOFss": "GetModuleHandle",
+    "PLlhQ823jAc8wUwo4YmluX": "GetProcAddress",
+    "Xzebc9gGoOT1dQ7FvRxIud": "WriteProcessMemory",
+    "8QTlUrFG02iOswha3C": "SetProcessMitigationPolicy",
+    "xtddTX6S1U6P23ZgLIYMYjIc84CP": "NtOpenThread",
+    "O13F0pqew9OYZOw3": "NtQueryInformationThread",
+    "zJoBFPyGTPVSR9bkBqg2OBhhe7GhS": "NtAllocateVirtualMemory",
+    "cn7fgMxANJUSUoTunL2QDnnVvyl": "VirtualFree",
+    "gIJRyZxrUvdO": "RtlInitUnicodeString",
+    "AdWh5q3OuT4oBzy9murkqeEAD": "RtlUnicodeStringToAnsiString",
+    "41lZ1sndDJRxzHs2vyO": "LdrGetDllHandleEx",
+    "xj8rsBvoGgYWdcvCmUcMBi": "GetModuleHandleA",
+    "psy4j1xsQvbqU23rz69Wgu5UX": "GetProcAddress",
+    "qQbWClPxT94HLwSxI": "LdrGetProcedureAddressForCaller",
+    "CvaJsnmPBLQ4xehNLhR4t": "GetModuleFileName",
+    "bhi4xsvMDsmURl5ghxtwjDhZMZ": "NtProtectVirtualMemory",
+    "7kvgO0MU2ly04dyHhRcM6": "NtQueryVirtualMemory",
+    "p9dL6QXAJrXIymS": "NtClose",
+    "CNJGgLEj7IBqBHOves0Lf3rInq8qV": "DwmSetWindowAttribute",
+    "GzxAoQ3Ba18wWb": "SetHandleInformation",
+    "wdMJC0xggNZABshLIoUztTtkJijq": "NtClose",
+    "HxYTGcOiq3VTS": "CreateMutexA",
+    "xPQ1S2p0HBmLcul": "IsDebuggerPresent",
+    "eRHWZZAq4QSnbv8gaD6V2qQxeQpWr": "GetModuleHandle",
+    "9e7qYEL61XPj6CkCZWCFuZyQGyAT": "GetProcAddress",
+    "Itn99QypuW4UeMiFTtONc1TUlKk": "WriteProcessMemory",
+    "rjkD2Esnlj7vvWo9HvQNPKx": "ReadProcessMemory",
+    "wGZQaTXyqJ8": "NtSetInformationThread",
+    "w0cZd5etwccGN": "NtOpenThread",
+    "M04XZhwgRvpbNRMJ": "GetTickCount",
+    "mYdNRS0tUpD": "GetCurrentThread",
+    "TnTDFGg3TtbYPjq": "NtGetContextThread",
+    "CrMhnY0stH5hEnF1sO7IVXHLp": "NtQueryInformationProcess",
+    "v26E7smFqncgp5": "NtQueryInformationProcess",
+    "kT8L8zpojpBliYojB2Xm7vpKM5": "NtQueryInformationProcess",
+    "7bYMjCUvEJ9qaFOXY5GDqCDboRS0z": "QueryFullProcessImageNameA",
+    "y8D0sMKccjOnkaBL7hsYQOG": "NtUserGetForegroundWindow",
+    "R4Y7iRtd5ZUBnjWCM6chzDcnZcU": "GetWindowTextLengthA",
+    "IbYk2KjyxN4LzusKGAiYKpLUw": "GetWindowTextA",
+    "DOcviG78UeBuIc9iO9BRs": "NtSetDebugFilterState",
+    "URgY45kdPDx": "GetSystemInfo",
+    "HUVCoxN1aNIV2FYm": "VirtualAlloc",
+    "MSe093KOJMBY1P76yV": "memset",
+    "MMUND0nHJKgyh8CCvTdIaLx": "VirtualFree",
+    "lLdi8KZDutZN2Ea9VwBD": "GetLastError",
+    "PJhVLBTl5a9WqhKPU": "NtResumeProcess",
+    "eaJQeYCDZAuV5Q4jdU": "SetForegroundWindow",
+    "3EwktsqpPKni": "IsIconic",
+    "oGrLP9pITHlS": "ShowWindow",
+    "jescGE0HbVr0Zixtw3wcmrzjtUe": "LoadLibrary",
+    "z0O2pJswjKI1Yg": "GetProcAddress",
+    "halw90MuldEjYeExjCtVb": "QueryFullProcessImageName",
+    "QhwER9h2WVdwSAQmhWnFnY": "GetLastInputInfo",
+    "jURfWizoLH3JEA5jNNsHt": "SetCursorPos",
+    "lMEh6fXrWA1": "GetMessageExtraInfo",
+    "Mt9eKThrSpZ0Mmlxa24R1esFbzlT": "SetWindowPos",
+    "du2SHxMjsCYkBx6": "SendInput",
+    "NUU4jRdGjFsA4DUsNZz4giFzZ": "SystemParametersInfo",
+    "rzfrzqvSNeRZsL": "PostMessage",
+    "wsBELopsqWm8CPp": "OpenDesktop",
+    "feUkok2QCPmzzay": "CloseDesktop",
+    "nnuzDuOkBGyUNstChPw4XkmL": "EnumDesktopWindows",
+    "vC5C02Qi4UZezMuQujhwhCTfjR": "IsWindowVisible",
+    "o3TDAj9RsShKOiwSYUhsC": "GetForegroundWindow",
+    "onBFYSssad": "GetWindowText",
+    "SlokRZ5z5B8MYTNuu5LBj": "RtlSetProcessIsCritical",
+    "lPqB5KriA1Em66HrG4m2H": "GetExtendedTcpTable",
+    "pbmwLh8xOc": "SetTcpEntry",
+    "t9Z4PduIWBGHwWRnCyQYqakjOZJ9J": "MiniDumpWriteDump",
+    "MnmmM6sx1b1uv9jTzZ446": "NtSuspendProcess",
+    "bkoUXH4dXO95ujggCShaIme5C6": "BCryptOpenAlgorithmProvider",
+    "FGt1pztJQQvI": "BCryptCloseAlgorithmProvider",
+    "6mCzZit419H": "BCryptGetProperty",
+    "bXpzFsRaAzXoW": "BCryptSetProperty",
+    "GBaQQQJbdfkofdMM": "BCryptImportKey",
+    "HlrObDUKhdrFHP": "BCryptDestroyKey",
+    "dFbsdlt0994JObNyO": "BCryptEncrypt",
+    "lQCoFp7GGswcWVPMKZBesmXurO": "BCryptDecrypt",
+    "ijtS6HFFVPC2OV5": "OpenProcessToken",
+    "9uxRFx5a7k9TrpjjZQ": "LookupPrivilegeValue",
+    "HaLVPrLm3GHPkJf5YxUKv": "AdjustTokenPrivileges",
+    "TUVHwXqpcd8xx9xZij3KCU": "DuplicateToken",
+    "VYJMuKwEFxdH09H4x6NnoQxWfI": "SetThreadToken",
+    "OuQkl9eAtnL6eqY2AT26ZbpGOzqLE": "GetCurrentProcess",
+    "NwqEylHalG9eUcudDEa0WSNPIG": "RevertToSelf",
+    "F0p6OgpN3RapF5MNflxXl": "DrawIcon",
+    "YnASv4RMCP08C": "BitBlt",
+    "WUcpVE2xOBqel9Yf": "CreateDC",
+    "X95cC56vu6qOLzG231KJI": "DeleteDC",
+    "hRkZ9lQSRy": "SetThreadDesktop",
+    "vRDaQ3BIFnh4T8QoBPsdwTZPkLD": "ResumeThread",
+    "pNsUSpXvWVpDKO4no": "Wow64SetThreadContext",
+    "7UE0uNpXFc2xz": "Wow64GetThreadContext",
+    "zod25NmnleS": "GetThreadContext",
+    "jpThYvlaOtSyceo5j53ifkN": "SetThreadContext",
+    "vCsaiUtkiEoAEiDGLZ0G": "CreateProcessA",
+    "oZajqDqltK8bxvWCL": "CloseHandle",
+    "4AsQY0o1B1wXGtHJHmR02QC9z3q": "TerminateProcess",
+    "QwqEAh6GoXAk5yCyyVDOT": "IsWow64Process",
+    "ouvU9n7sbfJFkPLsWixBet": "ReadProcessMemory",
+    "r5DOOKdzcPnI6TpiTJ56fa": "WriteProcessMemory",
+    "OwnG8fbSI4IDY5Zsi7prz7GOZr": "VirtualAllocEx",
+    "e2jwGQFzbl": "ZwUnmapViewOfSection",
+    "eUB7eNyPRm3": "VirtualAllocEx",
+    "W90tAQpYrRf7ZjHCxT": "WriteProcessMemory",
+    "8HecVq2c3aKZ": "ReadProcessMemory",
+    "kcMxPhFivMWNzEh5G": "ZwUnmapViewOfSection",
+    "OH77Y5cUh2XIOI": "DrawIcon",
+    "KuQlolSatL": "SetThreadDesktop",
+    "otMSZmJxpaLuB85MGSCHW": "EnumDisplayMonitors",
+    "R9kmtV3uqU8Pquo1xonyArE": "ShowWindow",
+    "RBDKPARv6h2lUVqTIvXss7": "SetWindowPos",
+    "eHK00yxAquQDY7ttltKmlgX": "GetProcAddress",
+    "HbYFM9hfsVIroN1rby0dI": "VirtualProtectEx",
+    "vNB6swy1D8tjt": "WriteProcessMemory",
+    "ZryrNuUDyBFY2cLxp3": "OpenProcess",
+    "7qLEQRur1RK7EebStAJ": "CloseHandle",
+    "XysY90U4VqQS0Hv": "LoadLibrary",
+    "OnhacCdvoEA3aJbxfnEJ7wFZ": "GetLastError",
+    "0VLB1H7ssDGctxVU6t50adLOdxMCm": "ReadProcessMemory",
+    "bhIdlqSux6DKrGVVwztyBCKjg": "EnumProcessModules",
+    "J6iE44G7miTQLoCM6": "GetModuleFileNameEx",
+    "wPvF3HBXTytYXj6OhWLtCJEuewBgo": "OpenProcessToken",
+    "vzGLxQlDCaD": "LookupPrivilegeValue",
+    "kRNNKuT6GqAN6mLBlHGe": "AdjustTokenPrivileges",
+    "o3VsPDtmZLzM7RW6QquriansRJ2": "SetThreadDesktop",
+    "hNbjOsUYXvk": "DrawIcon",
+    "LKpKEOqhvcUG": "ExitWindowsEx",
+    "4wrdKZbbKa7rKCI6cVJ1Yj": "SetSuspendState",
+    "qxLbbdfIMjv8yjw6MApAtsc4Mhl": "LockWorkStation",
+    "HKONV4Ap8897pSuI": "OpenProcessToken",
+    "DTWpY70tiI8VRO31LA": "LookupPrivilegeValue",
+    "Uin4iG8OAr": "AdjustTokenPrivileges",
+    "tGGdRty0aYyjatzBMrABwGp": "CloseHandle",
+    "JcPCA1R9ALtSRAt": "SystemParametersInfo"
+  },
+  "settings_class": {
+    "obfuscated_name": "XfvRhfc8YGggaI",
+    "namespace": "bjaeujhapczempm",
+    "file": "bjaeujhapczempm/XfvRhfc8YGggaI.cs",
+    "fields": {
+      "4uq4ws40syDkm": "whNf2gnap8MpGZ8YLtyjKxApa/luHsuMHCpHmH4H1jhq",
+      "T1hPcB5PAVrkADQaPu94": "TC5OcTmSU2VZ7Ycmdtrl2d9BQXOK+bBvnqUN9jYL4zCM7L9pBUmtsHhFPBEqEB8R",
+      "J20px0q0fMMSlIS": "GRlUQvaDaExHP67+T3BW98AJjms6ztNhyk5acHKUASCu",
+      "hegIqzDbyyHLS0xnaarrb3": "MbVwShvj3qIvAgHPiTqdlug/TujWtDTQV9b04g7E98K5FjVVZEa4",
+      "2CDfBfn2tWlVcIlrE": "LM0p7ZX+1BIyurgaW/THUfzis7cCEP7NXYo3eU/0sZix0T72gokixDPQq4V2+2y+1/lLoh0zT85w/QEsSy75qg==",
+      "fGB22frfEAKo8DW": "1vE//y7MvHnT8glU6RM628P+iIHpSmLR+UIvNEErI45MPg==",
+      "mptvvvwEX9ovort": "F00D8BB24970E7D1F5959C85D7084E366FF0C645",
+      "BpNKNrIwM7V3cpExXctUaxBuojUFs": "DtMT07ktysfGmMCW5eZhaaZoasQ7DSfIn3//mMTQSgbvGg==",
+      "TrpgF4SuC5g6iya3ms41YM8Zg": "Q06/orUvaj/Qgfmw1tkilmKFnJP35eKL58p8t4AGTt4=",
+      "odfoWDEaonO5jJ": "VjuYjuDnBat5d7txHsA66vJlXP6kVbkSYy8HKEW92NDgyEOUg0LRJ6+DIDAVfRjEmfrlYktyrktV0x4pwkVqlcK3u4SXWhhdZDnHKi/tNneXUVH45L+edV/X8daq4atGop/54uouO54IKT9TortxUJzFS7cCfY0VdPCtVyfHdC02XFYrJTCOlUhUgA9MVIqdfW2Db3sntAU4rxoFuylFYLThgQoWEqAeJb9QBTdytwNDnt21qA+rqav+iq4Zq6j96gQQxB0Wvu3IRUg4ksyjSIfH5sj8/DjLJt1jad7VATAqgwPN3/o5Yg7ffujMaQWC8I7JA2dxVNQARVHjyv1ZtVuwN9aXSA9xzbsaSgMqzrifC6mQcifPwtWjZhmcTPGmnc3s0Ygk+3ZllYY2WEcQRFUE5PsDzLsM787vvlLEppDWUeWLZ7X9eoMALSu+7pOED7c5iIEal0n2gudCsk31WrBlymzeIkGkjdcIGhppFfjuj5np",
+      "mayxeONUv7mK0XHtPA1": "8YWvoE3JQDavb6cMcsnlXgivI8/UPSBbMrp6Dm3QdJ6a1Nck77dmQeTqsxchk/FvUKaMEd6XuPC2H/RmkOAGRawIpHtD7RljXHqXsW1s0CmfamazSScbkrS/jgSnUp+KZJGZ3wddRTmPv1TNqr7XMajSGvGRLTMI0wzDm/EY2K+mMnOdjlFH1kD1CAprfNZNggMvQAj3J8gkt6Yrlffw4Ofmuhg5MnC26YuHdX64x49a5bG0auVcNMD6IdC2D3D5c75X4qLCFp+mKqkBcrjOF+R1kuVvV+dnFDS0vO/rwae2RXUt96MXs4Las3vlOC5t98g00p00xqwtQwKvfR4iCkUE/c0c1CYzs/GiV6kehRpKHNqrGbttVCEiKu7qY00swOHAMbeCWAD1WIdXQ2Q7FitcsVhNkG1NIUFjGQZ0ED8Sbj6kU/sOhnGpB4RCjHjk+kWfawZme0bWjv5Qgc/rq+2RvidZrEYzaVJUX/o1Y4RiWC/jcIwRg8C3iLUAj35b5Mz8ZN713zIL1N1YbtJdcNSU9ZRcAb/KQXydY7T/fwZJSwbXy5rCn2DVNps0dABIbcD9oq/m7GUqeXmLh2bACknc7AMu7MHJv4hfcZeSXjvAH3yyaFGOhIbtri9rZG/eYL2k4c3jrb4dPKnb+asUGcVnDim0Q7yaWnJkY4293t5UFdHakPHcbhLSVwy/0lfRneBBNEJv98+tq2EBmf7rw9qSt+rCkf0f8915oUK4W1IXnTr/naM4I0RD58lE0e82wds3DQocx0EMc5/2LEKDNHAq+LcVWdrVsaHg22wdve3mni+aDWVD10T2/DZzWm23vjKc2I24lYqArN1xSUZY79ZRGBbUJvO+X751S3pYvTnbfngDpigVuC4BFJG4+FdOrWaK/xDRC4KZpVdvDE4VmAShm8wAfvmRlvYvWiSKmZuKv/WmUK6Rff9eCRrm1awSy5pVs88Gg+HF+OGeihyU7hNP1AwN4yZvrWmvqKKdl70VRUXt9tdEcwzin7gmGKEHd4VxZcAjpi0nk1jDK9LqGjpV1KNht6gd5p6FupLrvPT24i02/eD65QYkJ1uukf8N71Lj+2DFxmJvZxPBHqbEl3/45Es7wy1PrkTT+nrtJKUSu6L+Mg5usbNftCMNLe1i9vSaKiDhCVei53J/qiGojk67KD/o2lARlC2BQ3KryasAOwMjN+DeryoQ98fHki0aXdSecyGNmOFnXAQV8pHniGPcJ43nZrmGTnJXgX8wTITMLbKUeIUlmMPY1ikbWlOS+40n34H/oFuFsqY1aaJX53d3xdCKb8PV6CEcr91x9pP6VoUXHfALPI2XAlEFXZZT43SKovlwW/hX/H1QldTskWgpWNaheOt5gD7jv+MC6JBREHqQl4/6JxA2KaxDN6WlABa/P/8UOQaCbO0pEfKNE+aH5bKUKdHHqf8I41cpTbDcrR1RAhvpqljVVUkKHVjrJ9mje2M9lFYaQ1W2DvQiQQ1Kju/xXQdhQHjF4SSOiRtoNciCEZj4eSL4gFEnKB2sXdMHwCVJe6Fi8WOF30/Kb7cng29uENJourO0Lah+BdK0ykw4ZOiw7jlbAusAiDPKEW2peb7zPwJrT47oZpmbG1aEsqOoT/5Ig34d0xdPz3EcniwDp/sXfg==",
+      "0rdqzkoEm2pwa2rXt3Ra4VkobP": "",
+      "tcMTV61B84Wau6Cbpbe": ""
+    }
+  },
+  "settings_fields": {}
+}
