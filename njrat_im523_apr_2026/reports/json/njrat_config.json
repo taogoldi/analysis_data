@@ -1,0 +1,14 @@
+{
+  "separator": "|'|'|",
+  "separator_offset": "0x76d0",
+  "version": "im523",
+  "c2_host": "phishing.multimilliontoken.org",
+  "c2_host_offset": "0x75c6",
+  "mutex": "411e31664bdd9d96369d0a44d5111aef",
+  "mutex_offset": "0x760e",
+  "campaign_tag_b64": "SGFjS2Vk",
+  "campaign_tag": "HacKed",
+  "persistence_key": "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+  "drop_name": "server.exe",
+  "c2_port": 443
+}
