@@ -1,0 +1,234 @@
+{
+  "sample": {
+    "sha256": "072533c1d31d83b056a1a9f4174a23763c53597df1c89ad9c545df2c3bb35f5e",
+    "md5": "650c00bed1b3ce7db2e8ddfb949a5576",
+    "sha1": "350c7b55675d1cd6903ac8f12dcdceace13f1d43",
+    "size": 1448064,
+    "format": "PE32+ x86-64 Go binary",
+    "go_version": "go1.24.5",
+    "compiler": "gc (standard Go compiler)",
+    "build_path": "Factory-v3/builder/temp/7061c16a7a05b72f2cf8d5e57bdcc1d0/main.go",
+    "build_flags": [
+      "-buildmode=exe",
+      "-trimpath=true"
+    ],
+    "pclntab": "stripped/modified (GoReSym fails)",
+    "overlay": {
+      "offset": 1445888,
+      "size": 2176,
+      "type": "Authenticode signature"
+    },
+    "sections": 8,
+    "timestamp": 0,
+    "subsystem": "GUI"
+  },
+  "obfuscation": {
+    "type": "dual-layer",
+    "layer1_english": {
+      "description": "Nuclear reactor physics decoy type names",
+      "types": [
+        "BeamEnvelope",
+        "ControlDrum",
+        "FuelRodBundle",
+        "GridRef",
+        "LatticeCell",
+        "MagnetFlavor",
+        "XenonTransientTable"
+      ],
+      "fields": [
+        "reactivityWorthCurve",
+        "dopplerCoefficientNeg",
+        "xenonConcentrationPpm",
+        "claddingIntegrityScore",
+        "rotationAngleDegrees"
+      ]
+    },
+    "layer2_cjk": {
+      "description": "Chinese character word-salad function names (garble-style)",
+      "functions": {
+        "main.简短平衡战斗": {
+          "translation": "Brief Balance Battle",
+          "address": "0x471740",
+          "size": 1896,
+          "note": "unnamed helper, calls LazyProc.Call"
+        },
+        "main.main": {
+          "translation": "main entry",
+          "address": "0x471ec0",
+          "size": 2255,
+          "note": "creates reactor maps, launches goroutines, calls syscall.Syscall"
+        },
+        "main.提升武装意识到": {
+          "translation": "Improve Armed Awareness",
+          "address": "0x4727a0",
+          "size": 2045,
+          "note": "slice/map ops, runtime.rand"
+        },
+        "main.账户男孩酒吧": {
+          "translation": "Account Boy Bar",
+          "address": "0x472fc0",
+          "size": 2262,
+          "note": "LoadLibrary + GetProcAddress — dynamic API resolution"
+        },
+        "main.也青铜爆炸": {
+          "translation": "Also Bronze Explosion",
+          "address": "0x4738a0",
+          "size": 1207,
+          "note": "map access, memory allocation"
+        },
+        "main.牛肉古代桥": {
+          "translation": "Beef Ancient Bridge",
+          "address": "0x473d60",
+          "size": 870,
+          "note": "string conversion, map operations"
+        },
+        "main.资产酒吧协助": {
+          "translation": "Asset Bar Assist",
+          "address": "0x4740e0",
+          "size": 1750,
+          "note": "SyscallN + LazyProc.Find — direct syscalls"
+        },
+        "main.讨价还价黄铜道歉": {
+          "translation": "Bargain Brass Apology",
+          "address": "0x4747c0",
+          "size": 3973,
+          "note": "largest closure, main payload logic"
+        }
+      }
+    }
+  },
+  "capabilities": {
+    "dynamic_api_resolution": {
+      "description": "LoadLibrary + GetProcAddress in main.账户男孩酒吧",
+      "dlls": [
+        "kernel32.dll",
+        "advapi32.dll",
+        "crypt32.dll",
+        "shell32.dll",
+        "ws2_32.dll",
+        "ntdll.dll"
+      ]
+    },
+    "direct_syscalls": {
+      "description": "syscall.SyscallN + syscall.LazyProc.Find in main.资产酒吧协助",
+      "apis_observed": [
+        "VirtualAlloc",
+        "VirtualFree",
+        "VirtualQuery",
+        "CreateThread",
+        "SuspendThread",
+        "ResumeThread",
+        "SetThreadContext",
+        "GetThreadContext",
+        "DuplicateHandle",
+        "OpenProcess",
+        "CreateProcessAsUserW",
+        "GetProcessAffinityMask",
+        "GetSystemInfo",
+        "LoadLibraryW",
+        "LoadLibraryExW",
+        "GetProcAddress",
+        "WriteFile",
+        "CreateFileW",
+        "DeleteFileW",
+        "SetFileTime",
+        "GetTempPathW",
+        "GetCurrentProcessId",
+        "GetCurrentDirectoryW"
+      ]
+    },
+    "thread_manipulation": {
+      "description": "SuspendThread + SetThreadContext + ResumeThread pattern suggests thread hijacking or injection",
+      "evidence": "APIs present in imports + LazyProc resolution"
+    },
+    "interleaved_cover_code": {
+      "description": "Nuclear reactor simulation math (float64 map operations) interleaved with malicious syscall setup in the same functions",
+      "constants": {
+        "0x3ff0000000000000": "1.0 (IEEE 754)",
+        "0x3ff8000000000000": "1.5",
+        "0x405f6ccccccccccd": "125.7",
+        "0x41a3ab6680000000": "165853696.0"
+      }
+    }
+  },
+  "builder": {
+    "framework": "Factory-v3",
+    "build_hash": "7061c16a7a05b72f2cf8d5e57bdcc1d0",
+    "description": "Custom builder framework generating Go implants with nuclear-themed obfuscation"
+  },
+  "c2_config": {
+    "status": "EXTRACTED via threat.rip MalConfig",
+    "source": "https://www.threat.rip/file/072533c1d31d83b056a1a9f4174a23763c53597df1c89ad9c545df2c3bb35f5e/config",
+    "host": "72.61.25.108",
+    "port": 6789,
+    "protocol": "tcp",
+    "asn": "AS-HOSTINGER",
+    "reputation": "unknown",
+    "note": "Config extracted by threat.rip's automated analysis, not visible in static strings (runtime-decrypted)"
+  },
+  "external_intelligence": {
+    "loader_insight_agency": {
+      "url": "https://loaderinsight.agency/?p=payload_view&hash=072533c1d31d83b056a1a9f4174a23763c53597df1c89ad9c545df2c3bb35f5e",
+      "distributed_by": "GCleaner",
+      "family_classification": "gcleaner (botnet payload)",
+      "first_seen": "2026-04-06",
+      "last_seen": "2026-04-08",
+      "tasks": "5 delivery tasks observed",
+      "unpacme_id": "3f8f561d-f870-4e10-9b9c-cdcaa20abd46"
+    },
+    "malwarebazaar": {
+      "url": "https://bazaar.abuse.ch/sample/072533c1d31d83b056a1a9f4174a23763c53597df1c89ad9c545df2c3bb35f5e",
+      "family_signature": "Smoke Loader (disputed — likely misclassification)",
+      "reporter": "Bitsight",
+      "tags": [
+        "dropped-by-GCleaner",
+        "exe",
+        "signed"
+      ],
+      "note": "MalwareBazaar tags as SmokeLoader but this is a Go binary, not a Delphi/C++ SmokeLoader variant. Likely a GCleaner second-stage payload misattributed to SmokeLoader."
+    },
+    "threat_rip": {
+      "url": "https://www.threat.rip/file/072533c1d31d83b056a1a9f4174a23763c53597df1c89ad9c545df2c3bb35f5e",
+      "verdict": "Malware",
+      "score": "100/100",
+      "threat_name": "Backdoor.Win64.Gsb",
+      "certificate": "www.glass.com (valid, signed)",
+      "config_url": "https://www.threat.rip/file/072533c1d31d83b056a1a9f4174a23763c53597df1c89ad9c545df2c3bb35f5e/config",
+      "note": "Config extraction available but behind Cloudflare challenge",
+      "detections": {
+        "ReversingLabs": "MALICIOUS - Win64.Malware.Heuristic (Explainable ML)",
+        "Malprob": "Malicious - Score 100",
+        "VirusTotal": "12/76 (15.8%) - TROJAN.FILEREPMALWARE/MISC (2026-04-06)",
+        "AnyRun": "100/100 - Malicious activity (ThreatLevel 2)",
+        "Hybrid_Analysis": "87/100 - Win/malicious_confidence_90%",
+        "Filescan_io": "LIKELY_MALICIOUS (1.00 confidence)",
+        "CyberFortress": "Malicious 94.9% - #injection #obfusc #crypt",
+        "Threat_Zone": "SUSPICIOUS",
+        "Kaspersky_Opentip": "Malware (Dynamic) - Backdoor.Win64.Gsb",
+        "Jotti": "3/13 scanners reported malware",
+        "Hatching_Triage": "3/10"
+      },
+      "die_analysis": {
+        "format": "PE64, AMD64, 64-bit, GUI",
+        "language": "Go",
+        "compiler": "Go 1.15.0-X.XX.X (DIE misidentifies version - actually go1.24.5)",
+        "signing": "Windows Authenticode, PKCS #7",
+        "certificate": "valid, issued to www.glass.com, Country Unknown"
+      }
+    }
+  },
+  "identification": {
+    "primary_name": "Backdoor.Win64.Gsb",
+    "alternate_names": [
+      "GCleaner payload",
+      "Factory-v3 implant"
+    ],
+    "delivery_chain": "GCleaner PPI loader → downloads this Go implant as second-stage payload",
+    "certificate_signer": "www.glass.com",
+    "framework": "Factory-v3 (custom Go builder)",
+    "attribution_notes": "GCleaner is a Pay-Per-Install (PPI) service first seen in 2019. It distributes payloads for multiple threat actors. The actual Gsb backdoor operator may be distinct from the GCleaner operator. MalwareBazaar's SmokeLoader classification is likely a misattribution — this is a Go binary, not the traditional Delphi/C++ SmokeLoader.",
+    "av_detection_rate": "12/76 (15.8%) on VirusTotal - LOW detection",
+    "kaspersky_name": "Backdoor.Win64.Gsb",
+    "note": "Only 15.8% VT detection despite 100/100 threat.rip score. The Go binary with valid Authenticode signature from www.glass.com evades most AV. Kaspersky's dynamic analysis engine is the only vendor with a specific family name (Gsb). CyberFortress flags #injection #obfusc #crypt tags."
+  }
+}

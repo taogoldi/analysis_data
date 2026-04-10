@@ -1,0 +1,76 @@
+================================================================
+BACKDOOR.WIN64.GSB — KEY ASM SNIPPETS FOR BLOG POST
+================================================================
+
+1. GOROUTINE LAUNCH + VirtualAlloc RWX (main.main @ 0x472100)
+----------------------------------------------------------------
+; main.main calls main.__6 to build payload, then allocates RWX memory
+0x004720e0  call sym.main.__6              ; Build payload (main.讨价还价黄铜道歉)
+0x004720e5  mov  qword [var_298h], rax     ; Store payload pointer
+0x004720ed  mov  rcx, qword [rax]          ; Load payload base
+0x004720f0  mov  ebx, dword [rax + 8]      ; Load payload size
+0x004720f3  mov  rax, rcx
+0x004720f6  mov  ecx, 0x3000               ; MEM_COMMIT | MEM_RESERVE
+0x004720fb  mov  edi, 0x40                 ; PAGE_EXECUTE_READWRITE (RWX!)
+0x00472100  call sym.main.                 ; → VirtualAlloc(NULL, size, 0x3000, 0x40)
+; Retry if first allocation fails:
+0x00472121  mov  edi, 0x40                 ; PAGE_EXECUTE_READWRITE
+0x00472126  call sym.main.                 ; → VirtualAlloc retry
+
+
+2. DYNAMIC API RESOLUTION (main.账户男孩酒吧 @ 0x4733f5)
+----------------------------------------------------------------
+; Resolve DLL handle, then get function address
+0x004733f5  call sym.syscall.LoadLibrary   ; Load target DLL
+0x004733fa  test rbx, rbx                  ; Check for error
+0x004733fd  jne  0x473456                  ; Jump if error
+0x00473407  mov  rsi, qword [var_8h]       ; Load function name data
+0x0047340f  mov  r8d, dword [rsi + rdx]    ; Function index/offset
+; ... setup ...
+0x00473529  call sym.main.__4              ; main.牛肉古代桥 — string decode
+0x00473539  call sym.syscall.GetProcAddress ; Resolve function pointer
+0x00473540  test rbx, rbx                  ; Check for error
+0x00473543  jne  0x4735af                  ; Jump if error
+0x00473555  call sym.main.__5              ; → Execute via SyscallN
+
+
+3. DIRECT SYSCALL EXECUTION (main.资产酒吧协助 @ 0x474235)
+----------------------------------------------------------------
+; Find the LazyProc, then execute via SyscallN
+0x00474225  mov  rax, [0x543668]           ; Load LazyDLL/Proc pointer
+0x00474235  call sym.syscall._LazyProc_.Find ; Resolve the procedure
+0x0047423a  test rax, rax                  ; Check result
+0x0047423d  jne  0x4742b4                  ; Jump if error
+0x00474250  mov  rsi, [rsi + 0x20]         ; Get proc address
+0x00474254  mov  rax, [rsi + 0x18]         ; Function pointer
+0x00474278  mov  ecx, 2                    ; 2 arguments
+0x00474280  call sym.syscall.SyscallN      ; Execute the syscall!
+0x00474285  test rax, rax                  ; Check return value
+
+
+4. STRING DECODE HELPER (main.牛肉古代桥 @ 0x473d60)
+----------------------------------------------------------------
+; Called before GetProcAddress — likely decodes encrypted function names
+; Input: r11 = encoded data pointer
+; Output: rax = decoded string, rbx = length
+; Uses: runtime.slicebytetostring for conversion
+0x00473529  mov  rcx, r11                  ; Encoded data
+0x00473529  call sym.main.__4              ; Decode function name
+0x00473531  mov  rbx, rax                  ; Decoded string result
+0x00473534  mov  rax, [var_78h]            ; DLL handle
+0x00473539  call sym.syscall.GetProcAddress ; Use decoded name
+
+
+5. NUCLEAR REACTOR DECOY INTERLEAVING (main.main @ 0x471f95)
+----------------------------------------------------------------
+; Legitimate-looking reactor simulation mixed with malicious setup
+0x00471f95  call sym.runtime.rand          ; Random seed for simulation
+0x00471fb6  call sym.runtime.mapassign_fast64  ; map[GridRef]float64 = value
+0x00471fbb  mov  qword [rax], 0           ; Set initial reactor parameter
+0x00471fd6  call sym.runtime.mapassign_fast64  ; Another lattice cell
+0x00472018  movabs rdx, 0x3ff8000000000000 ; 1.5 (IEEE 754 double)
+0x00472022  mov  qword [rax], rdx         ; Set neutron flux value
+; ... many more reactor calculations ...
+; Then suddenly:
+0x004720e0  call sym.main.__6             ; Build actual malicious payload
+0x00472100  call sym.main.                ; VirtualAlloc RWX memory
