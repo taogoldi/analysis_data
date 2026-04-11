@@ -1,0 +1,82 @@
+{
+  "sample": {
+    "sha256": "21117a9986e6c46e6ded575f875b254218d4d9b9588c1391fddf3b8b7cfa7e61",
+    "md5": "a1c0d2899cab26e5a5c7b736f1326a55",
+    "size": 48640,
+    "format": "PE32 .NET assembly (x86)",
+    "framework": ".NET Framework 4.0",
+    "version": "1.0.7.0"
+  },
+  "family": "DcRAT (Dark Crystal RAT)",
+  "config": {
+    "c2_host": "update35630.duckdns.org",
+    "c2_port": "35630",
+    "version": " 1.0.7",
+    "install": "false",
+    "mutex": "DcRatMutex_qwqdanchunl",
+    "pastebin": "null",
+    "bsod": "false",
+    "group": "update",
+    "anti_process": "false",
+    "anti_analysis": "false",
+    "install_folder": "%AppData%",
+    "delay": "1"
+  },
+  "crypto": {
+    "algorithm": "AES-256-CBC with HMAC-SHA256",
+    "kdf": "PBKDF2 (Rfc2898DeriveBytes)",
+    "salt": "DcRatByqwqdanchun",
+    "iterations": 50000,
+    "master_key": "HLsFOme5SzpKSRDkHnIN1Bwsu2s9x7No",
+    "aes_key_hex": "1bb76d6c993887c3155be69db2d060c4ebb546dfb29c25e1d06ab6f4e12d35d8",
+    "wire_format": "[HMAC-SHA256 (32)][IV (16)][AES-CBC ciphertext]"
+  },
+  "capabilities": {
+    "stub": [
+      "TLS C2 communication with cert pinning",
+      "MsgPack + GZip serialization",
+      "Pastebin fallback C2",
+      "Plugin system (reflective .NET assembly loading from registry)",
+      "Fileless plugin storage (HKCU\\Software\\<HWID>)",
+      "Persistence: scheduled task (admin) or Registry Run (user)",
+      "AMSI bypass (AmsiScanBuffer patching)",
+      "Anti-VM (WMI Win32_CacheMemory)",
+      "Anti-process (kills 13 analysis tools every 50ms)",
+      "BSOD protection (RtlSetProcessIsCritical)",
+      "Sleep prevention (SetThreadExecutionState)",
+      "Webcam detection (DirectShow COM)",
+      "Active window title capture (passive surveillance)",
+      "AV enumeration (WMI SecurityCenter2)",
+      "UAC bypass cleanup (3 methods)",
+      "Hardware fingerprinting (MD5-based HWID)"
+    ],
+    "plugins_available": [
+      "Keylogger",
+      "File Manager",
+      "Reverse Shell",
+      "Screen Capture",
+      "Webcam Capture",
+      "Clipboard Monitor",
+      "Browser Password Stealer",
+      "Process Manager",
+      "Registry Editor",
+      "Remote Desktop",
+      "(34+ plugins documented by Kaspersky Securelist)"
+    ]
+  },
+  "anti_process_kill_list": [
+    "Taskmgr.exe",
+    "ProcessHacker.exe",
+    "procexp.exe",
+    "MSASCui.exe",
+    "MsMpEng.exe",
+    "MpUXSrv.exe",
+    "MpCmdRun.exe",
+    "NisSrv.exe",
+    "ConfigSecurityPolicy.exe",
+    "MSConfig.exe",
+    "Regedit.exe",
+    "UserAccountControlSettings.exe",
+    "taskkill.exe"
+  ]
+}
