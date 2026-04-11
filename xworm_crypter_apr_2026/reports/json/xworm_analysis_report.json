@@ -1,0 +1,79 @@
+{
+  "crypter": {
+    "sha256": "27a2505cfd32ca1fda31e58c1d2ddee7e4726b8305fda10b779851e259a2ef9d",
+    "md5": "4e4f12fc574559e8bf84bfe074f4cad5",
+    "size": 930304,
+    "family": ".NET PBKDF2/AES-128-CBC Crypter",
+    "namespace": "vpppapxqlhunnbxavuims"
+  },
+  "payload1": {
+    "sha256": "710e3226b214aa6d3ab65bb3d8899ea533bdfc6da28602328c5912567c9bcf0c",
+    "md5": "50a2abc3ddd1355f112500eb2ed2814a",
+    "size": 384512,
+    "family": "XWorm RAT",
+    "arch": "x64",
+    "framework": ".NET 4.8",
+    "masquerade": "AMD drivers/software",
+    "obfuscation": "minimal (plaintext config)"
+  },
+  "payload2": {
+    "sha256": "3ac847a0e3137b7fe4b83a677bbb68ac2fa5043e276fa44d13b6c58be189f943",
+    "md5": "bbebbb015db3b3371405a09b7dab4e73",
+    "size": 537088,
+    "family": "XWorm RAT (obfuscated)",
+    "arch": "x86",
+    "framework": ".NET 4.7.2",
+    "masquerade": "VoiceMod",
+    "obfuscation": "ConfuserEx (randomized namespaces/classes)"
+  },
+  "xworm_config": {
+    "c2_host": "195.10.205.179",
+    "c2_port": 25565,
+    "group": "Superiority",
+    "mutex": "yp07tia%jr+2",
+    "aes_key": "cky9r4ytydhcwji3z3dizpj",
+    "version": "1.0",
+    "install_path": "%LocalAppData%\\MalwareDefenderW3eb32.exe",
+    "watchdog_path": "%Windows%\\BootExecutor.exe",
+    "task_client": "Windows Perfoment Host",
+    "task_watchdog": "OneDrive Downloader",
+    "registry_key": "HKCU\\Software\\gogoduck",
+    "certificate_resource": "hz24pph0a",
+    "features_enabled": [
+      "Install",
+      "BootKit",
+      "Rootkit",
+      "InstallWatchDog",
+      "UseInstallAdmin",
+      "ExclusionWD",
+      "UserInit",
+      "CmdlineAutorun"
+    ]
+  },
+  "capabilities": [
+    "UEFI Bootkit (BlackLotus DBX bypass, LogoFAIL, ESP stager, MBR overwrite)",
+    "r77 Userland Rootkit (DLL injection into all processes)",
+    "Driver Infection (PE section injection into 10 kernel drivers)",
+    "CVE-2026-20817 (WER ALPC UAC bypass)",
+    "AMSI + ETW Memory Patching (via D/Invoke)",
+    "Full Windows Defender Disable (17+ WMI settings + service stop)",
+    "5-Method Persistence (schtasks, Userinit, Setup\\CmdLine, Run key, AppInit_DLLs)",
+    "File Pumping (700MB+ binary inflation)",
+    "Critical Process (BSOD on kill)",
+    "Plugin System (reflective .NET assembly loading from C2)",
+    "Pastebin C2 Fallback",
+    "Anti-VM (WMI, disk size, VirtIO drivers, sandbox DLLs)",
+    "Anti-Process (kills debuggers every 2.5s)",
+    "TrustedInstaller Impersonation",
+    "WdFilter Minifilter Unload"
+  ],
+  "powershell_commands": {
+    "fake_error": "MessageBox.Show('Error 0x00005','','OK','Error')",
+    "defender_exclusion": "Add-MpPreference -ExclusionPath @($env:UserProfile,$env:SystemDrive) -Force"
+  },
+  "cve": {
+    "id": "CVE-2026-20817",
+    "name": "Windows Error Reporting ALPC Privilege Escalation",
+    "description": "Exploits WER service via ALPC message with method=13 to execute commands as SYSTEM"
+  }
+}

