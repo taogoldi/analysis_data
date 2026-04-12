@@ -1,0 +1,49 @@
+{
+  "loader": {
+    "sha256": "58c0f6f8f34d79ea67065761fd2bfc32101c1611cb7d16f5c15f8c19f8572e65",
+    "md5": "b6c327ecd634048616a94ed051fb4cd3",
+    "size": 3368448,
+    "format": "PE32+ x86-64 native (not .NET)",
+    "sections": 7,
+    "encrypted_data_section": "3,269,120 bytes, entropy 7.79",
+    "cipher": {
+      "type": "Custom byte-level cipher",
+      "steps": [
+        "Step 1: Byte-pair swap (3,266,047 iterations)",
+        "Step 2: Per-byte: SUB(counter) -> SUB(0x10) -> XOR(counter-0x1B) -> ROR(5)"
+      ],
+      "anti_sandbox": "Sleep(5000) before decryption",
+      "decryption_function": "0x140001000",
+      "blob_offset_in_data": "0xA40",
+      "blob_size": "0x31D5FF (3,266,047 bytes)"
+    }
+  },
+  "payload": {
+    "sha256": "6bb333f45cbb5db45f63379e81b737956804cdde4b436e81612da722d7c9a725",
+    "md5": "e5691913c74ff83d205d5691db451f9e",
+    "size": 3266047,
+    "family": "Quasar RAT",
+    "version": "1.4.1",
+    "author": "MaxXor",
+    "format": ".NET x86 assembly",
+    "obfuscation": "CJK Unicode class/method name obfuscation"
+  },
+  "config": {
+    "c2_host": "54.172.72.215",
+    "c2_port": 4443,
+    "version": "1.4.1",
+    "mutex": "Office04",
+    "install_subdir": "SubDir",
+    "install_filename": "Client.exe",
+    "startup_key": "9c9b9b52-cc5e-4e34-98f9-d6c777b3f4c9",
+    "log_directory": "Quasar Client Startup",
+    "encryption_key": "45567C0614C4584B61EF8AB3B378784EFE4A57F8"
+  },
+  "crypto": {
+    "algorithm": "AES-256-CBC + HMAC-SHA256",
+    "kdf": "PBKDF2 (Rfc2898DeriveBytes, HMAC-SHA1)",
+    "salt_hex": "bfeb1e56fbcd973bb219022430a57843003d5644d21e62b9d4f180e7e6c33941",
+    "iterations": 50000,
+    "wire_format": "[HMAC-SHA256 (32)][IV (16)][AES-CBC ciphertext]"
+  }
+}
