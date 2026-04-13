@@ -1,0 +1,151 @@
+{
+  "sample": {
+    "sha256": "a2ce4bfd8411324b10576d228b04cb8036e61b998ae9162e6f81ab65cf7416bd",
+    "md5": "0df954759bd65fe0c260820c257a084c",
+    "sha1": "3c287e6495d7cb75304f0c43506d4d9124f444e7",
+    "file_name": "linux_amd64",
+    "file_size": 2011136,
+    "file_type": "ELF 64-bit LSB executable, x86-64, statically linked, Go"
+  },
+  "identification": {
+    "family": "Chaos/Ares DDoS Botnet",
+    "language": "Go 1.20",
+    "build_env": "Windows (C:/Program Files/Go, C:/src/client/linux/)",
+    "cross_compiled": true,
+    "target_os": "Linux amd64",
+    "ldflags": "-s -w (stripped)",
+    "cgo_enabled": false,
+    "source_path": "C:/src/client/linux/"
+  },
+  "capabilities": {
+    "ddos_attacks": [
+      "Ares_Plain_Udp - UDP flood (plaintext)",
+      "Ares_Plain_Udp_Hex - UDP flood (hex payload)",
+      "Ares_L3_Udp - Layer 3 UDP flood",
+      "Ares_L3_Udp_Hex - Layer 3 UDP flood (hex)",
+      "Ares_L3_Raw - Raw socket flood",
+      "Ares_ipspoof - IP spoofing attack",
+      "Ares_Tcp - TCP flood",
+      "Ares_Tcp_Hex - TCP flood (hex)",
+      "Ares_Tcp_Keep - TCP keepalive flood",
+      "Ares_Tcp_Keep_Hex - TCP keepalive flood (hex)",
+      "Ares_Tcp_Send - TCP data send",
+      "Ares_Tcp_Read - TCP read attack"
+    ],
+    "remote_access": [
+      "terminalrun - Remote shell (reverse shell)",
+      "terminalwriter - Shell I/O handler",
+      "terminalclose - Shell cleanup",
+      "Shell - Command execution via /bin/sh"
+    ],
+    "proxy": [
+      "StartProxy / CloseProxy - SOCKS5 proxy control",
+      "Socks5Auth - SOCKS5 authentication",
+      "Socks5Connect - SOCKS5 connection handler",
+      "Proxyhandle - Proxy traffic handler"
+    ],
+    "persistence": [
+      "/etc/rc.d/rc.local modification",
+      "/etc/init.d/boot.local modification",
+      "/etc/profile.d/bash_cfg.sh shell login script",
+      "/etc/profile.d/gateway.sh shell login script",
+      "/boot/System.mod - disguised as boot module",
+      "/usr/lib/systemd/system/quotaoff.service - fake systemd service",
+      "/lib/system-mark - lockfile/marker",
+      "crontab persistence: */1 * * * * root /.mod",
+      "SELinux policy bypass: ausearch + audit2allow + semodule",
+      "chkconfig: 2345 10 90 (SysV init)"
+    ],
+    "system": [
+      "Killcpu - CPU exhaustion / resource abuse",
+      "Killsh - Kill competing processes",
+      "kpid - Process management",
+      "Watchdog - Self-monitoring and restart",
+      "Onlineinfo - System fingerprinting",
+      "Allowlist - IP allowlist management"
+    ],
+    "crypto": [
+      "AES-CFB decryption (DecryptCFB)",
+      "AES-CBC decryption (DecryptCBC)",
+      "AES-ECB decryption (DecryptECB)",
+      "DES decryption (DesDecrypt)",
+      "Enc/Dec - Generic encryption/decryption"
+    ],
+    "c2_protocol": [
+      "Dns_Url - DNS-based C2 URL resolution",
+      "Dns_Key - DNS-based encryption key exchange",
+      "chaos_readfromreader - Custom protocol reader",
+      "chaos_checkMsg - Message validation",
+      "Ares_send - Command response sender",
+      "connect - C2 connection handler",
+      "Link - C2 link establishment",
+      "handle - Command dispatcher",
+      "socket - Network socket management"
+    ],
+    "evasion": [
+      "copyfile / filereplace / replaceout - Binary replacement/update",
+      "initsh / initshread - Init script manipulation",
+      "rclocal - rc.local modification",
+      "getwalk / getwebwalk - File system traversal",
+      "win / windec / web / webdec - Config decryption"
+    ]
+  },
+  "persistence_artifacts": {
+    "files": [
+      "/boot/System.mod",
+      "/lib/system-mark",
+      "/.mod",
+      "/usr/sbin/ifconfig.cfg"
+    ],
+    "services": [
+      "/usr/lib/systemd/system/quotaoff.service"
+    ],
+    "scripts": [
+      "/etc/profile.d/bash_cfg.sh",
+      "/etc/profile.d/gateway.sh",
+      "/etc/rc.d/rc.local",
+      "/etc/init.d/boot.local"
+    ],
+    "crontab": "*/1 * * * * root /.mod",
+    "selinux_bypass": "ausearch + audit2allow + semodule -X 300",
+    "sysv_init": "chkconfig: 2345 10 90"
+  },
+  "source_files": [
+    "main.go",
+    "client.go",
+    "protocol.go",
+    "attack.go",
+    "ares_plan_udp.go",
+    "ares_raw.go",
+    "ares_spoof.go",
+    "ares_tcp.go",
+    "ares_tcp_keep.go",
+    "ares_udp.go",
+    "aes.go",
+    "socks5.go",
+    "terminal.go",
+    "killcpu.go",
+    "watchdog.go",
+    "onlineinfo.go",
+    "ini.go",
+    "init.go",
+    "old.go",
+    "getrand.go",
+    "strtohex.go",
+    "tool.go",
+    "type.go"
+  ],
+  "anti_analysis": {
+    "stripped": true,
+    "static_linked": true,
+    "anti_debug": "References analysis tool detection strings",
+    "process_detection": [
+      "netstat",
+      "lsof",
+      "ps",
+      "ss",
+      "find",
+      "ls"
+    ]
+  }
+}
