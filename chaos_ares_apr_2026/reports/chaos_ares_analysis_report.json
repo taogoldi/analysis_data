@@ -147,5 +147,33 @@
       "find",
       "ls"
     ]
+  },
+  "c2": {
+    "domain": "s4.quicklyspeed.com",
+    "port": 8080,
+    "ips": [
+      "183.236.97.73",
+      "176.65.149.237"
+    ],
+    "protocol": "Custom chaos binary protocol over TCP",
+    "dns_c2": "Dns_Url + Dns_Key for initial resolution and key exchange"
+  },
+  "online_attribution": {
+    "virustotal": "21/66, trojan.kaiji/ares",
+    "joe_sandbox": "84/100, Kaiji",
+    "hatching_triage": "10/10, Kaiji",
+    "malwarebazaar": "Signature: Kaiji",
+    "nucleon": "100%, MALWARE",
+    "thor_yara": "SUSP_CronTab_Entries_Sep24_2 (Florian Roth)"
+  },
+  "related_samples": {
+    "windows_variant": {
+      "sha256": "ee0b9fbdcfcf4fed1f2e960539b06e76cdc600240596b186f24561028691c34e",
+      "format": "PE (Windows)",
+      "go_version": "1.20.1",
+      "first_seen": "2026-04-02",
+      "mcrit_shared_functions": 578,
+      "mcrit_score": 18
+    }
   }
 }
