@@ -1,0 +1,176 @@
+{
+  "meta": {
+    "analyst": "Tao Goldi",
+    "date": "2026-04-17",
+    "platform": "Windows PE32 x86"
+  },
+  "sample": {
+    "file_name": "805b1dbf373986fb98f346b491cea9ce75c44ea7cc55339260c344606773e236.exe",
+    "md5": "da49f65a4695a037b11df7f2c20444df",
+    "sha1": "94fd3ca6f5fccac582289bb01cf4a17e96f2e6ff",
+    "sha256": "805b1dbf373986fb98f346b491cea9ce75c44ea7cc55339260c344606773e236",
+    "size_bytes": 92160,
+    "format": "PE32 x86 GUI executable",
+    "compile_timestamp": "2012-10-16T11:41:07Z",
+    "imphash": "2c8567c932832b8c3359ddf9343a4028",
+    "sections": [
+      {"name": ".text",  "va": "0x1000",  "size": 71680, "entropy": 6.065},
+      {"name": ".rdata", "va": "0x13000", "size": 512,   "entropy": 3.048},
+      {"name": ".data",  "va": "0x14000", "size": 19456, "entropy": 5.419}
+    ],
+    "packer": "APLib v1.01 (embedded compression library)",
+    "image_base": "0x400000",
+    "entry_point": "0x410329"
+  },
+  "family": {
+    "name": "Pony",
+    "aliases": ["Fareit", "Siplog"],
+    "category": "credential_stealer_loader",
+    "ml_classification": "chrysalis",
+    "capa_risk_score": 100.0,
+    "attack_id": "S0453",
+    "malpedia_id": "win.pony",
+    "variant_era": "pre-2015 source-leak era (single-stage PE32, no process hollowing, no WMI anti-VM, UA=MSIE 5.0/Win98)",
+    "distinguishing_mutation": "GetTickCount mod-7==5 gate differs from leaked Pony 2.0 source (mod 10==5); likely single-byte operator mutation for signature evasion"
+  },
+  "capabilities": {
+    "anti_analysis": [
+      "PEB.BeingDebugged check (0x40f743)"
+    ],
+    "credential_theft": {
+      "ftp_clients": [
+        "FileZilla", "TotalCommander/WinSCP (wcx_ftp.ini)", "SmartFTP", "FlashFXP",
+        "FTPVoyager", "WS_FTP", "CuteFTP", "BulletProof FTP", "FTP Explorer",
+        "FTPRush", "FTPGetter", "BlazeFTP", "3D-FTP", "Staff-FTP", "DeluxeFTP",
+        "FTPShell", "LeapFTP", "NetDrive", "Frigate3", "VanDyke SecureFX",
+        "UltraFXP", "WinFTP", "TurboFTP", "FFFTP", "CoreFTP", "ClassicFTP",
+        "ExpanDrive", "BitKinex", "FTP Now", "Robo-FTP", "FTPInfo", "NovaFTP",
+        "FTP Navigator", "FTP Commander", "WebDrive", "ALFTP", "Far Manager",
+        "WiseFTP", "LinasFTP", "MapleStudio ChromePlus", "My FTP", "NexusFile",
+        "CoffeeCup FTP", "NppFTP (Notepad++ plugin)", "Directory Opus"
+      ],
+      "browsers": [
+        "Firefox (NSS PK11SDR_Decrypt + sqlite3 moz_logins)",
+        "SeaMonkey", "Flock", "Mozilla",
+        "Chrome/Chromium (Login Data SQLite)",
+        "ChromePlus", "Bromium", "Nichrome", "Comodo Dragon",
+        "RockMelt", "K-Meleon", "Epic Browser", "Yandex Browser"
+      ],
+      "email_clients": [
+        "Outlook (DPAPI POP3/SMTP/IMAP)", "Windows Live Mail (.oeaccount)",
+        "Windows Mail", "Thunderbird (signons.sqlite/txt)",
+        "The Bat! (account.cfg)", "IncrediMail", "PocoMail",
+        "RimArts Becky!", "Poco Systems"
+      ],
+      "other": [
+        "PuTTY SSH sessions (Software\\SimonTatham\\PuTTY\\Sessions)",
+        "RDP (TERMSRV/* credentials via CredEnumerateA)",
+        "Internet Explorer IntelliForms/Storage2 (DPAPI)",
+        "Opera (wand.dat)"
+      ]
+    },
+    "exfiltration": {
+      "protocol": "HTTP/1.0",
+      "method": "POST",
+      "content_type": "application/octet-stream",
+      "content_encoding": "binary",
+      "user_agent": "Mozilla/4.0 (compatible; MSIE 5.0; Windows 98)",
+      "server_response": "STATUS-IMPORT-OK",
+      "machine_id_field": "Client Hash / HWID"
+    },
+    "loader": {
+      "url_retrieval": "HTTP GET from compromised forum pages (forum/viewtopic.php)",
+      "execution": "ShellExecuteA",
+      "self_delete": "abcd.bat batch loop"
+    },
+    "crypto": {
+      "xor": "key-scheduled XOR (multi-byte, 0x81010101/0x7efefeff idiom) keyed from session HWID",
+      "md5": {
+        "location": "fcn.00402d3e",
+        "iv_location": "VA 0x00402d01 (four DWORDs 0x67452301, 0xefcdab89, 0x98badcfe, 0x10325476)",
+        "identification": "standard RFC 1321 MD5 (NOT API hashing). Confirmed by: (1) all 64 T-table constants present and in order, (2) round functions F/G/H/I identifiable in Hex-Rays output, (3) standard shift schedule 7/12/17/22, 5/9/14/20, 4/11/16/23, 6/10/15/21, (4) 512-bit block + 128-bit state update",
+        "usage": [
+          "session XOR-key derivation from CoCreateGuid output",
+          "HWID stabilization (raw GUID bytes -> MD5 -> formatted string for Client Hash field)",
+          "payload-envelope integrity checksum (trailing 16 bytes of POST body)"
+        ],
+        "not_api_hashing": "Pony resolves imports via the PE Import Table (wsock32, wininet, advapi32, etc.). No ROR13/CRC32/djb2 style name resolver exists."
+      },
+      "aplib": "aPLib v1.01 decompression + copyright-banner integrity check at fcn.0041113d (rolling hash over first 256 bytes must equal 0 or function aborts)",
+      "des": "NOT PRESENT. CAPA false positive -- pattern matched the common-password word list at file 0x11bdc / VA 0x00412bdc",
+      "base64": "Base64 encoding (browser credential intermediate)"
+    },
+    "brute_force": {
+      "password_list_location": "file 0x11bdc / VA 0x00412bdc",
+      "password_count": 256,
+      "consumer_routine": "MD5 transform at fcn.00402d3e",
+      "origin_tells": [
+        "ghbdtn (Russian privet / 'hello' on English keyboard)",
+        "gfhjkm (Russian parol / 'password' on English keyboard)",
+        "mustdie, billgates (Russian-market hacker-culture shibboleths)",
+        "et{rvkornwu (operator-signature tail entry, unknown meaning)"
+      ]
+    },
+    "anti_emulation": {
+      "entry_trampoline": "push eax; pop eax; push 0x410335; clc; jb +1; ret (indirect call via stack-based return)",
+      "gate": "loop calling GetTickCount() until result mod 7 == 5",
+      "location": "0x00410335 - 0x0041034c",
+      "observed_impact": "Speakeasy emulator recorded 9980 GetTickCount calls in 6.052 s runtime, never reached credential/network logic",
+      "bypass": "one-byte patch cmp edx,5 -> cmp edx,edx, or hook GetTickCount to return real wall-clock time"
+    },
+    "persistence": {
+      "registry": "HKCU/HKLM run keys (RegCreateKeyA / RegSetValueExA)"
+    }
+  },
+  "iocs": {
+    "urls_c2_retrieval": [
+      "hxxp://o[.]casasferiasacores[.]org/forum/viewtopic.php",
+      "hxxp://o[.]cutanddrop[.]com/forum/viewtopic.php"
+    ],
+    "urls_payload_download": [
+      "hxxp://ipsiamarcora[.]it/9mMBpnGo.exe",
+      "hxxp://nuttytheory[.]com/B5ty.exe",
+      "hxxp://034c695[.]netsolhost[.]com/a1oep.exe",
+      "hxxp://www[.]webspace-lilly[.]rivido[.]de/Zpv3.exe",
+      "hxxp://infojerte[.]com/suJcZGL.exe",
+      "hxxp://cauplastic[.]com/V38T2Yx.exe",
+      "hxxp://joeckel[.]net/Wmw.exe",
+      "hxxp://www[.]integritymoving[.]ca/NzJYh.exe",
+      "hxxp://serapmodaevi[.]com/rpHrcVZ4.exe",
+      "hxxp://mwc-parts[.]nl/XNdb.exe",
+      "hxxp://www[.]proyectosweb[.]cl/Z6u.exe"
+    ],
+    "mutex_guid": "{74FF1730-B1F2-4D88-926B-1568FAE61DB7}",
+    "registry_typelibs": [
+      "SOFTWARE\\Classes\\TypeLib\\{CB1F2C0F-8094-4AAC-BCF5-41A64E27F777}",
+      "SOFTWARE\\Classes\\TypeLib\\{9EA55529-E122-4757-BC79-E4825F80732C}",
+      "SOFTWARE\\Classes\\TypeLib\\{F9043C88-F6F2-101A-A3C9-08002B2F49FB}"
+    ],
+    "batch_artifact": "abcd.bat"
+  },
+  "mitre_attack": [
+    {"id": "T1555",     "name": "Credentials from Password Stores"},
+    {"id": "T1555.003","name": "Credentials from Web Browsers"},
+    {"id": "T1552.002","name": "Unsecured Credentials: Credentials in Registry"},
+    {"id": "T1071.001","name": "Application Layer Protocol: Web Protocols"},
+    {"id": "T1027",    "name": "Obfuscated Files or Information"},
+    {"id": "T1140",    "name": "Deobfuscate/Decode Files or Information"},
+    {"id": "T1105",    "name": "Ingress Tool Transfer"},
+    {"id": "T1059.003","name": "Windows Command Shell (self-delete batch)"},
+    {"id": "T1547.001","name": "Registry Run Keys / Startup Folder"},
+    {"id": "T1082",    "name": "System Information Discovery"},
+    {"id": "T1083",    "name": "File and Directory Discovery"},
+    {"id": "T1012",    "name": "Query Registry"},
+    {"id": "T1070.004","name": "Indicator Removal: File Deletion"},
+    {"id": "T1497",    "name": "Virtualization/Sandbox Evasion"},
+    {"id": "B0001.035","name": "MBC: Debugger Detection - PEB BeingDebugged"}
+  ],
+  "code_weaknesses": [
+    "C2 URL list stored as plaintext in .data section",
+    "HTTP/1.0 (not HTTPS) exfiltration - trivially intercepted",
+    "Static User-Agent string trivially signatures",
+    "Single DES key (56-bit, cryptographically broken)",
+    "Self-deletion batch artifact (abcd.bat) is distinctive and detectable",
+    "STATUS-IMPORT-OK C2 acknowledgment string plaintext"
+  ]
+}

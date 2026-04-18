@@ -1,0 +1,30 @@
+flowchart TD
+    A([fa:fa-file-code Sample Launched]) --> B[Anti-Debug Check\nPEB.BeingDebugged]
+    B -->|Debugger detected| C[/Exit Process/]
+    B -->|Clean| D[HWID Generation\nCoCreateGuid + Hardware Survey]
+    D --> E[Credential Harvesting Loop]
+
+    E --> F1[FTP Clients\n~60 applications\nRegistry + INI files]
+    E --> F2[Web Browsers\nFirefox NSS/SQLite\nChrome Login Data]
+    E --> F3[Email Clients\nOutlook, Thunderbird,\nThe Bat!, IncrediMail]
+    E --> F4[SSH / RDP\nPuTTY Sessions\nTERMSRV credentials]
+
+    F1 & F2 & F3 & F4 --> G[Assemble Credential Package\nHWID + plaintext creds]
+
+    G --> H[Encrypt Payload\nXOR keyed from HWID\nMD5 integrity tag]
+    H --> I[HTTP POST to C2\napplication/octet-stream\nUser-Agent: MSIE 5.0]
+
+    I -->|STATUS-IMPORT-OK| J[Parse Download List\nHTTP GET forum/viewtopic.php]
+    I -->|Failure / Timeout| K[/Retry / Exit/]
+
+    J --> L[Download Additional Payloads\n10+ compromised sites\n%d.exe format]
+    L --> M[ShellExecuteA\nLaunch downloaded PE]
+
+    M --> N[Self-Delete via abcd.bat\nLoop-delete until gone]
+
+    style A fill:#1a1a2e,color:#eee
+    style C fill:#7d0000,color:#eee
+    style K fill:#7d0000,color:#eee
+    style N fill:#444,color:#eee
+    style H fill:#2d2d6e,color:#eee
+    style I fill:#1b4332,color:#eee
