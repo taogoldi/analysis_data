@@ -1,0 +1,28 @@
+graph LR
+    A["CollectLogs<br/>Parallel.ForEach<br/>52 ITar targets"] --> B["Browsers<br/>5 modules"]
+    A --> C["Messengers<br/>6 modules"]
+    A --> D["Games<br/>9 modules"]
+    A --> E["Remote Admin / FTP<br/>21 modules"]
+    A --> F["Crypto Wallets<br/>3 modules"]
+    A --> G["System / Capture<br/>8 modules"]
+
+    B --> B1["Chro_mium<br/>v10 + v20 + CNG"]
+    B --> B2["Gecko<br/>nss3.dll + key4.db"]
+    C --> C1["Discord<br/>token regex<br/>+ dQw4w9WgXcQ"]
+    C --> C2["Telegram<br/>tdata dir grab"]
+    D --> D1["Steam<br/>ssfn + config"]
+    E --> E1["AnyDesk / TeamViewer<br/>RDCMan / PuTTY"]
+    F --> F1["12 desktop wallets<br/>MetaMask extensions"]
+    G --> G1["SysInfo / ImageGrabber<br/>ProcessDump"]
+
+    B1 --> Z["ZipArchiveMemory<br/>(in-memory ZIP)"]
+    B2 --> Z
+    C1 --> Z
+    C2 --> Z
+    D1 --> Z
+    E1 --> Z
+    F1 --> Z
+    G1 --> Z
+
+    style A fill:#fd7e14,stroke:#fff,color:#fff
+    style Z fill:#198754,stroke:#fff,color:#fff

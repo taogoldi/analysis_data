@@ -1,0 +1,20 @@
+graph TD
+    A["VirtualAssistant<br/>CheckOrExit()"] --> B["ProccessorCheck<br/>cores <= 1"]
+    B --> C["CheckMemory<br/>RAM < 2 GB via WMI"]
+    C --> D["CheckDriveSpace<br/>C: < 50 GB"]
+    D --> E["CheckUserConditions<br/>username blocklist"]
+    E --> F["CheckCache<br/>Win32_CacheMemory empty"]
+    F --> G["CheckFileName<br/>name contains 'sandbox'"]
+    G --> H["CheckCim<br/>CIM_Memory empty"]
+    H --> I["Continue to<br/>ProcessKiller.KillerAll"]
+    B --> X["throw Exception<br/>process exits"]
+    C --> X
+    D --> X
+    E --> X
+    F --> X
+    G --> X
+    H --> X
+
+    style A fill:#6610f2,stroke:#fff,color:#fff
+    style X fill:#dc3545,stroke:#fff,color:#fff
+    style I fill:#198754,stroke:#fff,color:#fff

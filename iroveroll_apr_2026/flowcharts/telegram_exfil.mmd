@@ -1,0 +1,18 @@
+graph TD
+    A["ZIP buffer<br/>in memory"] --> B{"size > 47 MB?"}
+    B -- No --> C["Single sendDocument<br/>HTTPS to api.telegram.org"]
+    B -- Yes --> D["Chunk into 47 MB parts<br/>fileName_log_[n-total]"]
+    D --> C
+    C --> E{"Success?"}
+    E -- 200 OK --> F["Next chunk or exit"]
+    E -- migrate_to_chat_id --> G["Update chatId<br/>retry same chunk"]
+    E -- 5xx error --> H["Thread.Sleep 2s<br/>retry up to 3x"]
+    G --> C
+    H --> C
+    F --> I["AutoDel<br/>cmd /C timeout 3 & rmdir /s /q"]
+
+    style A fill:#0d6efd,stroke:#fff,color:#fff
+    style C fill:#fd7e14,stroke:#fff,color:#fff
+    style G fill:#6610f2,stroke:#fff,color:#fff
+    style H fill:#6610f2,stroke:#fff,color:#fff
+    style I fill:#dc3545,stroke:#fff,color:#fff

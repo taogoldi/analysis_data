@@ -1,0 +1,31 @@
+flowchart TD
+    A["Victim executes\nsvchost.zowner\n(PE32 .NET 4.7.2)"] --> B["MutexControl\nCreateMutex: IMSEXYGIRL\n(prevents re-infection)"]
+    B --> C["Config.Init()\nDecode Telegram bot token\n& chat ID via base64 chunks"]
+    C --> D["VirtualAssistant.CheckOrExit()\nAnti-Analysis Gauntlet"]
+    D --> D1["CPU cores ≤ 1?"]
+    D --> D2["RAM < 2 GB?"]
+    D --> D3["C: drive < 50 GB?"]
+    D --> D4["Username contains:\nsandbox/malware/cuckoo/joe/wdag?"]
+    D --> D5["Win32_CacheMemory = 0?\nCIM_Memory = 0?"]
+    D --> D6["Filename contains 'sandbox'?"]
+    D1 & D2 & D3 & D4 & D5 & D6 -->|"Any true → throw Exception()"| EXIT["Process.Exit()"]
+    D -->|"All false"| E["ProcessKiller.KillerAll()\n65 browser & Telegram processes\nkilled to unlock DB files"]
+    E --> F["StaticReference.loadBrowsers()\nScan Chromium + Gecko installs"]
+    F --> G["CollectLogs()\nParallel.ForEach across 50+ modules"]
+    G --> G1["Browsers\nPasswords, Cookies,\nAutofill, Credit Cards"]
+    G --> G2["Discord / Telegram\nTokens (plain + AES-GCM)"]
+    G --> G3["Crypto Wallets\nDesktop + Browser extensions\n14+ coin families"]
+    G --> G4["Games\nSteam, Epic, Battle.net\nRiot, Roblox, Minecraft..."]
+    G --> G5["Remote Tools\nAnyDesk, RDP, FileZilla\nTeamViewer, PuTTY, WinSCP..."]
+    G --> G6["System Info\nHWID, Screenshot, Processes\nInstalled Programs, Clipboard"]
+    G1 & G2 & G3 & G4 & G5 & G6 --> H["ZipArchiveMemory\nAll data zipped in-memory"]
+    H --> I["ImpersonationHelper\nImpersonateWinlogon()\n(SeDebugPrivilege + token dup)"]
+    I --> J["SendToTelegram()\nHTTP POST to api.telegram.org\n47 MB chunks, 3 retries"]
+    J --> K["AutoDel()\ncmd.exe /C timeout 3 & rmdir /s /q\n(self-destruct)"]
+    K --> L["Environment.Exit(0)"]
+
+    style A fill:#8B0000,color:#fff
+    style EXIT fill:#555,color:#fff
+    style J fill:#1a5276,color:#fff
+    style K fill:#6E2F1A,color:#fff
+    style L fill:#333,color:#fff

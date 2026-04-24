@@ -1,0 +1,156 @@
+{
+  "report_meta": {
+    "analyst": "Tao Goldi",
+    "date": "2026-04-23",
+    "family": "IRoveroll",
+    "aka": ["Inqusitor Prod", "svchost.zowner"],
+    "classification": "Infostealer / Credential Harvester",
+    "threat_level": "HIGH",
+    "blog_draft": "docs/iroveroll_blog_draft.md"
+  },
+  "sample": {
+    "file_name": "svchost.zowner",
+    "sha256": "e7fcb6ab49296e69d1aa94091bb639a8ab3f69823ada857ab7fd5b3457a41867",
+    "md5": "91b2420da18f82c5792497425425c03e",
+    "sha1": "7efdf5750fcad900c80e1dc58698f1c55c5766c0",
+    "file_size": 206336,
+    "file_type": "PE32 .NET assembly (GUI, x86)",
+    "packer": "MPRESS",
+    "dotnet_runtime": "v4.0.30319",
+    "dotnet_target_framework": ".NETFramework,Version=v4.7.2",
+    "dotnet_mvid": "92ec30d7-0389-4552-932b-9e5fb7b975d6",
+    "assembly_guid": "cdaab557-f662-4aa6-bd13-1c7744e2a753"
+  },
+  "pe_metadata": {
+    "machine": "0x14c (x86)",
+    "timestamp": "3792920369 (Sat Mar 11 12:59:29 2090 UTC) - FORGED",
+    "subsystem": "2 (GUI)",
+    "image_base": "0x400000",
+    "entry_point": "0x325b2",
+    "sections": [
+      {"name": ".text",  "va": "0x2000",  "raw_size": 203264, "entropy": 5.9624},
+      {"name": ".rsrc",  "va": "0x34000", "raw_size": 2048,   "entropy": 3.5805},
+      {"name": ".reloc", "va": "0x36000", "raw_size": 512,    "entropy": 0.1019}
+    ]
+  },
+  "version_info": {
+    "Comments": "Disable defender and antivirus softwares",
+    "CompanyName": "Alsu Software",
+    "FileDescription": "Inqusitor Prod",
+    "FileVersion": "15.16.11.3",
+    "InternalName": "svchost.exe",
+    "LegalCopyright": "Copyright 2021-2026",
+    "LegalTrademarks": "Inqusitor Inc",
+    "OriginalFilename": "svchost.exe",
+    "ProductName": "Inqusitor Prod",
+    "ProductVersion": "15.16.11.3",
+    "AssemblyVersion": "12.31.22.1"
+  },
+  "pdb_path": "D:\\Projects\\Client\\IRoveroll\\obj\\Release\\svchost.pdb",
+  "internal_namespace": "IRoveroll",
+  "mutex": "IMSEXYGIRL",
+  "c2": {
+    "type": "Telegram Bot API",
+    "endpoint": "https://api.telegram.org/bot<TOKEN>/sendDocument",
+    "bot_token": "8393829487:AAE3xZgel-Gfzccm4saPBJuNEoBqhXR8ZlI",
+    "chat_id": "-100380964339",
+    "chunk_size_bytes": 47185920,
+    "max_retries": 3,
+    "retry_delay_ms": 2000,
+    "caption_format": "[part/total] LOG - <username> @ <machinename>"
+  },
+  "iocs": {
+    "ipv4": ["15.16.11.3"],
+    "telegram_bot_id": "8393829487",
+    "telegram_chat_id": "-100380964339",
+    "mutexes": ["IMSEXYGIRL"],
+    "pdb_paths": ["D:\\Projects\\Client\\IRoveroll\\obj\\Release\\svchost.pdb"],
+    "assembly_mvid": "92ec30d7-0389-4552-932b-9e5fb7b975d6"
+  },
+  "anti_analysis": {
+    "techniques": [
+      {"check": "ProcessorCount <= 1", "mitigation": "Sandbox single-CPU detection"},
+      {"check": "TotalPhysicalMemory < 2048 MB (WMI)", "mitigation": "Low-RAM sandbox detection"},
+      {"check": "C: drive TotalSize < 50 GB", "mitigation": "Small disk VM detection"},
+      {"check": "Filename contains 'sandbox'", "mitigation": "Renaming bypass"},
+      {"check": "Username/MachineName in {sandbox,malware,virus,sample,test,analysis,cuckoo,joe}", "mitigation": "Sandboxed user detection"},
+      {"check": "Username contains 'wdag' or 'utilityaccount'", "mitigation": "Windows Defender Application Guard detection"},
+      {"check": "Username length <= 3 (unless 'admin')", "mitigation": "Auto-generated username detection"},
+      {"check": "Win32_CacheMemory count == 0", "mitigation": "VM without cache memory"},
+      {"check": "CIM_Memory count == 0", "mitigation": "VM without memory hardware"}
+    ],
+    "timestamp_forgery": "PE timestamp set to year 2090 to confuse triage tools"
+  },
+  "capabilities": {
+    "process_killer": {
+      "count": 65,
+      "targets": "Chrome, Firefox, Edge, Opera, Brave, Telegram, 58 others",
+      "purpose": "Unlock SQLite database files before theft"
+    },
+    "privilege_escalation": {
+      "technique": "T1134 - Access Token Manipulation",
+      "method": "ImpersonateWinlogon: SeDebugPrivilege + OpenProcessToken(winlogon) + DuplicateTokenEx + ImpersonateLoggedOnUser",
+      "error_language": "Russian (Cyrillic) - CIS origin indicator"
+    },
+    "self_deletion": "cmd.exe /C timeout 3 > nul & rmdir /s /q <dir>",
+    "hwid_fingerprint": "SHA256(MachineGuid|CPU|VolumeSerials|MAC|MachineName)"
+  },
+  "stealer_modules": {
+    "browsers": {
+      "chromium_family": ["Chrome", "Edge", "Opera", "Brave", "Vivaldi", "and all Chromium-based browsers"],
+      "gecko_family": ["Firefox", "Thunderbird", "PaleMoon", "and all Gecko-based browsers"],
+      "stolen_data": ["Passwords (Login Data)", "Cookies (Network Cookies)", "Autofill (Web Data)", "Credit Cards", "Token Service", "Yandex Passman", "Yandex Credit Cards"]
+    },
+    "messaging": ["Discord (plain + AES-GCM encrypted tokens)", "Telegram (session files)", "Element", "Jabber", "Tox", "Viber"],
+    "crypto_wallets_desktop": ["Zcash", "Armory", "Bytecoin", "Jaxx", "Exodus", "Ethereum", "Electrum", "AtomicWallet", "Guarda", "Coinomi", "Tari", "Bitcoin"],
+    "crypto_wallets_browser": "Extensions from Chromium and Gecko browsers",
+    "games": ["Steam", "Epic Games", "Battle.net", "Riot Games", "Roblox", "Minecraft", "Uplay/Ubisoft", "Electronic Arts"],
+    "remote_tools": ["AnyDesk", "RDP/RDCMan", "TeamViewer", "WinSCP", "CyberDuck", "DynDns", "Ngrok", "PlayIt", "Sunlogin", "Xmanager"],
+    "ftp_clients": ["FileZilla", "TotalCommander", "FTPNavigator", "FTPRush", "CoreFTP", "FTPGetter", "FTPCommander"],
+    "developer_tools": ["JetBrains IDEs", "GitHub Desktop", "PuTTY", "Navicat"],
+    "other": ["FoxMail", "TeamSpeak", "OBS Studio", "NoIP"],
+    "system": ["Screenshot (GDI32 BitBlt)", "Running processes", "Installed programs", "System info (CPU/RAM/GPU/OS)", "Clipboard content", "HWID fingerprint", "External IP (ip-api.com)", "Network interfaces"]
+  },
+  "cryptography": {
+    "browser_decryption": ["AES-GCM (Chrome v10 DPAPI + v20 App-Bound)", "ChaCha20-Poly1305", "DPAPI CryptUnprotectData"],
+    "firefox_decryption": ["NSS library (nss3.dll)", "PBKDF2", "3DES-CBC", "SHA-1"],
+    "other": ["Blowfish", "RC4", "XOR", "ASN.1/DER parsing"]
+  },
+  "exfiltration": {
+    "method": "In-memory ZIP archive sent via Telegram Bot API",
+    "format": "ZIP with structured folders per module",
+    "chunking": "47 MB max per part with [n/total] prefix",
+    "retries": 3,
+    "supports_chat_migration": true
+  },
+  "attribution": {
+    "language_indicators": ["Russian Cyrillic error strings in ImpersonationHelper", "Name 'Alsu' - common Russian/Tatar female name", "Yandex browser-specific data targeted (Ya Passman Data, Ya Credit Cards)"],
+    "suspected_region": "CIS (Commonwealth of Independent States)",
+    "confidence": "Medium"
+  },
+  "mitre_attack": [
+    {"id": "T1082", "name": "System Information Discovery",         "tactic": "Discovery"},
+    {"id": "T1083", "name": "File and Directory Discovery",         "tactic": "Discovery"},
+    {"id": "T1012", "name": "Query Registry",                       "tactic": "Discovery"},
+    {"id": "T1057", "name": "Process Discovery",                    "tactic": "Discovery"},
+    {"id": "T1016", "name": "System Network Configuration Discovery","tactic": "Discovery"},
+    {"id": "T1614", "name": "System Location Discovery",            "tactic": "Discovery"},
+    {"id": "T1087", "name": "Account Discovery",                    "tactic": "Discovery"},
+    {"id": "T1134", "name": "Access Token Manipulation",            "tactic": "Privilege Escalation"},
+    {"id": "T1027", "name": "Obfuscated Files or Information",      "tactic": "Defense Evasion"},
+    {"id": "T1140", "name": "Deobfuscate/Decode Files or Information","tactic": "Defense Evasion"},
+    {"id": "T1497", "name": "Virtualization/Sandbox Evasion",       "tactic": "Defense Evasion"},
+    {"id": "T1497.001","name":"System Checks",                      "tactic": "Defense Evasion"},
+    {"id": "T1036", "name": "Masquerading (svchost.exe)",           "tactic": "Defense Evasion"},
+    {"id": "T1047", "name": "Windows Management Instrumentation",   "tactic": "Execution"},
+    {"id": "T1070.004","name":"File Deletion (self-delete)",        "tactic": "Defense Evasion"},
+    {"id": "T1555.003","name":"Credentials from Web Browsers",      "tactic": "Credential Access"},
+    {"id": "T1539", "name": "Steal Web Session Cookie",             "tactic": "Credential Access"},
+    {"id": "T1113", "name": "Screen Capture",                       "tactic": "Collection"},
+    {"id": "T1115", "name": "Clipboard Data",                       "tactic": "Collection"},
+    {"id": "T1005", "name": "Data from Local System",               "tactic": "Collection"},
+    {"id": "T1560.002","name":"Archive Collected Data: ZIP",        "tactic": "Collection"},
+    {"id": "T1071.001","name":"Application Layer Protocol: Web (Telegram API)","tactic": "Command and Control"},
+    {"id": "T1567", "name": "Exfiltration Over Web Service",        "tactic": "Exfiltration"}
+  ]
+}
