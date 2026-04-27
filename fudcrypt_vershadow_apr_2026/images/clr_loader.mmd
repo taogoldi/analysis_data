@@ -1,0 +1,28 @@
+sequenceDiagram
+    participant L as VerShadow DoWork
+    participant K as kernel32 / mscoree
+    participant MH as ICLRMetaHost
+    participant RI as ICLRRuntimeInfo
+    participant CRH as ICorRuntimeHost
+    participant AD as _AppDomain
+    participant AS as Assembly / MethodInfo
+
+    L->>K: CoInitializeEx(COINIT_MULTITHREADED)
+    L->>K: LoadLibrary("mscoree.dll")
+    L->>K: GetProcAddress("CLRCreateInstance")
+    L->>MH: CLRCreateInstance(CLSID_CLRMetaHost,<br/>IID_ICLRMetaHost, &pMH)
+    L->>MH: GetRuntime("v4.0.30319",<br/>IID_ICLRRuntimeInfo, &pRI)
+    MH-->>RI: pRI
+    L->>RI: IsLoadable(&loadable)
+    L->>RI: GetInterface(CLSID_CorRuntimeHost,<br/>IID_ICorRuntimeHost, &pCRH)
+    RI-->>CRH: pCRH
+    L->>CRH: Start()
+    L->>CRH: GetDefaultDomain(&pDomain)
+    L->>AD: QueryInterface(IID__AppDomain)
+    L->>AD: Load_3(SafeArray<UI1> = decrypted blob)
+    AD-->>AS: _Assembly*
+    L->>AS: get_EntryPoint() -> MethodInfo*
+    L->>AS: GetParameters() -> SafeArray
+    L->>AS: InvokeMember_3(string[] args)
+    AS-->>L: return value (ignored)
+    L->>K: GetMessage / Translate / Dispatch loop

