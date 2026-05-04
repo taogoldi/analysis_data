@@ -1,0 +1,49 @@
+---
+config:
+  theme: dark
+---
+flowchart TD
+    PANEL["Amadey C2 panel\n91.92.242.236 (nginx/Ubuntu)\nhttp://.../oPvjr94jfe/Login.php\npanel UI in Russian (Авторизация)"]
+    PANEL --> DIST["Plugins/ directory\ncred.dll  (x86, b27ecd6a…)\ncred64.dll (x64, 3bdcb324…)"]
+    DIST -.->|"loader fetches plugin\n(parent Amadey loader)"| A
+
+    A["DLL Load\n(Main export called by parent loader)"] --> B["Decrypt config strings\npolyalphabetic (Vigenère) + Base64\nkey = a42cf94a609810d038dd0ca0d030ffef\nbotnet ID = 54e64e"]
+    B --> C["Anti-debug check\nIsDebuggerPresent"]
+    C -->|"Debugger detected"| Z["Skip stealer logic"]
+    C -->|"Clean"| D["Victim fingerprint\nGetUserNameA → LookupAccountNameA\nSID S-%lu-%lu-..."]
+
+    D --> E["Kill wallet processes\nlitecoin-qt / dash-qt / ArmoryQt / Atomic Wallet"]
+
+    E --> F1["Browser credential harvest"]
+    E --> F2["Crypto wallet harvest"]
+    E --> F3["Messaging app harvest"]
+    E --> F4["WiFi credential harvest"]
+    E --> F5["File search harvest"]
+
+    F1 --> G1["Chromium x11\nLocal State AES-256-GCM key\nCryptUnprotectData → BCryptDecrypt\nlogins SQLite DB"]
+    F1 --> G2["Firefox / Tor / Thunderbird\nNSS3.dll dynamic load\nlogins.json decryption"]
+
+    F2 --> H2["Electrum / Electrum-LTC wallets"]
+    F2 --> H3["Exodus exodus.wallet"]
+    F2 --> H4["Armory / Litecoin / DashCore\nDogecoin / Atomic Wallet dirs"]
+
+    F3 --> I1["Telegram\ntdata / key_datas / emoji / maps"]
+    F3 --> I2["Pidgin accounts.xml\nPsi accounts.xml\nFileZilla sitemanager.xml"]
+
+    F4 --> J1["netsh wlan export profile name=…\nkey=clear → parse XML PSK"]
+
+    F5 --> K1["*.doc / *.docx / *.xls / *.xlsx\n*.txt / *.zip / *.dat on Desktop"]
+
+    G1 --> L["Stage results\nZip per category: _Chromium _Atomic\n_Exodus _Telegram _Desktop.zip …"]
+    G2 --> L
+    H2 --> L
+    H3 --> L
+    H4 --> L
+    I1 --> L
+    I2 --> L
+    J1 --> L
+    K1 --> L
+
+    L --> M["RC4-encrypted HTTP POST exfiltration\nInternetConnectA 91.92.242.236:80\nPOST /oPvjr94jfe/index.php\nbody encrypted with C2 RC4 key (config offset)"]
+    M --> PANEL
+    M --> N["Cleanup & exit\nSave export → ret 0 stub"]

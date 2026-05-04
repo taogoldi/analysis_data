@@ -1,0 +1,268 @@
+{
+  "meta": {
+    "family": "Amadey",
+    "variant": "cred64.dll credential-stealer plugin",
+    "version": "5.78",
+    "botnet_id": "54e64e",
+    "internal_label": "Amadey_cred64 (PDB-based — see notes)",
+    "analyst": "Tao Goldi",
+    "analysis_date": "2026-04-27",
+    "tlp": "TLP:WHITE",
+    "confidence": "HIGH",
+    "novel": false,
+    "public_detection": true,
+    "external_classifications": [
+      { "source": "Hatching Triage",  "verdict": "Amadey 5.78 botnet 54e64e" },
+      { "source": "MalwareBazaar",    "verdict": "Amadey (uploaded by BlinkzSec)" },
+      { "source": "NeikiAnalytics",   "verdict": "Family.AMADEY 100/100" }
+    ],
+    "notes": "PDB path D:\\Mktmp\\StealerDLL\\ is a developer working directory for this Amadey 'cred' plugin build, not a separate family. The 'Amadey_cred64' label originated from an initial PDB-based naming pass before family validation."
+  },
+
+  "sample": {
+    "file_name": "cred64.dll",
+    "sha256": "3bdcb32460e5a613c35b14205e4a98ad50a03a1d7d17f4c30f2935c6f6d5db69",
+    "file_size_bytes": 1282048,
+    "file_type": "PE32+ DLL x64",
+    "compile_timestamp_utc": "2026-03-08T19:10:56Z",
+    "imphash": "3f175edea93fa7a76a78004d12de2235",
+    "pdb_path": "D:\\Mktmp\\StealerDLL\\Release.x64\\STEALERDLL.pdb",
+    "exports": [
+      { "name": "Main",  "rva": "0x000bfda0", "description": "Stealer entry point" },
+      { "name": "Save",  "rva": "0x000056d0", "description": "Stub — ret 0" }
+    ],
+    "sections": [
+      { "name": ".text",   "virtual_size": "0x0C3A00", "raw_size": "0x0C3C00", "entropy": 6.45 },
+      { "name": ".rdata",  "virtual_size": "0x072580", "raw_size": "0x072600", "entropy": 5.70 },
+      { "name": ".data",   "virtual_size": "0x005208", "raw_size": "0x001600", "entropy": 2.16 },
+      { "name": ".pdata",  "virtual_size": "0x009CA8", "raw_size": "0x009E00", "entropy": 5.77 },
+      { "name": "_RDATA",  "virtual_size": "0x000054", "raw_size": "0x000200", "entropy": 1.14 },
+      { "name": ".rsrc",   "virtual_size": "0x0001E0", "raw_size": "0x000200", "entropy": 4.38 },
+      { "name": ".reloc",  "virtual_size": "0x009D1C", "raw_size": "0x009E00", "entropy": 6.71 }
+    ]
+  },
+
+  "obfuscation": {
+    "method": "Polyalphabetic (Vigenère) cipher + Base64 — documented Amadey scheme",
+    "pipeline": "plaintext → base64_encode → vigenere_encrypt → stored_blob",
+    "vigenere_alphabet": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 ",
+    "vigenere_alphabet_length": 63,
+    "vigenere_key": "a42cf94a609810d038dd0ca0d030ffef",
+    "vigenere_key_length": 32,
+    "space_handling": "spaces in ciphertext are passed through as-is",
+    "decode_function_rva": "0x0008a820",
+    "b64_decode_function_rva": "0x0008a8e0",
+    "static_init_region_va": "0x180001000",
+    "total_encoded_strings": 99
+  },
+
+  "amadey_config_block": {
+    "description": "Contiguous .rdata block holding string-decrypt key, secondary key (likely C2 RC4 key), botnet ID, and a fourth key, immediately followed by the encrypted-string table.",
+    "layout_at_rva_window_around_0x116364": [
+      { "value": "a42cf94a609810d038dd0ca0d030ffef", "role": "string-decryption (Vigenère) key" },
+      { "value": "592deb617de745dd747a896c20d17d0f", "role": "secondary 32-byte hex key (suspected C2 RC4 key per Amadey norms)" },
+      { "value": "54e64e",                           "role": "botnet/campaign ID (matches Triage classification)" },
+      { "value": "904b5ca0578d21b2d7ffa8a149595584", "role": "fourth 32-byte hex key (role TBD — possibly mutex seed or aux key)" }
+    ],
+    "additional_hex_keys_in_binary": [
+      "397a1dad0e0212119274178e7e4cc080",
+      "558a8f02be63d149ebdfd34ec94bdd31"
+    ]
+  },
+
+  "c2": {
+    "ip": "91.92.242.236",
+    "port": 80,
+    "protocol": "HTTP transport (no TLS); POST body is RC4-encrypted per Amadey protocol",
+    "path": "/oPvjr94jfe/index.php",
+    "method": "POST",
+    "full_url": "http://91.92.242.236:80/oPvjr94jfe/index.php",
+    "encrypted_ip_blob": "OMvwTRBuH9OvB9LoFd==",
+    "encrypted_path_blob": "LV0SikiyJIPnPbXk3T8nOZgjfv_l",
+    "panel_probe_2026-04-27": {
+      "status": "live",
+      "server_header": "nginx/1.24.0 (Ubuntu)",
+      "index_php_response": "HTTP 200 with 'Refresh: 0; url = Login.php' header (auto-redirect to admin login)",
+      "login_page": "http://91.92.242.236/oPvjr94jfe/Login.php",
+      "login_page_traits": [
+        "HTML <title>Авторизация</title> (Russian: 'Authorization')",
+        "Form posts to Login.php with fields: login, password",
+        "Submit button text: 'Открыть' ('Open')",
+        "References Css\\Style.css and Images\\Ico.ico (backslash paths suggest Windows-developed panel)",
+        "Sets PHPSESSID cookie",
+        "Layout matches publicly-documented Amadey C2 panel screenshots"
+      ],
+      "panel_resources_observed": [
+        { "path": "Css/Style.css",        "status": 200, "size": 8330 },
+        { "path": "Images/Ico.ico",       "status": 200, "size": 1150 },
+        { "path": "Plugins/cred.dll",     "status": 200, "size": 1102336, "sha256": "b27ecd6a59c7d2471f7d407567d1b33068845ec89f5e0a76e18dc720cc69e80d" },
+        { "path": "Plugins/cred64.dll",   "status": 200, "size": 1282048, "sha256": "3bdcb32460e5a613c35b14205e4a98ad50a03a1d7d17f4c30f2935c6f6d5db69", "note": "Byte-identical to our analysis sample — confirms distribution channel" },
+        { "path": "Plugins/clip.dll",     "status": 404 },
+        { "path": "Plugins/clip64.dll",   "status": 404 },
+        { "path": "Plugins/",             "status": 403, "note": "Directory exists but listing forbidden" },
+        { "path": "Tasks/",               "status": 404 },
+        { "path": "Files/",               "status": 404 }
+      ]
+    }
+  },
+
+  "sibling_plugin_x86": {
+    "file_name": "cred.dll",
+    "sha256": "b27ecd6a59c7d2471f7d407567d1b33068845ec89f5e0a76e18dc720cc69e80d",
+    "file_size_bytes": 1102336,
+    "file_type": "PE32 DLL x86",
+    "compile_timestamp_utc": "2026-03-08T19:10:52Z",
+    "imphash": "a252cd53ebc44617e8418747345d10c1",
+    "pdb_path": null,
+    "exports": ["Main", "Save"],
+    "import_dlls": ["CRYPT32.dll", "KERNEL32.dll", "ADVAPI32.dll", "SHELL32.dll", "WININET.dll", "bcrypt.dll"],
+    "shared_with_x64_sample": {
+      "vigenere_key":  "a42cf94a609810d038dd0ca0d030ffef",
+      "botnet_id":     "54e64e",
+      "all_four_32byte_hex_keys_present": true
+    },
+    "notes": "Compiled 4 seconds before the x64 build (same build session). The x86 variant lacks the PDB string. Same export pair (Main, Save), same import surface, same Amadey config block — confirming the two are sibling builds of the same Amadey 'cred' plugin."
+  },
+
+  "capabilities": {
+    "anti_debug": ["IsDebuggerPresent"],
+    "anti_analysis": ["WOW64 filesystem redirection bypass (Wow64DisableWow64FsRedirection)"],
+    "process_kill": [
+      "litecoin-qt.exe",
+      "ArmoryQt.exe",
+      "dash-qt.exe",
+      "Atomic Wallet.exe"
+    ],
+    "victim_fingerprint": {
+      "method": "Windows SID",
+      "apis": ["GetUserNameA", "LookupAccountNameA", "GetSidIdentifierAuthority", "GetSidSubAuthority"],
+      "format": "S-%lu-%lu-..."
+    },
+    "process_enumeration": {
+      "apis": ["CreateToolhelp32Snapshot", "Process32First", "Process32Next"]
+    },
+
+    "browser_credentials": {
+      "chromium_targets": [
+        { "name": "Chrome",       "local_state": "\\Google\\Chrome\\User Data\\Local State",          "login_db": "\\Google\\Chrome\\User Data\\Default\\Login Data" },
+        { "name": "Edge",         "local_state": "\\Microsoft\\Edge\\User Data\\Local State",          "login_db": "\\Microsoft\\Edge\\User Data\\Default\\Login Data" },
+        { "name": "Chromium",     "local_state": "\\Chromium\\User Data\\Local State",                 "login_db": "\\Chromium\\User Data\\Default\\Login Data" },
+        { "name": "Vivaldi",      "local_state": "\\Vivaldi\\User Data\\Local State",                  "login_db": "\\Vivaldi\\User Data\\Default\\Login Data" },
+        { "name": "Opera",        "login_db":    "\\Opera Software\\Opera Stable\\Login Data",         "local_state": "\\Opera Software\\Opera Stable\\Local State" },
+        { "name": "CocCoc",       "local_state": "\\CocCoc\\Browser\\User Data\\Local State",          "login_db": "\\CocCoc\\Browser\\User Data\\Default\\Login Data" },
+        { "name": "CentBrowser",  "local_state": "\\CentBrowser\\User Data\\Local State",              "login_db": "\\CentBrowser\\User Data\\Default\\Login Data" },
+        { "name": "Orbitum",      "local_state": "\\Orbitum\\User Data\\Local State",                  "login_db": "\\Orbitum\\User Data\\Default\\Login Data" },
+        { "name": "Chedot",       "local_state": "\\Chedot\\User Data\\Local State",                   "login_db": "\\Chedot\\User Data\\Default\\Login Data" },
+        { "name": "Sputnik",      "local_state": "\\SputnikLab\\Sputnik\\User Data\\Local State",      "login_db": "\\SputnikLab\\Sputnik\\User Data\\Default\\Login Data" },
+        { "name": "Comodo Dragon","local_state": "\\Comodo\\Dragon\\User Data\\Local State",            "login_db": "\\Comodo\\Dragon\\User Data\\Default\\Login Data" }
+      ],
+      "chromium_decrypt_method": "CryptUnprotectData (DPAPI) + BCryptDecrypt (AES-256-GCM)",
+      "sql_query": "SELECT origin_url, username_value, password_value FROM logins",
+      "firefox_targets": ["Firefox", "Tor Browser", "Thunderbird"],
+      "firefox_decrypt_method": "Dynamic LoadLibrary nss3.dll + PK11_Decrypt",
+      "firefox_profile_paths": [
+        "\\Mozilla\\Firefox\\Profiles\\",
+        "\\Thunderbird\\Profiles\\"
+      ]
+    },
+
+    "crypto_wallets": [
+      { "name": "Atomic Wallet", "path": "%APPDATA%\\atomic\\Local Storage\\" },
+      { "name": "Electrum",      "path": "%APPDATA%\\Electrum\\wallets\\" },
+      { "name": "Electrum-LTC",  "path": "%APPDATA%\\Electrum-LTC\\wallets\\" },
+      { "name": "Exodus",        "path": "%APPDATA%\\Exodus\\exodus.wallet\\" },
+      { "name": "Armory",        "path": "%APPDATA%\\Armory\\" },
+      { "name": "Litecoin Core", "path": "%APPDATA%\\Litecoin\\wallets\\" },
+      { "name": "Dash Core",     "path": "%APPDATA%\\DashCore\\wallets\\" },
+      { "name": "Dogecoin Core", "path": "%APPDATA%\\Dogecoin\\" }
+    ],
+
+    "messaging_apps": [
+      { "name": "Telegram",  "paths": ["tdata\\", "tdata\\key_datas", "tdata\\emoji", "tdata\\maps", "tdata\\"] },
+      { "name": "Pidgin",    "paths": ["%APPDATA%\\.purple\\accounts.xml"] },
+      { "name": "Psi",       "paths": ["%APPDATA%\\Psi\\profiles\\default\\accounts.xml"] },
+      { "name": "FileZilla", "paths": ["%APPDATA%\\FileZilla\\sitemanager.xml"] }
+    ],
+
+    "wifi_credentials": {
+      "method": "netsh wlan export profile",
+      "command_template": "netsh wlan export profile name=<SSID> folder=<tmp> key=clear",
+      "result": "plaintext PSK in exported XML"
+    },
+
+    "file_search": {
+      "location": "Desktop",
+      "extensions": ["doc", "docx", "xls", "xlsx", "txt", "zip", "dat"],
+      "output_archive": "_Desktop.zip"
+    }
+  },
+
+  "iocs": {
+    "network": [
+      { "type": "ip_port",    "value": "91.92.242.236:80" },
+      { "type": "uri",        "value": "http://91.92.242.236/oPvjr94jfe/index.php" },
+      { "type": "user_agent", "value": "WinINet default (MSIE 7.0 compatible)" }
+    ],
+    "file": [
+      { "type": "sha256",  "value": "3bdcb32460e5a613c35b14205e4a98ad50a03a1d7d17f4c30f2935c6f6d5db69", "note": "cred64.dll (x64)" },
+      { "type": "sha256",  "value": "b27ecd6a59c7d2471f7d407567d1b33068845ec89f5e0a76e18dc720cc69e80d", "note": "cred.dll (x86 sibling, served from same panel)" },
+      { "type": "imphash", "value": "3f175edea93fa7a76a78004d12de2235", "note": "cred64.dll" },
+      { "type": "imphash", "value": "a252cd53ebc44617e8418747345d10c1", "note": "cred.dll" },
+      { "type": "pdb",     "value": "D:\\Mktmp\\StealerDLL\\Release.x64\\STEALERDLL.pdb" }
+    ],
+    "strings": [
+      { "type": "obfuscation_key",   "value": "a42cf94a609810d038dd0ca0d030ffef" },
+      { "type": "botnet_id",         "value": "54e64e" },
+      { "type": "config_hex_key",    "value": "592deb617de745dd747a896c20d17d0f", "role": "suspected C2 RC4 key" },
+      { "type": "config_hex_key",    "value": "904b5ca0578d21b2d7ffa8a149595584" },
+      { "type": "config_hex_key",    "value": "397a1dad0e0212119274178e7e4cc080" },
+      { "type": "config_hex_key",    "value": "558a8f02be63d149ebdfd34ec94bdd31" },
+      { "type": "encrypted_c2_ip",   "value": "OMvwTRBuH9OvB9LoFd==" },
+      { "type": "encrypted_c2_path", "value": "LV0SikiyJIPnPbXk3T8nOZgjfv_l" }
+    ]
+  },
+
+  "detection_artifacts": {
+    "yara_file": "detection/amadey_cred64.yar",
+    "yara_rules": [
+      { "name": "Amadey_cred64_PDB",              "fidelity": "high",      "signal": "PDB path string in .rdata" },
+      { "name": "Amadey_cred64_ObfuscationKey",   "fidelity": "high",      "signal": "Vigenère string-decryption key" },
+      { "name": "Amadey_cred64_EncryptedConfig",  "fidelity": "high",      "signal": "Encrypted C2 IP, path, SQL query blobs" },
+      { "name": "Amadey_cred64_Exports",          "fidelity": "medium",    "signal": "Main+Save export pair, x64 DLL, exports count = 2" },
+      { "name": "Amadey_cred64_ImportProfile",    "fidelity": "medium",    "signal": "DPAPI + BCrypt + WinINet imports + nss3 ref + encrypted Taskkill blobs" },
+      { "name": "Amadey_cred64_WifiExfil",        "fidelity": "low",       "signal": "netsh wlan profile-export pattern" },
+      { "name": "Amadey_cred64_Full",             "fidelity": "very_high", "signal": "Composite (PDB + obf key + nss3 + export pair + import profile)" }
+    ],
+    "suricata_sid": 9000001,
+    "suricata_rule": "alert http any any -> 91.92.242.236 80 (msg:\"Amadey_cred64 C2 POST\"; flow:established,to_server; http.method; content:\"POST\"; http.uri; content:\"/oPvjr94jfe/index.php\"; classtype:trojan-activity; sid:9000001; rev:1;)"
+  },
+
+  "mitre_attack": [
+    { "tactic": "Execution",          "technique": "Command and Scripting Interpreter: Windows Command Shell",     "id": "T1059.003", "evidence": "system() shell-out for Taskkill commands" },
+    { "tactic": "Execution",          "technique": "Native API",                                                   "id": "T1106",     "evidence": "CreateToolhelp32Snapshot / Process32First / Process32Next" },
+    { "tactic": "Defense Evasion",    "technique": "Debugger Evasion",                                             "id": "T1622",     "evidence": "IsDebuggerPresent gate" },
+    { "tactic": "Defense Evasion",    "technique": "Obfuscated Files or Information",                              "id": "T1027",     "evidence": "Vigenère + Base64 obfuscated strings" },
+    { "tactic": "Defense Evasion",    "technique": "Deobfuscate / Decode Files or Information",                    "id": "T1140",     "evidence": "Two-stage decoder fcn.18008a820 / fcn.18008a8e0" },
+    { "tactic": "Defense Evasion",    "technique": "File and Directory Permissions Modification",                  "id": "T1222.001", "evidence": "Wow64DisableWow64FsRedirection to reach 64-bit %APPDATA%" },
+    { "tactic": "Defense Evasion",    "technique": "Indicator Removal: File Deletion",                             "id": "T1070.004", "evidence": "Staged archives wiped post-POST per Amadey norms" },
+    { "tactic": "Credential Access",  "technique": "Credentials from Password Stores: Credentials from Web Browsers", "id": "T1555.003", "evidence": "Chromium DPAPI + AES-GCM, Firefox/Tor/Thunderbird via NSS3" },
+    { "tactic": "Credential Access",  "technique": "Steal Web Session Cookie",                                     "id": "T1539",     "evidence": "Telegram tdata session theft" },
+    { "tactic": "Credential Access",  "technique": "Unsecured Credentials: Credentials in Files",                  "id": "T1552.001", "evidence": "Pidgin / Psi accounts.xml, FileZilla sitemanager.xml, wallet files" },
+    { "tactic": "Credential Access",  "technique": "Unsecured Credentials: Credentials in Registry",               "id": "T1552.002", "evidence": "Local State and Login Data parsing relies on registry-resolved paths" },
+    { "tactic": "Discovery",          "technique": "System Information Discovery",                                 "id": "T1082",     "evidence": "GetUserNameA + SID-based victim ID" },
+    { "tactic": "Discovery",          "technique": "Process Discovery",                                            "id": "T1057",     "evidence": "Toolhelp snapshot to verify wallet processes are killed" },
+    { "tactic": "Discovery",          "technique": "Wi-Fi Discovery",                                              "id": "T1016.002", "evidence": "netsh wlan show profiles + export profile name=… key=clear" },
+    { "tactic": "Discovery",          "technique": "File and Directory Discovery",                                 "id": "T1083",     "evidence": "Desktop crawl for *.doc/*.docx/*.xls/*.xlsx/*.txt/*.zip/*.dat" },
+    { "tactic": "Collection",         "technique": "Archive Collected Data",                                       "id": "T1560.001", "evidence": "Per-category zip archives staged for upload" },
+    { "tactic": "Command and Control","technique": "Application Layer Protocol: Web Protocols",                    "id": "T1071.001", "evidence": "HTTP POST to 91.92.242.236/oPvjr94jfe/index.php" },
+    { "tactic": "Command and Control","technique": "Encrypted Channel: Symmetric Cryptography",                    "id": "T1573.001", "evidence": "RC4-encrypted POST body (Amadey wire protocol)" },
+    { "tactic": "Exfiltration",       "technique": "Exfiltration Over C2 Channel",                                 "id": "T1041",     "evidence": "Single multi-archive POST to the same C2 endpoint" }
+  ],
+
+  "decoded_strings_file": "reports/json/decoded_strings.json",
+  "blog_draft": "docs/amadey_cred64_blog_draft.md",
+  "images": {
+    "kill_chain": "images/killchain.png",
+    "string_decryption": "images/string_decrypt.png"
+  }
+}

@@ -1,0 +1,695 @@
+[
+  {
+    "addr": "0x18012cad8",
+    "len": 28,
+    "src": "YQIxgUejStvsORIhACQ315J72RN2",
+    "vig_dec": "YXRvbWljXExvY2FsIFN0b3JhZ2Vc",
+    "b64_dec": "atomic\\Local Storage\\"
+  },
+  {
+    "addr": "0x18012caf8",
+    "len": 8,
+    "src": "dzIjiEx=",
+    "vig_dec": "dGRhdGE ",
+    "b64_dec": "tdata>"
+  },
+  {
+    "addr": "0x18012cb18",
+    "len": 8,
+    "src": "LLMuiO==",
+    "vig_dec": "LSVsdQg ",
+    "b64_dec": "-%lu"
+  },
+  {
+    "addr": "0x18012cb38",
+    "len": 60,
+    "src": "XxEx3YGvTQvz3bbS5ZYBMHVo2MA6WLJ5YOoG4USh9LvXNtAkRZoxxGR7gvw=",
+    "vig_dec": "XENvY0NvY1xCcm93c2VyXFVzZXIgRGF0YVxEZWZhdWx0XExvZ2luIERhdGEk",
+    "b64_dec": "\\CocCoc\\Browser\\User Data\\Default\\Login Data$"
+  },
+  {
+    "addr": "0x18012cb78",
+    "len": 12,
+    "src": "Vfc43Uqk6F==",
+    "vig_dec": "Vml2YWxkaQbc",
+    "b64_dec": "Vivaldi"
+  },
+  {
+    "addr": "0x18012cbb8",
+    "len": 28,
+    "src": "ZPon31Ky9LZcPvIPQSA6NYxh2MJo",
+    "vig_dec": "ZWxlY3RydW1fZGF0YVx3YWxsZXRz",
+    "b64_dec": "electrum_data\\wallets"
+  },
+  {
+    "addr": "0x18012cbf8",
+    "len": 12,
+    "src": "QQAvg1C5Sp==",
+    "vig_dec": "QXJtb3J5XAbc",
+    "b64_dec": "Armory\\"
+  },
+  {
+    "addr": "0x18012cc18",
+    "len": 52,
+    "src": "XxSr31Cv8R7j4uAuRDgoMHVo2MA6WLJ5YOoOg0Gh7rzQ4vIPRN==",
+    "vig_dec": "XE1pY3Jvc29mdFxFZGdlXFVzZXIgRGF0YVxMb2NhbCBTdGF0ZQ77",
+    "b64_dec": "\\Microsoft\\Edge\\User Data\\Local State"
+  },
+  {
+    "addr": "0x18012cc38",
+    "len": 44,
+    "src": "XxEqhk2t6MTqNuYoRULjGIFP1KpBg7RmbvsViEy0UF==",
+    "vig_dec": "XENocm9taXVtXFVzZXIgRGF0YVxMb2NhbCBTdGF0ZQbc",
+    "b64_dec": "\\Chromium\\User Data\\Local State"
+  },
+  {
+    "addr": "0x18012cc58",
+    "len": 28,
+    "src": "LV0SikiyJIPnPbXk3T8nOZgjfv l",
+    "vig_dec": "L29QdmpyOTRqZmUvaW5kZXgucG w",
+    "b64_dec": "/oPvjr94jfe/index.po\ufffd"
+  },
+  {
+    "addr": "0x18012cc78",
+    "len": 48,
+    "src": "XxEnglKC8b703RYnPCYCOZI6UvxP30BRbVEjgAuT9vDXPF==",
+    "vig_dec": "XENlbnRCcm93c2VyXFVzZXIgRGF0YVxMb2NhbCBTdGF0ZQ7k",
+    "b64_dec": "\\CentBrowser\\User Data\\Local State"
+  },
+  {
+    "addr": "0x18012cc98",
+    "len": 40,
+    "src": "Xx0A3ke09LZ LMQa5fEHNZR70tpk37JxIyE23VKl",
+    "vig_dec": "XE9yYml0dW1 VXNlciBEYXRhXExvY2FsIFN0YXRl",
+    "b64_dec": "\\Orbitum~User Data\\Local State"
+  },
+  {
+    "addr": "0x18012ccd8",
+    "len": 8,
+    "src": "NLV5Ty==",
+    "vig_dec": "NS43OAg ",
+    "b64_dec": "5.78"
+  },
+  {
+    "addr": "0x18012ccf8",
+    "len": 8,
+    "src": "dzIjiEyc",
+    "vig_dec": "dGRhdGFc",
+    "b64_dec": "tdata\\"
+  },
+  {
+    "addr": "0x18012cd18",
+    "len": 32,
+    "src": "a42cf94a609810d038dd0ca0d030ffef",
+    "vig_dec": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "b64_dec": "i\ufffd\ufffdi\ufffd\ufffdi\ufffd\ufffdi\ufffd\ufffdi\ufffd\ufffdi\ufffd\ufffdi\ufffd\ufffdi\ufffd\ufffd"
+  },
+  {
+    "addr": "0x18012cd58",
+    "len": 40,
+    "src": "XyQrikysUvj LMQa5fEHNZR70tpk37JxIyE23VKl",
+    "vig_dec": "XFZpdmFsZGl VXNlciBEYXRhXExvY2FsIFN0YXRl",
+    "b64_dec": "\\Vivaldi~User Data\\Local State"
+  },
+  {
+    "addr": "0x18012cd78",
+    "len": 16,
+    "src": "IzknjRUj7vTe36==",
+    "vig_dec": "IGtleT1jbGVhcg7k",
+    "b64_dec": " key=clear"
+  },
+  {
+    "addr": "0x18012cd98",
+    "len": 36,
+    "src": "XxSxjkes7vD HbonRT2y4HxFfb1bf1BqcUn=",
+    "vig_dec": "XE1vemlsbGF RmlyZWZveFxQcm9maWxlc1w8",
+    "b64_dec": "\\Mozilla~Firefox\\Profiles\\<"
+  },
+  {
+    "addr": "0x18012cdb8",
+    "len": 12,
+    "src": "aVM720Kh9vDw",
+    "vig_dec": "a2V5X2RhdGFz",
+    "b64_dec": "key_datas"
+  },
+  {
+    "addr": "0x18012ce38",
+    "len": 52,
+    "src": "XyQrikysUvj LMQa5fEHNZR70tJa4rJ6bAIeYE2n6L2dHvIPQN==",
+    "vig_dec": "XFZpdmFsZGl VXNlciBEYXRhXERlZmF1bHRcTG9naW4gRGF0YQ77",
+    "b64_dec": "\\Vivaldi~User Data\\Default\\Login Data"
+  },
+  {
+    "addr": "0x18012ce58",
+    "len": 8,
+    "src": "ezoBjy==",
+    "vig_dec": "eGxzeAg ",
+    "b64_dec": "xlsx"
+  },
+  {
+    "addr": "0x18012ce98",
+    "len": 32,
+    "src": "XyIqiUYkUMHf1MM PCEB14ZeevNo2F==",
+    "vig_dec": "XFRodW5kZXJiaXJ XFByb2ZpbGVzXA65",
+    "b64_dec": "\\Thunderbir~\\Profiles\\"
+  },
+  {
+    "addr": "0x18012ceb8",
+    "len": 12,
+    "src": "TWAkfVK17F==",
+    "vig_dec": "T3JiaXR1bQbc",
+    "b64_dec": "Orbitum"
+  },
+  {
+    "addr": "0x18012ced8",
+    "len": 28,
+    "src": "RQ9x4FOzSvT12RUQ5v86NYxh2MJ2",
+    "vig_dec": "RXhvZHVzXGV4b2R1cy53YWxsZXRc",
+    "b64_dec": "Exodus\\exodus.wallet\\"
+  },
+  {
+    "addr": "0x18012cf18",
+    "len": 48,
+    "src": "XxEq4UKv9uvS3RYnABUk3IF2UvNb32ZxdyoOg07p78zBOMU7",
+    "vig_dec": "XENoZWRvdFxVc2VyIERhdGFcRGVmYXVsdFxMb2dpbiBEYXRh",
+    "b64_dec": "\\Chedot\\User Data\\Default\\Login Data"
+  },
+  {
+    "addr": "0x18012cf38",
+    "len": 32,
+    "src": "904b5ca0578d21b2d7ffa8a149595584",
+    "vig_dec": "97c 0eh0 h gbb9cl ccl6ab1jcj004Z",
+    "b64_dec": "\ufffd\ufffd>\ufffd\ufffdt\ufffd\u001f\ufffdm\ufffd\\\ufffd\ufffd\u001c\ufffd\ufffd\ufffd\ufffd7#\ufffdN"
+  },
+  {
+    "addr": "0x18012cf78",
+    "len": 4,
+    "src": "dA92",
+    "vig_dec": "dHh0",
+    "b64_dec": "txt"
+  },
+  {
+    "addr": "0x18012cf98",
+    "len": 56,
+    "src": "XyEyiVKu6LrJOLM2M0E43I5edQpKh7ZDIxIjiEycOv7gOLz6M0Uk3IU=",
+    "vig_dec": "XFNwdXRuaWtMYWJcU3B1dG5pa1xVc2VyIERhdGFcTG9jYWwgU3RhdGUk",
+    "b64_dec": "\\SputnikLab\\Sputnik\\User Data\\Local State$"
+  },
+  {
+    "addr": "0x18012cfd8",
+    "len": 52,
+    "src": "XxEqhk2t6MTqNuYoRULjGIFP1Kpt413mdPo22CqvURjrytU76DH=",
+    "vig_dec": "XENocm9taXVtXFVzZXIgRGF0YVxEZWZhdWx0XExvZ2luIERhdGE7",
+    "b64_dec": "\\Chromium\\User Data\\Default\\Login Data;"
+  },
+  {
+    "addr": "0x18012cff8",
+    "len": 60,
+    "src": "XxExgU2k7QvB3bIc4Z8fKZNaf8tt32VmXxIn4ky17wP Jvbc3T7jGIFP1F==",
+    "vig_dec": "XENvbW9kb1xEcmFnb25cVXNlciBEYXRhXERlZmF1bHR TG9naW4gRGF0YQhk",
+    "b64_dec": "\\Comodo\\Dragon\\User Data\\Default~Login Data"
+  },
+  {
+    "addr": "0x18012d018",
+    "len": 16,
+    "src": "XAMB4VCfUvDXOF==",
+    "vig_dec": "XHVzZXJfZGF0YQ7k",
+    "b64_dec": "\\user_data"
+  },
+  {
+    "addr": "0x18012d038",
+    "len": 76,
+    "src": "Tz0l3UpgPRTX4vojR0QfJ49bgw67hrZhTPclhk2z7RXXNuge4jUy35N2XR agLBhTQMrV0yj6vS=",
+    "vig_dec": "TG9jYWwgU2V0dGluZ3NcU29mdHdhcmVcTWljcm9zb2Z0XFdpbmRvd3NcU2 lbGxcTXVpQ2FjaGUc",
+    "b64_dec": "Local Settings\\Software\\Microsoft\\Windows\\So\ufffdll\\MuiCache"
+  },
+  {
+    "addr": "0x18012d058",
+    "len": 12,
+    "src": "QV9Ag0Up9LY=",
+    "vig_dec": "Q2hyb21pdW0c",
+    "b64_dec": "Chromium"
+  },
+  {
+    "addr": "0x18012d078",
+    "len": 8,
+    "src": "QV9n4E20",
+    "vig_dec": "Q2hlZG90",
+    "b64_dec": "Chedot"
+  },
+  {
+    "addr": "0x18012d0d8",
+    "len": 8,
+    "src": "Zz0ljy==",
+    "vig_dec": "ZG9jeAg ",
+    "b64_dec": "docx"
+  },
+  {
+    "addr": "0x18012d0f8",
+    "len": 12,
+    "src": "XToriEOj7Rjr",
+    "vig_dec": "X0xpdGVjb2lu",
+    "b64_dec": "_Litecoin"
+  },
+  {
+    "addr": "0x18012d118",
+    "len": 24,
+    "src": "RzwBfCGv8bT 4RIh4DY323w=",
+    "vig_dec": "RGFzaENvcmV d2FsbGV0c1wk",
+    "b64_dec": "DashCore~wallets\\$"
+  },
+  {
+    "addr": "0x18012d138",
+    "len": 48,
+    "src": "Xx5xg07sUKvA1wMk4TYfKZNaf8tt32VmXxox30ysDuLXOMUa",
+    "vig_dec": "XEdvb2dsZVxDaHJvbWVcVXNlciBEYXRhXExvY2FsIFN0YXRl",
+    "b64_dec": "\\Google\\Chrome\\User Data\\Local State"
+  },
+  {
+    "addr": "0x18012d158",
+    "len": 20,
+    "src": "dzIjiEyc6RT2NRU76DIC",
+    "vig_dec": "dGRhdGFca2V5X2RhdGFz",
+    "b64_dec": "tdata\\key_datas"
+  },
+  {
+    "addr": "0x18012d178",
+    "len": 16,
+    "src": "XTMu4UG08cTqAp==",
+    "vig_dec": "X0VsZWN0cnVtKA7k",
+    "b64_dec": "_Electrum("
+  },
+  {
+    "addr": "0x18012d198",
+    "len": 64,
+    "src": "XyEyiVKu6LrJOLM2M0E43I5edQpKh7ZDIxIjiEycMvTjOMYh6CAP14dee8tt32Vm",
+    "vig_dec": "XFNwdXRuaWtMYWJcU3B1dG5pa1xVc2VyIERhdGFcRGVmYXVsdFxMb2dpbiBEYXRh",
+    "b64_dec": "\\SputnikLab\\Sputnik\\User Data\\Default\\Login Data"
+  },
+  {
+    "addr": "0x18012d1b8",
+    "len": 48,
+    "src": "XxExgU2k7QvB3bIc4Z8fKZNaf8tt32VmXxox30ysDuLXOMUa",
+    "vig_dec": "XENvbW9kb1xEcmFnb25cVXNlciBEYXRhXExvY2FsIFN0YXRl",
+    "b64_dec": "\\Comodo\\Dragon\\User Data\\Local State"
+  },
+  {
+    "addr": "0x18012d1d8",
+    "len": 84,
+    "src": "UTMOWSGUDv7v1Lge4ib42owhLwNo42NzYPSn21Sh7wTiBrElQUQC349n2u1R31B6ZLsIZi2NDvvsPRoj5t==",
+    "vig_dec": "U0VMRUNUIG9yaWdpbl91cmwsIHVzZXJuYW1lX3ZhbHVlLCBwYXNzd29yZF92YWx1ZSBGUk9NIGxvZ2lucw77",
+    "b64_dec": "SELECT origin_url, username_value, password_value FROM logins"
+  },
+  {
+    "addr": "0x18012d218",
+    "len": 12,
+    "src": "XTM6g0K18l==",
+    "vig_dec": "X0V4b2R1cwbc",
+    "b64_dec": "_Exodus"
+  },
+  {
+    "addr": "0x18012d238",
+    "len": 8,
+    "src": "Lggrhy==",
+    "vig_dec": "LnppcAg ",
+    "b64_dec": ".zip"
+  },
+  {
+    "addr": "0x18012d258",
+    "len": 44,
+    "src": "VzwBf0mp7vudBPoCADAs3IV9eRdjQ2J5LfM64QtvM6==",
+    "vig_dec": "VGFza2tpbGwgL0lNIGxpdGVjb2luLXF0LmV4ZSAvRgbc",
+    "b64_dec": "Taskkill /IM litecoin-qt.exe /F"
+  },
+  {
+    "addr": "0x18012d278",
+    "len": 76,
+    "src": "Tz0l3UpgPRTX4vojR0QfJ49bgw67hrZhTPclhk2z7RXXNuge4jUy35N2XR agLBhTQMrV0yj6vS=",
+    "vig_dec": "TG9jYWwgU2V0dGluZ3NcU29mdHdhcmVcTWljcm9zb2Z0XFdpbmRvd3NcU2 lbGxcTXVpQ2FjaGUc",
+    "b64_dec": "Local Settings\\Software\\Microsoft\\Windows\\So\ufffdll\\MuiCache"
+  },
+  {
+    "addr": "0x18012d298",
+    "len": 16,
+    "src": "QVMwiCCy7SbwPML=",
+    "vig_dec": "Q2VudEJyb3dzZXIk",
+    "b64_dec": "CentBrowser$"
+  },
+  {
+    "addr": "0x18012d2b8",
+    "len": 8,
+    "src": "dzIjiEyc",
+    "vig_dec": "dGRhdGFc",
+    "b64_dec": "tdata\\"
+  },
+  {
+    "addr": "0x18012d2d8",
+    "len": 4,
+    "src": "ezoB",
+    "vig_dec": "eGxz",
+    "b64_dec": "xls"
+  },
+  {
+    "addr": "0x18012d2f8",
+    "len": 40,
+    "src": "VzwBf0mp7vudBPoCABIB1Y9nhKxPQrZ9ZLrxWe==",
+    "vig_dec": "VGFza2tpbGwgL0lNIEFybW9yeVF0LmV4ZSAvRgg ",
+    "b64_dec": "Taskkill /IM ArmoryQt.exe /F"
+  },
+  {
+    "addr": "0x18012d318",
+    "len": 16,
+    "src": "XUIngEOn8bDqAp==",
+    "vig_dec": "X1RlbGVncmFtKA7k",
+    "b64_dec": "_Telegram("
+  },
+  {
+    "addr": "0x18012d358",
+    "len": 12,
+    "src": "XTQrgEOzSQu=",
+    "vig_dec": "X0ZpbGVzX1wc",
+    "b64_dec": "_Files_\\"
+  },
+  {
+    "addr": "0x18012d378",
+    "len": 24,
+    "src": "RPon31Ky9LZ 4RIh4DY32y==",
+    "vig_dec": "RWxlY3RydW1 d2FsbGV0cw k",
+    "b64_dec": "Electrum~wallets"
+  },
+  {
+    "addr": "0x18012d398",
+    "len": 63,
+    "src": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+    "vig_dec": "ailb hnhnumowylAyupqFtwIvKIMxyAAGORHFNTNT0SU24R640VWaZ2d1fdh34",
+    "b64_dec": "j)[\ufffdxg\ufffdj0\ufffdP2\ufffd\ufffd\ufffd\ufffd\u0002/(\ufffd1\ufffd\u0000\u00069\u0011\ufffd53S\ufffd%6\ufffd\u001e\ufffd\ufffdU\ufffdggu}\ufffdw"
+  },
+  {
+    "addr": "0x18012d3b8",
+    "len": 12,
+    "src": "IzQxgEKl89Y=",
+    "vig_dec": "IGZvbGRlcj0c",
+    "b64_dec": " folder="
+  },
+  {
+    "addr": "0x18012d3d8",
+    "len": 56,
+    "src": "XxEnglKC8b703RYnPCYCOZI6UvxP30BJZPQjiUq0StvsPRojABUk3IE=",
+    "vig_dec": "XENlbnRCcm93c2VyXFVzZXIgRGF0YVxEZWZhdWx0XExvZ2luIERhdGEk",
+    "b64_dec": "\\CentBrowser\\User Data\\Default\\Login Data$"
+  },
+  {
+    "addr": "0x18012d3f8",
+    "len": 100,
+    "src": "UT0I0D7BP T JLo95jbC14ZP0u6egrVAdWEeV1Oy8bTr4u2a5kQs1452UM lgLcDZQAeWkOh9wTvPKYoQTgoMGFlfuFSf2VoazMm",
+    "vig_dec": "U09GVFdBU V TWljcm9zb2Z0XFdpbmRvd3NcQ3VycmVudFZlcnNpb25cRX wbG9yZXJcRmVhdHVyZVVzYWdlXEFwcFN3aXRjaGVk",
+    "b64_dec": "SOFTWAS\ufffd~Microsoft\\Windows\\CurrentVersion\\E\u007f\ufffdlorer\\FeatureUsage\\AppSwitched"
+  },
+  {
+    "addr": "0x18012d418",
+    "len": 8,
+    "src": "XzMvg0ip",
+    "vig_dec": "XGVtb2pp",
+    "b64_dec": "\\emoji"
+  },
+  {
+    "addr": "0x18012d438",
+    "len": 8,
+    "src": "KLW8fVt=",
+    "vig_dec": "KS56aXA ",
+    "b64_dec": ").zip>"
+  },
+  {
+    "addr": "0x18012d458",
+    "len": 20,
+    "src": "OMvwTRBuH9OvB9LoFd==",
+    "vig_dec": "OTEuOTIuMjQyLjIzNg77",
+    "b64_dec": "91.92.242.236"
+  },
+  {
+    "addr": "0x18012d478",
+    "len": 12,
+    "src": "XTw2g0UpTl==",
+    "vig_dec": "X0F0b21pYwbc",
+    "b64_dec": "_Atomic"
+  },
+  {
+    "addr": "0x18012d498",
+    "len": 32,
+    "src": "592deb617de745dd747a896c20d17d0f",
+    "vig_dec": "5fab dc1bog dfaoe748i76nZalb29Wa",
+    "b64_dec": "\ufffd\ufffd\ufffd\ufffd\ufffd5n\ufffd>u\ufffd\ufffd{\ufffd<\ufffd\ufffd\ufffde\ufffd[\ufffd\u055a"
+  },
+  {
+    "addr": "0x18012d4b8",
+    "len": 44,
+    "src": "bfM2h0 g9Rve28Ea7EEy2pQ6fwBk4rpxZLsw3UUlKF==",
+    "vig_dec": "bmV0c2 gd2xhbiBleHBvcnQgcHJvZmlsZSBuYW1lPQbc",
+    "b64_dec": "netso\ufffdwlan export profile name="
+  },
+  {
+    "addr": "0x18012d4d8",
+    "len": 12,
+    "src": "XTwAgU2y F==",
+    "vig_dec": "X0FybW9y Qbc",
+    "b64_dec": "_Armor\ufffd"
+  },
+  {
+    "addr": "0x18012d4f8",
+    "len": 8,
+    "src": "KbWm3VJ=",
+    "vig_dec": "Ki5kYXQ ",
+    "b64_dec": "*.dat>"
+  },
+  {
+    "addr": "0x18012d518",
+    "len": 8,
+    "src": "JLSuiO==",
+    "vig_dec": "JS1sdQg ",
+    "b64_dec": "%-lu"
+  },
+  {
+    "addr": "0x18012d538",
+    "len": 12,
+    "src": "RPon31Ky9LY=",
+    "vig_dec": "RWxlY3RydW0c",
+    "b64_dec": "Electrum"
+  },
+  {
+    "addr": "0x18012d578",
+    "len": 8,
+    "src": "RPIp4O==",
+    "vig_dec": "RWRnZQg ",
+    "b64_dec": "Edge"
+  },
+  {
+    "addr": "0x18012d598",
+    "len": 20,
+    "src": "XzIr31Kp7R3e3boa5t==",
+    "vig_dec": "XGRpY3Rpb25hcmllcw77",
+    "b64_dec": "\\dictionaries"
+  },
+  {
+    "addr": "0x18012d5b8",
+    "len": 6,
+    "src": "54e64e",
+    "vig_dec": "5an4Zg",
+    "b64_dec": "\ufffd\ufffdf"
+  },
+  {
+    "addr": "0x18012d5d8",
+    "len": 52,
+    "src": "Xx0y4VChDuLsPcUSQUMoMG9l2MB7NKR5YPAu4TqM7Rbm28EtQUUk",
+    "vig_dec": "XE9wZXJhIFNvZnR3YXJlXE9wZXJhIFN0YWJsZVxMb2dpbiBEYXRh",
+    "b64_dec": "\\Opera Software\\Opera Stable\\Login Data"
+  },
+  {
+    "addr": "0x18012d618",
+    "len": 16,
+    "src": "RPon31Ky9LYrPMka",
+    "vig_dec": "RWxlY3RydW0uZXhl",
+    "b64_dec": "Electrum.exe"
+  },
+  {
+    "addr": "0x18012d658",
+    "len": 12,
+    "src": "XTIjh0aj7SHi",
+    "vig_dec": "X0Rhc2hjb3Jl",
+    "b64_dec": "_Dashcore"
+  },
+  {
+    "addr": "0x18012d678",
+    "len": 8,
+    "src": "TWsnhkx=",
+    "vig_dec": "T3BlcmE ",
+    "b64_dec": "Opera>"
+  },
+  {
+    "addr": "0x18012d698",
+    "len": 16,
+    "src": "Xzox40eu8n3n3Rbj",
+    "vig_dec": "XGxvZ2lucy5qc29u",
+    "b64_dec": "\\logins.json"
+  },
+  {
+    "addr": "0x18012d6b8",
+    "len": 8,
+    "src": "QV9Ag0Ul",
+    "vig_dec": "Q2hyb21l",
+    "b64_dec": "Chrome"
+  },
+  {
+    "addr": "0x18012d6d8",
+    "len": 52,
+    "src": "XxEx3YGvTQvz3bbS5ZYBMHVo2MA6WLJ5YOoOg0Gh7rzQ4vIPRN==",
+    "vig_dec": "XENvY0NvY1xCcm93c2VyXFVzZXIgRGF0YVxMb2NhbCBTdGF0ZQ77",
+    "b64_dec": "\\CocCoc\\Browser\\User Data\\Local State"
+  },
+  {
+    "addr": "0x18012d738",
+    "len": 8,
+    "src": "QV0lV02j",
+    "vig_dec": "Q29jQ29j",
+    "b64_dec": "CocCoc"
+  },
+  {
+    "addr": "0x18012d758",
+    "len": 12,
+    "src": "UWs3iEYp6l==",
+    "vig_dec": "U3B1dG5pawbc",
+    "b64_dec": "Sputnik"
+  },
+  {
+    "addr": "0x18012d778",
+    "len": 12,
+    "src": "Rz0p4UGv6L3",
+    "vig_dec": "RG9nZWNvaW5",
+    "b64_dec": "Dogecoin"
+  },
+  {
+    "addr": "0x18012d798",
+    "len": 8,
+    "src": "QV0vg0Kv",
+    "vig_dec": "Q29tb2Rv",
+    "b64_dec": "Comodo"
+  },
+  {
+    "addr": "0x18012d7b8",
+    "len": 16,
+    "src": "XTInh0m07Syr5bol",
+    "vig_dec": "X0Rlc2t0b3Auemlw",
+    "b64_dec": "_Desktop.zip"
+  },
+  {
+    "addr": "0x18012d7d8",
+    "len": 24,
+    "src": "Tzc24UGv6L3 4RIh4DY32y==",
+    "vig_dec": "TGl0ZWNvaW5 d2FsbGV0cw k",
+    "b64_dec": "Litecoin~wallets"
+  },
+  {
+    "addr": "0x18012d7f8",
+    "len": 36,
+    "src": "VzwBf0mp7vudBPoCADUk24gifMIj42lqIv0I",
+    "vig_dec": "VGFza2tpbGwgL0lNIGRhc2gtcXQuZXhlIC9G",
+    "b64_dec": "Taskkill /IM dash-qt.exe /F"
+  },
+  {
+    "addr": "0x18012d818",
+    "len": 40,
+    "src": "XxEq4UKv9uvS3RYnABUk3IF2Wv1931AlUWIjiEN=",
+    "vig_dec": "XENoZWRvdFxVc2VyIERhdGFcTG9jYWwgU3RhdGU ",
+    "b64_dec": "\\Chedot\\User Data\\Local State>"
+  },
+  {
+    "addr": "0x18012d858",
+    "len": 12,
+    "src": "VzMu4U7yTLY=",
+    "vig_dec": "VGVsZWdyYW0c",
+    "b64_dec": "Telegram"
+  },
+  {
+    "addr": "0x18012d898",
+    "len": 60,
+    "src": "XxSr31Cv8R7j4uAuRDgoMHVo2MA6WLJ5YOoG4USh9LvXNtAkRZoxxGR7gvw=",
+    "vig_dec": "XE1pY3Jvc29mdFxFZGdlXFVzZXIgRGF0YVxEZWZhdWx0XExvZ2luIERhdGEk",
+    "b64_dec": "\\Microsoft\\Edge\\User Data\\Default\\Login Data$"
+  },
+  {
+    "addr": "0x18012d8b8",
+    "len": 60,
+    "src": "Xx5xg07sUKvA1wMk4TYfKZNaf8tt32VmXxIn4ky17wP Jvbc3T7jGIFP1F==",
+    "vig_dec": "XEdvb2dsZVxDaHJvbWVcVXNlciBEYXRhXERlZmF1bHR TG9naW4gRGF0YQhk",
+    "b64_dec": "\\Google\\Chrome\\User Data\\Default~Login Data"
+  },
+  {
+    "addr": "0x18012d8f8",
+    "len": 100,
+    "src": "UT0I0D7BP T JLo95jbC14ZP0u6egrVAdWEeV1Oy8bTr4u2a5kQs1452UM lgLcDZQAeWkOh9wTvPKYoQTgoMGFlfuFSf2VoazMm",
+    "vig_dec": "U09GVFdBU V TWljcm9zb2Z0XFdpbmRvd3NcQ3VycmVudFZlcnNpb25cRX wbG9yZXJcRmVhdHVyZVVzYWdlXEFwcFN3aXRjaGVk",
+    "b64_dec": "SOFTWAS\ufffd~Microsoft\\Windows\\CurrentVersion\\E\u007f\ufffdlorer\\FeatureUsage\\AppSwitched"
+  },
+  {
+    "addr": "0x18012d918",
+    "len": 16,
+    "src": "VzMu4U7yTLYrPMka",
+    "vig_dec": "VGVsZWdyYW0uZXhl",
+    "b64_dec": "Telegram.exe"
+  },
+  {
+    "addr": "0x18012d958",
+    "len": 8,
+    "src": "UrRngFNt",
+    "vig_dec": "Uy0lbHUt",
+    "b64_dec": "S-%lu-"
+  },
+  {
+    "addr": "0x18012d978",
+    "len": 48,
+    "src": "VzwBf0mp7vudBPoCAzME3I9idLE607JxbzM2QkO4UHGdBP1=",
+    "vig_dec": "VGFza2tpbGwgL0lNICJBdG9taWMgV2FsbGV0LmV4ZSIgL0Yk",
+    "b64_dec": "Taskkill /IM \"Atomic Wallet.exe\" /F$"
+  },
+  {
+    "addr": "0x18012d998",
+    "len": 12,
+    "src": "YV0w4ken8l==",
+    "vig_dec": "Y29uZmlncwbc",
+    "b64_dec": "configs"
+  },
+  {
+    "addr": "0x18012d9b8",
+    "len": 52,
+    "src": "Xx0A3ke09LZ LMQa5fEHNZR70tJa4rJ6bAIeYE2n6L2dHvIPQN==",
+    "vig_dec": "XE9yYml0dW1 VXNlciBEYXRhXERlZmF1bHRcTG9naW4gRGF0YQ77",
+    "b64_dec": "\\Orbitum~User Data\\Default\\Login Data"
+  },
+  {
+    "addr": "0x18012d9f8",
+    "len": 4,
+    "src": "Zz0l",
+    "vig_dec": "ZG9j",
+    "b64_dec": "doc"
+  },
+  {
+    "addr": "0x18012da58",
+    "len": 12,
+    "src": "XTIx40Oj7Rjr",
+    "vig_dec": "X0RvZ2Vjb2lu",
+    "b64_dec": "_Dogecoin"
+  },
+  {
+    "addr": "0x18012da78",
+    "len": 8,
+    "src": "bPwyhu==",
+    "vig_dec": "bWFwcwg ",
+    "b64_dec": "maps"
+  },
+  {
+    "addr": "0x18012da98",
+    "len": 56,
+    "src": "Xx0y4VChDuLsPcUSQUMoMG9l2MB7NKR5YPAu4TqM7RLe2rEI6DI3OS==",
+    "vig_dec": "XE9wZXJhIFNvZnR3YXJlXE9wZXJhIFN0YWJsZVxMb2NhbCBTdGF0ZQ k",
+    "b64_dec": "\\Opera Software\\Opera Stable\\Local State"
+  }
+]

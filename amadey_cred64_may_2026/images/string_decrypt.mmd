@@ -1,0 +1,15 @@
+---
+config:
+  theme: dark
+---
+flowchart LR
+    A["Stored ciphertext blob\ne.g. OMvwTRBuH9OvB9LoFd=="] --> B["Vigenère decrypt\nalphabet = a-z A-Z 0-9 SPACE\nkey = a42cf94a609810d038dd0ca0d030ffef\nspaces pass-through"]
+    B --> C["Base64-encoded plaintext\ne.g. OTEuOTIuMjQyLjIzNg=="]
+    C --> D["Base64 decode"]
+    D --> E["Plaintext string\ne.g. 91.92.242.236"]
+
+    style A fill:#1a1a2e,color:#e0e0e0
+    style B fill:#16213e,color:#e0e0e0
+    style C fill:#0f3460,color:#e0e0e0
+    style D fill:#533483,color:#e0e0e0
+    style E fill:#e94560,color:#fff
