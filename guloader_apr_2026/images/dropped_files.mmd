@@ -1,0 +1,22 @@
+flowchart TB
+    Root["%TEMP%\nsXXXX.tmp\"]
+    Root --> P["$PLUGINSDIR\"]
+    Root --> D["Darnel\"]
+    Root --> Misc["piasaba<br/>(229 KB encoded data)"]
+    Root --> ChokoTxt["Chokolademoussers.txt<br/>(395 B word-salad)"]
+
+    P --> Sysdll["System.dll<br/>(12 KB NSIS native-call plugin)<br/>SHA256 8b4c47c4cf5e76ec57dd5...d37c"]
+
+    D --> Maynard["Maynard.pen<br/>8.96 MB / entropy 0.16<br/>99% byte 0x5A padding"]
+    D --> Ganoc["Ganocephala176.ham<br/>8.64 MB / entropy 0.16<br/>99% byte 0xB7 padding"]
+    D --> Toolers["Toolers<br/>(154 KB)<br/>sparse encoded blob"]
+    D --> Inis["7 x .ini and .txt<br/>Danish word salad<br/>(120 to 545 B each)"]
+    D --> Jpgs["5 x .jpg images<br/>(2.9 to 14.6 KB each)<br/>cover images, no stego payload"]
+
+    classDef decoy fill:#553311,stroke:#aa6644,color:#ffcc99
+    classDef payload fill:#003366,stroke:#3399cc,color:#cce6ff
+    classDef plugin fill:#330033,stroke:#cc33cc,color:#ffccff
+
+    class Maynard,Ganoc,Inis,Jpgs,ChokoTxt decoy
+    class Misc,Toolers payload
+    class Sysdll plugin

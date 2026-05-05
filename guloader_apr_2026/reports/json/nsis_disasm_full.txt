@@ -1,0 +1,233 @@
+NSIS first header @ 0x22a00
+Inflated header size: 16410 bytes
+Entries: 0xe4 (228) at 0x11dc
+Strings: 0x2acc..0x3ed0
+
+   0 EW_SENDMESSAGE        -1, '脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', 102, 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', -37, 'ProgramFilesDir'
+   1 EW_SENDMESSAGE        -1, '䌀漀洀洀漀渀\u2000䘀椀氀攀猀', 102, 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', -38, 'ProgramFilesDir'
+   2 EW_RET                0, 0, 0, 0, 0, 0
+   3 EW_FINDWINDOW         'am Files', 'ommon Files', 0, '渀\u2000䘀椀氀攀猀', 0, 0
+   4 EW_GETDLGITEM         '洀\u2000䘀椀氀攀猀', ' Files', '椀氀攀猀', 0, 0, 0
+   5 EW_GETDLGITEM         'm Files', ' Files', 'es', 0, 0, 0
+   6 EW_GETDLGITEM         '\u2000䘀椀氀攀猀', ' Files', 'Ȁ鄀4Ȁᨀ尣漀瀀氀礀猀渀椀渀最猀昀漀爀戀甀渀搀攀渀攀', 0, 0, 0
+   7 EW_GETDLGITEM         ' Files', ' Files', 140, 0, 0, 0
+   8 EW_RET                0, 0, 0, 0, 0, 0
+   9 EW_IFFLAG             'mFilesDir', 0, '爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', -1, 0, 0
+  10 EW_SENDMESSAGE        -1, '脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', 102, 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', -39, 'ProgramFilesDir'
+  11 EW_SENDMESSAGE        -1, '䌀漀洀洀漀渀\u2000䘀椀氀攀猀', 102, 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', -40, 'ProgramFilesDir'
+  12 EW_NOP                'FilesDir', 0, 0, 0, 0, 0
+  13 EW_SENDMESSAGE        -1, '脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', 102, 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', -41, 'ProgramFilesDir'
+  14 EW_SENDMESSAGE        -1, '䌀漀洀洀漀渀\u2000䘀椀氀攀猀', 102, 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', -42, 'ProgramFilesDir'
+  15 EW_IFFLAG             '椀氀攀猀䐀椀爀', 0, '爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', -1, 0, 0
+  16 EW_RET                0, 0, 0, 0, 0, 0
+  17 EW_GETDLGITEM         32, '渀\u2000䘀椀氀攀猀', '尣漀瀀氀礀猀渀椀渀最猀昀漀爀戀甀渀搀攀渀攀', 0, 0, 0
+  18 EW_CREATEFONT         '䌀漀洀洀漀渀䘀椀氀攀猀䐀椀爀', -43, -44, 'plysningsforbundene', 0, 0
+  19 EW_SENDMESSAGE        -1, '脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', '渀椀渀最猀昀漀爀戀甀渀搀攀渀攀', 'ysningsforbundene', 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', 0
+  20 EW_GETDLGITEM         'CommonFilesDir', '渀\u2000䘀椀氀攀猀', 'gsforbundene', 0, 0, 0
+  21 EW_SETCTLCOLORS       '脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', 0, 0, 0, 0, 0
+  22 EW_SETCTLCOLORS       '䌀漀洀洀漀渀\u2000䘀椀氀攀猀', 0, 0, 0, 0, 0
+  23 EW_GETDLGITEM         '漀洀洀漀渀䘀椀氀攀猀䐀椀爀', '渀\u2000䘀椀氀攀猀', '漀爀戀甀渀搀攀渀攀', 0, 0, 0
+  24 EW_SETCTLCOLORS       'bundene', 'sDir', 0, 0, 0, 0
+  25 EW_GETDLGITEM         'ommonFilesDir', '渀\u2000䘀椀氀攀猀', '渀搀攀渀攀', 0, 0, 0
+  26 EW_SETCTLCOLORS       'ene', 'sDir', 0, 0, 0, 0
+  27 EW_GETDLGITEM         'mmonFilesDir', '渀\u2000䘀椀氀攀猀', '攀', 0, 0, 0
+  28 EW_SETCTLCOLORS       ' ', 'ilesDir', 0, 0, 0, 0
+  29 EW_GETDLGITEM         '洀洀漀渀䘀椀氀攀猀䐀椀爀', '渀\u2000䘀椀氀攀猀', 193, 0, 0, 0
+  30 EW_SETCTLCOLORS       '\x03肠', 'ilesDir', 0, 0, 0, 0
+  31 EW_SENDMESSAGE        -1, '\x03肠', 102, 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', '\x80\u3000砀\u3000\u3000\u3000䌀', 'ProgramFilesDir'
+  32 EW_GETDLGITEM         '洀漀渀䘀椀氀攀猀䐀椀爀', '渀\u2000䘀椀氀攀猀', '砀\u3000\u3000\u3000䌀', 0, 0, 0
+  33 EW_GETDLGITEM         'monFilesDir', '渀\u2000䘀椀氀攀猀', '00C', 0, 0, 0
+  34 EW_GETDLGITEM         '漀渀䘀椀氀攀猀䐀椀爀', '渀\u2000䘀椀氀攀猀', 215, 0, 0, 0
+  35 EW_GETDLGITEM         'onFilesDir', '渀\u2000䘀椀氀攀猀', '̀ꈀ\x80⌀㌀㈀㜀㜀\u3000', 0, 0, 0
+  36 EW_GETDLGITEM         '渀䘀椀氀攀猀䐀椀爀', '渀\u2000䘀椀氀攀猀', 'ꈀ\x80⌀㌀㈀㜀㜀\u3000', 0, 0, 0
+  37 EW_RET                0, 0, 0, 0, 0, 0
+  38 EW_RET                0, 0, 0, 0, 0, 0
+  39 EW_SETCTLCOLORS       '\x80⌀㌀㈀㜀㜀\u3000', 'rogram Files', 0, 0, 0, 0
+  40 EW_PUSHPOP            'ramFilesDir', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0, 0
+  41 EW_ISWINDOW           '#32770', '渀䘀椀氀攀猀䐀椀爀', 'nFilesDir', 0, 0, 0
+  42 EW_MESSAGEBOX         'ilesDir', '㈀㜀㜀\u3000', 0, 0, 0, 0
+  43 EW_FOPEN              '䘀椀氀攀猀䐀椀爀', -1073741824, 'rogramFilesDir', '胐', 0, 0
+  44 EW_READENVSTR         61, '\u3100\u3000\u3000㘀', 0, 0, 0, 0
+  45 EW_SETFLAG            '洀䘀椀氀攀猀䐀椀爀', 0, '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0
+  46 EW_FSEEK              '䘀椀氀攀猀䐀椀爀', -1, '016', 'ProgramFilesDir', 0, 0
+  47 EW_PUSHPOP            288, 0, 0, 0, 0, 0
+  48 EW_PUSHPOP            '洀䘀椀氀攀猀䐀椀爀', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0, 0
+  49 EW_FPUTS              '䘀椀氀攀猀䐀椀爀', '\u3000㌀㜀', 0, 0, 0, 0
+  50 EW_SETFILEATTRIBUTES  '37', 32, 0, 0, 0, 0
+  51 EW_FCLOSE             '䘀椀氀攀猀䐀椀爀', 0, 0, 0, 0, 0
+  52 EW_CREATEFONT         '爀', '㌀\u3000', '\u3000㌀㠀', '8', 'rogramFilesDir', 0
+  53 EW_FOPEN              '䘀椀氀攀猀䐀椀爀', -1073741824, 'rogramFilesDir', '胐', 0, 0
+  54 EW_FGETS              '䘀椀氀攀猀䐀椀爀', 'FilesDir', '\u3000㌀㐀', 0, 0, 0
+  55 EW_LOCKWINDOW         '愀洀\u2000䘀椀氀攀猀', '4', 0, 0, 0, 0
+  56 EW_ASSIGNVAR          'ramFilesDir', '\x80\u3100\u3000㌀㤀', 0, 0, 0, 0
+  57 EW_FSEEK              '䌀㨀尀倀爀漀最爀愀洀\u2000䘀椀氀攀猀', -1, '1039', 'ProgramFilesDir', 0, 0
+  58 EW_NOP                0, 0, 0, 0, 0, 0
+  59 EW_FCLOSE             '䘀椀氀攀猀䐀椀爀', 0, 0, 0, 0, 0
+  60 EW_PUSHPOP            '\u3000㌀㜀', 0, 0, 0, 0, 0
+  61 EW_REGENUM            'r', -2147483646, '9', 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0
+  62 EW_RET                0, 0, 0, 0, 0, 0
+  63 EW_FPUTS              'C:\\Program Files', '㌀㔀', 0, 0, 0, 0
+  64 EW_INTCMP             '045', '㔀', '尀倀爀漀最爀愀洀\u2000䘀椀氀攀猀', '倀爀漀最爀愀洀\u2000䘀椀氀攀猀', '倀爀漀最爀愀洀\u2000䘀椀氀攀猀', 0
+  65 EW_GETDLGITEM         'Dir', 431, '2', 0, 0, 0
+  66 EW_REBOOT             195948557, 0, 0, 0, 0, 0
+  67 EW_QUIT               0, 0, 0, 0, 0, 0
+  68 EW_DELREG             0, -2147483646, 440, 0, '最爀愀洀䘀椀氀攀猀䐀椀爀', 0
+  69 EW_ASSIGNVAR          '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', '洀椀搀搀攀氀猀', 0, 0, 0, 0
+  70 EW_FPUTS              'C:\\Program Files', '㌀㔀', 0, 0, 0, 0
+  71 EW_FPUTS              '㨀尀倀爀漀最爀愀洀\u2000䘀椀氀攀猀', 'iddels', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0
+  72 EW_UPDATETEXT         'dels', 0, 0, 0, 0, 0
+  73 EW_RENAME             '肑', 't%\\prunkende\\Treks79', 0, 'reks79', 0, 0
+  74 EW_ASSIGNVAR          'sDir', '爀猀尀一愀渀欀椀渀最㜀\u3000⸀樀瀀最', 0, 0, 0, 0
+  75 EW_LOG                '̀ꈀ\x80⌀㌀㈀㜀㜀\u3000', '最爀愀洀\u2000䘀椀氀攀猀', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0
+  76 EW_RET                0, 0, 0, 0, 0, 0
+  77 EW_SETFLAG            'ProgramFilesDir', 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', 0, 0, 0, 0
+  78 EW_SENDMESSAGE        -1, 'Nanking70.jpg', '渀欀椀渀最㜀\u3000⸀樀瀀最', 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', 0
+  79 EW_PUSHPOP            'ng70.jpg', 0, 0, 0, 0, 0
+  80 EW_PUSHPOP            '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0, 0
+  81 EW_FCLOSE             62, 0, 0, 0, 0, 0
+  82 EW_INTOP              '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', '㘀', 215, 0, 0, 0
+  83 EW_INTCMP             '㘀', 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', 'm Files', 'm Files', '椀氀攀猀', 0
+  84 EW_NOP                ' Files', 0, 0, 0, 0, 0
+  85 EW_NOP                '椀氀攀猀', 0, 0, 0, 0, 0
+  86 EW_ASSIGNVAR          '倀爀漀最爀愀洀\u2000䘀椀氀攀猀', '㜀\u3000⸀樀瀀最', 0, 0, 0, 0
+  87 EW_INTOP              '攀猀', '0.jpg', '樀瀀最', 0, 0, 0
+  88 EW_FOPEN              95, -2147483648, '爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 639, 0, 0
+  89 EW_READENVSTR         '漀最爀愀洀\u2000䘀椀氀攀猀', 'Calibri', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0
+  90 EW_DELETEFILE         '胐', 0, 0, 0, 0, 0
+  91 EW_GETTEMPFILENAME    '椀氀攀猀䐀椀爀', 656, 0, 0, 0, 0
+  92 EW_ASSIGNVAR          '猀', '㔀㠀㈀', 0, 0, 0, 0
+  93 EW_PUSHPOP            '0.jpg', 0, 0, 0, 0, 0
+  94 EW_PUSHPOP            '爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0, 0
+  95 EW_PUSHPOP            '82', 0, 0, 0, 0, 0
+  96 EW_PUSHPOP            'amFilesDir', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0, 0
+  97 EW_WRITEREG           -2147483647, 665, 718, 0, '爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', '爀漀最爀愀洀䘀椀氀攀猀䐀椀爀'
+  98 EW_CALL               'ningsforbundene', 0, 0, 0, 0, 0
+  99 EW_FGETS              95, 'ProgramFilesDir', '㘀', 0, 0, 0
+ 100 EW_REGENUM            'r', -2147483646, '9', 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0
+ 101 EW_INTOP              '攀猀', '0.jpg', '愀爀攀尀䴀椀挀爀漀猀漀昀琀尀圀椀渀搀漀眀猀尀䌀甀爀爀攀渀琀嘀攀爀猀椀漀渀尀匀欀爀甀戀栀瘀氀㐀尀', 0, 0, 0
+ 102 EW_STRCMP             '攀尀䴀椀挀爀漀猀漀昀琀尀圀椀渀搀漀眀猀尀䌀甀爀爀攀渀琀嘀攀爀猀椀漀渀尀匀欀爀甀戀栀瘀氀㐀尀', '\\Microsoft\\Windows\\CurrentVersion\\Skrubhvl4\\', '䌀漀洀洀漀渀\u2000䘀椀氀攀猀', 0, 0, 0
+ 103 EW_PUSHPOP            '攀尀䴀椀挀爀漀猀漀昀琀尀圀椀渀搀漀眀猀尀䌀甀爀爀攀渀琀嘀攀爀猀椀漀渀尀匀欀爀甀戀栀瘀氀㐀尀', 0, 0, 0, 0, 0
+ 104 EW_LOG                '̀ꈀ\x80⌀㌀㈀㜀㜀\u3000', '̀ꈀ\x80⌀㌀㈀㜀㜀\u3000', -2, 0, 0, 0
+ 105 EW_CALL               'monFilesDir', 0, 0, 0, 0, 0
+ 106 EW_PUSHPOP            '最爀愀洀䘀椀氀攀猀䐀椀爀', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0, 0
+ 107 EW_NOP                's', 0, 0, 0, 0, 0
+ 108 EW_CALL               '00C', 0, 0, 0, 0, 0
+ 109 EW_EXTRACTFILE        83886225, 'Microsoft\\Windows\\CurrentVersion\\Skrubhvl4\\', 'gramFilesDir', -1, -1, -45
+ 110 EW_SETFLAG            '洀䘀椀氀攀猀䐀椀爀', 0, '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', -1, 0, 0
+ 111 EW_PUSHPOP            'ft\\Windows\\CurrentVersion\\Skrubhvl4\\', 0, 0, 0, 0, 0
+ 112 EW_REGISTERDLL        'Microsoft\\Windows\\CurrentVersion\\Skrubhvl4\\', '尀圀椀渀搀漀眀猀尀䌀甀爀爀攀渀琀嘀攀爀猀椀漀渀尀匀欀爀甀戀栀瘀氀㐀尀', 0, 0, '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0
+ 113 EW_PUSHPOP            '氀攀猀䐀椀爀', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0, 0
+ 114 EW_LOG                '̀ꈀ\x80⌀㌀㈀㜀㜀\u3000', '̀ꈀ\x80⌀㌀㈀㜀㜀\u3000', -2, 0, 0, 0
+ 115 EW_PUSHPOP            '渀搀漀眀猀尀䌀甀爀爀攀渀琀嘀攀爀猀椀漀渀尀匀欀爀甀戀栀瘀氀㐀尀', 0, 0, 0, 0, 0
+ 116 EW_REGENUM            'r', -2147483646, '9', 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0
+ 117 EW_PUSHPOP            '㘀', 0, 0, 0, 0, 0
+ 118 EW_PUSHPOP            'dows\\CurrentVersion\\Skrubhvl4\\', 0, 0, 0, 0, 0
+ 119 EW_PUSHPOP            'gramFilesDir', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0, 0
+ 120 EW_PUSHPOP            '猀尀䌀甀爀爀攀渀琀嘀攀爀猀椀漀渀尀匀欀爀甀戀栀瘀氀㐀尀', 0, 0, 0, 0, 0
+ 121 EW_PUSHPOP            '₁', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0, 0
+ 122 EW_CALL               '00C', 0, 0, 0, 0, 0
+ 123 EW_EXTRACTFILE        33554601, 'Microsoft\\Windows\\CurrentVersion\\Skrubhvl4\\', 'gramFilesDir', -1, -1, -45
+ 124 EW_SETFLAG            '洀䘀椀氀攀猀䐀椀爀', 0, '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', -1, 0, 0
+ 125 EW_PUSHPOP            '\\CurrentVersion\\Skrubhvl4\\', 0, 0, -1, -1, -45
+ 126 EW_REGISTERDLL        'Microsoft\\Windows\\CurrentVersion\\Skrubhvl4\\', 'urrentVersion\\Skrubhvl4\\', 0, 0, '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', -45
+ 127 EW_PUSHPOP            '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0, 0
+ 128 EW_NOP                'les', 0, 0, 0, 0, 0
+ 129 EW_RET                0, 0, 0, 0, 0, 0
+ 130 EW_SETFLAG            'amFilesDir', 0, '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0
+ 131 EW_SETFLAG            '洀䘀椀氀攀猀䐀椀爀', 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', 0, 0, 0, 0
+ 132 EW_WRITEREG           -2147483647, '攀爀猀椀漀渀尀匀欀爀甀戀栀瘀氀㐀尀', '㤀㜀㜀\u3000', 7104, '爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', '爀漀最爀愀洀䘀椀氀攀猀䐀椀爀'
+ 133 EW_SETFLAG            '洀䘀椀氀攀猀䐀椀爀', '̀ꈀ\x80⌀㌀㈀㜀㜀\u3000', 0, 0, 0, 0
+ 134 EW_READENVSTR         '椀氀攀猀䐀椀爀', '\x80\u3100㈀㜀\u3100㠀', 0, 0, 0, 0
+ 135 EW_CREATEDIR          '\\sigmoidally\\Nonillatively', 0, 0, 0, 0, 0
+ 136 EW_SETFLAG            'rogramFilesDir', 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', 0, 0, 0, 0
+ 137 EW_SETFILEATTRIBUTES  '漀渀椀氀氀愀琀椀瘀攀氀礀', '6', 0, 0, 0, 0
+ 138 EW_GETFULLPATHNAME    '̀謀\x80\u3100㔀㘀', 'ilesDir', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0
+ 139 EW_IFFLAG             'Ȁᨀ尣漀瀀氀礀猀渀椀渀最猀昀漀爀戀甀渀搀攀渀攀', '\x02⌚\\oplysningsforbundene', 'rogramFilesDir', -1, 0, 0
+ 140 EW_GETTEMPFILENAME    'nFilesDir', 656, 0, 0, 0, 0
+ 141 EW_RET                0, 0, 0, 0, 0, 0
+ 142 EW_NOP_ZERO           0, 0, 0, 0, 0, 0
+ 143 EW_NOP_ZERO           0, 0, 0, 0, 0, 0
+ 144 EW_NOP_ZERO           0, 0, 0, 0, 0, 0
+ 145 EW_NOP_ZERO           0, 0, 0, 0, 0, 0
+ 146 EW_NOP_ZERO           0, 0, 0, 0, 0, 0
+ 147 EW_NOP_ZERO           0, 0, 0, 0, 0, 0
+ 148 EW_NOP_ZERO           0, 0, 0, 0, 0, 0
+ 149 EW_NOP_ZERO           0, 0, 0, 0, 0, 0
+ 150 EW_NOP_ZERO           0, 0, 0, 0, 0, 0
+ 151 EW_NOP_ZERO           0, 0, 0, 0, 0, 0
+ 152 EW_NOP_ZERO           0, 0, 0, 0, 0, 0
+ 153 EW_NOP_ZERO           0, 0, 0, 0, 0, 0
+ 154 EW_NOP_ZERO           0, 0, 0, 0, 0, 0
+ 155 EW_NOP_ZERO           0, 0, 0, 0, 0, 0
+ 156 EW_NOP_ZERO           0, 0, 0, 0, 0, 0
+ 157 EW_SETFILEATTRIBUTES  'Ԁ尮倀氀攀戀戀礀尀䌀漀渀昀愀戀甀氀愀琀椀漀渀⸀攀砀攀', 'les', 0, 0, 0, 0
+ 158 EW_STRCMP             '礀尀䌀漀渀昀愀戀甀氀愀琀椀漀渀⸀攀砀攀', '\\Confabulation.exe', '最猀昀漀爀戀甀渀搀攀渀攀', 'gsforbundene', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0
+ 159 EW_INTCMP             '甀氀愀琀椀漀渀⸀攀砀攀', 'lation.exe', 'gsforbundene', 'gsforbundene', 0, 0
+ 160 EW_CALL               '00C', 0, 0, 0, 0, 0
+ 161 EW_SETFLAG            '洀䘀椀氀攀猀䐀椀爀', 0, '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0
+ 162 EW_PUSHPOP            'ion.exe', 0, 0, 0, 0, 0
+ 163 EW_FINDNEXT           '\\Program Files', '尀倀爀漀最爀愀洀\u2000䘀椀氀攀猀', 0, 0, 0, 0
+ 164 EW_SETFILEATTRIBUTES  'e', 'ProgramFilesDir', 0, 0, 0, 0
+ 165 EW_FINDWINDOW         '䐀椀爀', 'ommon Files', 0, '渀\u2000䘀椀氀攀猀', 0, 0
+ 166 EW_FSEEK              'amFilesDir', -1, '10', 0, 0, 0
+ 167 EW_SETFLAG            'rogramFilesDir', 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', 0, 0, 0, 0
+ 168 EW_SHOWWINDOW         'ⴀ\u3100', '000C', 0, 0, 0, 0
+ 169 EW_DELREG             0, -2147483646, 440, 0, '最爀愀洀䘀椀氀攀猀䐀椀爀', 0
+ 170 EW_RET                0, 0, 0, 0, 0, 0
+ 171 EW_SETFLAG            '愀洀䘀椀氀攀猀䐀椀爀', '̀ꈀ\x80⌀㌀㈀㜀㜀\u3000', 0, 0, 0, 0
+ 172 EW_SETFLAG            'ProgramFilesDir', 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', 0, 0, 0, 0
+ 173 EW_SETFLAG            'ProgramFilesDir', 215, 0, 0, 0, 0
+ 174 EW_CREATEDIR          1269, '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0, 0
+ 175 EW_SETFLAG            'ProgramFilesDir', 215, 0, 0, 0, 0
+ 176 EW_CREATEDIR          1269, '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0, 0
+ 177 EW_EXTRACTFILE        83886224, '00', 7111, 1968810752, 31198288, -45
+ 178 EW_EXTRACTFILE        83886224, '胞', 201816, 1968810752, 31198288, -45
+ 179 EW_CREATEDIR          'ILE%', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0, 0
+ 180 EW_EXTRACTFILE        83886224, '\x03肙', 202086, 1968810752, 31198288, -45
+ 181 EW_EXTRACTFILE        83886224, '胡', 278380, 1968810752, 31198288, -45
+ 182 EW_EXTRACTFILE        83886224, '愀爀攀尀䴀椀挀爀漀猀漀昀琀尀圀椀渀搀漀眀猀尀䌀甀爀爀攀渀琀嘀攀爀猀椀漀渀尀猀礀渀愀最漀最椀猀洀', 291623, 1968810752, 31198288, -45
+ 183 EW_EXTRACTFILE        83886224, 'soft\\Windows\\CurrentVersion\\synagogism', 570554, 1968810752, 31198288, -45
+ 184 EW_EXTRACTFILE        83886224, '漀眀猀尀䌀甀爀爀攀渀琀嘀攀爀猀椀漀渀尀猀礀渀愀最漀最椀猀洀', 570801, 1968810752, 31198288, -45
+ 185 EW_EXTRACTFILE        83886224, 'entVersion\\synagogism', 570975, 1968810752, 31198288, -45
+ 186 EW_EXTRACTFILE        83886224, 'sion\\synagogism', 861544, 1968810752, 31198288, -45
+ 187 EW_EXTRACTFILE        83886224, 'gogism', 861793, 1968810752, 31198288, -45
+ 188 EW_EXTRACTFILE        83886224, 1434, 862005, 1968810752, 31198288, -45
+ 189 EW_EXTRACTFILE        83886224, '愀渀攀猀', 874858, 1968810752, 31198288, -45
+ 190 EW_EXTRACTFILE        83886224, '舀\x80⬀', 875210, 1968810752, 31198288, -45
+ 191 EW_EXTRACTFILE        83886224, '\\System.dll', 875559, 1968810752, 31198288, -45
+ 192 EW_EXTRACTFILE        83886224, 'dll', 889608, 1968810752, 31198288, -45
+ 193 EW_EXTRACTFILE        83886224, 'lloc', 889983, 1968810752, 31198288, -45
+ 194 EW_EXTRACTFILE        83886224, '⨀⨀̀蜀\x80̀蠀\x80⌀̀\ue400\x80䌀愀氀氀', 894721, 1968810752, 31198288, -45
+ 195 EW_EXTRACTFILE        83886224, '\x03肈', 894870, 1968810752, 31198288, -45
+ 196 EW_DELREG             0, -2147483646, 1550, '搀氀攀', 0, 0
+ 197 EW_INTCMP             '漀昀琀眀愀爀攀尀䴀椀挀爀漀猀漀昀琀尀圀椀渀搀漀眀猀尀䌀甀爀爀攀渀琀嘀攀爀猀椀漀渀尀攀渀挀氀漀猀攀搀尀昀攀搀琀挀攀氀氀攀渀', 'ftware\\Microsoft\\Windows\\CurrentVersion\\enclosed\\fedtcellen', 'ꀀ\x80\u3000砀\u3000\u3000\u3000䌀', '肠', 0, 0
+ 198 EW_SETFLAG            'rogramFilesDir', 215, 0, 0, 0, 0
+ 199 EW_REGENUM            'FilesDir', -2147483646, '愀爀攀尀䴀椀挀爀漀猀漀昀琀尀圀椀渀搀漀眀猀尀䌀甀爀爀攀渀琀嘀攀爀猀椀漀渀尀攀渀挀氀漀猀攀搀尀昀攀搀琀挀攀氀氀攀渀', 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0
+ 200 EW_CHDETAILSVIEW      0, 'gramFilesDir', 0, 0, 0, 0
+ 201 EW_ASSIGNVAR          'rogramFilesDir', 'tVersion\\enclosed\\fedtcellen', 0, 0, 0, 0
+ 202 EW_SETFLAG            'ProgramFilesDir', 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', 0, 0, 0, 0
+ 203 EW_READENVSTR         '氀攀猀䐀椀爀', '漀渀尀攀渀挀氀漀猀攀搀尀昀攀搀琀挀攀氀氀攀渀', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0
+ 204 EW_PUSHPOP            'nclosed\\fedtcellen', 0, 0, 0, 0, 0
+ 205 EW_SHOWWINDOW         '渀\u2000䘀椀氀攀猀', 'edtcellen', 0, 0, 0, 0
+ 206 EW_PUSHPOP            's', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0, 0
+ 207 EW_CALL               'ram Files', 0, 0, 0, 0, 0
+ 208 EW_RET                0, 0, 0, 0, 0, 0
+ 209 EW_SETFLAG            '洀䘀椀氀攀猀䐀椀爀', 'les', -1, 0, 0, 0
+ 210 EW_STRCMP             'ellen', 0, 0, '⌀㌀㈀㜀㜀\u3000', 0, 0
+ 211 EW_PUSHPOP            '渀搀漀眀猀尀䌀甀爀爀攀渀琀嘀攀爀猀椀漀渀尀匀欀爀甀戀栀瘀氀㐀尀', 0, 0, 0, 0, 0
+ 212 EW_PUSHPOP            '㘀', 0, 0, 0, 0, 0
+ 213 EW_ASSIGNVAR          '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', '渀搀漀眀猀尀䌀甀爀爀攀渀琀嘀攀爀猀椀漀渀尀匀欀爀甀戀栀瘀氀㐀尀', 0, -1, 0, 0
+ 214 EW_SETFLAG            'ProgramFilesDir', 0, 0, 0, 0, 0
+ 215 EW_GETTEMPFILENAME    0, 656, 0, 0, 0, 0
+ 216 EW_DELETEFILE         '渀搀漀眀猀尀䌀甀爀爀攀渀琀嘀攀爀猀椀漀渀尀匀欀爀甀戀栀瘀氀㐀尀', 'gramFilesDir', 0, 0, 0, 0
+ 217 EW_CREATEDIR          '渀搀漀眀猀尀䌀甀爀爀攀渀琀嘀攀爀猀椀漀渀尀匀欀爀甀戀栀瘀氀㐀尀', 0, '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0
+ 218 EW_IFFLAG             '#32770', 0, 'ProgramFilesDir', 0, 0, 0
+ 219 EW_ASSIGNVAR          'Dir', '渀搀漀眀猀尀䌀甀爀爀攀渀琀嘀攀爀猀椀漀渀尀匀欀爀甀戀栀瘀氀㐀尀', 0, 0, 0, 0
+ 220 EW_PUSHPOP            '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0, 0
+ 221 EW_PUSHPOP            0, '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0, 0
+ 222 EW_RET                0, 0, 0, 0, 0, 0
+ 223 EW_INTOP              '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', '㘀', 215, 0, 0, 0
+ 224 EW_STRCMP             '㘀', 'dene', 0, 215, 0, 0
+ 225 EW_MESSAGEBOX         2097168, '氀攀渀', 0, 0, 0, 0
+ 226 EW_QUIT               0, 0, 0, 0, 0, 0
+ 227 EW_RET                0, 0, 0, 0, 0, 0

@@ -1,0 +1,318 @@
+{
+  "analysis": {
+    "author": "Tao Goldi",
+    "date": "2026-04-29",
+    "engagement": "Daily malware hunt - GuLoader NSIS variant",
+    "scope": "Static analysis only, no detonation, macOS host"
+  },
+  "sample": {
+    "sha256": "39c0135a0e8d46053fbcaa4efe6cbc83d33cf8e7be43efbca1622b2f77c7b9c6",
+    "md5": "7d784ec37ec7bcac8a9c735a35b06449",
+    "file_size": 1043029,
+    "imphash": "573bb7b41bc641bd95c0f5eec13c233b",
+    "format": "PE32",
+    "subsystem": "WINDOWS_GUI",
+    "machine": "i386",
+    "compile_timestamp_utc": "2025-03-08T23:05:20Z",
+    "version_info": {
+      "FileVersion": "1.3.0.0",
+      "InternalName": "agestole.exe",
+      "LegalCopyright": "unfixated nonministerial",
+      "ProductName": "paymasters tvrmundes",
+      "ProductVersion": "1.3.0.0"
+    },
+    "nsis": {
+      "version": "NSIS-3 Unicode (BadCmd=13)",
+      "first_header_offset_hex": "0x22a00",
+      "compressed_header_size": 16410,
+      "embedded_stub_size": 141824,
+      "entries_count": 228,
+      "entries_offset_hex": "0x11dc",
+      "strings_offset_hex": "0x2acc"
+    },
+    "sections": [
+      {"name": ".text", "va": "0x1000", "vsize": 26931, "rsize": 27136, "entropy": 6.49},
+      {"name": ".rdata", "va": "0x8000", "vsize": 5220, "rsize": 5632, "entropy": 4.97},
+      {"name": ".data", "va": "0xa000", "vsize": 174104, "rsize": 1536, "entropy": 4.17},
+      {"name": ".ndata", "va": "0x35000", "vsize": 208896, "rsize": 0, "entropy": 0.0},
+      {"name": ".rsrc", "va": "0x68000", "vsize": 106016, "rsize": 106496, "entropy": 4.13}
+    ]
+  },
+  "family": {
+    "name": "GuLoader",
+    "aliases": ["CloudEye", "VBdropper"],
+    "category": "shellcode-loader",
+    "first_seen": "2019-12",
+    "campaign_cluster_marker": "Skrubhvl4",
+    "delivery": "NSIS-3 self-extracting installer",
+    "stage_1": "embedded shellcode in piasaba blob",
+    "stage_2": "downloaded from cloud host (Drive/OneDrive/Discord/Mediafire)",
+    "final_payload_examples": ["FormBook", "Remcos", "AgentTesla", "Lokibot", "Vidar", "NetWire", "RemcosRAT"]
+  },
+  "dropped_files": {
+    "$PLUGINSDIR/System.dll": {
+      "size": 12288,
+      "sha256": "8b4c47c4cf5e76ec57dd5a050d5acd832a0d532ee875d7b44f6cdaf68f90d37c",
+      "md5": "9b38a1b07a0ebc5c7e59e63346ecc2db",
+      "purpose": "Stock NSIS native-call plugin, abused for System::Call",
+      "exports": [
+        {"ord": 1, "name": "Alloc"},
+        {"ord": 2, "name": "Call"},
+        {"ord": 3, "name": "Copy"},
+        {"ord": 4, "name": "Free"},
+        {"ord": 5, "name": "Get"},
+        {"ord": 6, "name": "Int64Op"},
+        {"ord": 7, "name": "Store"},
+        {"ord": 8, "name": "StrAlloc"}
+      ]
+    },
+    "Darnel/Maynard.pen": {
+      "size": 8960747,
+      "entropy": 0.159,
+      "purpose": "decoy padding (99% byte 0x5A)",
+      "fill_byte": "0x5A",
+      "fill_count": 8872366
+    },
+    "Darnel/Ganocephala176.ham": {
+      "size": 8637278,
+      "entropy": 0.158,
+      "purpose": "decoy padding (99% byte 0xB7)",
+      "fill_byte": "0xB7",
+      "fill_count": 8552488
+    },
+    "Darnel/Toolers": {
+      "size": 154537,
+      "entropy": 4.614,
+      "purpose": "encoded data blob, sparse byte stream (~55% zero)",
+      "notes": "Likely contains the encrypted final-stage payload"
+    },
+    "piasaba": {
+      "size": 229649,
+      "entropy": 7.610,
+      "purpose": "encoded shellcode blob",
+      "trailing_pad_byte": "0xAC",
+      "trailing_pad_size": 17000,
+      "real_data_size": 212649
+    },
+    "Darnel/*.ini and *.txt": {
+      "count": 7,
+      "purpose": "Danish word-salad fragments read by EW_READINISTR for runtime API name assembly"
+    },
+    "Darnel/*.jpg": {
+      "count": 5,
+      "purpose": "valid JPEGs used as cover material; no steganography (no data after FFD9 EOI)"
+    }
+  },
+  "obfuscation": {
+    "string_concatenation": {
+      "technique": "EW_PUSHPOP and EW_ASSIGNVAR concatenate small fragments at runtime",
+      "fragment_examples_in_strings_table": [
+        "lloc",
+        "::Call",
+        "\\System.dll",
+        "Skrubhvl4\\",
+        "Software\\Microsoft\\Windows\\CurrentVersion\\Skrubhvl4\\",
+        "synagogism",
+        "enclosed\\fedtcellen",
+        "Confabulation.exe"
+      ]
+    },
+    "language": "Danish word salad for variable and label naming",
+    "decoy_padding_total_bytes": 17597025,
+    "stage1_shellcode_encryption": {
+      "container": "piasaba",
+      "real_data_size": 212649,
+      "trailing_pad_size": 17000,
+      "trailing_pad_byte": "0xAC",
+      "cipher": "4-byte sliding XOR",
+      "key_hex": "49ED06B1",
+      "recovery_method": "stride-4 byte-frequency analysis: dominant byte at each position mod 4 IS the key byte (cipher-of-zero)",
+      "post_decode_peb_walks": 9,
+      "post_decode_fs_reads": 14
+    }
+  },
+  "shellcode_analysis": {
+    "stage1_buffer_size": 212649,
+    "peb_walk_offsets_in_decoded": [
+      "0xb197", "0xfdf2", "0x1124f", "0x12906", "0x144c2",
+      "0x17db0", "0x2ddca", "0x2ea37", "0x2fd15"
+    ],
+    "peb_walk_pattern": "mov eax, fs:[0x30]; mov eax, [eax+0xC]; mov eax, [eax+0x14]; mov eax, [eax]; mov eax, [eax+0x10]; add eax, [eax+0x3c]",
+    "api_hash_function": {
+      "location_in_decoded": "0x2EE78",
+      "tolower_helper_location": "0x2EF17",
+      "algorithm": "H = (H + UC(byte)) XOR 0x182DE6AD per UTF-16 wchar low byte",
+      "key": "0x182DE6AD",
+      "case_folding": "lowercase a-z to uppercase A-Z (subtract 0x20)",
+      "string_terminator": "wchar 0x0000",
+      "stride": 2
+    },
+    "resolved_apis": [
+      {"hash": "0x00000124", "name": "kernel32", "first_offset": "0xb98f", "purpose": "PEB walk module name target"},
+      {"hash": "0x0000045a", "name": "VirtualAlloc", "first_offset": "0x1127e", "purpose": "RWX memory allocation"},
+      {"hash": "0x0000015c", "name": "VirtualProtect", "first_offset": "0x2122", "purpose": "Memory permission change"},
+      {"hash": "0x000001c9", "name": "VirtualProtectEx", "first_offset": "0x435b", "purpose": "Cross-process VirtualProtect"},
+      {"hash": "0x000001ce", "name": "CreateThread", "first_offset": "0x6adf", "purpose": "Local thread creation"},
+      {"hash": "0x00000020", "name": "NtCreateThread", "first_offset": "0x22e0", "purpose": "NT-level thread creation"},
+      {"hash": "0x0000018d", "name": "NtCreateThreadEx", "first_offset": "0x7902", "purpose": "Extended NT thread creation"},
+      {"hash": "0x000001cb", "name": "NtCreateSection+null", "first_offset": "0x215b3", "purpose": "Process hollowing section"},
+      {"hash": "0x00000120", "name": "RtlMoveMemory+null", "first_offset": "0xb7e4", "purpose": "Memcpy primitive"},
+      {"hash": "0x0000012e", "name": "CreateProcessA", "first_offset": "0x30506", "purpose": "Spawn injection target"},
+      {"hash": "0x00000134", "name": "CreateProcessW", "first_offset": "0x144ab", "purpose": "Spawn injection target"},
+      {"hash": "0x0000007d", "name": "CreateFileA+null", "first_offset": "0x11d9a", "purpose": "Disk staging"},
+      {"hash": "0x00000093", "name": "CreateFileW+null", "first_offset": "0xc338", "purpose": "Disk staging"},
+      {"hash": "0x00000188", "name": "GetTempFileNameA", "first_offset": "0x9956", "purpose": "Disk staging"},
+      {"hash": "0x00000196", "name": "GetTempFileNameW", "first_offset": "0x6b75", "purpose": "Disk staging"},
+      {"hash": "0x00000193", "name": "SHGetFolderPathA", "first_offset": "0x7250", "purpose": "AppData path lookup"},
+      {"hash": "0x000001f9", "name": "SHGetFolderPathW", "first_offset": "0x9a42", "purpose": "AppData path lookup"},
+      {"hash": "0x000001b3", "name": "RegQueryValueExA", "first_offset": "0x4eaf", "purpose": "Registry probe"},
+      {"hash": "0x00000199", "name": "RegQueryValueExW", "first_offset": "0x3ce3", "purpose": "Registry probe"},
+      {"hash": "0x000001b0", "name": "CheckRemoteDebuggerPresent", "first_offset": "0x7f78", "purpose": "Anti-debug"},
+      {"hash": "0x000000bc", "name": "GetTickCount", "first_offset": "0xa7f7", "purpose": "Anti-emulation timing"},
+      {"hash": "0x000000e4", "name": "OutputDebugStringW", "first_offset": "0x17f52", "purpose": "Anti-debug"},
+      {"hash": "0x000000f6", "name": "HttpSendRequestA", "first_offset": "0x21980", "purpose": "WinINET HTTP"},
+      {"hash": "0x000000dc", "name": "HttpSendRequestW", "first_offset": "0x17ef8", "purpose": "WinINET HTTP"},
+      {"hash": "0x000010ba", "name": "InternetOpenA+null", "first_offset": "0x3d9e", "purpose": "WinINET init"},
+      {"hash": "0x0000019d", "name": "WinHttpSendRequest", "first_offset": "0x9769", "purpose": "WinHTTP"},
+      {"hash": "0x00000048", "name": "WinHttpReadData+null", "first_offset": "0x104c6", "purpose": "WinHTTP read"},
+      {"hash": "0x00000e88", "name": "WinHttpSetTimeouts", "first_offset": "0xa779", "purpose": "WinHTTP timeout"},
+      {"hash": "0x0000043a", "name": "ShellExecuteW+null", "first_offset": "0x19e91", "purpose": "Final stage launch"},
+      {"hash": "0x00000d38", "name": "NtReadVirtualMemory+null", "first_offset": "0x114e8", "purpose": "Cross-process read"},
+      {"hash": "0x0000016b", "name": "GetModuleHandleW", "first_offset": "0x33431", "purpose": "Module lookup"}
+    ]
+  },
+  "capabilities": [
+    {"capability": "self-extracting installer abuse", "evidence": "EW_EXTRACTFILE x19", "mitre": "T1027.009"},
+    {"capability": "native API call from script context", "evidence": "EW_REGISTERDLL at idx 112,126; System.dll", "mitre": "T1218.011"},
+    {"capability": "string concatenation obfuscation", "evidence": "EW_PUSHPOP/EW_ASSIGNVAR chains", "mitre": "T1140"},
+    {"capability": "decoy padding for sandbox evasion", "evidence": "Maynard.pen, Ganocephala176.ham", "mitre": "T1027.001"},
+    {"capability": "junk-language identifiers", "evidence": "Danish nouns throughout strings table", "mitre": "T1027.013"},
+    {"capability": "registry persistence marker", "evidence": "EW_WRITEREG at idx 97,132", "mitre": "T1547.001,T1112"},
+    {"capability": "anti-analysis (downstream)", "evidence": "stage-1 shellcode in piasaba (referenced)", "mitre": "T1497.001,T1622,T1057"},
+    {"capability": "process injection (downstream)", "evidence": "stage-1 shellcode (referenced)", "mitre": "T1055.012"},
+    {"capability": "cloud-hosted final-stage delivery", "evidence": "stage-1 shellcode (referenced)", "mitre": "T1102,T1071.001"}
+  ],
+  "iocs": {
+    "file_hashes": {
+      "sample_sha256": "39c0135a0e8d46053fbcaa4efe6cbc83d33cf8e7be43efbca1622b2f77c7b9c6",
+      "system_dll_sha256": "8b4c47c4cf5e76ec57dd5a050d5acd832a0d532ee875d7b44f6cdaf68f90d37c"
+    },
+    "host_artifacts": {
+      "registry_keys": [
+        "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Skrubhvl4\\",
+        "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\synagogism",
+        "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\enclosed\\fedtcellen"
+      ],
+      "file_paths": [
+        "%TEMP%\\ns[A-Z0-9]+\\.tmp\\Darnel\\",
+        "%TEMP%\\ns[A-Z0-9]+\\.tmp\\$PLUGINSDIR\\System.dll",
+        "%TEMP%\\ns[A-Z0-9]+\\.tmp\\Darnel\\Confabulation.exe"
+      ]
+    },
+    "string_fingerprints": [
+      "Skrubhvl4",
+      "oplysningsforbundene",
+      "fedtcellen",
+      "Confabulation",
+      "synagogism",
+      "sigmoidally",
+      "Nonillatively",
+      "kontaktskabende",
+      "Maynard.pen",
+      "Ganocephala",
+      "Cylindruria",
+      "agestole.exe",
+      "paymasters tvrmundes",
+      "unfixated nonministerial"
+    ],
+    "network_iocs": {
+      "note": "Stage-2 download URL not extracted statically; recovered via runtime correlation with independent execution telemetry on this exact sample.",
+      "stage2_download_url": "https://drive.google.com/uc?export=download&id=15kGN2jVE2bpmAl-3NVYGsPG8pnvv6lrH",
+      "stage2_download_domains": [
+        "drive.google.com",
+        "drive.usercontent.google.com"
+      ],
+      "stage2_download_ipv4": [
+        "142.251.2.113",
+        "74.125.137.132"
+      ],
+      "final_c2": {
+        "ipv4": "31.57.184.186",
+        "port": 2404,
+        "protocol": "tcp_raw",
+        "note": "Remcos default C2 is raw TCP on 2404, NOT HTTP. The WinHTTP/WinINet APIs resolved in stage-1 are used only for the Google Drive staging fetch."
+      }
+    },
+    "final_stage": {
+      "family": "Remcos",
+      "version": "7.2.3 Pro",
+      "source": "runtime correlation; not statically extracted from piasaba_decoded.bin",
+      "config": {
+        "botnet": "RemoteHost",
+        "mutex": "Rmc-JUY15N",
+        "install_filename": "remcos.exe",
+        "install_folder": "%ProgramData%\\Remcos\\",
+        "keylog_file": "logs.dat",
+        "screenshot_folder": "Screenshots",
+        "screenshot_interval_sec": 10,
+        "audio_recording_interval_sec": 5,
+        "keylogging_enabled": true,
+        "browser_credential_theft_enabled": true,
+        "process_hollowing": false,
+        "comment": "This sample drops remcos.exe and runs it directly; it does NOT process-hollow into RegAsm.exe / wininit.exe / ieinstal.exe."
+      },
+      "persistence": [
+        "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run value Rmc-JUY15N",
+        "HKLM\\Run, HKLM\\Explorer\\Run, HKLM\\Winlogon\\Shell (where privileges allow)"
+      ],
+      "filesystem_chain": [
+        "RFQ__________pdf.exe (delivered)",
+        "%TEMP%\\nsXXXX.tmp\\ (NSIS extraction)",
+        "%APPDATA%\\Roaming\\oplysningsforbundene\\Darnel\\ (stage-1 working dir)",
+        "%TEMP%\\exe.exe (intermediate)",
+        "%ProgramData%\\Remcos\\remcos.exe (final installed)"
+      ]
+    }
+  },
+  "mitre_attack": [
+    {"tactic": "TA0002", "technique": "T1059", "subtechnique": null, "name": "Command and Scripting Interpreter (NSIS bytecode)"},
+    {"tactic": "TA0002", "technique": "T1218", "subtechnique": "T1218.011", "name": "RegAsm proxy execution (downstream)"},
+    {"tactic": "TA0005", "technique": "T1027", "subtechnique": "T1027.001", "name": "Binary padding"},
+    {"tactic": "TA0005", "technique": "T1027", "subtechnique": "T1027.002", "name": "NSIS self-extractor packing"},
+    {"tactic": "TA0005", "technique": "T1027", "subtechnique": "T1027.007", "name": "Dynamic API resolution (DJB2 hashing)"},
+    {"tactic": "TA0005", "technique": "T1027", "subtechnique": "T1027.009", "name": "Embedded payloads"},
+    {"tactic": "TA0005", "technique": "T1027", "subtechnique": "T1027.013", "name": "Encrypted/encoded files"},
+    {"tactic": "TA0005", "technique": "T1140", "subtechnique": null, "name": "Deobfuscate runtime string concat"},
+    {"tactic": "TA0005", "technique": "T1497", "subtechnique": "T1497.001", "name": "System checks (CPUID, RDTSC)"},
+    {"tactic": "TA0005", "technique": "T1622", "subtechnique": null, "name": "Debugger evasion"},
+    {"tactic": "TA0005", "technique": "T1055", "subtechnique": "T1055.012", "name": "Process hollowing"},
+    {"tactic": "TA0005", "technique": "T1112", "subtechnique": null, "name": "Modify registry (Skrubhvl4)"},
+    {"tactic": "TA0007", "technique": "T1057", "subtechnique": null, "name": "Process discovery (analysis tool scan)"},
+    {"tactic": "TA0011", "technique": "T1071", "subtechnique": "T1071.001", "name": "HTTP application protocol"},
+    {"tactic": "TA0011", "technique": "T1102", "subtechnique": null, "name": "Web service abuse for staging"},
+    {"tactic": "TA0003", "technique": "T1547", "subtechnique": "T1547.001", "name": "Registry persistence (Skrubhvl4)"}
+  ],
+  "yara_rules": [
+    "GuLoader_NSIS_Outer",
+    "GuLoader_NSIS_DroppedScriptArtifacts",
+    "GuLoader_NSIS_DecoyPadding",
+    "GuLoader_NSIS_Generic"
+  ],
+  "yara_validation": {
+    "sample.exe": ["GuLoader_NSIS_Outer", "GuLoader_NSIS_Generic"],
+    "Maynard.pen": ["GuLoader_NSIS_DecoyPadding"],
+    "Ganocephala176.ham": ["GuLoader_NSIS_DecoyPadding"],
+    "piasaba": ["GuLoader_NSIS_DecoyPadding"],
+    "inflated_nsis_header.bin": ["GuLoader_NSIS_DroppedScriptArtifacts"]
+  },
+  "references": [
+    "https://www.elastic.co/security-labs/getting-gooey-with-guloader-downloader",
+    "https://www.mcafee.com/blogs/other-blogs/mcafee-labs/guloader-campaigns-a-deep-dive-analysis-of-a-highly-evasive-shellcode-based-loader/",
+    "https://www.trellix.com/blogs/research/guloader-the-nsis-vantage-point/",
+    "https://research.openanalysis.net/guloader/unicorn/emulation/anti-debug/debugging/config/2022/12/16/guloader.html",
+    "https://www.sonicwall.com/blog/guloader-demystified-unraveling-its-vectored-exception-handler-approach",
+    "https://www.spamhaus.com/resource-center/dissecting-the-new-shellcode-based-variant-of-guloader-cloudeye/",
+    "https://www.zscaler.com/blogs/security-research/technical-analysis-guloader-obfuscation-techniques",
+    "https://www.morphisec.com/blog/guloader-campaign-targets-law-firms-in-the-us/"
+  ]
+}

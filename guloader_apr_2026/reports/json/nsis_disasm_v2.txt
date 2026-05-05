@@ -1,0 +1,251 @@
+NSIS first header @ 0x22a00
+Inflated header: 16410 bytes
+Entries: 228 at 0x11dc
+Strings: 0x2acc..0x3ed0
+
+   0 SENDMESSAGE        -1, '脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', 102, 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', -37, 'ProgramFilesDir'
+   1 SENDMESSAGE        -1, '䌀漀洀洀漀渀\u2000䘀椀氀攀猀', 102, 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', -38, 'ProgramFilesDir' 
+   2 RET                0, 0, 0, 0, 0, 0                                                                  # return; result=0
+   3 FINDWINDOW         'am Files', 'ommon Files', 0, '渀\u2000䘀椀氀攀猀', 0, 0                              
+   4 GETDLGITEM         '洀\u2000䘀椀氀攀猀', ' Files', '椀氀攀猀', 0, 0, 0                                       
+   5 GETDLGITEM         'm Files', ' Files', 'es', 0, 0, 0                                              
+   6 GETDLGITEM         '\u2000䘀椀氀攀猀', ' Files', 'Ȁ鄀4Ȁᨀ尣漀瀀氀礀猀渀椀渀最猀昀漀爀戀甀渀搀攀渀攀', 0, 0, 0                  
+   7 GETDLGITEM         ' Files', ' Files', 140, 0, 0, 0                                                
+   8 RET                0, 0, 0, 0, 0, 0                                                                  # return; result=0
+   9 IFFLAG             'mFilesDir', 0, '爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', -1, 0, 0                                        # if($flag) jmp idx=14 else jmp idx=0
+         raw:          14|          0|          3|         -1|          0|          0
+  10 SENDMESSAGE        -1, '脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', 102, 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', -39, 'ProgramFilesDir'
+  11 SENDMESSAGE        -1, '䌀漀洀洀漀渀\u2000䘀椀氀攀猀', 102, 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', -40, 'ProgramFilesDir' 
+  12 NOP                'FilesDir', 0, 0, 0, 0, 0                                                       
+  13 SENDMESSAGE        -1, '脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', 102, 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', -41, 'ProgramFilesDir'
+  14 SENDMESSAGE        -1, '䌀漀洀洀漀渀\u2000䘀椀氀攀猀', 102, 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', -42, 'ProgramFilesDir' 
+  15 IFFLAG             '椀氀攀猀䐀椀爀', 0, '爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', -1, 0, 0                                          # if($flag) jmp idx=17 else jmp idx=0
+         raw:          17|          0|          3|         -1|          0|          0
+  16 RET                0, 0, 0, 0, 0, 0                                                                  # return; result=0
+  17 GETDLGITEM         32, '渀\u2000䘀椀氀攀猀', '尣漀瀀氀礀猀渀椀渀最猀昀漀爀戀甀渀搀攀渀攀', 0, 0, 0                            
+  18 CREATEFONT         '䌀漀洀洀漀渀䘀椀氀攀猀䐀椀爀', -43, -44, 'plysningsforbundene', 0, 0                         
+  19 SENDMESSAGE        -1, '脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', '渀椀渀最猀昀漀爀戀甀渀搀攀渀攀', 'ysningsforbundene', 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', 0
+  20 GETDLGITEM         'CommonFilesDir', '渀\u2000䘀椀氀攀猀', 'gsforbundene', 0, 0, 0                       
+  21 SETCTLCOLORS       '脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', 0, 0, 0, 0, 0                                         
+  22 SETCTLCOLORS       '䌀漀洀洀漀渀\u2000䘀椀氀攀猀', 0, 0, 0, 0, 0                                              
+  23 GETDLGITEM         '漀洀洀漀渀䘀椀氀攀猀䐀椀爀', '渀\u2000䘀椀氀攀猀', '漀爀戀甀渀搀攀渀攀', 0, 0, 0                           
+  24 SETCTLCOLORS       'bundene', 'sDir', 0, 0, 0, 0                                                   
+  25 GETDLGITEM         'ommonFilesDir', '渀\u2000䘀椀氀攀猀', '渀搀攀渀攀', 0, 0, 0                               
+  26 SETCTLCOLORS       'ene', 'sDir', 0, 0, 0, 0                                                       
+  27 GETDLGITEM         'mmonFilesDir', '渀\u2000䘀椀氀攀猀', '攀', 0, 0, 0                                    
+  28 SETCTLCOLORS       ' ', 'ilesDir', 0, 0, 0, 0                                                      
+  29 GETDLGITEM         '洀洀漀渀䘀椀氀攀猀䐀椀爀', '渀\u2000䘀椀氀攀猀', '\u3000', 0, 0, 0                               
+  30 SETCTLCOLORS       '\x03肠', 'ilesDir', 0, 0, 0, 0                                                  
+  31 SENDMESSAGE        -1, '\x03肠', 102, 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', '\x80\u3000砀\u3000\u3000\u3000䌀', 'ProgramFilesDir'
+  32 GETDLGITEM         '洀漀渀䘀椀氀攀猀䐀椀爀', '渀\u2000䘀椀氀攀猀', '砀\u3000\u3000\u3000䌀', 0, 0, 0                  
+  33 GETDLGITEM         'monFilesDir', '渀\u2000䘀椀氀攀猀', '00C', 0, 0, 0                                   
+  34 GETDLGITEM         '漀渀䘀椀氀攀猀䐀椀爀', '渀\u2000䘀椀氀攀猀', 215, 0, 0, 0                                      
+  35 GETDLGITEM         'onFilesDir', '渀\u2000䘀椀氀攀猀', '̀ꈀ\x80⌀㌀㈀㜀㜀\u3000', 0, 0, 0                      
+  36 GETDLGITEM         '渀䘀椀氀攀猀䐀椀爀', '渀\u2000䘀椀氀攀猀', 'ꈀ\x80⌀㌀㈀㜀㜀\u3000', 0, 0, 0                        
+  37 RET                0, 0, 0, 0, 0, 0                                                                  # return; result=0
+  38 RET                0, 0, 0, 0, 0, 0                                                                  # return; result=0
+  39 SETCTLCOLORS       '\x80⌀㌀㈀㜀㜀\u3000', 'rogram Files', 0, 0, 0, 0                                   
+  40 PUSHPOP            'ramFilesDir', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0, 0                                    
+  41 ISWINDOW           '#32770', '渀䘀椀氀攀猀䐀椀爀', 'nFilesDir', 0, 0, 0                                     
+  42 MESSAGEBOX         'ilesDir', '㈀㜀㜀\u3000', 0, 0, 0, 0                                              
+  43 FOPEN              '䘀椀氀攀猀䐀椀爀', -1073741824, 'rogramFilesDir', '胐', 0, 0                            
+  44 READENVSTR         61, '\u3100\u3000\u3000㘀', 0, 0, 0, 0                                           
+  45 SETFLAG            '洀䘀椀氀攀猀䐀椀爀', 0, '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0                                      
+  46 FSEEK              '䘀椀氀攀猀䐀椀爀', -1, '016', 'ProgramFilesDir', 0, 0                                  
+  47 PUSHPOP            288, 0, 0, 0, 0, 0                                                              
+  48 PUSHPOP            '洀䘀椀氀攀猀䐀椀爀', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0, 0                                      
+  49 FPUTS              '䘀椀氀攀猀䐀椀爀', '\u3000㌀㜀', 0, 0, 0, 0                                              
+  50 SETFILEATTRIBUTES  '37', 32, 0, 0, 0, 0                                                            
+  51 FCLOSE             '䘀椀氀攀猀䐀椀爀', 0, 0, 0, 0, 0                                                       
+  52 CREATEFONT         '爀', '㌀\u3000', '\u3000㌀㠀', '8', 'rogramFilesDir', 0                            
+  53 FOPEN              '䘀椀氀攀猀䐀椀爀', -1073741824, 'rogramFilesDir', '胐', 0, 0                            
+  54 FGETS              '䘀椀氀攀猀䐀椀爀', 'FilesDir', '\u3000㌀㐀', 0, 0, 0                                     
+  55 LOCKWINDOW         '愀洀\u2000䘀椀氀攀猀', '4', 0, 0, 0, 0                                                
+  56 ASSIGNVAR          'ramFilesDir', '\x80\u3100\u3000㌀㤀', 0, 0, 0, 0                                 
+  57 FSEEK              '䌀㨀尀倀爀漀最爀愀洀\u2000䘀椀氀攀猀', -1, '1039', 'ProgramFilesDir', 0, 0                    
+  58 NOP                0, 0, 0, 0, 0, 0                                                                
+  59 FCLOSE             '䘀椀氀攀猀䐀椀爀', 0, 0, 0, 0, 0                                                       
+  60 PUSHPOP            '\u3000㌀㜀', 0, 0, 0, 0, 0                                                       
+  61 REGENUM            'r', -2147483646, '9', 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0          
+  62 RET                0, 0, 0, 0, 0, 0                                                                  # return; result=0
+  63 FPUTS              'C:\\Program Files', '㌀㔀', 0, 0, 0, 0                                           
+  64 INTCMP             '045', '㔀', '尀倀爀漀最爀愀洀\u2000䘀椀氀攀猀', '倀爀漀最爀愀洀\u2000䘀椀氀攀猀', '倀爀漀最爀愀洀\u2000䘀椀氀攀猀', 0  # cmp; eq->idx=69 lt->idx=69 gt->idx=0
+         raw:         422|        425|         67|         69|         69|          0
+  65 GETDLGITEM         'Dir', 431, '2', 0, 0, 0                                                        
+  66 REBOOT             195948557, 0, 0, 0, 0, 0                                                        
+  67 QUIT               0, 0, 0, 0, 0, 0                                                                
+  68 DELREG             0, -2147483646, 440, 0, '最爀愀洀䘀椀氀攀猀䐀椀爀', 0                                       
+  69 ASSIGNVAR          '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', '洀椀搀搀攀氀猀', 0, 0, 0, 0                                        
+  70 FPUTS              'C:\\Program Files', '㌀㔀', 0, 0, 0, 0                                           
+  71 FPUTS              '㨀尀倀爀漀最爀愀洀\u2000䘀椀氀攀猀', 'iddels', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0                    
+  72 UPDATETEXT         'dels', 0, 0, 0, 0, 0                                                           
+  73 RENAME             '肑', 't%\\prunkende\\Treks79', 0, 'reks79', 0, 0                                
+  74 ASSIGNVAR          'sDir', '爀猀尀一愀渀欀椀渀最㜀\u3000⸀樀瀀最', 0, 0, 0, 0                                     
+  75 LOG                '̀ꈀ\x80⌀㌀㈀㜀㜀\u3000', '最爀愀洀\u2000䘀椀氀攀猀', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0              
+  76 RET                0, 0, 0, 0, 0, 0                                                                  # return; result=0
+  77 SETFLAG            'ProgramFilesDir', 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', 0, 0, 0, 0                        
+  78 SENDMESSAGE        -1, 'Nanking70.jpg', '渀欀椀渀最㜀\u3000⸀樀瀀最', 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', 0
+  79 PUSHPOP            'ng70.jpg', 0, 0, 0, 0, 0                                                       
+  80 PUSHPOP            '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0, 0                                
+  81 FCLOSE             62, 0, 0, 0, 0, 0                                                               
+  82 INTOP              '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', '㘀', 215, 0, 0, 0                                              # +-op
+         raw:           1|        285|        215|          0|          0|          0
+  83 INTCMP             '㘀', 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', 'm Files', 'm Files', '椀氀攀猀', 0                   # cmp; eq->idx=82 lt->idx=87 gt->idx=0
+         raw:         285|         97|         82|         82|         87|          0
+  84 NOP                ' Files', 0, 0, 0, 0, 0                                                         
+  85 NOP                '椀氀攀猀', 0, 0, 0, 0, 0                                                           
+  86 ASSIGNVAR          '倀爀漀最爀愀洀\u2000䘀椀氀攀猀', '㜀\u3000⸀樀瀀最', 0, 0, 0, 0                                 
+  87 INTOP              '攀猀', '0.jpg', '樀瀀最', 0, 0, 0                                                     # +-op
+         raw:          91|        630|        633|          0|          0|          0
+  88 FOPEN              95, -2147483648, '爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 639, 0, 0                                    
+  89 READENVSTR         '漀最爀愀洀\u2000䘀椀氀攀猀', 'Calibri', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0                       
+  90 DELETEFILE         '胐', 0, 0, 0, 0, 0                                                              
+  91 GETTEMPFILENAME    '椀氀攀猀䐀椀爀', 656, 0, 0, 0, 0                                                      
+  92 ASSIGNVAR          '猀', '㔀㠀㈀', 0, 0, 0, 0                                                          
+  93 PUSHPOP            '0.jpg', 0, 0, 0, 0, 0                                                          
+  94 PUSHPOP            '爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0, 0                                 
+  95 PUSHPOP            '82', 0, 0, 0, 0, 0                                                             
+  96 PUSHPOP            'amFilesDir', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0, 0                                     
+  97 WRITEREG           -2147483647, 665, 718, 0, '爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', '爀漀最爀愀洀䘀椀氀攀猀䐀椀爀'                    
+  98 CALL               'ningsforbundene', 0, 0, 0, 0, 0                                                  # call to entry idx=158
+         raw:         158|          0|          0|          0|          0|          0
+  99 FGETS              95, 'ProgramFilesDir', '㘀', 0, 0, 0                                             
+ 100 REGENUM            'r', -2147483646, '9', 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0          
+ 101 INTOP              '攀猀', '0.jpg', '愀爀攀尀䴀椀挀爀漀猀漀昀琀尀圀椀渀搀漀眀猀尀䌀甀爀爀攀渀琀嘀攀爀猀椀漀渀尀匀欀爀甀戀栀瘀氀㐀尀', 0, 0, 0         # +-op
+         raw:          91|        630|        729|          0|          0|          0
+ 102 STRCMP             '攀尀䴀椀挀爀漀猀漀昀琀尀圀椀渀搀漀眀猀尀䌀甀爀爀攀渀琀嘀攀爀猀椀漀渀尀匀欀爀甀戀栀瘀氀㐀尀', '\\Microsoft\\Windows\\CurrentVersion\\Skrubhvl4\\, '䌀漀洀洀漀渀\u2000䘀椀氀攀猀', 0, 0, 0  # strcmp; case_sens=0 eq->? ne->?
+ 103 PUSHPOP            '攀尀䴀椀挀爀漀猀漀昀琀尀圀椀渀搀漀眀猀尀䌀甀爀爀攀渀琀嘀攀爀猀椀漀渀尀匀欀爀甀戀栀瘀氀㐀尀', 0, 0, 0, 0, 0                  
+ 104 LOG                '̀ꈀ\x80⌀㌀㈀㜀㜀\u3000', '̀ꈀ\x80⌀㌀㈀㜀㜀\u3000', -2, 0, 0, 0                           
+ 105 CALL               'monFilesDir', 0, 0, 0, 0, 0                                                      # call to entry idx=40
+         raw:          40|          0|          0|          0|          0|          0
+ 106 PUSHPOP            '最爀愀洀䘀椀氀攀猀䐀椀爀', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0, 0                                   
+ 107 NOP                's', 0, 0, 0, 0, 0                                                              
+ 108 CALL               '00C', 0, 0, 0, 0, 0                                                              # call to entry idx=210
+         raw:         210|          0|          0|          0|          0|          0
+ 109 EXTRACTFILE        83886225, 'Microsoft\\Windows\\CurrentVersion\\Skrubhvl4\\', 'gramFilesDir', -1, -1, -45
+ 110 SETFLAG            '洀䘀椀氀攀猀䐀椀爀', 0, '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', -1, 0, 0                                     
+ 111 PUSHPOP            'ft\\Windows\\CurrentVersion\\Skrubhvl4\\', 0, 0, 0, 0, 0                       
+ 112 REGISTERDLL        'Microsoft\\Windows\\CurrentVersion\\Skrubhvl4\\', '尀圀椀渀搀漀眀猀尀䌀甀爀爀攀渀琀嘀攀爀猀椀漀渀尀匀欀爀甀戀栀瘀氀㐀尀', 0, 0, '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0
+ 113 PUSHPOP            '氀攀猀䐀椀爀', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0, 0                                         
+ 114 LOG                '̀ꈀ\x80⌀㌀㈀㜀㜀\u3000', '̀ꈀ\x80⌀㌀㈀㜀㜀\u3000', -2, 0, 0, 0                           
+ 115 PUSHPOP            '渀搀漀眀猀尀䌀甀爀爀攀渀琀嘀攀爀猀椀漀渀尀匀欀爀甀戀栀瘀氀㐀尀', 0, 0, 0, 0, 0                                
+ 116 REGENUM            'r', -2147483646, '9', 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0          
+ 117 PUSHPOP            '㘀', 0, 0, 0, 0, 0                                                              
+ 118 PUSHPOP            'dows\\CurrentVersion\\Skrubhvl4\\', 0, 0, 0, 0, 0                              
+ 119 PUSHPOP            'gramFilesDir', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0, 0                                   
+ 120 PUSHPOP            '猀尀䌀甀爀爀攀渀琀嘀攀爀猀椀漀渀尀匀欀爀甀戀栀瘀氀㐀尀', 0, 0, 0, 0, 0                                    
+ 121 PUSHPOP            '₁', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0, 0                                              
+ 122 CALL               '00C', 0, 0, 0, 0, 0                                                              # call to entry idx=210
+         raw:         210|          0|          0|          0|          0|          0
+ 123 EXTRACTFILE        33554601, 'Microsoft\\Windows\\CurrentVersion\\Skrubhvl4\\', 'gramFilesDir', -1, -1, -45
+ 124 SETFLAG            '洀䘀椀氀攀猀䐀椀爀', 0, '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', -1, 0, 0                                     
+ 125 PUSHPOP            '\\CurrentVersion\\Skrubhvl4\\', 0, 0, -1, -1, -45                              
+ 126 REGISTERDLL        'Microsoft\\Windows\\CurrentVersion\\Skrubhvl4\\', 'urrentVersion\\Skrubhvl4\\', 0, 0, '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', -45
+ 127 PUSHPOP            '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0, 0                                
+ 128 NOP                'les', 0, 0, 0, 0, 0                                                            
+ 129 RET                0, 0, 0, 0, 0, 0                                                                  # return; result=0
+ 130 SETFLAG            'amFilesDir', 0, '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0                                     
+ 131 SETFLAG            '洀䘀椀氀攀猀䐀椀爀', 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', 0, 0, 0, 0                              
+ 132 WRITEREG           -2147483647, '攀爀猀椀漀渀尀匀欀爀甀戀栀瘀氀㐀尀', '㤀㜀㜀\u3000', 7104, '爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', '爀漀最爀愀洀䘀椀氀攀猀䐀椀爀'
+ 133 SETFLAG            '洀䘀椀氀攀猀䐀椀爀', '̀ꈀ\x80⌀㌀㈀㜀㜀\u3000', 0, 0, 0, 0                                    
+ 134 READENVSTR         '椀氀攀猀䐀椀爀', '\x80\u3100㈀㜀\u3100㠀', 0, 0, 0, 0                                    
+ 135 CREATEDIR          '\\sigmoidally\\Nonillatively', 0, 0, 0, 0, 0                                   
+ 136 SETFLAG            'rogramFilesDir', 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', 0, 0, 0, 0                         
+ 137 SETFILEATTRIBUTES  '漀渀椀氀氀愀琀椀瘀攀氀礀', '6', 0, 0, 0, 0                                                 
+ 138 GETFULLPATHNAME    '̀謀\x80\u3100㔀㘀', 'ilesDir', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0                         
+ 139 IFFLAG             'Ȁᨀ尣漀瀀氀礀猀渀椀渀最猀昀漀爀戀甀渀搀攀渀攀', '\x02⌚\\oplysningsforbundene', 'rogramFilesDir', -1, 0, 0  # if($flag) jmp idx=141 else jmp idx=142
+         raw:         141|        142|          4|         -1|          0|          0
+ 140 GETTEMPFILENAME    'nFilesDir', 656, 0, 0, 0, 0                                                    
+ 141 RET                0, 0, 0, 0, 0, 0                                                                  # return; result=0
+ 142 NOP_ZERO           0, 0, 0, 0, 0, 0                                                                
+ 143 NOP_ZERO           0, 0, 0, 0, 0, 0                                                                
+ 144 NOP_ZERO           0, 0, 0, 0, 0, 0                                                                
+ 145 NOP_ZERO           0, 0, 0, 0, 0, 0                                                                
+ 146 NOP_ZERO           0, 0, 0, 0, 0, 0                                                                
+ 147 NOP_ZERO           0, 0, 0, 0, 0, 0                                                                
+ 148 NOP_ZERO           0, 0, 0, 0, 0, 0                                                                
+ 149 NOP_ZERO           0, 0, 0, 0, 0, 0                                                                
+ 150 NOP_ZERO           0, 0, 0, 0, 0, 0                                                                
+ 151 NOP_ZERO           0, 0, 0, 0, 0, 0                                                                
+ 152 NOP_ZERO           0, 0, 0, 0, 0, 0                                                                
+ 153 NOP_ZERO           0, 0, 0, 0, 0, 0                                                                
+ 154 NOP_ZERO           0, 0, 0, 0, 0, 0                                                                
+ 155 NOP_ZERO           0, 0, 0, 0, 0, 0                                                                
+ 156 NOP_ZERO           0, 0, 0, 0, 0, 0                                                                
+ 157 SETFILEATTRIBUTES  'Ԁ尮倀氀攀戀戀礀尀䌀漀渀昀愀戀甀氀愀琀椀漀渀⸀攀砀攀', 'les', 0, 0, 0, 0                                 
+ 158 STRCMP             '礀尀䌀漀渀昀愀戀甀氀愀琀椀漀渀⸀攀砀攀', '\\Confabulation.exe', '最猀昀漀爀戀甀渀搀攀渀攀', 'gsforbundene', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0  # strcmp; case_sens=164 eq->? ne->?
+ 159 INTCMP             '甀氀愀琀椀漀渀⸀攀砀攀', 'lation.exe', 'gsforbundene', 'gsforbundene', 0, 0                 # cmp; eq->idx=164 lt->idx=0 gt->idx=0
+         raw:        1189|       1192|        164|        164|          0|          0
+ 160 CALL               '00C', 0, 0, 0, 0, 0                                                              # call to entry idx=210
+         raw:         210|          0|          0|          0|          0|          0
+ 161 SETFLAG            '洀䘀椀氀攀猀䐀椀爀', 0, '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0                                      
+ 162 PUSHPOP            'ion.exe', 0, 0, 0, 0, 0                                                        
+ 163 FINDNEXT           '\\Program Files', '尀倀爀漀最爀愀洀\u2000䘀椀氀攀猀', 0, 0, 0, 0                            
+ 164 SETFILEATTRIBUTES  'e', 'ProgramFilesDir', 0, 0, 0, 0                                              
+ 165 FINDWINDOW         '䐀椀爀', 'ommon Files', 0, '渀\u2000䘀椀氀攀猀', 0, 0                                   
+ 166 FSEEK              'amFilesDir', -1, '10', 0, 0, 0                                                 
+ 167 SETFLAG            'rogramFilesDir', 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', 0, 0, 0, 0                         
+ 168 SHOWWINDOW         'ⴀ\u3100', '000C', 0, 0, 0, 0                                                   
+ 169 DELREG             0, -2147483646, 440, 0, '最爀愀洀䘀椀氀攀猀䐀椀爀', 0                                       
+ 170 RET                0, 0, 0, 0, 0, 0                                                                  # return; result=0
+ 171 SETFLAG            '愀洀䘀椀氀攀猀䐀椀爀', '̀ꈀ\x80⌀㌀㈀㜀㜀\u3000', 0, 0, 0, 0                                   
+ 172 SETFLAG            'ProgramFilesDir', 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', 0, 0, 0, 0                        
+ 173 SETFLAG            'ProgramFilesDir', 215, 0, 0, 0, 0                                              
+ 174 CREATEDIR          '\u3000\u3000\u3000', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0, 0                             
+ 175 SETFLAG            'ProgramFilesDir', 215, 0, 0, 0, 0                                              
+ 176 CREATEDIR          '\u3000\u3000\u3000', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0, 0                             
+ 177 EXTRACTFILE        83886224, '00', 7111, 1968810752, 31198288, -45                                 
+ 178 EXTRACTFILE        83886224, '胞', 201816, 1968810752, 31198288, -45                                
+ 179 CREATEDIR          'ILE%', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0, 0                                           
+ 180 EXTRACTFILE        83886224, '\x03肙', 202086, 1968810752, 31198288, -45                            
+ 181 EXTRACTFILE        83886224, '胡', 278380, 1968810752, 31198288, -45                                
+ 182 EXTRACTFILE        83886224, '愀爀攀尀䴀椀挀爀漀猀漀昀琀尀圀椀渀搀漀眀猀尀䌀甀爀爀攀渀琀嘀攀爀猀椀漀渀尀猀礀渀愀最漀最椀猀洀', 291623, 1968810752, 31198288, -45
+ 183 EXTRACTFILE        83886224, 'soft\\Windows\\CurrentVersion\\synagogism', 570554, 1968810752, 31198288, -45
+ 184 EXTRACTFILE        83886224, '漀眀猀尀䌀甀爀爀攀渀琀嘀攀爀猀椀漀渀尀猀礀渀愀最漀最椀猀洀', 570801, 1968810752, 31198288, -45    
+ 185 EXTRACTFILE        83886224, 'entVersion\\synagogism', 570975, 1968810752, 31198288, -45           
+ 186 EXTRACTFILE        83886224, 'sion\\synagogism', 861544, 1968810752, 31198288, -45                 
+ 187 EXTRACTFILE        83886224, 'gogism', 861793, 1968810752, 31198288, -45                           
+ 188 EXTRACTFILE        83886224, 1434, 862005, 1968810752, 31198288, -45                               
+ 189 EXTRACTFILE        83886224, '愀渀攀猀', 874858, 1968810752, 31198288, -45                             
+ 190 EXTRACTFILE        83886224, '舀\x80⬀', 875210, 1968810752, 31198288, -45                           
+ 191 EXTRACTFILE        83886224, '\\System.dll', 875559, 1968810752, 31198288, -45                     
+ 192 EXTRACTFILE        83886224, 'dll', 889608, 1968810752, 31198288, -45                              
+ 193 EXTRACTFILE        83886224, 'lloc', 889983, 1968810752, 31198288, -45                             
+ 194 EXTRACTFILE        83886224, '⨀⨀̀蜀\x80̀蠀\x80⌀̀\ue400\x80䌀愀氀氀', 894721, 1968810752, 31198288, -45   
+ 195 EXTRACTFILE        83886224, '\x03肈', 894870, 1968810752, 31198288, -45                            
+ 196 DELREG             0, -2147483646, 1550, '搀氀攀', 0, 0                                               
+ 197 INTCMP             '漀昀琀眀愀爀攀尀䴀椀挀爀漀猀漀昀琀尀圀椀渀搀漀眀猀尀䌀甀爀爀攀渀琀嘀攀爀猀椀漀渀尀攀渀挀氀漀猀攀搀, 'ftware\\Microsoft\\Windows\\CurrentVersion\\enclo, 'ꀀ\x80\u3000砀\u3000\u3000\u3000䌀', '肠', 0, 0  # cmp; eq->idx=200 lt->idx=0 gt->idx=0
+         raw:        1579|       1582|        199|        200|          0|          0
+ 198 SETFLAG            'rogramFilesDir', 215, 0, 0, 0, 0                                               
+ 199 REGENUM            'FilesDir', -2147483646, '愀爀攀尀䴀椀挀爀漀猀漀昀琀尀圀椀渀搀漀眀猀尀䌀甀爀爀攀渀琀嘀攀爀猀椀漀渀尀攀渀挀氀漀猀攀搀尀昀攀搀, 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0
+ 200 CHDETAILSVIEW      0, 'gramFilesDir', 0, 0, 0, 0                                                   
+ 201 ASSIGNVAR          'rogramFilesDir', 'tVersion\\enclosed\\fedtcellen', 0, 0, 0, 0                  
+ 202 SETFLAG            'ProgramFilesDir', 'Ȁ脀 Ȁ脀尠䌀漀洀洀漀渀\u2000䘀椀氀攀猀', 0, 0, 0, 0                        
+ 203 READENVSTR         '氀攀猀䐀椀爀', '漀渀尀攀渀挀氀漀猀攀搀尀昀攀搀琀挀攀氀氀攀渀', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0                  
+ 204 PUSHPOP            'nclosed\\fedtcellen', 0, 0, 0, 0, 0                                            
+ 205 SHOWWINDOW         '渀\u2000䘀椀氀攀猀', 'edtcellen', 0, 0, 0, 0                                         
+ 206 PUSHPOP            's', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0, 0                                              
+ 207 CALL               'ram Files', 0, 0, 0, 0, 0                                                        # call to entry idx=78
+         raw:          78|          0|          0|          0|          0|          0
+ 208 RET                0, 0, 0, 0, 0, 0                                                                  # return; result=0
+ 209 SETFLAG            '洀䘀椀氀攀猀䐀椀爀', 'les', -1, 0, 0, 0                                                 
+ 210 STRCMP             'ellen', 0, 0, '⌀㌀㈀㜀㜀\u3000', 0, 0                                                # strcmp; case_sens=223 eq->? ne->?
+ 211 PUSHPOP            '渀搀漀眀猀尀䌀甀爀爀攀渀琀嘀攀爀猀椀漀渀尀匀欀爀甀戀栀瘀氀㐀尀', 0, 0, 0, 0, 0                                
+ 212 PUSHPOP            '㘀', 0, 0, 0, 0, 0                                                              
+ 213 ASSIGNVAR          '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', '渀搀漀眀猀尀䌀甀爀爀攀渀琀嘀攀爀猀椀漀渀尀匀欀爀甀戀栀瘀氀㐀尀', 0, -1, 0, 0               
+ 214 SETFLAG            'ProgramFilesDir', 0, 0, 0, 0, 0                                                
+ 215 GETTEMPFILENAME    0, 656, 0, 0, 0, 0                                                              
+ 216 DELETEFILE         '渀搀漀眀猀尀䌀甀爀爀攀渀琀嘀攀爀猀椀漀渀尀匀欀爀甀戀栀瘀氀㐀尀', 'gramFilesDir', 0, 0, 0, 0                   
+ 217 CREATEDIR          '渀搀漀眀猀尀䌀甀爀爀攀渀琀嘀攀爀猀椀漀渀尀匀欀爀甀戀栀瘀氀㐀尀', 0, '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0                
+ 218 IFFLAG             '#32770', 0, 'ProgramFilesDir', 0, 0, 0                                           # if($flag) jmp idx=224 else jmp idx=0
+         raw:         224|          0|          2|          0|          0|          0
+ 219 ASSIGNVAR          'Dir', '渀搀漀眀猀尀䌀甀爀爀攀渀琀嘀攀爀猀椀漀渀尀匀欀爀甀戀栀瘀氀㐀尀', 0, 0, 0, 0                            
+ 220 PUSHPOP            '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0, 0                                
+ 221 PUSHPOP            0, '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', 0, 0, 0, 0                                                
+ 222 RET                0, 0, 0, 0, 0, 0                                                                  # return; result=0
+ 223 INTOP              '倀爀漀最爀愀洀䘀椀氀攀猀䐀椀爀', '㘀', 215, 0, 0, 0                                              # +-op
+         raw:           1|        285|        215|          0|          0|          0
+ 224 STRCMP             '㘀', 'dene', 0, 215, 0, 0                                                         # strcmp; case_sens=215 eq->? ne->?
+ 225 MESSAGEBOX         2097168, '氀攀渀', 0, 0, 0, 0                                                      
+ 226 QUIT               0, 0, 0, 0, 0, 0                                                                
+ 227 RET                0, 0, 0, 0, 0, 0                                                                  # return; result=0

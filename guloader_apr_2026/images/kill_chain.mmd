@@ -1,0 +1,23 @@
+flowchart TD
+    A[Email or web drop<br/>NSIS-3 self-extracting installer<br/>1.04 MB / agestole.exe] --> B[NSIS exehead executes]
+    B --> C[Extract files to %TEMP%]
+    C --> D1[$PLUGINSDIR\System.dll<br/>NSIS native-call plugin]
+    C --> D2[Darnel\Maynard.pen<br/>9 MB constant 0x5A padding]
+    C --> D3[Darnel\Ganocephala176.ham<br/>8.6 MB constant 0xB7 padding]
+    C --> D4[Darnel\Toolers + piasaba<br/>encoded shellcode + final stage]
+    C --> D5[Darnel\*.ini, *.txt, *.jpg<br/>Danish word-salad fragments]
+    D1 --> E[NSIS opcode loop<br/>228 entries / heavy obfuscation]
+    D5 --> E
+    E -->|System::Call kernel32::VirtualAlloc| F[RWX heap region]
+    D4 -->|byte stream merge + decode| F
+    F -->|System::Call user32::CallWindowProcW| G[Stage 1 shellcode]
+    G --> H{Anti-analysis suite}
+    H -->|Process scan / DJB2 hash| I1[Quit on Wireshark, Procmon, x64dbg, etc.]
+    H -->|VEH int3 / VirtualProtect bait| I2[Quit on debugger present]
+    H -->|RDTSC delta / sleep skew| I3[Quit on emulator]
+    H -->|PEB BeingDebugged / NtGlobal| I4[Quit on debugger flags]
+    H -->|Pass| J[Resolve API by DJB2 hash]
+    J --> K[HTTP GET final payload<br/>Google Drive / Discord CDN / OneDrive]
+    K --> L[Sub or RC4 decrypt<br/>final stage payload]
+    L --> M[Process hollow / map-inject<br/>into RegAsm.exe or wininit.exe]
+    M --> N[Final stage executes<br/>Remcos / FormBook / AgentTesla / Vidar / Lokibot]

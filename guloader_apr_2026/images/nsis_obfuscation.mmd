@@ -1,0 +1,12 @@
+flowchart LR
+    subgraph nsis [NSIS script obfuscation pattern]
+        S1["String fragment store:<br/>'Sys', 'tem.dll', 'lloc', '::Call'<br/>'Virtua', 'GetProc', 'Address'"]
+        S2["Variable assignments via<br/>StrCpy / Push / Pop with<br/>Danish-word names<br/>$oplysningsforbundene<br/>$kontaktskabende<br/>$Skrubhvl4"]
+        S3["INI / TXT files in Darnel\<br/>read by ReadINIStr<br/>to fetch script tokens"]
+    end
+    S1 --> M[StrCpy concatenation<br/>at runtime]
+    S2 --> M
+    S3 --> M
+    M -->|"$0 = 'System::Call'<br/>$1 = '::VirtualAlloc'<br/>$2 = 'i,i,i,i,i'"| C[System::Call invocation]
+    C --> N[Native API call<br/>kernel32!VirtualAlloc<br/>kernel32!GetProcAddress<br/>user32!CallWindowProcW]
+    N --> X[Shellcode execution<br/>without ever calling<br/>those APIs from the EXE]
