@@ -1,0 +1,542 @@
+{
+  "report_metadata": {
+    "analyst": "Tao Goldi",
+    "report_date": "2026-04-28",
+    "tooling": [
+      "pefile",
+      "radare2 6.1.2",
+      "yara 4.5.2",
+      "mmdc 11.12.0"
+    ],
+    "scope": "static analysis only; no detonation"
+  },
+  "sample": {
+    "file_name": "Destover.exe",
+    "sha256": "4c2efe2f1253b94f16a1cab032f36c7883e4f6c8d9fc17d0ee553b5afb16330c",
+    "sha1": "8397c1e1f0b9d53a114850f6b3ae8c1f2b2d1590",
+    "md5": "e904bf93403c0fb08b9683a9e858c73e",
+    "file_size": 91888,
+    "format": "PE32 GUI x86 (Intel 80386)",
+    "compile_time_utc": "2014-07-07T08:01:09Z",
+    "signing_time_utc": "2014-12-05T21:29:35Z",
+    "image_base": "0x00400000",
+    "entry_point": "0x0040766e",
+    "main_address": "0x00401040",
+    "subsystem": "Windows GUI",
+    "imphash": null,
+    "packer": "none",
+    "overlay": true,
+    "version_info": {
+      "CompanyName": "Microsoft Corporation",
+      "FileDescription": "igfxstartup Module",
+      "FileVersion": "5.6.4590.2023",
+      "InternalName": "igfxtpers.exe",
+      "LegalCopyright": "(c) Microsoft Corporation. All rights reserved.",
+      "OriginalFilename": "igfxtpers.exe",
+      "ProductName": "Microsoft Windows Operating System",
+      "ProductVersion": "5.6.4590.2023"
+    }
+  },
+  "family": {
+    "name": "Destover",
+    "aliases": [
+      "Wiper.A",
+      "DestRover",
+      "Volgmer-related",
+      "SPE Wiper"
+    ],
+    "actor": "Lazarus Group / DarkSeoul",
+    "campaign": "Sony Pictures Entertainment intrusion (Nov-Dec 2014)",
+    "first_seen": "2014",
+    "category": "backdoor + wiper-stager"
+  },
+  "authenticode": {
+    "signed": true,
+    "signer_subject": "Sony Pictures Entertainment Inc., Culver City, California, US",
+    "issuer": "DigiCert Assured ID Code Signing CA-1",
+    "status_at_observation_date": "revoked (Dec 2014, post-leak)",
+    "note": "the certificate was stolen during the Sony breach and either re-used by attackers or by researchers; the cert appears in dumped credentials posted publicly in late November 2014"
+  },
+  "sections": [
+    {
+      "name": ".text",
+      "vaddr": "0x1000",
+      "vsize": 56565,
+      "rsize": 57344,
+      "entropy": 6.55
+    },
+    {
+      "name": ".rdata",
+      "vaddr": "0xf000",
+      "vsize": 3464,
+      "rsize": 4096,
+      "entropy": 4.85
+    },
+    {
+      "name": ".data",
+      "vaddr": "0x10000",
+      "vsize": 22268,
+      "rsize": 16384,
+      "entropy": 2.13
+    },
+    {
+      "name": ".rsrc",
+      "vaddr": "0x16000",
+      "vsize": 1088,
+      "rsize": 4096,
+      "entropy": 1.15
+    }
+  ],
+  "imports_static": {
+    "kernel32.dll": [
+      "GetTickCount",
+      "GetACP",
+      "GetComputerNameW",
+      "GetDriveTypeW",
+      "LocalAlloc",
+      "Sleep",
+      "MoveFileA",
+      "GetModuleFileNameA",
+      "GetProcAddress",
+      "LoadLibraryA",
+      "lstrcpyA",
+      "lstrlenA",
+      "WriteFile",
+      "GetSystemTime",
+      "GetLocalTime",
+      "GetTimeZoneInformation",
+      "MultiByteToWideChar",
+      "WideCharToMultiByte",
+      "GetFileAttributesW",
+      "VirtualAlloc",
+      "VirtualFree",
+      "TerminateProcess",
+      "GetVersionExA",
+      "ExitProcess",
+      "CloseHandle"
+    ],
+    "user32.dll": [
+      "GetSystemMetrics"
+    ],
+    "shell32.dll": [
+      "SHGetSpecialFolderPathA"
+    ],
+    "ws2_32.dll": [
+      "WSAStartup",
+      "WSACleanup",
+      "WSAGetLastError",
+      "socket",
+      "connect",
+      "send",
+      "recv",
+      "select",
+      "setsockopt",
+      "ioctlsocket",
+      "shutdown",
+      "closesocket",
+      "htons",
+      "ntohs",
+      "htonl"
+    ]
+  },
+  "imports_obfuscated_runtime": {
+    "encoding": "ASCII API name interleaved with single-character spaces and full-stops; the loader strips both classes of junk before passing the cleaned name to GetProcAddress",
+    "decoded_targets": [
+      "VirtualFree",
+      "VirtualAlloc",
+      "VirtualFreeEx",
+      "VirtualAllocEx",
+      "WriteProcessMemory",
+      "GetDriveTypeW",
+      "GetLogicalDrives",
+      "GetTempFileNameW",
+      "GetTempPathW",
+      "GetComputerNameW",
+      "GetSystemDirectoryA",
+      "GetSystemDirectoryW",
+      "GetLocalTime",
+      "FindClose",
+      "FindNextFileW",
+      "FindFirstFileW",
+      "SetCurrentDirectoryW",
+      "GetCurrentDirectoryW",
+      "GetSystemInfo",
+      "GetVersionExW",
+      "MoveFileW",
+      "GetTickCount",
+      "GetVolumeInformationW",
+      "GetLastError",
+      "Sleep",
+      "GetDiskFreeSpaceExW",
+      "LocalFree",
+      "LocalAlloc",
+      "SetFileTime",
+      "GetFileTime",
+      "Module32FirstW",
+      "GetProcessTimes",
+      "OpenProcess",
+      "Process32NextW",
+      "Process32FirstW",
+      "CreateToolhelp32Snapshot",
+      "GetFileAttributesW",
+      "DeleteFileW",
+      "SetFilePointerEx",
+      "SetFilePointer",
+      "GetFileSize",
+      "ReadFile",
+      "WriteFile",
+      "WaitForSingleObject",
+      "TerminateThread",
+      "TerminateProcess",
+      "GetExitCodeThread",
+      "GetExitCodeProcess",
+      "CreateThread",
+      "CreateFileW",
+      "WinExec",
+      "CloseHandle",
+      "WaitForMultipleObjects",
+      "CreateProcessA",
+      "CreateProcessW",
+      "GetModuleFileNameW",
+      "GetModuleHandleW",
+      "FreeLibrary",
+      "LoadLibraryA",
+      "LoadLibraryW",
+      "GetProcAddress",
+      "SetServiceStatus",
+      "StartServiceW",
+      "CloseServiceHandle",
+      "OpenServiceW",
+      "ControlService",
+      "CreateServiceW",
+      "OpenSCManagerW",
+      "LookupAccountSidW",
+      "GetTokenInformation",
+      "OpenProcessToken",
+      "GetUserNameW",
+      "QueryServiceConfig2W",
+      "EnumServicesStatusW",
+      "RegisterServiceCtrlHandlerW",
+      "StartServiceCtrlDispatcherW",
+      "ChangeServiceConfig2W",
+      "DeleteService",
+      "RegDeleteValueW",
+      "RegCloseKey",
+      "RegSetValueExA",
+      "RegSetValueExW",
+      "RegQueryValueExA",
+      "RegQueryValueExW",
+      "RegOpenKeyA",
+      "RegOpenKeyW",
+      "RegOpenKeyExW",
+      "RegCreateKeyExW",
+      "RegCreateKeyW",
+      "ioctlsocket",
+      "inet_addr",
+      "__WSAFDIsSet",
+      "recv",
+      "send",
+      "select",
+      "connect",
+      "accept",
+      "setsockopt",
+      "shutdown",
+      "closesocket",
+      "gethostbyname",
+      "listen",
+      "bind",
+      "ntohs",
+      "htons",
+      "socket",
+      "WSAGetLastError",
+      "WSACleanup",
+      "WSAStartup",
+      "GetTcpTable",
+      "GetAdaptersInfo"
+    ]
+  },
+  "c2_servers": [
+    {
+      "ip": "208.105.226.235",
+      "port": 443,
+      "protocol": "TCP",
+      "country": "United States",
+      "asn_at_observation": "historic - revoked"
+    },
+    {
+      "ip": "203.131.222.102",
+      "port": 443,
+      "protocol": "TCP",
+      "country": "Thailand",
+      "note": "open relay used in the SPE intrusion; same IP appeared in DarkSeoul wiper traffic earlier in 2014"
+    }
+  ],
+  "c2_loop": {
+    "table_address": "0x00413b88",
+    "table_entry_count": 10,
+    "entry_size_bytes": 40,
+    "default_entry": "0.0.0.0",
+    "active_entries": [
+      "203.131.222.102",
+      "208.105.226.235"
+    ],
+    "default_port": 443,
+    "retry_max": 5,
+    "retry_sleep_seconds": 60,
+    "outer_rotation_count": 10,
+    "stop_opcode": "0xfffff",
+    "control_word_addresses": {
+      "selected_index": "0x00413e70",
+      "max_attempts": "0x00413e5c",
+      "sleep_value": "0x00413e50",
+      "tick_seed": "0x00413e40",
+      "active_port": "0x00413e18"
+    },
+    "note_on_table_size": "Init loop seeds slots 0..9 with 0.0.0.0 wide-string. Slots 0 and 1 are then overwritten with the live IPs. The selector uses rand() mod 10, so all 10 slots are reachable; placeholder slots 2..9 are operator-fillable in custom builds."
+  },
+  "key_functions": [
+    {
+      "address": "0x00401040",
+      "name": "main",
+      "purpose": "config init, seed PRNG, kick off C2 loop"
+    },
+    {
+      "address": "0x00406a1d",
+      "name": "copy_wide_string",
+      "purpose": "ASCII to wide-char copy used to seed the 40-entry server table"
+    },
+    {
+      "address": "0x00406917",
+      "name": "trigger_date_check",
+      "purpose": "compare GetSystemTime fields against constants at 0x4140xx; calls payload-trigger fcn.0040858a on match"
+    },
+    {
+      "address": "0x00401350",
+      "name": "c2_main_loop",
+      "purpose": "rotate through server table, retry/sleep, dispatch commands"
+    },
+    {
+      "address": "0x00401130",
+      "name": "c2_attempt_connect",
+      "purpose": "single-shot connect-and-handshake against a server table entry"
+    },
+    {
+      "address": "0x00405310",
+      "name": "tcp_connect",
+      "purpose": "WSAStartup -> socket -> connect wrapper"
+    },
+    {
+      "address": "0x00405470",
+      "name": "tcp_send",
+      "purpose": "send wrapper used by command-output channel"
+    },
+    {
+      "address": "0x00405600",
+      "name": "tcp_recv",
+      "purpose": "recv wrapper"
+    },
+    {
+      "address": "0x00402870",
+      "name": "drive_enumerator",
+      "purpose": "iterate drive letters C: through Z: via GetDriveTypeW + GetDiskFreeSpaceExW"
+    },
+    {
+      "address": "0x00403fd0",
+      "name": "command_dispatcher",
+      "purpose": "branch on opcode received over TCP"
+    },
+    {
+      "address": "0x00405d60",
+      "name": "wsastartup_wrapper",
+      "purpose": "lazy WSAStartup with version 2.2"
+    }
+  ],
+  "obfuscation": {
+    "string_table_dot_space": "API names stored in .rdata as ASCII strings interleaved with junk dots and spaces; e.g. 'Vir . tualFr. ee' decodes to VirtualFree. The runtime decoder strips both 0x20 and 0x2E before calling GetProcAddress.",
+    "version_info_masquerade": "VS_VERSION_INFO claims to be Intel graphics persistence helper igfxtpers.exe v5.6.4590.2023, copyrighted to Microsoft Corporation",
+    "no_packer": "the binary is not packed - sections show normal compiled-C entropy; obfuscation is at the string and import-resolution layer only"
+  },
+  "capabilities": {
+    "persistence": [
+      "service installation via OpenSCManagerW + CreateServiceW (dynamically resolved)",
+      "registers SCM control handler so the binary can be configured to run as SYSTEM service"
+    ],
+    "discovery": [
+      "drive enumeration C:..Z: with type and free-space",
+      "process enumeration via CreateToolhelp32Snapshot + Process32FirstW/NextW",
+      "module enumeration (Module32FirstW)",
+      "user enumeration (LookupAccountSidW + GetTokenInformation + GetUserNameW)",
+      "service enumeration (EnumServicesStatusW + QueryServiceConfig2W)",
+      "OS-version detection (rich product table from Windows 2000 through Server 2012 R2)",
+      "network-table enumeration (GetTcpTable, GetAdaptersInfo)"
+    ],
+    "execution": [
+      "shell exec via cmd.exe redirected to a temporary file (format string '%sd.e%sc \"%s > %s\" 2>&1')",
+      "WinExec",
+      "CreateProcessA / CreateProcessW (dynamically resolved)"
+    ],
+    "command_and_control": [
+      "TCP outbound on port 443 to two hard-coded IPs",
+      "rotating retry loop with 60-second sleeps, max 5 attempts per server, 10 rotations total",
+      "Authenticode-signed binary masquerades as a Windows Update component to evade gateway inspection"
+    ],
+    "destructive": [
+      "drive enumerator wired into the command dispatcher",
+      "DeleteFileW + SetFilePointer + WriteFile primitives present and reachable from C2 commands",
+      "this binary is the foothold/RAT component; the destructive raw-disk overwrite was historically delivered by a companion driver (EldoS RawDisk or 'usbdrv3.sys' style) dropped after staging"
+    ],
+    "anti_analysis": [
+      "API-name string obfuscation (dot-space junk insertion)",
+      "lazy GetProcAddress import resolution",
+      "stolen Authenticode signature for code-signing trust",
+      "system-time gated trigger of payload routine"
+    ]
+  },
+  "mitre_attack": {
+    "tactics": [
+      "TA0001",
+      "TA0002",
+      "TA0003",
+      "TA0005",
+      "TA0007",
+      "TA0011",
+      "TA0040"
+    ],
+    "techniques": [
+      {
+        "id": "T1543.003",
+        "name": "Create or Modify System Process: Windows Service"
+      },
+      {
+        "id": "T1059.003",
+        "name": "Command and Scripting Interpreter: Windows Command Shell"
+      },
+      {
+        "id": "T1057",
+        "name": "Process Discovery"
+      },
+      {
+        "id": "T1082",
+        "name": "System Information Discovery"
+      },
+      {
+        "id": "T1083",
+        "name": "File and Directory Discovery"
+      },
+      {
+        "id": "T1135",
+        "name": "Network Share Discovery"
+      },
+      {
+        "id": "T1518.001",
+        "name": "Software Discovery: Security Software Discovery"
+      },
+      {
+        "id": "T1027.013",
+        "name": "Obfuscated Files or Information: Encrypted/Encoded File"
+      },
+      {
+        "id": "T1140",
+        "name": "Deobfuscate/Decode Files or Information"
+      },
+      {
+        "id": "T1553.002",
+        "name": "Subvert Trust Controls: Code Signing"
+      },
+      {
+        "id": "T1036.005",
+        "name": "Masquerading: Match Legitimate Name or Location"
+      },
+      {
+        "id": "T1071.001",
+        "name": "Application Layer Protocol: Web Protocols"
+      },
+      {
+        "id": "T1095",
+        "name": "Non-Application Layer Protocol"
+      },
+      {
+        "id": "T1571",
+        "name": "Non-Standard Port"
+      },
+      {
+        "id": "T1485",
+        "name": "Data Destruction"
+      },
+      {
+        "id": "T1561.002",
+        "name": "Disk Wipe: Disk Structure Wipe"
+      },
+      {
+        "id": "T1497.003",
+        "name": "Virtualization/Sandbox Evasion: Time Based Evasion"
+      },
+      {
+        "id": "T1480.001",
+        "name": "Execution Guardrails: Environmental Keying"
+      }
+    ]
+  },
+  "iocs": {
+    "ipv4": [
+      "208.105.226.235",
+      "203.131.222.102"
+    ],
+    "ipv4_defanged": [
+      "208.105.226[.]235",
+      "203.131.222[.]102"
+    ],
+    "filenames": [
+      "Destover.exe",
+      "igfxtpers.exe"
+    ],
+    "version_info_marker": "InternalName=igfxtpers.exe; OriginalFilename=igfxtpers.exe; FileDescription=igfxstartup Module",
+    "yara_rules": [
+      "Destover_Lazarus_Backdoor_2014",
+      "Destover_Stolen_Sony_Certificate"
+    ],
+    "hashes": {
+      "sha256": "4c2efe2f1253b94f16a1cab032f36c7883e4f6c8d9fc17d0ee553b5afb16330c",
+      "sha1": "8397c1e1f0b9d53a114850f6b3ae8c1f2b2d1590",
+      "md5": "e904bf93403c0fb08b9683a9e858c73e"
+    },
+    "certificate": {
+      "subject": "Sony Pictures Entertainment Inc.",
+      "subject_locality": "Culver City, California, US",
+      "issuer": "DigiCert Assured ID Code Signing CA-1",
+      "signing_time": "2014-12-05T21:29:35Z",
+      "status": "revoked"
+    }
+  },
+  "weaknesses": [
+    "Hard-coded C2 IPs - no DGA, no fast-flux; once both addresses sinkhole the malware degrades into useless retry loops",
+    "Uniform 60-second sleep with no jitter generates a regular network beacon visible at gateway level",
+    "Dot-space API obfuscation is trivial to defeat by stripping the two filler characters; static signatures match the cleartext after one regex pass",
+    "VS_VERSION_INFO masquerade collides with real Intel graphics binaries in product-version space; mismatch between claimed version 5.6.4590.2023 and actual file size easy to flag",
+    "Stolen-certificate signature is the strongest evasion lever and the most fragile - a single revocation event invalidates every signed sample",
+    "No AV/AVI checks, no debugger checks, no VM checks: the binary will detonate happily inside any sandbox that allows TCP egress on 443",
+    "OS detection table does not branch on Windows 10 or later - the build was frozen mid-2014"
+  ],
+  "references": [
+    {
+      "title": "Securelist: Destover malware now digitally signed by Sony certificates",
+      "url": "https://securelist.com/destover-malware-now-digitally-signed-by-sony-certificates/68073/"
+    },
+    {
+      "title": "Securelist: Sony/Destover - mystery North Korean actor's destructive and past network activity",
+      "url": "https://securelist.com/destover/67985/"
+    },
+    {
+      "title": "SecurityAffairs: Damballa revealed the secrets behind the Destover malware",
+      "url": "https://securityaffairs.com/42194/malware/destover-malware-analysis.html"
+    },
+    {
+      "title": "ThreatPost: Details Emerge on Sony Wiper Malware Destover",
+      "url": "https://threatpost.com/details-emerge-on-sony-wiper-malware-destover/109727/"
+    },
+    {
+      "title": "APTnotes: From Seoul to Sony - DarkSeoul group history",
+      "url": "https://github.com/kbandla/APTnotes/issues/260"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+flowchart TD
+    A[Destover.exe<br/>signed: Sony Pictures Entertainment Inc.<br/>masquerades as igfxtpers.exe] --> B{Date check<br/>fcn.00406917}
+    B -- match --> C[Trigger payload<br/>fcn.0040858a]
+    B -- no match --> D[Service install<br/>OpenSCManagerW + CreateServiceW<br/>via obfuscated GetProcAddress]
+    D --> E[Main C2 loop<br/>fcn.00401350]
+    E --> F[Pick server from rotating array<br/>10 attempts × 60s sleep]
+    F --> G1[208.105.226.235:443<br/>United States]
+    F --> G2[203.131.222.102:443<br/>Thailand]
+    G1 --> H[TCP connect<br/>fcn.00405310]
+    G2 --> H
+    H --> I{Handshake OK?}
+    I -- no --> F
+    I -- yes --> J[Command dispatcher<br/>fcn.00403fd0]
+    J --> K1[Drive enum C:..Z:<br/>GetDriveTypeW]
+    J --> K2[Process enum<br/>CreateToolhelp32Snapshot]
+    J --> K3[Shell exec<br/>cmd.exe /c %s &gt; %s 2&gt;&amp;1]
+    J --> K4[File ops<br/>FindFirstFileW / DeleteFileW]
+    J --> K5[Self-update<br/>WinExec + MoveFileA]
+    K1 --> L[Stage destructive payload<br/>raw disk overwrite]
+    K3 --> M[Capture output<br/>send back over TCP]

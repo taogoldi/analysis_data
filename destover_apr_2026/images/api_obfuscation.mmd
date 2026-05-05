@@ -1,0 +1,7 @@
+flowchart LR
+    A[".rdata blob<br/>'Vir . tualFr. ee'<br/>'..Cre..ate Th re.. ad'<br/>'Ope..nSCMan. agerW'"]
+    A --> B[Strip junk:<br/>spaces and dots]
+    B --> C["Clean name<br/>'VirtualFree'<br/>'CreateThread'<br/>'OpenSCManagerW'"]
+    C --> D[GetProcAddress<br/>kernel32 / advapi32<br/>iphlpapi / ws2_32]
+    D --> E[Function pointer<br/>stored in .data table<br/>0x413f80, 0x413f88, ...]
+    E --> F[Indirect call<br/>at runtime]

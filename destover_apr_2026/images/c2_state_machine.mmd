@@ -1,0 +1,23 @@
+stateDiagram-v2
+    [*] --> Idle
+    Idle --> ServerSelect: outer loop esi=0..10
+    ServerSelect --> ConnectAttempt: pick IP from<br/>40-entry table
+    ConnectAttempt --> Connected: TCP 443 succeeds
+    ConnectAttempt --> Sleep: connect fails
+    Sleep --> ConnectAttempt: GetTickCount-driven<br/>60s wait (cfg word [0x413e50])
+    ConnectAttempt --> Aborted: counter ≥ 5<br/>(cfg word [0x413e5c])
+    Aborted --> ServerSelect: rotate to next IP
+    Connected --> CommandLoop
+    CommandLoop --> ExecuteCmd: dispatch by opcode
+    ExecuteCmd --> ShellExec: opcode = exec
+    ExecuteCmd --> DriveEnum: opcode = enum_drives
+    ExecuteCmd --> FileOps: opcode = file_op
+    ExecuteCmd --> ProcEnum: opcode = enum_procs
+    ShellExec --> CommandLoop: send output back
+    DriveEnum --> CommandLoop
+    FileOps --> CommandLoop
+    ProcEnum --> CommandLoop
+    CommandLoop --> Connected: server keep-alive
+    CommandLoop --> Sleep: server disconnect
+    Connected --> Done: special opcode 0xfffff
+    Done --> [*]: print "------End------!"
