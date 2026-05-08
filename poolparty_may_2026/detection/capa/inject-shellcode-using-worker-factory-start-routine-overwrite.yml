@@ -3,7 +3,7 @@ rule:
     name: inject shellcode using worker factory start routine overwrite
     namespace: host-interaction/process/inject
     authors:
-      - threat-intel@tao-threatintel.com
+      - taogoldi
     description: >
       PoolParty worker-factory start-routine overwrite. The attacker queries
       the target's worker factory via NtQueryInformationWorkerFactory, then

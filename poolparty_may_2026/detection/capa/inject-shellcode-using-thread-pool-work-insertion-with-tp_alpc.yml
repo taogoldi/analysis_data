@@ -3,7 +3,7 @@ rule:
     name: inject shellcode using thread pool work insertion with TP_ALPC
     namespace: host-interaction/process/inject
     authors:
-      - threat-intel@tao-threatintel.com
+      - taogoldi
     description: >
       PoolParty TP_ALPC variant: pivots through the target's ALPC port
       queue. Attacker writes a TP_ALPC structure into the target via the

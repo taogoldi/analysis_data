@@ -3,7 +3,7 @@ rule:
     name: inject shellcode using thread pool work insertion with TP_JOB
     namespace: host-interaction/process/inject
     authors:
-      - threat-intel@tao-threatintel.com
+      - taogoldi
     description: >
       PoolParty TP_JOB variant: assigns the target process to an
       attacker-controlled Job object after writing a TP_JOB callback

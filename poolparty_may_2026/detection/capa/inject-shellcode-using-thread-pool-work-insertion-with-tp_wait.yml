@@ -3,7 +3,7 @@ rule:
     name: inject shellcode using thread pool work insertion with TP_WAIT
     namespace: host-interaction/process/inject
     authors:
-      - threat-intel@tao-threatintel.com
+      - taogoldi
     description: >
       PoolParty TP_WAIT variant: writes a TP_WAIT structure pointing at
       an attacker-controlled event into the target, then signals the
