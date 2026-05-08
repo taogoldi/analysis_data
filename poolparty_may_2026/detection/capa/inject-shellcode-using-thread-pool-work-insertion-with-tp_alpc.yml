@@ -1,0 +1,41 @@
+rule:
+  meta:
+    name: inject shellcode using thread pool work insertion with TP_ALPC
+    namespace: host-interaction/process/inject
+    authors:
+      - threat-intel@tao-threatintel.com
+    description: >
+      PoolParty TP_ALPC variant: pivots through the target's ALPC port
+      queue. Attacker writes a TP_ALPC structure into the target via the
+      thread-pool ALPC completion-allocator helper and sends a crafted
+      ALPC message; the target's worker callback fires when the message
+      is received.
+    scopes:
+      static: function
+      dynamic: unsupported
+    att&ck:
+      - Defense Evasion::Process Injection [T1055]
+    mbc:
+      - Defense Evasion::Process Injection [E1055]
+    references:
+      - https://i.blackhat.com/EU-23/Presentations/EU-23-Leviev-The-Pool-Party-You-Will-Never-Forget.pdf
+  features:
+    - and:
+      # behavior anchor: RemoteTpAlpcInsertion
+      - or:
+        - api: ntdll.NtAlpcSendWaitReceivePort
+        - api: ntdll.NtAlpcConnectPort
+        - string: "NtAlpcSendWaitReceivePort"
+        - string: "NtAlpcConnectPort"
+      - or:
+        - api: ntdll.TpAllocAlpcCompletion
+        - string: "TpAllocAlpcCompletion"
+      - or:
+        - api: WriteProcessMemory
+        - api: ntdll.NtWriteVirtualMemory
+        - string: "NtWriteVirtualMemory"
+      - api: OpenProcess
+      - or:
+        - api: VirtualAllocEx
+        - api: ntdll.NtAllocateVirtualMemory
+        - string: "NtAllocateVirtualMemory"

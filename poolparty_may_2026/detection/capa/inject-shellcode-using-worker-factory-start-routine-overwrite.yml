@@ -1,0 +1,35 @@
+rule:
+  meta:
+    name: inject shellcode using worker factory start routine overwrite
+    namespace: host-interaction/process/inject
+    authors:
+      - threat-intel@tao-threatintel.com
+    description: >
+      PoolParty worker-factory start-routine overwrite. The attacker queries
+      the target's worker factory via NtQueryInformationWorkerFactory, then
+      replaces the StartRoutine field via NtSetInformationWorkerFactory
+      (info class WorkerFactoryUpdateStartRoutine). The next worker thread
+      the factory spawns dispatches into the attacker's RWX shellcode.
+    scopes:
+      static: function
+      dynamic: unsupported
+    att&ck:
+      - Defense Evasion::Process Injection [T1055]
+    mbc:
+      - Defense Evasion::Process Injection [E1055]
+    references:
+      - https://i.blackhat.com/EU-23/Presentations/EU-23-Leviev-The-Pool-Party-You-Will-Never-Forget.pdf
+  features:
+    - and:
+      # behavior anchor: RemoteWorkerFactoryStartRoutineOverwrite
+      - or:
+        - api: ntdll.NtSetInformationWorkerFactory
+        - string: "NtSetInformationWorkerFactory"
+      - or:
+        - api: ntdll.NtQueryInformationWorkerFactory
+        - string: "NtQueryInformationWorkerFactory"
+      - or:
+        - api: WriteProcessMemory
+        - api: ntdll.NtWriteVirtualMemory
+        - string: "NtWriteVirtualMemory"
+      - api: OpenProcess

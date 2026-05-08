@@ -1,0 +1,43 @@
+rule:
+  meta:
+    name: inject shellcode using thread pool work insertion with TP_DIRECT
+    namespace: host-interaction/process/inject
+    authors:
+      - threat-intel@tao-threatintel.com
+    description: >
+      PoolParty TP_DIRECT variant: the attacker writes a forged TP_DIRECT
+      structure into the target and signals the target's I/O completion
+      port cross-process with the structure's address as the completion
+      key. The target's worker thread receives the completion key, treats
+      it as the remote TP_DIRECT pointer, and dispatches the callback on
+      the next dequeue cycle.
+    scopes:
+      static: function
+      dynamic: unsupported
+    att&ck:
+      - Defense Evasion::Process Injection [T1055]
+    mbc:
+      - Defense Evasion::Process Injection [E1055]
+    references:
+      - https://i.blackhat.com/EU-23/Presentations/EU-23-Leviev-The-Pool-Party-You-Will-Never-Forget.pdf
+      - https://github.com/SafeBreach-Labs/PoolParty
+    examples:
+      - 4cfc8ee7f76a8c7aca96fa783a8d90e915fc1f720062a8241f0c2a0247a382c5
+      - 849e64db81b5bebe1d0b6fb82dd66a1fd8bb4094a016beff6e501bcbbf36e72c
+  features:
+    - and:
+      # behavior anchor: RemoteTpDirectInsertion
+      - or:
+        - api: ntdll.NtSetIoCompletion
+        - api: ntdll.ZwSetIoCompletion
+        - string: "NtSetIoCompletion"
+        - string: "ZwSetIoCompletion"
+      - or:
+        - api: WriteProcessMemory
+        - api: ntdll.NtWriteVirtualMemory
+        - string: "NtWriteVirtualMemory"
+      - api: OpenProcess
+      - or:
+        - api: VirtualAllocEx
+        - api: ntdll.NtAllocateVirtualMemory
+        - string: "NtAllocateVirtualMemory"

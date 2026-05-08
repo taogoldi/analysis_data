@@ -1,0 +1,36 @@
+rule:
+  meta:
+    name: inject shellcode using thread pool work insertion with TP_WAIT
+    namespace: host-interaction/process/inject
+    authors:
+      - threat-intel@tao-threatintel.com
+    description: >
+      PoolParty TP_WAIT variant: writes a TP_WAIT structure pointing at
+      an attacker-controlled event into the target, then signals the
+      event. The target's wait worker fires on signal.
+    scopes:
+      static: function
+      dynamic: unsupported
+    att&ck:
+      - Defense Evasion::Process Injection [T1055]
+    mbc:
+      - Defense Evasion::Process Injection [E1055]
+    references:
+      - https://i.blackhat.com/EU-23/Presentations/EU-23-Leviev-The-Pool-Party-You-Will-Never-Forget.pdf
+  features:
+    - and:
+      # behavior anchor: RemoteTpWaitInsertion
+      - or:
+        - api: CreateThreadpoolWait
+        - api: ntdll.ZwAssociateWaitCompletionPacket
+        - string: "ZwAssociateWaitCompletionPacket"
+      - or:
+        - api: SetEvent
+        - api: ntdll.NtSetEvent
+        - string: "NtSetEvent"
+      - or:
+        - api: WriteProcessMemory
+        - api: ntdll.NtWriteVirtualMemory
+        - string: "NtWriteVirtualMemory"
+      - api: OpenProcess
+      - api: DuplicateHandle

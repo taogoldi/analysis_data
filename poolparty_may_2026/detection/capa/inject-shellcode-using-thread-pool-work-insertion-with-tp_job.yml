@@ -1,0 +1,39 @@
+rule:
+  meta:
+    name: inject shellcode using thread pool work insertion with TP_JOB
+    namespace: host-interaction/process/inject
+    authors:
+      - threat-intel@tao-threatintel.com
+    description: >
+      PoolParty TP_JOB variant: assigns the target process to an
+      attacker-controlled Job object after writing a TP_JOB callback
+      structure. Job notifications fire the worker callback in the
+      target.
+    scopes:
+      static: function
+      dynamic: unsupported
+    att&ck:
+      - Defense Evasion::Process Injection [T1055]
+    mbc:
+      - Defense Evasion::Process Injection [E1055]
+    references:
+      - https://i.blackhat.com/EU-23/Presentations/EU-23-Leviev-The-Pool-Party-You-Will-Never-Forget.pdf
+  features:
+    - and:
+      # behavior anchor: RemoteTpJobInsertion
+      - or:
+        - api: AssignProcessToJobObject
+        - api: ntdll.NtAssignProcessToJobObject
+        - string: "NtAssignProcessToJobObject"
+      - or:
+        - api: CreateJobObject
+        - api: CreateJobObjectA
+        - api: CreateJobObjectW
+      - or:
+        - api: ntdll.TpAllocJobNotification
+        - string: "TpAllocJobNotification"
+      - or:
+        - api: WriteProcessMemory
+        - api: ntdll.NtWriteVirtualMemory
+        - string: "NtWriteVirtualMemory"
+      - api: OpenProcess
