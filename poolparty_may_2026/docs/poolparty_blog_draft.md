@@ -1,4 +1,4 @@
-# PoolParty in the Wild (2026): A Reverse-Engineering View, Three ITW Samples, and the Five Missing Capa Rules
+# PoolParty in the Wild (2026): Reversing Three Samples and Building Cross-Variant Detection
 
 *Tao Threat Intelligence, May 2026*
 
