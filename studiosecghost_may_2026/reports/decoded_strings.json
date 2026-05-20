@@ -1,0 +1,159 @@
+{
+  "sample": {
+    "sha256": "5940c41ab003399680a04d726587eed242e4ad8969abe4b5617d712ff190a852",
+    "file_size": 353280,
+    "arch": "x86-64",
+    "subsystem": "Windows GUI (2)",
+    "compile_timestamp_utc": "2026-05-17T01:46:09Z",
+    "imphash": "26edff0935c20dff74e040648243639a",
+    "filename_observed": "ahy.exe",
+    "version_info": {
+      "ProductName": "ahy",
+      "FileDescription": "ahy",
+      "OriginalFilename": "ahy.exe",
+      "InternalName": "ahy",
+      "FileVersion": "1.0.0.0"
+    }
+  },
+  "build_identifier": "StudioSecGhost",
+  "build_identifier_note": "Internal builder/title marker. The literal string StudioSecGhost is used as the title of the bounce HTML and as the search target for the ghost-window interceptor. The companion banner window class is StudioSecVNC_Banner. The folder/post name follows the binary's own self-identifier.",
+  "c2": {
+    "ip": "2.26.122.211",
+    "port_format": "%u (read from binary at runtime via separate config blob; observed string format: 'Target: %ls:%u')",
+    "transport": "raw TCP, custom binary protocol with 1-byte opcode header",
+    "asn": "AS201988 VPSPay",
+    "country": "FI",
+    "city": "Helsinki",
+    "abuse_contact": "abuse@vpspay.cloud"
+  },
+  "anti_analysis_blocklist": [
+    "ollydbg.exe",
+    "x64dbg.exe",
+    "x32dbg.exe",
+    "windbg.exe",
+    "ida.exe",
+    "ida64.exe",
+    "idaq.exe",
+    "idaq64.exe",
+    "devenv.exe",
+    "processhacker.exe",
+    "procmon.exe",
+    "procexp.exe",
+    "dnspy.exe",
+    "ghidra",
+    "cheatengine"
+  ],
+  "browsers_targeted": [
+    {
+      "name": "Chrome",
+      "process": "chrome.exe",
+      "window_class": "Chrome_WidgetWin_1",
+      "profile_path": "Google\\Chrome\\User Data",
+      "install_paths": [
+        "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+      ]
+    },
+    {
+      "name": "Edge",
+      "process": "msedge.exe",
+      "profile_path": "Microsoft\\Edge\\User Data",
+      "install_paths": [
+        "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+        "C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe"
+      ]
+    },
+    {
+      "name": "Firefox",
+      "process": "firefox.exe",
+      "window_class": "MozillaWindowClass",
+      "profile_path": "Mozilla\\Firefox\\Profiles",
+      "install_paths": [
+        "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+        "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe"
+      ]
+    }
+  ],
+  "browser_launch_args": {
+    "chromium": "\"%s\" --app=\"%s\" --disable-infobars --hide-crash-restore-bubble --disable-backgrounding-occluded-windows --disable-renderer-backgrounding --disable-occlusion-tracking",
+    "firefox": "\"%s\" -new-instance -no-remote -url \"%s\""
+  },
+  "bounce_html_filenames": [
+    "%sstudiosec_bounce.html",
+    "%s\\chrome_update_manifest.html"
+  ],
+  "bounce_html_template": "<html><head><title>StudioSecGhost</title></head><body><script>setTimeout(function(){window.location.replace('...');},2000);</script></body></html>",
+  "persistence": {
+    "mechanism": "Windows Scheduled Task (XML import via schtasks.exe)",
+    "task_xml_file_format": "%schrome_task_%u.xml",
+    "shell_commands": [
+      "schtasks /Query /TN \"<task>\"",
+      "schtasks /Create /TN \"<task>\" /XML \"<xmlfile>\"",
+      "schtasks /Delete /TN \"<task>\""
+    ],
+    "triggers": [
+      "LogonTrigger (Enabled=true, Delay=PT1M)",
+      "TimeTrigger (Interval=PT2M, Duration=P1D, StopAtDurationEnd=false)"
+    ],
+    "settings": {
+      "MultipleInstancesPolicy": "Parallel",
+      "DisallowStartIfOnBatteries": "false",
+      "StopIfGoingOnBatteries": "false",
+      "ExecutionTimeLimit": "PT0S",
+      "StartWhenAvailable": "true",
+      "RestartOnFailure": "Interval=PT1M, Count=999"
+    },
+    "replica_slots": "multiple ('Replica deploy failed slot %d', 'Replica deployed: slot %d') -- redundant copies on disk; watchdog restores any deleted slot"
+  },
+  "victim_overlay_banner": {
+    "window_class": "StudioSecVNC_Banner",
+    "window_title": "StudioSecVNC Banner",
+    "banner_text": "  WARNING!  SECURITY AUDIT IN PROGRESS.  ",
+    "font": "Segoe UI",
+    "control_class": "STATIC",
+    "purpose": "Lock-out overlay shown on the victim's visible desktop while the operator pilots the ghost browser. Disguises the operator session as a sanctioned audit so the victim does not interfere."
+  },
+  "anchor_window": {
+    "class_name_a": "GSystem",
+    "class_name_b": ".SecAnchor",
+    "purpose": "Hidden message-pump window that receives broker commands and hosts the ghost lifecycle thread."
+  },
+  "filesystem_artifacts": [
+    "%TEMP%\\studiosec_bounce.html",
+    "%TEMP%\\chrome_update_manifest.html",
+    "%TEMP%\\chrome_task_<n>.xml",
+    "%TEMP%\\ssv_cleanup.bat"
+  ],
+  "registry_reads": [
+    "HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\ProductName",
+    "HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\DisplayVersion",
+    "HKLM\\HARDWARE\\DESCRIPTION\\System\\CentralProcessor\\0\\ProcessorNameString"
+  ],
+  "command_protocol": {
+    "client_to_server_packets": [
+      "AUTH_LOGIN",
+      "BROWSERS_UPDATED",
+      "SYSTEM_INFO",
+      "Screenshot frame (JPEG body, %dx%d, image/jpeg)"
+    ],
+    "server_to_client_commands": [
+      "CMD_RE_DETECT_BROWSERS",
+      "CMD_SCREENSHOT_REQUEST",
+      "CMD_START_VIEWING",
+      "CMD_STOP_VIEWING",
+      "CMD_UNINSTALL",
+      "CMD_UPLOAD_EXECUTE (filename + bytes, returns exitCode)",
+      "Mouse/Keyboard injection (VK code + char + position)"
+    ],
+    "session_lifecycle": [
+      "Connect -> Handshake -> Handshake ACK -> AUTH_LOGIN with browser inventory -> command loop -> reconnect with backoff on close"
+    ]
+  },
+  "subsystem_log_prefixes": {
+    "INIT": "Agent bootstrap: GDI+ init, Winsock2 init, AgentNetwork.Start, anchor window creation, scheduled task install, replica deployment, watchdog spawn, banner thread, Chrome lifecycle manager launch, uninstall handling, self-delete.",
+    "CHROME": "Browser lifecycle: detect running browsers, patch Firefox prefs.js to disable crash recovery, write bounce HTML, launch browser with --app or -url pointing at bounce HTML, search for hidden window titled StudioSecGhost, cloak ghost, restore wrongly-cloaked legitimate windows, hot-swap browsers on operator command, close stale ghosts.",
+    "VNC": "Capture: WindowCapturer initialised on ghost HWND, GetDC/CreateCompatibleDC/CreateCompatibleBitmap, GDI+ encodes to JPEG, frame counter logged, resize tracked.",
+    "NET": "C2 transport: connect, handshake, AUTH_LOGIN, command dispatch (screenshot request, viewing start/stop, browser re-detect, upload-execute, uninstall, mouse, keyboard), oversized-packet guard, reconnect with backoff."
+  },
+  "novel_hidden_browser_technique": "The traditional hVNC pattern (Pandora, DarkVNC, LOBSHOT) creates a hidden desktop via CreateDesktopW + SetThreadDesktop and spawns a fresh browser process on that desktop. This sample does NOT use CreateDesktopW. Instead it launches a normal Chromium/Firefox process with command-line flags that disable crash restore bubbles and infobars, navigates that process to a file:// HTML page whose <title> is the agreed-upon marker 'StudioSecGhost', enumerates EnumWindows + GetWindowText to find a window with that title, then uses ShowWindow/SetWindowPos to cloak it. The cloak is per-window, not per-desktop. That means the victim can keep using their visible Chrome instance while the operator pilots a sibling hidden window in the same Chromium process tree, sharing cookies and session state via the shared User Data profile."
+}

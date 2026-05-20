@@ -1,0 +1,64 @@
+{
+  "c2_ip": "2.26.122.211",
+  "c2_port_candidates": [],
+  "bounce_html_filenames": [
+    "%s\\chrome_update_manifest.html",
+    "%sstudiosec_bounce.html"
+  ],
+  "task_xml_filename_fmt": "%schrome_task_%u.xml",
+  "cleanup_batch": "%s\\ssv_cleanup.bat",
+  "banner_class": "StudioSecVNC_Banner",
+  "banner_title": "StudioSecVNC Banner",
+  "anchor_class_a": "GSystem",
+  "anchor_class_b": ".SecAnchor",
+  "ghost_window_title": "StudioSecGhost",
+  "browsers": [
+    {
+      "name": "Chrome",
+      "process": "chrome.exe",
+      "window_class": "Chrome_WidgetWin_1",
+      "install_paths_observed": [
+        "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+      ]
+    },
+    {
+      "name": "Edge",
+      "process": "msedge.exe",
+      "window_class": null,
+      "install_paths_observed": [
+        "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+        "C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe"
+      ]
+    },
+    {
+      "name": "Firefox",
+      "process": "firefox.exe",
+      "window_class": "MozillaWindowClass",
+      "install_paths_observed": [
+        "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+        "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe"
+      ]
+    }
+  ],
+  "blocklist": [
+    "cheatengine",
+    "devenv.exe",
+    "dnspy.exe",
+    "ghidra",
+    "ida.exe",
+    "ida64.exe",
+    "idaq.exe",
+    "idaq64.exe",
+    "ollydbg.exe",
+    "processhacker.exe",
+    "procexp.exe",
+    "procmon.exe",
+    "windbg.exe",
+    "x32dbg.exe",
+    "x64dbg.exe"
+  ],
+  "firefox_prefs_key": null,
+  "browser_args_chromium": "\"%s\" --app=\"%s\" --disable-infobars --hide-crash-restore-bubble --disable-backgrounding-occluded-windows --disable-renderer-backgrounding --disable-occlusion-tracking",
+  "browser_args_firefox": "\"%s\" -new-instance -no-remote -url \"%s\""
+}

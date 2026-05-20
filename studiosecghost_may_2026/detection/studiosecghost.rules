@@ -1,0 +1,57 @@
+# Suricata rules for StudioSecGhost hVNC agent
+# Author: taogoldi  Date: 2026-05-19  TLP: TLP:CLEAR
+#
+# The agent speaks a custom raw-TCP binary protocol (no TLS in the observed
+# build). The first packet on the wire is an AUTH_LOGIN frame that includes
+# the operator-assigned client tag as a UTF-16LE string, followed by the
+# browser inventory count and the active-browser index.
+#
+# We anchor on the C2 IP for the observed build and on the wire-format
+# constants that survive a C2 rotation: the JPEG screenshot frame body
+# starts with the JPEG SOI (0xFF 0xD8 0xFF) sent inside a length-prefixed
+# packet, which is unusual for raw-TCP traffic on non-standard ports.
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (
+    msg:"StudioSecGhost agent: outbound to observed C2 IP";
+    flow:to_server,established;
+    ip_dst:2.26.122.211;
+    threshold: type limit, track by_src, count 1, seconds 300;
+    classtype:trojan-activity;
+    sid:9300101; rev:2;
+)
+
+# This build hardcodes destination TCP/4444. Future builds may rotate the port,
+# but the IP and the JPEG-SOI-over-raw-TCP signature (sid:9300102) will still
+# catch them.
+alert tcp $HOME_NET any -> $EXTERNAL_NET 4444 (
+    msg:"StudioSecGhost agent: outbound TCP/4444 to non-CDN external host";
+    flow:to_server,established;
+    ip_dst:!any;
+    threshold: type limit, track by_src, count 1, seconds 300;
+    classtype:trojan-activity;
+    sid:9300104; rev:1;
+)
+
+alert tcp $HOME_NET any -> $EXTERNAL_NET any (
+    msg:"StudioSecGhost agent: JPEG screenshot frame on raw TCP (non-80/non-443)";
+    flow:to_server,established;
+    dsize:>200;
+    content:"|FF D8 FF E0|"; offset:4; depth:32;
+    content:"JFIF"; distance:0; within:16;
+    pcre:"/^(?!.*HTTP\/1)/";
+    not_port:[80,443,8080,8443];
+    threshold: type limit, track by_src, count 1, seconds 60;
+    classtype:trojan-activity;
+    sid:9300102; rev:1;
+)
+
+# Bounce HTML drop fetched from disk via file:// (rarely seen in HTTP traffic
+# but included for analyst rules driven by sandbox HTTP capture)
+alert http $HOME_NET any -> any any (
+    msg:"StudioSecGhost bounce HTML title observed in HTTP body";
+    flow:to_server,established;
+    content:"StudioSecGhost"; http_body;
+    content:"window.location.replace("; http_body; distance:0;
+    classtype:trojan-activity;
+    sid:9300103; rev:1;
+)
